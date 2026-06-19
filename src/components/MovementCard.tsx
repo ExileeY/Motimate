@@ -1,0 +1,88 @@
+/**
+ * MovementCard — the "Today's movement" card. Shows the real step count and a
+ * progress bar (StepsConvertor.toProgress), with the mood-appropriate footer
+ * line. Falls back to the mockup's meta phrase when no live count is available.
+ */
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient'
+import { Mood } from '@/mood/mood'
+import { mochiMessages } from '@/mood/messages'
+import { colors, fonts } from '@/theme/tokens'
+
+interface MovementCardProps {
+  mood: Mood
+  steps: number
+  progress: number // 0..1
+  /** When false, show the mood's meta phrase instead of a live count. */
+  hasLiveSteps: boolean
+}
+
+const MovementCard = ({ mood, steps, progress, hasLiveSteps }: MovementCardProps) => {
+  const message = mochiMessages[mood]
+  const meta = hasLiveSteps ? `${steps.toLocaleString()} steps` : message.meta
+
+  return (
+    <View style={styles.card}>
+      <View style={styles.headerRow}>
+        <Text style={styles.title}>Today's movement</Text>
+        <Text style={styles.meta}>{meta}</Text>
+      </View>
+      <View style={styles.track}>
+        <LinearGradient
+          colors={[colors.barFrom, colors.barTo]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={[styles.fill, { width: `${Math.round(progress * 100)}%` }]}
+        />
+      </View>
+      <Text style={styles.footer}>{message.footer}</Text>
+    </View>
+  )
+}
+
+export default MovementCard
+
+const styles = StyleSheet.create({
+  card: {
+    width: '100%',
+    marginTop: 20,
+    gap: 9,
+    backgroundColor: colors.cardBg,
+    borderWidth: 1,
+    borderColor: colors.cardBorder,
+    borderRadius: 20,
+    paddingVertical: 14,
+    paddingHorizontal: 16,
+  },
+  headerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  title: {
+    fontSize: 13,
+    fontFamily: fonts.bodyBold,
+    color: colors.pillText,
+  },
+  meta: {
+    fontSize: 12,
+    fontFamily: fonts.bodyRegular,
+    color: colors.cardMeta,
+  },
+  track: {
+    height: 8,
+    borderRadius: 99,
+    backgroundColor: colors.barTrack,
+    overflow: 'hidden',
+  },
+  fill: {
+    height: '100%',
+    borderRadius: 99,
+  },
+  footer: {
+    fontSize: 12.5,
+    fontFamily: fonts.bodyRegular,
+    color: colors.cardFooter,
+  },
+})

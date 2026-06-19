@@ -1,13 +1,18 @@
 {
   "expo": {
-    "name": "__scaffold__",
-    "slug": "__scaffold__",
+    "name": "Motimate",
+    "slug": "motimate",
+    "scheme": "motimate",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "plugins": ["expo-router", "expo-font"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMotionUsageDescription": "Motimate reads your step count to set your companion's mood."
+      }
     },
     "android": {
       "adaptiveIcon": {
