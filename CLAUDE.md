@@ -18,7 +18,7 @@ npx tsc --noEmit   # typecheck (strict mode is on; there is no lint/test setup)
 
 There is no test runner, linter, or build script configured — verification is manual (run the app on a device). See the "Verification" section of [plan.md](plan.md).
 
-**Device requirements:** iOS step data works in Expo Go (real pedometer). The iOS Simulator has no pedometer, so the app reports `unavailable` and renders a resting state. Android real step data needs Health Connect (a dev build, not Expo Go) and is **not yet wired** — Android currently reports `unavailable` by design.
+**Device requirements:** iOS step data works in Expo Go (real pedometer via `expo-sensors` `Pedometer`). The iOS Simulator has no pedometer, so the app reports `unavailable` and renders a resting state. Android real step data needs Health Connect (a dev build, not Expo Go) and is **not yet wired** — Android currently reports `unavailable` by design.
 
 ## Architecture
 
@@ -47,9 +47,9 @@ Key conventions:
 
 Pets are hand-authored in **`react-native-svg`**, not RN `View`s. The source mockups use `radial-gradient`, `filter:blur`, and elliptical `border-radius` — none supported by RN StyleSheet — which map **1:1** onto SVG `<RadialGradient>`, `<feGaussianBlur>`, `<Ellipse>`/`<Path>`. The rest of the screen (layout, text, linear-gradient backgrounds) uses plain RN + `expo-linear-gradient`. When editing pet visuals, read exact values from the reference mockups rather than eyeballing.
 
-- [Mochi.tsx](src/components/pet/Mochi.tsx) — the cat in SVG; takes a `mood` prop (ears/eyes/mouth differ per mood). Animatable parts are separate named `<G>` groups.
-- [PetStage.tsx](src/components/pet/PetStage.tsx) — composes Glow + Mochi and drives **whole-body** motion (bob/breathe/sway) with cheap View-level Reanimated transforms (matches the mockup, which transforms the wrapper). Per-part SVG-group animation hooks exist in [animations.ts](src/components/pet/animations.ts) but are reserved for finer motion later.
-- [Glow.tsx](src/components/pet/Glow.tsx) — radial halo + mood-driven particle (energetic) / Zzz (tired) emitters.
+- [Mochi/](src/components/pet/Mochi/) — the cat in SVG; takes a `mood` prop. `index.tsx` renders the mood-independent body (head/ears/tail/feet, with `roundedBoxPath` from [svgPath.ts](src/components/pet/svgPath.ts) for asymmetric per-corner radii); [Face.tsx](src/components/pet/Mochi/Face.tsx) renders the per-mood face (eyes/mouth/cheeks differ per mood) and composes the small `FaceItems/` primitives (`Arc`, `Cheek`, `RoundEye`). Animatable parts are separate named `<G>` groups.
+- [PetStage.tsx](src/components/pet/PetStage.tsx) — composes Glow + Mochi and drives **whole-body** motion (bob/breathe/sway) with cheap View-level Reanimated transforms (matches the mockup, which transforms the wrapper). [animations.ts](src/components/pet/animations.ts) holds only the shared `usePingPong` primitive (a 0↔1↔0 oscillator that PetStage and the Glow halo build on); each `Glow/` emitter's own animation hook lives inline in its component.
+- [Glow/](src/components/pet/Glow/) — radial halo + mood-driven emitters, split into `Halo.tsx`, `Particles.tsx` (energetic), `Zzz.tsx` (tired), composed in `index.tsx`.
 
 ### Reanimated 4 / babel
 
@@ -61,7 +61,7 @@ This uses **Reanimated 4.1** (SDK 54). The babel plugin is `react-native-worklet
 - `src/mood/` — `mood.ts` (Mood enum + StepsConvertor), `messages.ts` (per-mood text).
 - `src/steps/` — `stepSource.ts` (platform adapter), `useDailySteps.ts` (the hook).
 - `src/theme/` — `tokens.ts` (colors, fonts, per-mood gradients/glow/dot, verbatim from mockups), `fonts.ts` (Fredoka + Nunito loading; UI is gated on `useAppFonts()`).
-- `src/components/` — `PhoneCanvas`, `TopBar`, `MovementCard`, and `pet/`.
+- `src/components/` — `PhoneCanvas`, `TopBar`, `MovementCard`, and `pet/` (`Mochi/`, `Face.tsx`, `FaceItems/`, `svgPath.ts`, `PetStage.tsx`, `animations.ts`, `Glow/`).
 - `@/*` path alias → `./src/*` (tsconfig).
 
 ### Design source of truth
