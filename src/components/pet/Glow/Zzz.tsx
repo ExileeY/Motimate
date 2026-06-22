@@ -7,8 +7,10 @@ const AG = Animated.createAnimatedComponent(G)
 
 const easeInOut = Easing.inOut(Easing.ease)
 
-const lerp = (min: number, max: number, progress: number) =>
-  min + (max - min) * progress
+const lerp = (min: number, max: number, progress: number) => {
+  'worklet'
+  return min + (max - min) * progress
+}
 
 // zfloat animates these as the glyph rises and drifts over one cycle (0→1).
 const TRANSLATE_X = {
@@ -29,8 +31,10 @@ const SCALE = {
 // Opacity is a triangle: it fades in until FADE_IN, then back out to 0.
 const FADE_IN = 0.25
 
-const triangleOpacity = (progress: number) =>
-  progress < FADE_IN ? progress / FADE_IN : 1 - (progress - FADE_IN) / (1 - FADE_IN)
+const triangleOpacity = (progress: number) => {
+  'worklet'
+  return progress < FADE_IN ? progress / FADE_IN : 1 - (progress - FADE_IN) / (1 - FADE_IN)
+}
 
 /**
  * zfloat: a "Z" that rises ~30px, drifts +16px right, scales .7 → 1.15, fading.

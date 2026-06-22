@@ -17,8 +17,10 @@ const AG = Animated.createAnimatedComponent(G)
 
 const easeInOut = Easing.inOut(Easing.ease)
 
-const lerp = (min: number, max: number, progress: number) =>
-  min + (max - min) * progress
+const lerp = (min: number, max: number, progress: number) => {
+  'worklet'
+  return min + (max - min) * progress
+}
 
 // floatUp animates these as the particle rises over one cycle (progress 0→1).
 const TRANSLATE_Y = {
@@ -34,8 +36,10 @@ const SCALE = {
 // Opacity is a triangle: it fades in until FADE_IN, then back out to 0.
 const FADE_IN = 0.28
 
-const triangleOpacity = (progress: number) =>
-  progress < FADE_IN ? progress / FADE_IN : 1 - (progress - FADE_IN) / (1 - FADE_IN)
+const triangleOpacity = (progress: number) => {
+  'worklet'
+  return progress < FADE_IN ? progress / FADE_IN : 1 - (progress - FADE_IN) / (1 - FADE_IN)
+}
 
 /**
  * floatUp: a particle that rises ~40px while fading in then out, repeating.

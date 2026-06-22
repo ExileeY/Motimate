@@ -23,8 +23,10 @@ const SCALE = {
   max: 1.07,
 }
 
-const lerp = (min: number, max: number, progress: number) =>
-  min + (max - min) * progress
+const lerp = (min: number, max: number, progress: number) => {
+  'worklet'
+  return min + (max - min) * progress
+}
 
 const useGlowPulse = (durationMs: number, cx: number, cy: number) => {
   const progress = usePingPong(durationMs)
