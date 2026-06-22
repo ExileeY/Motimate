@@ -1,7 +1,3 @@
-/**
- * Zzz — the tired mood's rising "z z Z" glyphs (`zfloat`). Three glyphs of
- * growing size drift up on staggered delays; the last is a capital Z.
- */
 import React from 'react'
 import { StyleSheet } from 'react-native'
 import Svg, { G, Text as SvgText } from 'react-native-svg'
@@ -10,36 +6,48 @@ import { useZFloat } from '@/components/pet/animations'
 
 const AG = Animated.createAnimatedComponent(G)
 
+const BOX_SIZE = 236 // 236×236 box: Stage
+const PET_SIZE = 180 // 180×180 box: Pet
+
+const PET_TOP_LEFT = (BOX_SIZE - PET_SIZE) / 2 // 28: pet body's top-left in the stage
+const ZZZ_POSITION = {
+  x: PET_TOP_LEFT + 150,
+  y: PET_TOP_LEFT + 20
+}
+
 const Z_SPECS = [
   {
-    x: 132,
-    y: 44,
-    size: 13,
+    label: 'z',
+    offsetX: 0,
+    fontSize: 20,
     delay: 0
   },
   {
-    x: 141,
-    y: 44,
-    size: 17,
+    label: 'z',
+    offsetX: 15,
+    fontSize: 25,
     delay: 1100
   },
   {
-    x: 152,
-    y: 44,
-    size: 22,
+    label: 'Z',
+    offsetX: 30,
+    fontSize: 30,
     delay: 2200
   },
 ]
 
-const ZGlyph = ({ x, y, size, delay, scale, label }: (typeof Z_SPECS)[number] & { scale: number; label: string }) => {
-  const animatedProps = useZFloat(3400, delay)
+const ZGlyph = ({ offsetX, fontSize, delay, label, scale }: (typeof Z_SPECS)[number] & { scale: number }) => {
+  const cx = (ZZZ_POSITION.x + offsetX) * scale
+  const cy = (ZZZ_POSITION.y + fontSize) * scale
+  const animatedProps = useZFloat(3400, delay, cx, cy)
   return (
     <AG animatedProps={animatedProps as any}>
       <SvgText
-        x={x * scale}
-        y={y * scale}
+        x={cx}
+        y={cy}
         fontFamily="Fredoka_600SemiBold"
-        fontSize={size * scale}
+        fontWeight="600"
+        fontSize={fontSize * scale}
         fill="#A9794F"
       >
         {label}
@@ -58,8 +66,7 @@ const Zzz = ({ size }: { size: number }) => (
     {Z_SPECS.map((zSpec, index) => (
       <ZGlyph
         key={index}
-        label={index === 2 ? 'Z' : 'z'}
-        scale={size / 180}
+        scale={size / BOX_SIZE}
         {...zSpec}
       />
     ))}

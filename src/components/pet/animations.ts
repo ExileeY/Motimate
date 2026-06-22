@@ -4,12 +4,11 @@
  * an `Animated.G`. Durations come straight from the mockups.
  *
  * CSS keyframes reproduced here:
- *   breathe  scale 1 ↔ 1.035
- *   bob      translateY 0 ↔ -9
- *   sway     rotate -2.6° ↔ 2.6°   (transform-origin: bottom center)
  *   glowPulse opacity .82↔1 + scale 1↔1.07
  *   floatUp  particle rise + fade (one-shot, looped with delay)
  *   zfloat   Zzz rise + drift + fade
+ *
+ * (Whole-body breathe/bobble/sway live in PetStage as View-level transforms.)
  *
  * SVG note: <G> has no transform-origin, so rotation/scale are expressed as a
  * matrix about an explicit pivot (cx, cy) passed by the caller.
@@ -19,49 +18,38 @@ import { useAnimatedProps, useSharedValue, withRepeat, withTiming, withDelay, Ea
 
 const easeInOut = Easing.inOut(Easing.ease)
 
-/** A 0↔1↔0 triangle wave on a shared value, looping forever. */
-const usePulse = (durationMs: number, delayMs = 0) => {
-  const v = useSharedValue(0)
+/**
+ * A normalized 0↔1↔0 value that smoothly oscillates forever (a "ping-pong").
+ * `durationMs` is the *full* round-trip; it's halved internally because the
+ * yoyo (`withRepeat(..., -1, true)`) replays the 1→0 return leg for free, so
+ * one `withTiming` only needs to cover the 0→1 half. Callers map the returned
+ * progress onto their own range (a scale, translateY, angle, opacity, …).
+ *
+ * `active` (default true) gates the loop: when false the value holds at 0 and
+ * no animation runs — used for moods that should sit still (e.g. tired).
+ */
+export const usePingPong = (durationMs: number, delayMs = 0, active = true) => {
+  const progress = useSharedValue(0)
   useEffect(() => {
-    v.value = withDelay(
+    if (!active) {
+      progress.value = 0 // reset so a later re-activation starts from rest
+      return
+    }
+    progress.value = withDelay(
       delayMs,
       withRepeat(withTiming(1, { duration: durationMs / 2, easing: easeInOut }), -1, true),
     )
-  }, [durationMs, delayMs, v])
-  return v
-}
-
-/** breathe: uniform scale about (cx, cy). */
-export const useBreathe = (durationMs: number, cx: number, cy: number) => {
-  const p = usePulse(durationMs)
-  return useAnimatedProps(() => {
-    const s = 1 + 0.035 * p.value
-    return { transform: `translate(${cx} ${cy}) scale(${s}) translate(${-cx} ${-cy})` }
-  })
-}
-
-/** bob: vertical translate 0 → -9. */
-export const useBob = (durationMs: number) => {
-  const p = usePulse(durationMs)
-  return useAnimatedProps(() => ({ transform: `translate(0 ${-9 * p.value})` }))
-}
-
-/** sway: rotate ±deg about a bottom-center pivot. */
-export const useSway = (durationMs: number, deg: number, cx: number, cy: number) => {
-  const p = usePulse(durationMs)
-  return useAnimatedProps(() => {
-    const angle = -deg + 2 * deg * p.value // -deg → +deg
-    return { transform: `rotate(${angle} ${cx} ${cy})` }
-  })
+  }, [durationMs, delayMs, active, progress])
+  return progress
 }
 
 /** glowPulse: opacity .82↔1 and scale 1↔1.07 about (cx, cy). */
 export const useGlowPulse = (durationMs: number, cx: number, cy: number) => {
-  const p = usePulse(durationMs)
+  const progress = usePingPong(durationMs)
   return useAnimatedProps(() => {
-    const s = 1 + 0.07 * p.value
+    const s = 1 + 0.07 * progress.value
     return {
-      opacity: 0.82 + 0.18 * p.value,
+      opacity: 0.82 + 0.18 * progress.value,
       transform: `translate(${cx} ${cy}) scale(${s}) translate(${-cx} ${-cy})`,
     }
   })
@@ -87,8 +75,14 @@ export const useFloatUp = (durationMs: number, delayMs: number) => {
 
 /**
  * zfloat: a "Z" that rises ~30px, drifts +16px right, scales .7 → 1.15, fading.
+ *
+ * The mockup's CSS `scale()` is about the glyph's own centre; an SVG <G> scale
+ * is about the group origin (0,0), which would fling the glyph across the stage
+ * since it sits ~166px from the origin. The caller passes the glyph anchor
+ * (cx, cy) so we scale about it (translate→scale→translate-back), keeping the
+ * letters put beside the head — matching the mockup.
  */
-export const useZFloat = (durationMs: number, delayMs: number) => {
+export const useZFloat = (durationMs: number, delayMs: number, cx: number, cy: number) => {
   const t = useSharedValue(0)
   useEffect(() => {
     t.value = withDelay(delayMs, withRepeat(withTiming(1, { duration: durationMs, easing: easeInOut }), -1, false))
@@ -98,6 +92,9 @@ export const useZFloat = (durationMs: number, delayMs: number) => {
     const x = 16 * t.value
     const s = 0.7 + 0.45 * t.value
     const opacity = t.value < 0.25 ? t.value / 0.25 : 1 - (t.value - 0.25) / 0.75
-    return { opacity, transform: `translate(${x} ${y}) scale(${s})` }
+    return {
+      opacity,
+      transform: `translate(${x} ${y}) translate(${cx} ${cy}) scale(${s}) translate(${-cx} ${-cy})`,
+    }
   })
 }
