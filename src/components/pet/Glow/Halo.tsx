@@ -6,12 +6,39 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
 import Svg, { Defs, RadialGradient, Stop, Filter, FeGaussianBlur, G, Circle } from 'react-native-svg'
-import Animated from 'react-native-reanimated'
+import Animated, { useAnimatedProps } from 'react-native-reanimated'
 import { Mood } from '@/mood/mood'
 import { glow as glowTokens } from '@/theme/tokens'
-import { useGlowPulse } from '@/components/pet/animations'
+import { usePingPong } from '@/components/pet/animations'
 
 const AG = Animated.createAnimatedComponent(G)
+
+const OPACITY = {
+  min: 0.82,
+  max: 1,
+}
+
+const SCALE = {
+  min: 1,
+  max: 1.07,
+}
+
+const lerp = (min: number, max: number, progress: number) =>
+  min + (max - min) * progress
+
+const useGlowPulse = (durationMs: number, cx: number, cy: number) => {
+  const progress = usePingPong(durationMs)
+
+  return useAnimatedProps(() => {
+    const scale = lerp(SCALE.min, SCALE.max, progress.value)
+    const opacity = lerp(OPACITY.min, OPACITY.max, progress.value)
+
+    return {
+      opacity,
+      transform: `translate(${cx} ${cy}) scale(${scale}) translate(${-cx} ${-cy})`
+    }
+  })
+}
 
 const Halo = ({ mood, size }: { mood: Mood; size: number }) => {
   const spec = glowTokens[mood]

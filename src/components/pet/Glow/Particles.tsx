@@ -8,13 +8,56 @@
  * We push them out into the halo margin — flanking the head left/right and
  * rising from above the shoulders — and scale them up so they read clearly.
  */
-import React from 'react'
+import React, { useEffect } from 'react'
 import { StyleSheet } from 'react-native'
 import Svg, { G, Rect } from 'react-native-svg'
-import Animated from 'react-native-reanimated'
-import { useFloatUp } from '@/components/pet/animations'
+import Animated, { useAnimatedProps, useSharedValue, withRepeat, withTiming, withDelay, Easing } from 'react-native-reanimated'
 
 const AG = Animated.createAnimatedComponent(G)
+
+const easeInOut = Easing.inOut(Easing.ease)
+
+const lerp = (min: number, max: number, progress: number) =>
+  min + (max - min) * progress
+
+// floatUp animates these as the particle rises over one cycle (progress 0→1).
+const TRANSLATE_Y = {
+  min: 10,
+  max: -40,
+}
+
+const SCALE = {
+  min: 0.6,
+  max: 1,
+}
+
+// Opacity is a triangle: it fades in until FADE_IN, then back out to 0.
+const FADE_IN = 0.28
+
+const triangleOpacity = (progress: number) =>
+  progress < FADE_IN ? progress / FADE_IN : 1 - (progress - FADE_IN) / (1 - FADE_IN)
+
+/**
+ * floatUp: a particle that rises ~40px while fading in then out, repeating.
+ * Drives a single <G>; caller positions it. `delayMs` staggers particles.
+ */
+const useFloatUp = (durationMs: number, delayMs: number) => {
+  const progress = useSharedValue(0)
+  useEffect(() => {
+    progress.value = withDelay(delayMs, withRepeat(withTiming(1, { duration: durationMs, easing: easeInOut }), -1, false))
+  }, [durationMs, delayMs, progress])
+
+  return useAnimatedProps(() => {
+    const y = lerp(TRANSLATE_Y.min, TRANSLATE_Y.max, progress.value)
+    const scale = lerp(SCALE.min, SCALE.max, progress.value)
+    const opacity = triangleOpacity(progress.value)
+
+    return {
+      opacity,
+      transform: `translate(0 ${y}) scale(${scale})`,
+    }
+  })
+}
 
 const PARTICLES = [
   {
