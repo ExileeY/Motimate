@@ -12,11 +12,11 @@
  */
 import React, { useState } from 'react'
 import { View, Text, ActivityIndicator, Pressable, StyleSheet } from 'react-native'
-import { useAppFonts } from '@/theme/fonts'
+import { useAppFonts } from '@/hooks/useAppFonts'
 import { useDailySteps } from '@/steps/useDailySteps'
 import { Mood } from '@/mood/mood'
 import { sessionMessages } from '@/mood/messages'
-import { colors, fonts } from '@/theme/tokens'
+import { colors, fonts } from '@/constants/tokens'
 import PhoneCanvas from '@/components/PhoneCanvas'
 import TopBar from '@/components/TopBar'
 import MovementCard from '@/components/MovementCard'

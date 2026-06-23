@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { MoodMessage } from '@/mood/messages'
-import { colors, fonts } from '@/theme/tokens'
+import { colors, fonts } from '@/constants/tokens'
 
 interface MovementCardProps {
   message: MoodMessage

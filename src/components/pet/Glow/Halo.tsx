@@ -11,7 +11,7 @@ import Svg, {
 } from 'react-native-svg'
 import Animated, { useAnimatedProps } from 'react-native-reanimated'
 import { Mood } from '@/mood/mood'
-import { glow as glowTokens } from '@/theme/tokens'
+import { glow as glowTokens } from '@/constants/tokens'
 import { usePingPong } from '@/components/pet/hooks/useLoop'
 
 import { calcTransform, linearInterpolate } from '@/components/pet/Glow/utils'

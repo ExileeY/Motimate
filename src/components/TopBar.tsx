@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Mood } from '@/mood/mood'
-import { colors, fonts, statusDot } from '@/theme/tokens'
+import { colors, fonts, statusDot } from '@/constants/tokens'
 
 const timeOfDay = (hour: number): string => {
   if (hour < 12) return 'Morning'
