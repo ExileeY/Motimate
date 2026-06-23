@@ -13,6 +13,7 @@
 import React, { useState } from 'react'
 import { View, Text, ActivityIndicator, Pressable, StyleSheet } from 'react-native'
 import { useAppFonts } from '@/hooks/useAppFonts'
+import { useResponsiveScale } from '@/hooks/useResponsiveScale'
 import { useDailySteps } from '@/steps/useDailySteps'
 import { Mood } from '@/mood/mood'
 import { sessionMessages } from '@/mood/messages'
@@ -26,6 +27,7 @@ const MOOD_CYCLE = [Mood.ENERGETIC, Mood.CALM, Mood.TIRED]
 
 const Home = () => {
   const [fontsLoaded] = useAppFonts()
+  const scale = useResponsiveScale()
   const live = useDailySteps()
   // Dev-only: tap the pet to preview each mood without walking (verification §3).
   const [override, setOverride] = useState<Mood | null>(null)
@@ -64,8 +66,18 @@ const Home = () => {
       </Pressable>
 
       <View style={styles.copy}>
-        <Text style={styles.headline}>{message.headline}</Text>
-        <Text style={styles.subtitle}>{message.subtitle}</Text>
+        <Text
+          style={[styles.headline, { fontSize: Math.round(30 * scale) }]}
+          maxFontSizeMultiplier={1.3}
+        >
+          {message.headline}
+        </Text>
+        <Text
+          style={[styles.subtitle, { fontSize: Math.round(14.5 * scale * 10) / 10 }]}
+          maxFontSizeMultiplier={1.3}
+        >
+          {message.subtitle}
+        </Text>
       </View>
 
       <MovementCard
