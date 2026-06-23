@@ -34,7 +34,7 @@ import {
   linearInterpolate
 } from '@/components/pet/Glow/utils'
 
-import useRise from '@/components/pet/hooks/useRise'
+import { useRise } from '@/components/pet/hooks/useLoop'
 
 const TRANSLATE_Y = {
   min: 10,

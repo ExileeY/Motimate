@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 import Animated, { useAnimatedStyle } from 'react-native-reanimated'
 import { Mood } from '@/mood/mood'
-import { usePingPong } from '@/components/pet/animations'
+import { usePingPong } from '@/components/pet/hooks/useLoop'
 import Mochi from '@/components/pet/Mochi'
 import Glow from '@/components/pet/Glow'
 

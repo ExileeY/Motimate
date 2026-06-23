@@ -11,7 +11,7 @@ import {
   linearInterpolate
 } from '@/components/pet/Glow/utils'
 
-import useRise from '@/components/pet/hooks/useRise'
+import { useRise } from '@/components/pet/hooks/useLoop'
 
 // zfloat animates these as the glyph rises and drifts over one cycle (0→1).
 const TRANSLATE_X = {
