@@ -4,13 +4,20 @@
  * translateY, angle, opacity, …).
  *
  * (Whole-body breathe/bobble/sway live in PetStage as View-level transforms;
- * the per-emitter animations live inside each Glow/ component.)
+ * the per-emitter animations live inside each Glow/ component — the rising
+ * emitters share their own primitives in Glow/animations.ts.)
  *
  * SVG note: <G> has no transform-origin, so when a caller turns this into a
  * rotation/scale it must express it as a matrix about an explicit pivot.
  */
 import { useEffect } from 'react'
-import { useSharedValue, withRepeat, withTiming, withDelay, Easing } from 'react-native-reanimated'
+import {
+  useSharedValue,
+  withRepeat,
+  withTiming,
+  withDelay,
+  Easing
+} from 'react-native-reanimated'
 
 const easeInOut = Easing.inOut(Easing.ease)
 
