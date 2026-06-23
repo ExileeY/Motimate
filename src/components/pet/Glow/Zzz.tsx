@@ -1,16 +1,17 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { StyleSheet } from 'react-native'
 import Svg, { G, Text as SvgText } from 'react-native-svg'
-import Animated, { useAnimatedProps, useSharedValue, withRepeat, withTiming, withDelay, Easing } from 'react-native-reanimated'
+import Animated, { useAnimatedProps } from 'react-native-reanimated'
 
-const AG = Animated.createAnimatedComponent(G)
+import { BOX_SIZE, PET_SIZE } from '@/constants/pet/dimensions'
 
-const easeInOut = Easing.inOut(Easing.ease)
+import {
+  calcTransform,
+  calcTriangleOpacity,
+  linearInterpolate
+} from '@/components/pet/Glow/utils'
 
-const lerp = (min: number, max: number, progress: number) => {
-  'worklet'
-  return min + (max - min) * progress
-}
+import { useRise } from '@/components/pet/hooks/useLoop'
 
 // zfloat animates these as the glyph rises and drifts over one cycle (0→1).
 const TRANSLATE_X = {
@@ -28,44 +29,22 @@ const SCALE = {
   max: 1.15,
 }
 
-// Opacity is a triangle: it fades in until FADE_IN, then back out to 0.
 const FADE_IN = 0.25
 
-const triangleOpacity = (progress: number) => {
-  'worklet'
-  return progress < FADE_IN ? progress / FADE_IN : 1 - (progress - FADE_IN) / (1 - FADE_IN)
-}
-
-/**
- * zfloat: a "Z" that rises ~30px, drifts +16px right, scales .7 → 1.15, fading.
- *
- * The mockup's CSS `scale()` is about the glyph's own centre; an SVG <G> scale
- * is about the group origin (0,0), which would fling the glyph across the stage
- * since it sits ~166px from the origin. The caller passes the glyph anchor
- * (cx, cy) so we scale about it (translate→scale→translate-back), keeping the
- * letters put beside the head — matching the mockup.
- */
 const useZFloat = (durationMs: number, delayMs: number, cx: number, cy: number) => {
-  const progress = useSharedValue(0)
-  useEffect(() => {
-    progress.value = withDelay(delayMs, withRepeat(withTiming(1, { duration: durationMs, easing: easeInOut }), -1, false))
-  }, [durationMs, delayMs, progress])
+  const progress = useRise(durationMs, delayMs)
 
   return useAnimatedProps(() => {
-    const x = lerp(TRANSLATE_X.min, TRANSLATE_X.max, progress.value)
-    const y = lerp(TRANSLATE_Y.min, TRANSLATE_Y.max, progress.value)
-    const scale = lerp(SCALE.min, SCALE.max, progress.value)
-    const opacity = triangleOpacity(progress.value)
+    const scale = linearInterpolate(SCALE.min, SCALE.max, progress.value)
+    const translateX = linearInterpolate(TRANSLATE_X.min, TRANSLATE_X.max, progress.value)
+    const translateY = linearInterpolate(TRANSLATE_Y.min, TRANSLATE_Y.max, progress.value)
 
     return {
-      opacity,
-      transform: `translate(${x} ${y}) translate(${cx} ${cy}) scale(${scale}) translate(${-cx} ${-cy})`,
+      opacity: calcTriangleOpacity(progress.value, FADE_IN),
+      transform: calcTransform(scale, cx, cy, translateX, translateY)
     }
   })
 }
-
-const BOX_SIZE = 236 // 236×236 box: Stage
-const PET_SIZE = 180 // 180×180 box: Pet
 
 const PET_TOP_LEFT = (BOX_SIZE - PET_SIZE) / 2 // 28: pet body's top-left in the stage
 const ZZZ_POSITION = {
@@ -94,12 +73,14 @@ const Z_SPECS = [
   },
 ]
 
+const AnimatedG = Animated.createAnimatedComponent(G)
+
 const ZGlyph = ({ offsetX, fontSize, delay, label, scale }: (typeof Z_SPECS)[number] & { scale: number }) => {
   const cx = (ZZZ_POSITION.x + offsetX) * scale
   const cy = (ZZZ_POSITION.y + fontSize) * scale
   const animatedProps = useZFloat(3400, delay, cx, cy)
   return (
-    <AG animatedProps={animatedProps as any}>
+    <AnimatedG animatedProps={animatedProps as any}>
       <SvgText
         x={cx}
         y={cy}
@@ -110,7 +91,7 @@ const ZGlyph = ({ offsetX, fontSize, delay, label, scale }: (typeof Z_SPECS)[num
       >
         {label}
       </SvgText>
-    </AG>
+    </AnimatedG>
   )
 }
 

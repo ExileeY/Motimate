@@ -1,17 +1,20 @@
-/**
- * Halo — the soft radial-gradient glow behind the pet. A blurred circle that
- * `glowPulse`s, in its own absolutely-positioned SVG layer so it sits behind
- * Mochi and scales freely. Color/opacity/size come from `glow[mood]` tokens.
- */
 import React from 'react'
 import { StyleSheet } from 'react-native'
-import Svg, { Defs, RadialGradient, Stop, Filter, FeGaussianBlur, G, Circle } from 'react-native-svg'
+import Svg, {
+  Circle,
+  Defs,
+  FeGaussianBlur,
+  Filter,
+  G,
+  RadialGradient,
+  Stop
+} from 'react-native-svg'
 import Animated, { useAnimatedProps } from 'react-native-reanimated'
 import { Mood } from '@/mood/mood'
-import { glow as glowTokens } from '@/theme/tokens'
-import { usePingPong } from '@/components/pet/animations'
+import { glow as glowTokens } from '@/constants/tokens'
+import { usePingPong } from '@/components/pet/hooks/useLoop'
 
-const AG = Animated.createAnimatedComponent(G)
+import { calcTransform, linearInterpolate } from '@/components/pet/Glow/utils'
 
 const OPACITY = {
   min: 0.82,
@@ -23,24 +26,20 @@ const SCALE = {
   max: 1.07,
 }
 
-const lerp = (min: number, max: number, progress: number) => {
-  'worklet'
-  return min + (max - min) * progress
-}
-
 const useGlowPulse = (durationMs: number, cx: number, cy: number) => {
   const progress = usePingPong(durationMs)
 
   return useAnimatedProps(() => {
-    const scale = lerp(SCALE.min, SCALE.max, progress.value)
-    const opacity = lerp(OPACITY.min, OPACITY.max, progress.value)
+    const scale = linearInterpolate(SCALE.min, SCALE.max, progress.value)
 
     return {
-      opacity,
-      transform: `translate(${cx} ${cy}) scale(${scale}) translate(${-cx} ${-cy})`
+      opacity: linearInterpolate(OPACITY.min, OPACITY.max, progress.value),
+      transform: calcTransform(scale, cx, cy)
     }
   })
 }
+
+const AnimatedG = Animated.createAnimatedComponent(G)
 
 const Halo = ({ mood, size }: { mood: Mood; size: number }) => {
   const spec = glowTokens[mood]
@@ -82,7 +81,8 @@ const Halo = ({ mood, size }: { mood: Mood; size: number }) => {
           <FeGaussianBlur stdDeviation="4" />
         </Filter>
       </Defs>
-      <AG animatedProps={animatedProps as any}>
+
+      <AnimatedG animatedProps={animatedProps as any}>
         <Circle
           cx={c}
           cy={c}
@@ -90,7 +90,7 @@ const Halo = ({ mood, size }: { mood: Mood; size: number }) => {
           fill="url(#halo)"
           filter="url(#haloBlur)"
         />
-      </AG>
+      </AnimatedG>
     </Svg>
   )
 }
