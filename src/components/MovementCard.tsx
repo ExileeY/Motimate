@@ -1,32 +1,28 @@
-/**
- * MovementCard — the "Today's movement" card. Shows the real step count and a
- * progress bar (StepsConvertor.toProgress), with the mood-appropriate footer
- * line. Falls back to the mockup's meta phrase when no live count is available.
- */
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
-import { Mood } from '@/mood/mood'
-import { mochiMessages } from '@/mood/messages'
+import { MoodMessage } from '@/mood/messages'
 import { colors, fonts } from '@/theme/tokens'
 
 interface MovementCardProps {
-  mood: Mood
+  message: MoodMessage
   steps: number
-  progress: number // 0..1
-  /** When false, show the mood's meta phrase instead of a live count. */
+  progress: number
   hasLiveSteps: boolean
 }
 
-const MovementCard = ({ mood, steps, progress, hasLiveSteps }: MovementCardProps) => {
-  const message = mochiMessages[mood]
+const MovementCard = ({ message, steps, progress, hasLiveSteps }: MovementCardProps) => {
   const meta = hasLiveSteps ? `${steps.toLocaleString()} steps` : message.meta
 
   return (
     <View style={styles.card}>
       <View style={styles.headerRow}>
-        <Text style={styles.title}>Today's movement</Text>
-        <Text style={styles.meta}>{meta}</Text>
+        <Text style={styles.title}>
+          Today's movement
+        </Text>
+        <Text style={styles.meta}>
+          {meta}
+        </Text>
       </View>
       <View style={styles.track}>
         <LinearGradient
@@ -36,7 +32,9 @@ const MovementCard = ({ mood, steps, progress, hasLiveSteps }: MovementCardProps
           style={[styles.fill, { width: `${Math.round(progress * 100)}%` }]}
         />
       </View>
-      <Text style={styles.footer}>{message.footer}</Text>
+      <Text style={styles.footer}>
+        {message.footer}
+      </Text>
     </View>
   )
 }

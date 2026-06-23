@@ -15,7 +15,7 @@ import { View, Text, ActivityIndicator, Pressable, StyleSheet } from 'react-nati
 import { useAppFonts } from '@/theme/fonts'
 import { useDailySteps } from '@/steps/useDailySteps'
 import { Mood } from '@/mood/mood'
-import { mochiMessages } from '@/mood/messages'
+import { sessionMessages } from '@/mood/messages'
 import { colors, fonts } from '@/theme/tokens'
 import PhoneCanvas from '@/components/PhoneCanvas'
 import TopBar from '@/components/TopBar'
@@ -44,7 +44,7 @@ const Home = () => {
   }
 
   const hasLiveSteps = permission === 'granted' && !error
-  const message = mochiMessages[mood]
+  const message = sessionMessages[mood]
   const notice =
     permission === 'unavailable'
       ? 'Movement data unavailable on this device.'
@@ -69,7 +69,7 @@ const Home = () => {
       </View>
 
       <MovementCard
-        mood={mood}
+        message={message}
         steps={steps}
         progress={progress}
         hasLiveSteps={hasLiveSteps}
