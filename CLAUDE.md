@@ -16,7 +16,9 @@ npm run web        # expo start --web
 npx tsc --noEmit   # typecheck (strict mode is on; there is no lint/test setup)
 ```
 
-There is no test runner, linter, or build script configured — verification is manual (run the app on a device). See the "Verification" section of [plan.md](plan.md).
+There is no test runner, linter, or build script configured — verification is manual (run the app on a device).
+
+**Verifying mood visuals without walking:** in dev builds (`__DEV__`), tapping the pet cycles `ENERGETIC → CALM → TIRED` ([app/index.tsx:30-33](app/index.tsx#L30-L33)). The override is local UI state layered over live `useDailySteps()`, so you can preview every mood's gradient/face/glow on a Simulator that has no pedometer.
 
 **Device requirements:** iOS step data works in Expo Go (real pedometer via `expo-sensors` `Pedometer`). The iOS Simulator has no pedometer, so the app reports `unavailable` and renders a resting state. Android real step data needs Health Connect (a dev build, not Expo Go) and is **not yet wired** — Android currently reports `unavailable` by design.
 
@@ -48,8 +50,10 @@ Key conventions:
 Pets are hand-authored in **`react-native-svg`**, not RN `View`s. The source mockups use `radial-gradient`, `filter:blur`, and elliptical `border-radius` — none supported by RN StyleSheet — which map **1:1** onto SVG `<RadialGradient>`, `<feGaussianBlur>`, `<Ellipse>`/`<Path>`. The rest of the screen (layout, text, linear-gradient backgrounds) uses plain RN + `expo-linear-gradient`. When editing pet visuals, read exact values from the reference mockups rather than eyeballing.
 
 - [Mochi/](src/components/pet/Mochi/) — the cat in SVG; takes a `mood` prop. `index.tsx` renders the mood-independent body (head/ears/tail/feet, with `roundedBoxPath` from [svgPath.ts](src/components/pet/svgPath.ts) for asymmetric per-corner radii); [Face.tsx](src/components/pet/Mochi/Face.tsx) renders the per-mood face (eyes/mouth/cheeks differ per mood) and composes the small `FaceItems/` primitives (`Arc`, `Cheek`, `RoundEye`). Animatable parts are separate named `<G>` groups.
-- [PetStage.tsx](src/components/pet/PetStage.tsx) — composes Glow + Mochi and drives **whole-body** motion (bob/breathe/sway) with cheap View-level Reanimated transforms (matches the mockup, which transforms the wrapper). [animations.ts](src/components/pet/animations.ts) holds only the shared `usePingPong` primitive (a 0↔1↔0 oscillator that PetStage and the Glow halo build on); each `Glow/` emitter's own animation hook lives inline in its component.
-- [Glow/](src/components/pet/Glow/) — radial halo + mood-driven emitters, split into `Halo.tsx`, `Particles.tsx` (energetic), `Zzz.tsx` (tired), composed in `index.tsx`.
+- [PetStage.tsx](src/components/pet/PetStage.tsx) — composes Glow + Mochi and drives **whole-body** motion (bob/breathe/sway) with cheap View-level Reanimated transforms (matches the mockup, which transforms the wrapper).
+- **Two named animation hooks over one shared core:** [pet/hooks/useLoop.ts](src/components/pet/hooks/useLoop.ts) exports `usePingPong(durationMs, delayMs?, active?)` — a 0↔1↔0 oscillator (breathe/bob/sway/halo pulse; `durationMs` is the full round-trip, halved internally), and `useRise(durationMs, delayMs?)` — a 0→1 ramp that snaps back each cycle (the rising-and-fading emitters, with `delayMs` to stagger siblings). Both are thin wrappers over a private `useRepeatedTiming`; `active: false` (pingpong) holds at 0 so still moods (e.g. tired) sit at rest.
+- [Glow/](src/components/pet/Glow/) — radial halo + mood-driven emitters, split into `Halo.tsx`, `Particles.tsx` (energetic), `Zzz.tsx` (tired), composed in `index.tsx`. [Glow/utils.ts](src/components/pet/Glow/utils.ts) holds the `'worklet'` math helpers (`linearInterpolate`, `calcTriangleOpacity`, `calcTransform`) that emitters call inside their animated SVG props.
+- Pet sizing is centralized in [src/constants/pet/dimensions.ts](src/constants/pet/dimensions.ts) (`BOX_SIZE` / `PET_SIZE` / `BOX_CENTER`) — read these rather than hard-coding the SVG viewBox or pivot.
 
 ### Reanimated 4 / babel
 
@@ -60,10 +64,11 @@ This uses **Reanimated 4.1** (SDK 54). The babel plugin is `react-native-worklet
 - `app/` — expo-router screens (`_layout.tsx` root, `index.tsx` is the only screen / the whole app).
 - `src/mood/` — `mood.ts` (Mood enum + StepsConvertor), `messages.ts` (per-mood text).
 - `src/steps/` — `stepSource.ts` (platform adapter), `useDailySteps.ts` (the hook).
-- `src/theme/` — `tokens.ts` (colors, fonts, per-mood gradients/glow/dot, verbatim from mockups), `fonts.ts` (Fredoka + Nunito loading; UI is gated on `useAppFonts()`).
-- `src/components/` — `PhoneCanvas`, `TopBar`, `MovementCard`, and `pet/` (`Mochi/`, `Face.tsx`, `FaceItems/`, `svgPath.ts`, `PetStage.tsx`, `animations.ts`, `Glow/`).
+- `src/hooks/` — `useAppFonts.ts` (Fredoka + Nunito loading; UI is gated on `useAppFonts()`).
+- `src/components/` — `PhoneCanvas`, `TopBar`, `MovementCard`, and `pet/` (`Mochi/`, `Face.tsx`, `FaceItems/`, `svgPath.ts`, `PetStage.tsx`, `hooks/useLoop.ts`, `Glow/`).
+- `src/constants/` — `tokens.ts` (colors, fonts, per-mood gradients/glow/dot, verbatim from mockups), `pet/dimensions.ts` (SVG box/pet/center sizing).
 - `@/*` path alias → `./src/*` (tsconfig).
 
 ### Design source of truth
 
-The mockups in `/Users/danila/Downloads/Mockups/` (HTML "deck" presentation slides, not app code) define the exact palette, fonts (Fredoka/Nunito), gradients, and animation keyframes. Values in `tokens.ts` are lifted verbatim from `Mockups/Emotions/Mochi/{happy,calm,tired}.dc.html`. When changing visuals, diff against these. [plan.md](plan.md) is the detailed implementation spec and records the design decisions; consult it before larger changes.
+The mockups in `/Users/danila/Downloads/Mockups/` (HTML "deck" presentation slides, not app code) define the exact palette, fonts (Fredoka/Nunito), gradients, and animation keyframes. Values in `tokens.ts` are lifted verbatim from `Mockups/Emotions/Mochi/{happy,calm,tired}.dc.html`. When changing visuals, diff against these.
