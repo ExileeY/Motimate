@@ -3,11 +3,10 @@ import { StyleSheet } from 'react-native'
 import Animated, { useAnimatedStyle } from 'react-native-reanimated'
 import { Mood } from '@/mood/mood'
 import { usePingPong } from '@/components/pet/hooks/useLoop'
+import { useResponsiveScale } from '@/hooks/useResponsiveScale'
+import { BOX_SIZE, PET_SIZE } from '@/constants/pet/dimensions'
 import Mochi from '@/components/pet/Mochi'
 import Glow from '@/components/pet/Glow'
-
-const STAGE = 236
-const PET_SIZE = 180
 
 const BREATH_TIME = {
   [Mood.ENERGETIC]: 3300,
@@ -53,6 +52,10 @@ const tiredTilt = () => {
 }
 
 const PetStage = ({ mood }: { mood: Mood }) => {
+  const scale = useResponsiveScale()
+  const stage = Math.round(BOX_SIZE * scale)
+  const pet = Math.round(PET_SIZE * scale)
+
   const pulse = usePingPong(BREATH_TIME[mood])
   const motion = usePingPong(MOTION_TIME[mood], 0, mood !== Mood.TIRED)
 
@@ -69,15 +72,15 @@ const PetStage = ({ mood }: { mood: Mood }) => {
   })
 
   return (
-    <Animated.View style={[styles.stage, style]}>
+    <Animated.View style={[styles.stage, { width: stage, height: stage }, style]}>
       <Glow
         mood={mood}
-        size={STAGE}
+        size={stage}
       />
 
       <Mochi
         mood={mood}
-        size={PET_SIZE}
+        size={pet}
       />
     </Animated.View>
   )
@@ -87,8 +90,6 @@ export default PetStage
 
 const styles = StyleSheet.create({
   stage: {
-    width: STAGE,
-    height: STAGE,
     alignItems: 'center',
     justifyContent: 'center',
   },

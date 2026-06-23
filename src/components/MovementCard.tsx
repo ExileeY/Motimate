@@ -17,10 +17,18 @@ const MovementCard = ({ message, steps, progress, hasLiveSteps }: MovementCardPr
   return (
     <View style={styles.card}>
       <View style={styles.headerRow}>
-        <Text style={styles.title}>
+        <Text
+          style={styles.title}
+          numberOfLines={1}
+          maxFontSizeMultiplier={1.3}
+        >
           Today's movement
         </Text>
-        <Text style={styles.meta}>
+        <Text
+          style={styles.meta}
+          numberOfLines={1}
+          maxFontSizeMultiplier={1.3}
+        >
           {meta}
         </Text>
       </View>
@@ -59,11 +67,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   title: {
+    flexShrink: 1,
     fontSize: 13,
     fontFamily: fonts.bodyBold,
     color: colors.pillText,
   },
   meta: {
+    flexShrink: 0,
     fontSize: 12,
     fontFamily: fonts.bodyRegular,
     color: colors.cardMeta,
