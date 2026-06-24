@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
 import Animated, { useAnimatedStyle } from 'react-native-reanimated'
-import { Mood } from '@/mood/mood'
+import { Mood } from '@/pet/mood'
 import { usePingPong } from '@/components/pet/hooks/useLoop'
 import { useResponsiveScale } from '@/hooks/useResponsiveScale'
 import { BOX_SIZE, PET_SIZE } from '@/constants/pet/dimensions'

@@ -5,7 +5,7 @@
  * The per-mood tables are keyed by the `Mood` enum so the whole UI can do a
  * single `TABLE[mood]` lookup (see src/mood/mood.ts).
  */
-import { Mood } from '@/mood/mood'
+import { Mood } from '@/pet/mood'
 
 /** Shared terracotta-cream palette (mood-independent). */
 export const colors = {

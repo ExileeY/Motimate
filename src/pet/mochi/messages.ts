@@ -1,13 +1,7 @@
-import { Mood } from '@/mood/mood'
+import { Mood } from '@/pet/mood'
+import { MessageSet } from '@/pet/messages'
 
-export interface MoodMessage {
-  headline: string
-  subtitle: string
-  meta: string
-  footer: string
-}
-
-export const mochiMessages: Record<Mood, MoodMessage[]> = {
+export const mochiMessages: Record<Mood, MessageSet[]> = {
   [Mood.ENERGETIC]: [
     {
       headline: 'Walk with me?',
@@ -195,38 +189,3 @@ export const mochiMessages: Record<Mood, MoodMessage[]> = {
     },
   ],
 }
-
-export const bulbashikMessages: Record<Mood, MoodMessage[]> = {
-  [Mood.ENERGETIC]: [
-    {
-      headline: "Let's get growing!",
-      subtitle: 'Fresh sprouts and ready to roll.',
-      meta: 'quiet so far',
-      footer: 'Roots are restless — fancy a little walk?',
-    },
-  ],
-  [Mood.CALM]: [
-    {
-      headline: 'Soaking it in.',
-      subtitle: 'Happy to amble whenever.',
-      meta: 'in the sun',
-      footer: 'Photosynthesising nicely — out when you are.',
-    },
-  ],
-  [Mood.TIRED]: [
-    {
-      headline: 'Wilting a little.',
-      subtitle: 'Big day in the sun. Time to rest.',
-      meta: 'all grown out',
-      footer: 'All grown out for today. Night night.',
-    },
-  ],
-}
-
-const pickRandomFrom = <T,>(collection: T[]): T => collection[Math.floor(Math.random() * collection.length)]
-
-export const pickMessages = (petMessages: Record<Mood, MoodMessage[]>): Record<Mood, MoodMessage> => ({
-  [Mood.ENERGETIC]: pickRandomFrom(petMessages[Mood.ENERGETIC]),
-  [Mood.CALM]: pickRandomFrom(petMessages[Mood.CALM]),
-  [Mood.TIRED]: pickRandomFrom(petMessages[Mood.TIRED]),
-})

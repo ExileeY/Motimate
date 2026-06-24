@@ -4,7 +4,7 @@ import Arc from '@/components/pet/Mochi/FaceItems/Arc'
 import Cheek from '@/components/pet/Mochi/FaceItems/Cheek'
 import RoundEye from '@/components/pet/Mochi/FaceItems/RoundEye'
 
-import { Mood } from '@/mood/mood'
+import { Mood } from '@/pet/mood'
 
 export type OffsetProps = {
   ox: number

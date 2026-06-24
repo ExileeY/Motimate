@@ -10,7 +10,7 @@ import {
 import Arc from '@/components/pet/Mochi/FaceItems/Arc'
 import BulbEye from '@/components/pet/Bulbashik/FaceItems/BulbEye'
 
-import { Mood } from '@/mood/mood'
+import { Mood } from '@/pet/mood'
 
 export type OffsetProps = {
   ox: number

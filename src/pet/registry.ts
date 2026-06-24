@@ -12,8 +12,10 @@
  * a pet's definition — it stays pet-agnostic in PetStage.
  */
 import React from 'react'
-import { Mood } from '@/mood/mood'
-import { MoodMessage, mochiMessages, bulbashikMessages } from '@/mood/messages'
+import { Mood } from '@/pet/mood'
+import { MessageSet, pickMessages } from '@/pet/messages'
+import { mochiMessages } from '@/pet/mochi/messages'
+import { bulbashikMessages } from '@/pet/bulbashik/messages'
 import Mochi from '@/components/pet/Mochi'
 import Bulbashik from '@/components/pet/Bulbashik'
 
@@ -22,20 +24,20 @@ enum PetId {
   BULBASHIK = 'bulbashik',
 }
 
-interface PetDef {
+interface PetDefinition {
   Body: React.FC<{ mood: Mood; size?: number }>
-  messages: Record<Mood, MoodMessage[]>
+  pickMessages: () => Record<Mood, MessageSet>
 }
 
-const PETS: Record<PetId, PetDef> = {
+const PETS: Record<PetId, PetDefinition> = {
   [PetId.MOCHI]: {
     Body: Mochi,
-    messages: mochiMessages,
+    pickMessages: () => pickMessages(mochiMessages)
   },
   [PetId.BULBASHIK]: {
     Body: Bulbashik,
-    messages: bulbashikMessages,
-  },
+    pickMessages: () => pickMessages(bulbashikMessages)
+  }
 }
 
 export const activePet = PETS[PetId.BULBASHIK]

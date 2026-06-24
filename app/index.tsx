@@ -15,8 +15,7 @@ import { View, Text, ActivityIndicator, Pressable, StyleSheet } from 'react-nati
 import { useAppFonts } from '@/hooks/useAppFonts'
 import { useResponsiveScale } from '@/hooks/useResponsiveScale'
 import { useDailySteps } from '@/steps/useDailySteps'
-import { Mood } from '@/mood/mood'
-import { pickMessages } from '@/mood/messages'
+import { Mood } from '@/pet/mood'
 import { activePet } from '@/pet/registry'
 import { colors, fonts } from '@/constants/tokens'
 import PhoneCanvas from '@/components/PhoneCanvas'
@@ -25,7 +24,7 @@ import MovementCard from '@/components/MovementCard'
 import PetStage from '@/components/pet/PetStage'
 
 const MOOD_CYCLE = [Mood.ENERGETIC, Mood.CALM, Mood.TIRED]
-const petMessages = pickMessages(activePet.messages)
+const petMessages = activePet.pickMessages()
 
 const Home = () => {
   const [fontsLoaded] = useAppFonts()

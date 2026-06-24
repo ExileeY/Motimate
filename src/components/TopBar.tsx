@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { View, Text, Pressable, StyleSheet } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { useRouter } from 'expo-router'
-import { Mood } from '@/mood/mood'
+import { Mood } from '@/pet/mood'
 import { colors, fonts, statusDot } from '@/constants/tokens'
 
 const timeOfDay = (hour: number): string => {

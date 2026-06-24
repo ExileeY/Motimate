@@ -11,7 +11,7 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { Mood } from '@/mood/mood'
+import { Mood } from '@/pet/mood'
 import { screenBackground } from '@/constants/tokens'
 
 const PhoneCanvas = ({ mood, children }: { mood: Mood; children: React.ReactNode }) => {

@@ -42,7 +42,7 @@ import Svg, {
   Ellipse,
   Path,
 } from 'react-native-svg'
-import { Mood } from '@/mood/mood'
+import { Mood } from '@/pet/mood'
 import { PET_SIZE } from '@/constants/pet/dimensions'
 import { roundedBoxPath } from '@/components/pet/svgPath'
 import Face from '@/components/pet/Bulbashik/Face'
