@@ -19,7 +19,7 @@ import {
   normalizeGoal,
   readGoal,
   writeGoal
-} from '@/goal/goalStorage'
+} from '@/settings/goalStorage'
 
 interface GoalContextValue {
   goal: number

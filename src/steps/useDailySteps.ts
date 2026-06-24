@@ -8,7 +8,7 @@
  */
 import { useEffect, useState } from 'react'
 import { Mood, StepsConvertor } from '@/mood/mood'
-import { useGoal } from '@/goal/GoalContext'
+import { useGoal } from '@/settings/GoalContext'
 import { stepSource, type PermissionState } from '@/steps/stepSource'
 
 export interface DailySteps {
