@@ -8,6 +8,7 @@
  */
 import { useEffect, useState } from 'react'
 import { Mood, StepsConvertor } from '@/mood/mood'
+import { useGoal } from '@/goal/GoalContext'
 import { stepSource, type PermissionState } from '@/steps/stepSource'
 
 export interface DailySteps {
@@ -25,6 +26,8 @@ export const useDailySteps = (): DailySteps => {
   const [steps, setSteps] = useState(0)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+
+  const { goal } = useGoal()
 
   useEffect(() => {
     let unsubscribe: (() => void) | undefined
@@ -64,8 +67,8 @@ export const useDailySteps = (): DailySteps => {
 
   return {
     steps,
-    mood: StepsConvertor.toMood(steps),
-    progress: StepsConvertor.toProgress(steps),
+    mood: StepsConvertor.toMood(steps, goal),
+    progress: StepsConvertor.toProgress(steps, goal),
     permission,
     loading,
     error,
