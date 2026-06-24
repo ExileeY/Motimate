@@ -16,12 +16,15 @@ import { Mood } from '@/pet/mood'
 import { MessageSet, pickMessages } from '@/pet/messages'
 import { mochiMessages } from '@/pet/mochi/messages'
 import { bulbashikMessages } from '@/pet/bulbashik/messages'
+import { dogMessages } from '@/pet/dog/messages'
 import Mochi from '@/components/pet/Mochi'
 import Bulbashik from '@/components/pet/Bulbashik'
+import Dog from '@/components/pet/Dog'
 
 enum PetId {
   MOCHI = 'mochi',
   BULBASHIK = 'bulbashik',
+  DOG = 'dog',
 }
 
 interface PetDefinition {
@@ -37,7 +40,11 @@ const PETS: Record<PetId, PetDefinition> = {
   [PetId.BULBASHIK]: {
     Body: Bulbashik,
     pickMessages: () => pickMessages(bulbashikMessages)
+  },
+  [PetId.DOG]: {
+    Body: Dog,
+    pickMessages: () => pickMessages(dogMessages)
   }
 }
 
-export const activePet = PETS[PetId.BULBASHIK]
+export const activePet = PETS[PetId.DOG]
