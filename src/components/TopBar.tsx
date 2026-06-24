@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, Pressable, StyleSheet } from 'react-native'
+import { Ionicons } from '@expo/vector-icons'
+import { useRouter } from 'expo-router'
 import { Mood } from '@/mood/mood'
 import { colors, fonts, statusDot } from '@/constants/tokens'
 
@@ -13,6 +15,8 @@ const formatClock = (date: Date): string =>
   `${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')}`
 
 const TopBar = ({ mood }: { mood: Mood }) => {
+  const router = useRouter()
+
   const [now, setNow] = useState(() => new Date())
 
   useEffect(() => {
@@ -28,7 +32,21 @@ const TopBar = ({ mood }: { mood: Mood }) => {
         <View style={[styles.dot, { backgroundColor: dot, shadowColor: dot }]} />
         <Text style={styles.pillLabel}>{timeOfDay(now.getHours())}</Text>
       </View>
-      <Text style={styles.clock}>{formatClock(now)}</Text>
+      <View style={styles.right}>
+        <Text style={styles.clock}>{formatClock(now)}</Text>
+        <Pressable
+          onPress={() => router.push('/settings')}
+          hitSlop={10}
+          accessibilityRole="button"
+          accessibilityLabel="Settings"
+        >
+          <Ionicons
+            name="settings-outline"
+            size={20}
+            color={colors.clock}
+          />
+        </Pressable>
+      </View>
     </View>
   )
 }
@@ -65,6 +83,11 @@ const styles = StyleSheet.create({
     fontSize: 12.5,
     fontFamily: fonts.bodyBold,
     color: colors.pillText,
+  },
+  right: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
   },
   clock: {
     fontSize: 13,

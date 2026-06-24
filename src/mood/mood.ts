@@ -4,21 +4,19 @@ export enum Mood {
   TIRED = 'tired',
 }
 
-const MOOD_MAX: Record<Mood, number> = {
-  [Mood.ENERGETIC]: 2_500,
-  [Mood.CALM]: 8_000,
+const MOOD_MAX_RATIO: Record<Mood, number> = {
+  [Mood.ENERGETIC]: 0.2,
+  [Mood.CALM]: 0.64,
   [Mood.TIRED]: Infinity,
 }
 
-const GOAL = 12_500
-
 export const StepsConvertor = {
-  toMood(steps: number): Mood {
-    if (steps < MOOD_MAX[Mood.ENERGETIC]) return Mood.ENERGETIC
-    if (steps < MOOD_MAX[Mood.CALM]) return Mood.CALM
+  toMood(steps: number, goal: number): Mood {
+    if (steps < MOOD_MAX_RATIO[Mood.ENERGETIC] * goal) return Mood.ENERGETIC
+    if (steps < MOOD_MAX_RATIO[Mood.CALM] * goal) return Mood.CALM
     return Mood.TIRED
   },
-  toProgress(steps: number): number {
-    return Math.min(steps / GOAL, 1)
+  toProgress(steps: number, goal: number): number {
+    return Math.min(steps / goal, 1)
   },
 }
