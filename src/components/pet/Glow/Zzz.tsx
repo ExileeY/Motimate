@@ -48,7 +48,7 @@ const useZFloat = (durationMs: number, delayMs: number, cx: number, cy: number) 
 
 const PET_TOP_LEFT = (BOX_SIZE - PET_SIZE) / 2 // 28: pet body's top-left in the stage
 const ZZZ_POSITION = {
-  x: PET_TOP_LEFT + 150,
+  x: PET_TOP_LEFT + 160,
   y: PET_TOP_LEFT + 20
 }
 
