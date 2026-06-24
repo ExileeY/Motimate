@@ -7,15 +7,11 @@ import {
   Defs
 } from 'react-native-svg'
 
-import Arc from '@/components/pet/Mochi/FaceItems/Arc'
+import Arc from '@/components/pet/shared/FaceItems/Arc'
 import BulbEye from '@/components/pet/Bulbashik/FaceItems/BulbEye'
 
 import { Mood } from '@/pet/mood'
-
-export type OffsetProps = {
-  ox: number
-  oy: number
-}
+import { OffsetProps } from '@/components/pet/shared/types'
 
 const EYE_COLOR = '#8A5A33'
 
