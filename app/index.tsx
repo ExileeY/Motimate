@@ -2,8 +2,8 @@
  * Home screen — the whole app, for now. The pet *is* the home screen.
  *
  * Single source of truth: useDailySteps() → mood/progress → everything below.
- * Layout (top→bottom): TopBar · pet (Glow+Mochi) · headline+subtitle ·
- * MovementCard. Matches `Mockups/Emotions/Mochi/*.dc.html` minus the bezel.
+ * Layout (top→bottom): TopBar · pet (Glow + active pet body) · headline+subtitle ·
+ * MovementCard. The active pet (Mochi/Bulbashik) comes from the pet registry.
  *
  * Degrades gracefully: while permission/first reading resolve we show a quiet
  * loader; if motion data is unavailable or denied we still render the pet
@@ -16,7 +16,8 @@ import { useAppFonts } from '@/hooks/useAppFonts'
 import { useResponsiveScale } from '@/hooks/useResponsiveScale'
 import { useDailySteps } from '@/steps/useDailySteps'
 import { Mood } from '@/mood/mood'
-import { sessionMessages } from '@/mood/messages'
+import { pickMessages } from '@/mood/messages'
+import { activePet } from '@/pet/registry'
 import { colors, fonts } from '@/constants/tokens'
 import PhoneCanvas from '@/components/PhoneCanvas'
 import TopBar from '@/components/TopBar'
@@ -24,6 +25,7 @@ import MovementCard from '@/components/MovementCard'
 import PetStage from '@/components/pet/PetStage'
 
 const MOOD_CYCLE = [Mood.ENERGETIC, Mood.CALM, Mood.TIRED]
+const petMessages = pickMessages(activePet.messages)
 
 const Home = () => {
   const [fontsLoaded] = useAppFonts()
@@ -46,7 +48,7 @@ const Home = () => {
   }
 
   const hasLiveSteps = permission === 'granted' && !error
-  const message = sessionMessages[mood]
+  const message = petMessages[mood]
   const notice =
     permission === 'unavailable'
       ? 'Movement data unavailable on this device.'
