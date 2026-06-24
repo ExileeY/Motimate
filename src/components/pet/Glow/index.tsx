@@ -8,7 +8,7 @@
  */
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
-import { Mood } from '@/mood/mood'
+import { Mood } from '@/pet/mood'
 import Halo from '@/components/pet/Glow/Halo'
 import Particles from '@/components/pet/Glow/Particles'
 import Zzz from '@/components/pet/Glow/Zzz'

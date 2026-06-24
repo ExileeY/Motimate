@@ -10,7 +10,7 @@ import Svg, {
   Stop
 } from 'react-native-svg'
 import Animated, { useAnimatedProps } from 'react-native-reanimated'
-import { Mood } from '@/mood/mood'
+import { Mood } from '@/pet/mood'
 import { glow as glowTokens } from '@/constants/tokens'
 import { usePingPong } from '@/components/pet/hooks/useLoop'
 

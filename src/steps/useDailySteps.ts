@@ -7,7 +7,7 @@
  * pedometer) are surfaced as state, never thrown — the UI degrades gracefully.
  */
 import { useEffect, useState } from 'react'
-import { Mood, StepsConvertor } from '@/mood/mood'
+import { Mood, StepsConvertor } from '@/pet/mood'
 import { useGoal } from '@/settings/GoalContext'
 import { stepSource, type PermissionState } from '@/steps/stepSource'
 

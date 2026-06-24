@@ -1,12 +1,14 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
 import Animated, { useAnimatedStyle } from 'react-native-reanimated'
-import { Mood } from '@/mood/mood'
+import { Mood } from '@/pet/mood'
 import { usePingPong } from '@/components/pet/hooks/useLoop'
 import { useResponsiveScale } from '@/hooks/useResponsiveScale'
 import { BOX_SIZE, PET_SIZE } from '@/constants/pet/dimensions'
-import Mochi from '@/components/pet/Mochi'
+import { activePet } from '@/pet/registry'
 import Glow from '@/components/pet/Glow'
+
+const { Body } = activePet
 
 const BREATH_TIME = {
   [Mood.ENERGETIC]: 3300,
@@ -78,7 +80,7 @@ const PetStage = ({ mood }: { mood: Mood }) => {
         size={stage}
       />
 
-      <Mochi
+      <Body
         mood={mood}
         size={pet}
       />

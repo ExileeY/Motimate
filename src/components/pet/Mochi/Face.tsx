@@ -1,15 +1,11 @@
 import React from 'react'
 
-import Arc from '@/components/pet/Mochi/FaceItems/Arc'
-import Cheek from '@/components/pet/Mochi/FaceItems/Cheek'
+import Arc from '@/components/pet/shared/FaceItems/Arc'
+import Cheek from '@/components/pet/shared/FaceItems/Cheek'
 import RoundEye from '@/components/pet/Mochi/FaceItems/RoundEye'
 
-import { Mood } from '@/mood/mood'
-
-export type OffsetProps = {
-  ox: number
-  oy: number
-}
+import { Mood } from '@/pet/mood'
+import { OffsetProps } from '@/components/pet/shared/types'
 
 const Cheeks = ({ ox, oy, dy, opacity }: OffsetProps & { dy: number; opacity: number }) => (
   <>
@@ -19,6 +15,7 @@ const Cheeks = ({ ox, oy, dy, opacity }: OffsetProps & { dy: number; opacity: nu
       dx={33}
       dy={dy}
       opacity={opacity}
+      filterId="soft"
     />
     <Cheek
       ox={ox}
@@ -26,6 +23,7 @@ const Cheeks = ({ ox, oy, dy, opacity }: OffsetProps & { dy: number; opacity: nu
       dx={115}
       dy={dy}
       opacity={opacity}
+      filterId="soft"
     />
   </>
 )

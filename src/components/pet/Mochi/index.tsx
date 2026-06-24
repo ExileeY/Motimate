@@ -40,7 +40,7 @@ import Svg, {
   Ellipse,
   Path,
 } from 'react-native-svg'
-import { Mood } from '@/mood/mood'
+import { Mood } from '@/pet/mood'
 import { roundedBoxPath } from '@/components/pet/svgPath'
 import Face from '@/components/pet/Mochi/Face'
 
