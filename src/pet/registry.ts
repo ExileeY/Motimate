@@ -20,12 +20,14 @@ import { dogMessages } from '@/pet/dog/messages'
 import { octopusMessages } from '@/pet/octopus/messages'
 import { aruticMessages } from '@/pet/arutic/messages'
 import { khinklearMessages } from '@/pet/khinklear/messages'
+import { tomatoMessages } from '@/pet/tomato/messages'
 import Mochi from '@/components/pet/Mochi'
 import Bulbashik from '@/components/pet/Bulbashik'
 import Dog from '@/components/pet/Dog'
 import Octopus from '@/components/pet/Octopus'
 import Arutic from '@/components/pet/Arutic'
 import Khinklear from '@/components/pet/Khinklear'
+import Tomato from '@/components/pet/Tomato'
 
 enum PetId {
   MOCHI = 'mochi',
@@ -34,6 +36,7 @@ enum PetId {
   OCTOPUS = 'octopus',
   ARUTIC = 'arutic',
   KHINKLEAR = 'khinklear',
+  TOMATO = 'tomato',
 }
 
 interface PetDefinition {
@@ -65,7 +68,11 @@ const PETS: Record<PetId, PetDefinition> = {
   [PetId.KHINKLEAR]: {
     Body: Khinklear,
     pickMessages: () => pickMessages(khinklearMessages)
+  },
+  [PetId.TOMATO]: {
+    Body: Tomato,
+    pickMessages: () => pickMessages(tomatoMessages)
   }
 }
 
-export const activePet = PETS[PetId.KHINKLEAR]
+export const activePet = PETS[PetId.TOMATO]
