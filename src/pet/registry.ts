@@ -18,16 +18,19 @@ import { mochiMessages } from '@/pet/mochi/messages'
 import { bulbashikMessages } from '@/pet/bulbashik/messages'
 import { dogMessages } from '@/pet/dog/messages'
 import { octopusMessages } from '@/pet/octopus/messages'
+import { aruticMessages } from '@/pet/arutic/messages'
 import Mochi from '@/components/pet/Mochi'
 import Bulbashik from '@/components/pet/Bulbashik'
 import Dog from '@/components/pet/Dog'
 import Octopus from '@/components/pet/Octopus'
+import Arutic from '@/components/pet/Arutic'
 
 enum PetId {
   MOCHI = 'mochi',
   BULBASHIK = 'bulbashik',
   DOG = 'dog',
   OCTOPUS = 'octopus',
+  ARUTIC = 'arutic',
 }
 
 interface PetDefinition {
@@ -51,7 +54,11 @@ const PETS: Record<PetId, PetDefinition> = {
   [PetId.OCTOPUS]: {
     Body: Octopus,
     pickMessages: () => pickMessages(octopusMessages)
+  },
+  [PetId.ARUTIC]: {
+    Body: Arutic,
+    pickMessages: () => pickMessages(aruticMessages)
   }
 }
 
-export const activePet = PETS[PetId.OCTOPUS]
+export const activePet = PETS[PetId.ARUTIC]
