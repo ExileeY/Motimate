@@ -2,19 +2,18 @@ import { useEffect, useState } from 'react'
 
 import { PersistedStorage } from '@/settings/persistedStorage'
 
-export interface PersistedSettingConfig<T, Extra extends object> {
+export interface PersistedSettingConfig<T> {
   default: T
   storage: PersistedStorage<T>
-  derive?: (value: T) => Extra
 }
 
-export type PersistedSettingValue<T, Extra extends object> = {
+export type PersistedSettingValue<T> = {
   value: T
   ready: boolean
   set: (value: T) => T
-} & Extra
+}
 
-export const usePersistedSetting = <T, Extra extends object = {}>(config: PersistedSettingConfig<T, Extra>): PersistedSettingValue<T, Extra> => {
+export const usePersistedSetting = <T,>(config: PersistedSettingConfig<T>): PersistedSettingValue<T> => {
   const [value, setValue] = useState<T>(config.default)
   const [ready, setReady] = useState(false)
 
@@ -41,7 +40,5 @@ export const usePersistedSetting = <T, Extra extends object = {}>(config: Persis
     return normalized
   }
 
-  const extra = config.derive ? config.derive(value) : ({} as Extra)
-
-  return { value, ready, set, ...extra }
+  return { value, ready, set }
 }
