@@ -6,7 +6,7 @@ import { usePingPong } from '@/components/pet/hooks/useLoop'
 import { useResponsiveScale } from '@/hooks/useResponsiveScale'
 import { BOX_SIZE, PET_SIZE } from '@/constants/pet/dimensions'
 import Glow from '@/components/pet/Glow'
-import { useActivePet } from '@/settings/PetContext'
+import { useActivePet } from '@/settings/pet/useActivePet'
 
 const BREATH_TIME = {
   [Mood.ENERGETIC]: 3300,

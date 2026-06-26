@@ -3,7 +3,7 @@ import { View, Text, Pressable, StyleSheet } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { Mood } from '@/pet/mood'
 import { PetId, PET_IDS, PETS } from '@/pet/registry'
-import { useActivePet } from '@/settings/PetContext'
+import { useActivePet } from '@/settings/pet/useActivePet'
 import { colors, fonts } from '@/constants/tokens'
 
 const PREVIEW_SIZE = 64
