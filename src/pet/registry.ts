@@ -1,16 +1,3 @@
-/**
- * Pet registry — the single place that knows which pets exist and which one is
- * active. Each pet contributes its body component and its message table; the
- * rest of the app (PetStage, the home screen) reads `PETS[ACTIVE_PET]` instead
- * of importing a specific pet.
- *
- * To add a pet: build its `Body` (mood-prop SVG, like Mochi/Bulbashik) and its
- * `messages`, then add one entry here. To switch the active pet: change the one
- * `ACTIVE_PET` constant below — that's the whole "programmatic switch".
- *
- * The shared, mood-driven Glow (Halo/Particles/Zzz) is intentionally NOT part of
- * a pet's definition — it stays pet-agnostic in PetStage.
- */
 import React from 'react'
 import { Mood } from '@/pet/mood'
 import { MessageSet, pickMessages } from '@/pet/messages'
@@ -29,7 +16,7 @@ import Arutic from '@/components/pet/Arutic'
 import Khinklear from '@/components/pet/Khinklear'
 import Tomato from '@/components/pet/Tomato'
 
-enum PetId {
+export enum PetId {
   MOCHI = 'mochi',
   BULBASHIK = 'bulbashik',
   DOG = 'dog',
@@ -39,40 +26,50 @@ enum PetId {
   TOMATO = 'tomato',
 }
 
-interface PetDefinition {
+export interface PetDefinition {
+  name: string
   Body: React.FC<{ mood: Mood; size?: number }>
   pickMessages: () => Record<Mood, MessageSet>
 }
 
-const PETS: Record<PetId, PetDefinition> = {
+export const PETS: Record<PetId, PetDefinition> = {
   [PetId.MOCHI]: {
+    name: 'Mochi',
     Body: Mochi,
     pickMessages: () => pickMessages(mochiMessages)
   },
   [PetId.BULBASHIK]: {
+    name: 'Bulbashik',
     Body: Bulbashik,
     pickMessages: () => pickMessages(bulbashikMessages)
   },
   [PetId.DOG]: {
+    name: 'Dog',
     Body: Dog,
     pickMessages: () => pickMessages(dogMessages)
   },
   [PetId.OCTOPUS]: {
+    name: 'Octopus',
     Body: Octopus,
     pickMessages: () => pickMessages(octopusMessages)
   },
   [PetId.ARUTIC]: {
+    name: 'Arutic',
     Body: Arutic,
     pickMessages: () => pickMessages(aruticMessages)
   },
   [PetId.KHINKLEAR]: {
+    name: 'Khinklear',
     Body: Khinklear,
     pickMessages: () => pickMessages(khinklearMessages)
   },
   [PetId.TOMATO]: {
+    name: 'Tomato',
     Body: Tomato,
     pickMessages: () => pickMessages(tomatoMessages)
   }
 }
 
-export const activePet = PETS[PetId.TOMATO]
+export const PET_IDS = Object.keys(PETS) as PetId[]
+export const DEFAULT_PET_ID = PetId.MOCHI
+
