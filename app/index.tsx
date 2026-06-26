@@ -10,13 +10,13 @@
  * (defaulting to its energetic "quiet so far" state) with a small notice,
  * instead of crashing.
  */
-import React, { useState } from 'react'
-import { View, Text, ActivityIndicator, Pressable, StyleSheet } from 'react-native'
+import React, { useMemo, useState } from 'react'
+import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native'
 import { useAppFonts } from '@/hooks/useAppFonts'
 import { useResponsiveScale } from '@/hooks/useResponsiveScale'
 import { useDailySteps } from '@/steps/useDailySteps'
 import { Mood } from '@/pet/mood'
-import { activePet } from '@/pet/registry'
+import { useActivePet } from '@/settings/pet/useActivePet'
 import { colors, fonts } from '@/constants/tokens'
 import PhoneCanvas from '@/components/PhoneCanvas'
 import TopBar from '@/components/TopBar'
@@ -24,12 +24,15 @@ import MovementCard from '@/components/MovementCard'
 import PetStage from '@/components/pet/PetStage'
 
 const MOOD_CYCLE = [Mood.ENERGETIC, Mood.CALM, Mood.TIRED]
-const petMessages = activePet.pickMessages()
 
 const Home = () => {
   const [fontsLoaded] = useAppFonts()
   const scale = useResponsiveScale()
   const live = useDailySteps()
+
+  const { activePet } = useActivePet()
+  const activePetMessages = useMemo(() => activePet.pickMessages(), [activePet])
+
   // Dev-only: tap the pet to preview each mood without walking (verification §3).
   const [override, setOverride] = useState<Mood | null>(null)
   const cycleMood = () =>
@@ -47,7 +50,7 @@ const Home = () => {
   }
 
   const hasLiveSteps = permission === 'granted' && !error
-  const message = petMessages[mood]
+  const message = activePetMessages[mood]
   const notice =
     permission === 'unavailable'
       ? 'Movement data unavailable on this device.'

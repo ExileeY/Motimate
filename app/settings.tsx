@@ -1,23 +1,26 @@
 /**
  * Settings screen.
  *
- * One section ("User goals") with one setting ("Steps") — the daily steps
- * objective that drives the home progress bar. The field is seeded from the
- * shared GoalContext; edits are kept as local text while typing and committed
- * (parsed → clamped → persisted) on blur / submit / leaving the screen.
+ * Two sections: "User goals" (the daily steps objective that drives the home
+ * progress bar) and "Pet" (which companion lives on the home screen). The steps
+ * field is seeded from GoalContext; edits are kept as local text while typing
+ * and committed (parsed → clamped → persisted) on blur / submit / leaving the
+ * screen. The pet grid (PetPicker) is instant-apply via PetContext.
  *
- * Background reuses PhoneCanvas with a fixed neutral mood so settings keeps the
- * warm-cream feel without coupling to live step data.
+ * Content scrolls (the pet grid can exceed the screen). Background reuses
+ * PhoneCanvas with a fixed neutral mood so settings keeps the warm-cream feel
+ * without coupling to live step data.
  */
 import React, { useState } from 'react'
-import { View, Text, TextInput, Pressable, StyleSheet } from 'react-native'
+import { View, Text, TextInput, Pressable, ScrollView, StyleSheet } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { useRouter } from 'expo-router'
 import { Mood } from '@/pet/mood'
-import { useGoal } from '@/settings/GoalContext'
-import { GOAL_DEFAULT, GOAL_MIN, GOAL_MAX } from '@/settings/goalStorage'
+import { useGoal } from '@/settings/goal/useGoal'
+import { GOAL_DEFAULT, GOAL_MIN, GOAL_MAX } from '@/settings/goal/storage'
 import { colors, fonts } from '@/constants/tokens'
 import PhoneCanvas from '@/components/PhoneCanvas'
+import PetPicker from '@/components/PetPicker'
 
 const Settings = () => {
   const router = useRouter()
@@ -56,37 +59,58 @@ const Settings = () => {
         </Text>
       </View>
 
-      <Text style={styles.sectionLabel}>
-        User goals
-      </Text>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollContent}
+        keyboardShouldPersistTaps="handled"
+      >
+        <Text style={styles.sectionLabel}>
+          User goals
+        </Text>
 
-      <View style={styles.card}>
-        <View style={styles.rowText}>
-          <Text style={styles.settingLabel}>
-            Steps
-          </Text>
-          <Text style={styles.settingHelp}>
-            Your daily movement objective
-          </Text>
+        <View style={styles.card}>
+          <View style={styles.rowText}>
+            <Text style={styles.settingLabel}>
+              Steps
+            </Text>
+            <Text style={styles.settingHelp}>
+              Your daily movement objective
+            </Text>
+          </View>
+          <TextInput
+            style={styles.input}
+            value={draft}
+            onChangeText={setDraft}
+            onBlur={commit}
+            onSubmitEditing={commit}
+            keyboardType="number-pad"
+            returnKeyType="done"
+            maxLength={6}
+            selectTextOnFocus
+            placeholder={String(GOAL_DEFAULT)}
+            placeholderTextColor={colors.cardMeta}
+          />
         </View>
-        <TextInput
-          style={styles.input}
-          value={draft}
-          onChangeText={setDraft}
-          onBlur={commit}
-          onSubmitEditing={commit}
-          keyboardType="number-pad"
-          returnKeyType="done"
-          maxLength={6}
-          selectTextOnFocus
-          placeholder={String(GOAL_DEFAULT)}
-          placeholderTextColor={colors.cardMeta}
-        />
-      </View>
 
-      <Text style={styles.hint}>
-        Between {GOAL_MIN.toLocaleString()} and {GOAL_MAX.toLocaleString()} steps.
-      </Text>
+        <Text style={styles.hint}>
+          Between {GOAL_MIN.toLocaleString()} and {GOAL_MAX.toLocaleString()} steps.
+        </Text>
+
+        <View style={styles.petSection}>
+          <Text style={styles.sectionLabel}>
+            Pet
+          </Text>
+          <Text style={styles.petHeading}>
+            Choose your companion
+          </Text>
+          <Text style={styles.petHelp}>
+            Lives on your home screen. Switch any time.
+          </Text>
+          <View style={styles.petGrid}>
+            <PetPicker />
+          </View>
+        </View>
+      </ScrollView>
     </PhoneCanvas>
   )
 }
@@ -158,5 +182,26 @@ const styles = StyleSheet.create({
     color: colors.cardMeta,
     marginTop: 10,
     marginLeft: 4,
+  },
+  scrollContent: {
+    paddingBottom: 24,
+  },
+  petSection: {
+    marginTop: 32,
+  },
+  petHeading: {
+    fontFamily: fonts.heading,
+    fontSize: 24,
+    color: colors.text,
+    marginTop: 5,
+  },
+  petHelp: {
+    fontFamily: fonts.bodyRegular,
+    fontSize: 13,
+    color: colors.subtitle,
+    marginTop: 6,
+  },
+  petGrid: {
+    marginTop: 16,
   },
 })

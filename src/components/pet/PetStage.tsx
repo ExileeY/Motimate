@@ -5,10 +5,8 @@ import { Mood } from '@/pet/mood'
 import { usePingPong } from '@/components/pet/hooks/useLoop'
 import { useResponsiveScale } from '@/hooks/useResponsiveScale'
 import { BOX_SIZE, PET_SIZE } from '@/constants/pet/dimensions'
-import { activePet } from '@/pet/registry'
 import Glow from '@/components/pet/Glow'
-
-const { Body } = activePet
+import { useActivePet } from '@/settings/pet/useActivePet'
 
 const BREATH_TIME = {
   [Mood.ENERGETIC]: 3300,
@@ -54,6 +52,9 @@ const tiredTilt = () => {
 }
 
 const PetStage = ({ mood }: { mood: Mood }) => {
+  const { activePet } = useActivePet()
+  const { Body } = activePet
+
   const scale = useResponsiveScale()
   const stage = Math.round(BOX_SIZE * scale)
   const pet = Math.round(PET_SIZE * scale)
