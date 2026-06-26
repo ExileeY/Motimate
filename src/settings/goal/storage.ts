@@ -6,15 +6,16 @@ export const GOAL_DEFAULT = 12_500
 export const GOAL_MIN = 1_000
 export const GOAL_MAX = 50_000
 
-export const normalizeGoal = (value: number): number =>
-  Number.isFinite(value)
-    ? Math.min(Math.max(Math.round(value), GOAL_MIN), GOAL_MAX)
+const normalize = (goal: number): number =>
+  Number.isFinite(goal)
+    ? Math.min(Math.max(Math.round(goal), GOAL_MIN), GOAL_MAX)
     : GOAL_DEFAULT
 
 export const goalStorage = createPersistedStorage<number>({
   key: STORAGE_KEY,
-  decode: (raw) => raw == null ? GOAL_DEFAULT : normalizeGoal(Number(raw)),
-  encode: String,
+  decode: (goal) => goal == null ? GOAL_DEFAULT : Number(goal),
+  encode: (goal) => String(goal),
+  normalize: normalize,
   fallback: GOAL_DEFAULT
 })
 

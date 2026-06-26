@@ -5,7 +5,6 @@ import { PersistedStorage } from '@/settings/persistedStorage'
 export interface PersistedSettingConfig<T, Extra extends object> {
   default: T
   storage: PersistedStorage<T>
-  normalize?: (value: T) => T
   derive?: (value: T) => Extra
 }
 
@@ -32,9 +31,9 @@ export const usePersistedSetting = <T, Extra extends object = {}>(config: Persis
 
     return () => { active = false }
   }, [])
-  
+
   const set = (next: T): T => {
-    const normalized = config.normalize ? config.normalize(next) : next
+    const normalized = config.storage.normalize(next)
 
     setValue(normalized)
     config.storage.set(normalized)

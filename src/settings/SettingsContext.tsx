@@ -1,7 +1,7 @@
 import React, { createContext, useContext } from 'react'
 
 import { PetId, PetDefinition, PETS } from '@/pet/registry'
-import { GOAL_DEFAULT, goalStorage, normalizeGoal } from '@/settings/goal/storage'
+import { GOAL_DEFAULT, goalStorage } from '@/settings/goal/storage'
 import { PET_DEFAULT, petStorage } from '@/settings/pet/storage'
 import { usePersistedSetting } from '@/settings/usePersistedSetting'
 
@@ -24,7 +24,6 @@ export const SettingsProvider = ({ children }: { children: React.ReactNode }) =>
   const goalSetting = usePersistedSetting<number>({
     default: GOAL_DEFAULT,
     storage: goalStorage,
-    normalize: normalizeGoal,
   })
 
   const petSetting = usePersistedSetting<PetId, { activePet: PetDefinition }>({
