@@ -2,6 +2,7 @@ import React, { createContext, useContext } from 'react'
 
 import { PetId } from '@/pet/registry'
 import { GOAL_DEFAULT, goalStorage } from '@/settings/goal/storage'
+import { GameMode, MODE_DEFAULT, modeStorage } from '@/settings/mode/storage'
 import { PET_DEFAULT, petStorage } from '@/settings/pet/storage'
 import { usePersistedSetting } from '@/settings/usePersistedSetting'
 
@@ -15,7 +16,12 @@ type PetContext = {
   setPet: (id: PetId) => PetId
 }
 
-type SettingsContextValue = GoalContext & PetContext & { ready: boolean }
+type ModeContext = {
+  mode: GameMode
+  setMode: (mode: GameMode) => GameMode
+}
+
+type SettingsContextValue = GoalContext & PetContext & ModeContext & { ready: boolean }
 const SettingsContext = createContext<SettingsContextValue | null>(null)
 
 export const SettingsProvider = ({ children }: { children: React.ReactNode }) => {
@@ -29,12 +35,19 @@ export const SettingsProvider = ({ children }: { children: React.ReactNode }) =>
     storage: petStorage,
   })
 
+  const modeSetting = usePersistedSetting<GameMode>({
+    default: MODE_DEFAULT,
+    storage: modeStorage,
+  })
+
   const value: SettingsContextValue = {
-    ready: [goalSetting, petSetting].every((setting) => setting.ready),
+    ready: [goalSetting, petSetting, modeSetting].every((setting) => setting.ready),
     goal: goalSetting.value,
     petId: petSetting.value,
+    mode: modeSetting.value,
     setGoal: goalSetting.set,
     setPet: petSetting.set,
+    setMode: modeSetting.set,
   }
 
   return (

@@ -21,6 +21,7 @@ import { GOAL_DEFAULT, GOAL_MIN, GOAL_MAX } from '@/settings/goal/storage'
 import { colors, fonts } from '@/constants/tokens'
 import PhoneCanvas from '@/components/PhoneCanvas'
 import PetPicker from '@/components/PetPicker'
+import ModePicker from '@/components/ModePicker'
 
 const Settings = () => {
   const router = useRouter()
@@ -96,17 +97,32 @@ const Settings = () => {
           Between {GOAL_MIN.toLocaleString()} and {GOAL_MAX.toLocaleString()} steps.
         </Text>
 
-        <View style={styles.petSection}>
+        <View style={styles.section}>
+          <Text style={styles.sectionLabel}>
+            Mode
+          </Text>
+          <Text style={styles.sectionHeading}>
+            How real do you want it?
+          </Text>
+          <Text style={styles.sectionHelp}>
+            Choose what happens to your pet between walks.
+          </Text>
+          <View style={styles.sectionBody}>
+            <ModePicker />
+          </View>
+        </View>
+
+        <View style={styles.section}>
           <Text style={styles.sectionLabel}>
             Pet
           </Text>
-          <Text style={styles.petHeading}>
+          <Text style={styles.sectionHeading}>
             Choose your companion
           </Text>
-          <Text style={styles.petHelp}>
+          <Text style={styles.sectionHelp}>
             Lives on your home screen. Switch any time.
           </Text>
-          <View style={styles.petGrid}>
+          <View style={styles.sectionBody}>
             <PetPicker />
           </View>
         </View>
@@ -186,22 +202,22 @@ const styles = StyleSheet.create({
   scrollContent: {
     paddingBottom: 24,
   },
-  petSection: {
+  section: {
     marginTop: 32,
   },
-  petHeading: {
+  sectionHeading: {
     fontFamily: fonts.heading,
     fontSize: 24,
     color: colors.text,
     marginTop: 5,
   },
-  petHelp: {
+  sectionHelp: {
     fontFamily: fonts.bodyRegular,
     fontSize: 13,
     color: colors.subtitle,
     marginTop: 6,
   },
-  petGrid: {
+  sectionBody: {
     marginTop: 16,
   },
 })
