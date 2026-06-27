@@ -21,23 +21,18 @@ const MOOD_MAX_RATIO: Record<Exclude<Mood, Mood.SAD>, number> = {
 }
 
 const stepMood = (steps: number, goal: number): Mood => {
-  if (steps < MOOD_MAX_RATIO[Mood.ENERGETIC] * goal) return Mood.ENERGETIC
-  if (steps < MOOD_MAX_RATIO[Mood.CALM] * goal) return Mood.CALM
+  if (steps < goal * MOOD_MAX_RATIO[Mood.ENERGETIC]) return Mood.ENERGETIC
+  if (steps < goal * MOOD_MAX_RATIO[Mood.CALM]) return Mood.CALM
   return Mood.TIRED
 }
 
 export const StepsConvertor = {
-  /**
-   * Maps steps → mood. In Real mode, an energetic (inactive) pet past morning
-   * turns SAD; otherwise the mood is purely step-derived. This is the only place
-   * SAD is produced.
-   */
   toMood(steps: number, goal: number, mode: GameMode, hour: number): Mood {
-    const base = stepMood(steps, goal)
-    if (mode === GameMode.REAL && base === Mood.ENERGETIC && hour >= MORNING_END_HOUR) {
-      return Mood.SAD
-    }
-    return base
+    const baseMood = stepMood(steps, goal)
+
+    return mode === GameMode.REAL && baseMood === Mood.ENERGETIC && hour >= MORNING_END_HOUR
+      ? Mood.SAD
+      : baseMood
   },
   toProgress(steps: number, goal: number): number {
     return Math.min(steps / goal, 1)
