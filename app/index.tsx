@@ -23,7 +23,7 @@ import TopBar from '@/components/TopBar'
 import MovementCard from '@/components/MovementCard'
 import PetStage from '@/components/pet/PetStage'
 
-const MOOD_CYCLE = [Mood.ENERGETIC, Mood.CALM, Mood.TIRED]
+const MOOD_CYCLE = [Mood.ENERGETIC, Mood.CALM, Mood.TIRED, Mood.SAD]
 
 const Home = () => {
   const [fontsLoaded] = useAppFonts()

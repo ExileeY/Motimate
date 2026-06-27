@@ -50,6 +50,10 @@ export const screenBackground: Record<Mood, ScreenBackground> = {
     colors: ['#F3E0CA', '#E7C6A1', '#D9B083'],
     locations: [0, 0.56, 1],
   },
+  [Mood.SAD]: {
+    colors: ['#E4EDF4', '#CFDCE8', '#BFCFE0'],
+    locations: [0, 0.5, 1],
+  },
 }
 
 /**
@@ -82,21 +86,21 @@ export const glow: Record<Mood, GlowSpec> = {
     opacity: 0.6,
     pulseDuration: 8000
   },
+  [Mood.SAD]: {
+    size: 236,
+    color: '#BED6EC',
+    opacity: 0.8,
+    pulseDuration: 5500
+  },
 }
 
-/**
- * The time-of-day status dot in the top bar (it glows the pill).
- * happy=Morning #C9824F, calm=Afternoon #E0A95C, tired=Evening #B98E5E.
- * Note: the *label* (Morning/Afternoon/Evening) and clock are derived live
- * from the device hour in TopBar — only the dot color is mood-flavored here.
- */
 export const statusDot: Record<Mood, string> = {
   [Mood.ENERGETIC]: '#C9824F',
   [Mood.CALM]: '#E0A95C',
   [Mood.TIRED]: '#B98E5E',
+  [Mood.SAD]: '#7FA3C9'
 }
 
-/** Pet phone-screen inner dimensions from the mockup (276×600). */
 export const screen = {
   width: 276,
   height: 600,

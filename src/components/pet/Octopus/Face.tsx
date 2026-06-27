@@ -143,6 +143,30 @@ const FACE: Record<Mood, React.FC<OffsetProps>> = {
       />
     </>
   ),
+  [Mood.SAD]: ({ ox, oy }: OffsetProps) => (
+    <>
+      <Cheeks
+        ox={ox}
+        oy={oy}
+        opacity={0.4}
+      />
+
+      <OpenEyes
+        ox={ox}
+        oy={oy}
+      />
+
+      {/* Frown */}
+      <Arc
+        ox={ox}
+        oy={oy}
+        dx={81}
+        dy={84}
+        d="q 9 -8 18 0"
+        color={MOUTH_COLOR}
+      />
+    </>
+  ),
 }
 
 const Face = ({ mood, ox, oy }: { mood: Mood } & OffsetProps) => {

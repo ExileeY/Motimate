@@ -101,14 +101,16 @@ const FACE: Record<Mood, React.FC<OffsetProps>> = {
         oy={oy}
         dx={41}
         dy={62}
-        d="q 11 -11 22 0" color={EYE_COLOR}
+        d="q 11 -11 22 0"
+        color={EYE_COLOR}
       />
       <Arc
         ox={ox}
         oy={oy}
         dx={89}
         dy={62}
-        d="q 11 -11 22 0" color={EYE_COLOR}
+        d="q 11 -11 22 0"
+        color={EYE_COLOR}
       />
 
       {/* Smile */}
@@ -117,7 +119,8 @@ const FACE: Record<Mood, React.FC<OffsetProps>> = {
         oy={oy}
         dx={61}
         dy={96}
-        d="q 15 9 30 0" color={EYE_COLOR}
+        d="q 15 9 30 0"
+        color={EYE_COLOR}
       />
     </>
   ),
@@ -129,14 +132,16 @@ const FACE: Record<Mood, React.FC<OffsetProps>> = {
         oy={oy}
         dx={41}
         dy={64}
-        d="q 10 6 20 0" color={EYE_COLOR}
+        d="q 10 6 20 0"
+        color={EYE_COLOR}
       />
       <Arc
         ox={ox}
         oy={oy}
         dx={91}
         dy={64}
-        d="q 10 6 20 0" color={EYE_COLOR}
+        d="q 10 6 20 0"
+        color={EYE_COLOR}
       />
 
       {/* Tiny mouth */}
@@ -145,7 +150,37 @@ const FACE: Record<Mood, React.FC<OffsetProps>> = {
         oy={oy}
         dx={68}
         dy={98}
-        d="q 8 7 16 0" color={EYE_COLOR}
+        d="q 8 7 16 0"
+        color={EYE_COLOR}
+      />
+    </>
+  ),
+  [Mood.SAD]: ({ ox, oy }: OffsetProps) => (
+    <>
+      <Arc
+        ox={ox}
+        oy={oy}
+        dx={40}
+        dy={60}
+        d="q 11 10 22 0"
+        color={EYE_COLOR}
+      />
+      <Arc
+        ox={ox}
+        oy={oy}
+        dx={88}
+        dy={60}
+        d="q 11 10 22 0"
+        color={EYE_COLOR}
+      />
+
+      <Arc
+        ox={ox}
+        oy={oy}
+        dx={61}
+        dy={100}
+        d="q 15 -9 30 0"
+        color={EYE_COLOR}
       />
     </>
   ),

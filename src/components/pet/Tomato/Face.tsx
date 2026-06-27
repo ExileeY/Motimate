@@ -317,6 +317,55 @@ const FACE: Record<Mood, React.FC<OffsetProps>> = {
       />
     </>
   ),
+  [Mood.SAD]: ({ ox, oy }: OffsetProps) => (
+    <>
+      <Rect
+        x={ox + 34}
+        y={oy + 48}
+        width={24}
+        height={6}
+        rx={3}
+        fill={BROW_TIRED}
+        transform={`rotate(16 ${ox + 46} ${oy + 51})`}
+      />
+      <Rect
+        x={ox + 152 - 34 - 24}
+        y={oy + 48}
+        width={24}
+        height={6}
+        rx={3}
+        fill={BROW_TIRED}
+        transform={`rotate(-16 ${ox + 152 - 46} ${oy + 51})`}
+      />
+
+      <Arc
+        ox={ox}
+        oy={oy}
+        dx={36}
+        dy={62}
+        d="q 12 10 24 0"
+        color="#3A2018"
+      />
+      <Arc
+        ox={ox}
+        oy={oy}
+        dx={152 - 36 - 24}
+        dy={62}
+        d="q 12 10 24 0"
+        color="#3A2018"
+      />
+
+      {/* Frown */}
+      <Arc
+        ox={ox}
+        oy={oy}
+        dx={(152 - 24) / 2}
+        dy={114}
+        d="q 12 -9 24 0"
+        color="#7A2418"
+      />
+    </>
+  ),
 }
 
 const Face = ({ mood, ox, oy }: { mood: Mood } & OffsetProps) => {
