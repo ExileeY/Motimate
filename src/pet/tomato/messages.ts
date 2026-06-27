@@ -188,4 +188,24 @@ export const tomatoMessages: Record<Mood, MessageSet[]> = {
       footer: 'Sleep tight, amigo. This tomate is done for today.',
     },
   ],
+  [Mood.SAD]: [
+    {
+      headline: 'Feeling wilted.',
+      subtitle: 'No walk today and my vines droop low.',
+      meta: 'feeling low',
+      footer: 'A little sun and a stroll would revive me, amigo.',
+    },
+    {
+      headline: 'So lonely, amigo.',
+      subtitle: "We haven't wandered and I miss it terribly.",
+      meta: 'lonely',
+      footer: 'Come, just a short walk? For this sad tomate?',
+    },
+    {
+      headline: 'Waiting and blue.',
+      subtitle: 'The day feels grey without our paseo.',
+      meta: 'no walks',
+      footer: 'Even a tiny walk would make me ripe with joy again.',
+    },
+  ],
 }

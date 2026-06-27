@@ -188,4 +188,24 @@ export const dogMessages: Record<Mood, MessageSet[]> = {
       footer: 'Curling up tight now — thank you for the best walks.',
     },
   ],
+  [Mood.SAD]: [
+    {
+      headline: "I've been waiting.",
+      subtitle: 'By the door, leash in mouth, all day.',
+      meta: 'feeling low',
+      footer: 'Just one walk? My tail would wag again.',
+    },
+    {
+      headline: 'No walkies?',
+      subtitle: 'It makes my ears droop something awful.',
+      meta: 'lonely',
+      footer: 'I miss the smell of the path with you.',
+    },
+    {
+      headline: 'Sad puppy.',
+      subtitle: 'The day feels long without our adventure.',
+      meta: 'no walks',
+      footer: 'A short stroll and I promise to be the happiest pup.',
+    },
+  ],
 }

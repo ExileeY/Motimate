@@ -9,6 +9,7 @@
 import { useEffect, useState } from 'react'
 import { Mood, StepsConvertor } from '@/pet/mood'
 import { useGoal } from '@/settings/goal/useGoal'
+import { useMode } from '@/settings/mode/useMode'
 import { stepSource, type PermissionState } from '@/steps/stepSource'
 
 export interface DailySteps {
@@ -28,6 +29,13 @@ export const useDailySteps = (): DailySteps => {
   const [error, setError] = useState<string | null>(null)
 
   const { goal } = useGoal()
+  const { mode } = useMode()
+  const [hour, setHour] = useState(() => new Date().getHours())
+
+  useEffect(() => {
+    const id = setInterval(() => setHour(new Date().getHours()), 60_000)
+    return () => clearInterval(id)
+  }, [])
 
   useEffect(() => {
     let unsubscribe: (() => void) | undefined
@@ -67,7 +75,7 @@ export const useDailySteps = (): DailySteps => {
 
   return {
     steps,
-    mood: StepsConvertor.toMood(steps, goal),
+    mood: StepsConvertor.toMood(steps, goal, mode, hour),
     progress: StepsConvertor.toProgress(steps, goal),
     permission,
     loading,

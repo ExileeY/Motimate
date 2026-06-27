@@ -188,4 +188,24 @@ export const octopusMessages: Record<Mood, MessageSet[]> = {
       footer: 'Sleep tight, sweet thing. This little octopus is done.',
     },
   ],
+  [Mood.SAD]: [
+    {
+      headline: 'All eight arms ache.',
+      subtitle: 'For a wander we never took today.',
+      meta: 'feeling low',
+      footer: 'A little walk would lift this heavy tide.',
+    },
+    {
+      headline: 'Adrift and blue.',
+      subtitle: "The day's gone still without our stroll.",
+      meta: 'lonely',
+      footer: 'I miss drifting along beside you.',
+    },
+    {
+      headline: 'So lonesome.',
+      subtitle: 'Even the water feels colder without a walk.',
+      meta: 'no walks',
+      footer: 'Just a short one? It would mean everything.',
+    },
+  ],
 }

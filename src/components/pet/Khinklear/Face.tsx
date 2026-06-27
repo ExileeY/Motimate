@@ -235,6 +235,57 @@ const FACE: Record<Mood, React.FC<FaceProps>> = {
       />
     </>
   ),
+  [Mood.SAD]: ({ ox, oy, scale }: FaceProps) => (
+    <>
+      <Arc
+        ox={ox}
+        oy={oy}
+        dx={41 * scale}
+        dy={60 * scale}
+        d={`q ${8.5 * scale} ${9 * scale} ${17 * scale} 0`}
+        color={INK_BASIC}
+      />
+      <Arc
+        ox={ox}
+        oy={oy}
+        dx={(POUCH_WIDTH - 41 - 17) * scale}
+        dy={60 * scale}
+        d={`q ${8.5 * scale} ${9 * scale} ${17 * scale} 0`}
+        color={INK_BASIC}
+      />
+
+      <Lash
+        ox={ox}
+        oy={oy}
+        scale={scale}
+        x={38}
+        y={62}
+        w={7}
+        deg={22}
+        color={INK_BASIC}
+      />
+      <Lash
+        ox={ox}
+        oy={oy}
+        scale={scale}
+        x={POUCH_WIDTH - 38 - 7}
+        y={62}
+        w={7}
+        deg={-22}
+        color={INK_BASIC}
+      />
+
+      {/* Frown */}
+      <Arc
+        ox={ox}
+        oy={oy}
+        dx={(POUCH_WIDTH / 2 - 7.5) * scale}
+        dy={88 * scale}
+        d={`q ${7.5 * scale} ${-8 * scale} ${15 * scale} 0`}
+        color={INK_BASIC}
+      />
+    </>
+  ),
 }
 
 const Face = ({ mood, ox, oy, scale }: { mood: Mood } & FaceProps) => {

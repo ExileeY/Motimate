@@ -188,4 +188,24 @@ export const bulbashikMessages: Record<Mood, MessageSet[]> = {
       footer: 'See you at dawn, da? Night night.',
     },
   ],
+  [Mood.SAD]: [
+    {
+      headline: 'Where are you?',
+      subtitle: 'The day is so grey without a walk.',
+      meta: 'feeling low',
+      footer: 'Come, da? A little stroll would warm my heart.',
+    },
+    {
+      headline: 'So lonely, druzhok.',
+      subtitle: "We haven't gone out and I miss it terribly.",
+      meta: 'lonely',
+      footer: 'My dough feels heavy and sad today.',
+    },
+    {
+      headline: 'I wait and wait.',
+      subtitle: 'A walk would chase these blues away.',
+      meta: 'no walks',
+      footer: 'Please, just a small one? For me?',
+    },
+  ],
 }

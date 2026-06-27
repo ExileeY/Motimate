@@ -188,4 +188,24 @@ export const khinklearMessages: Record<Mood, MessageSet[]> = {
       footer: "Let me rest, darling. I earned this nap.",
     },
   ],
+  [Mood.SAD]: [
+    {
+      headline: 'Feeling crumbly.',
+      subtitle: 'A day with no walk leaves me so blue.',
+      meta: 'feeling low',
+      footer: 'A little stroll would put me back together.',
+    },
+    {
+      headline: 'So lonely, darling.',
+      subtitle: "We haven't stepped out and I miss it.",
+      meta: 'lonely',
+      footer: 'Come walk with me? My dough is heavy with sadness.',
+    },
+    {
+      headline: 'Waiting on you.',
+      subtitle: 'The kitchen feels cold without our wander.',
+      meta: 'no walks',
+      footer: 'Even a tiny walk would warm me right up.',
+    },
+  ],
 }

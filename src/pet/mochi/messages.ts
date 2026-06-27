@@ -188,4 +188,24 @@ export const mochiMessages: Record<Mood, MessageSet[]> = {
       footer: 'Today was a lot — curled up and resting.',
     },
   ],
+  [Mood.SAD]: [
+    {
+      headline: 'I miss you.',
+      subtitle: "It's been so quiet without our walks.",
+      meta: 'feeling low',
+      footer: 'A little walk would cheer me right up.',
+    },
+    {
+      headline: 'Where did you go?',
+      subtitle: 'My paws have been waiting all day.',
+      meta: 'lonely',
+      footer: "I get so down when we don't go out.",
+    },
+    {
+      headline: 'So lonesome.',
+      subtitle: 'The day feels empty without a stroll.',
+      meta: 'no walks',
+      footer: 'Even a tiny wander would mean the world.',
+    },
+  ],
 }

@@ -12,13 +12,17 @@ const BREATH_TIME = {
   [Mood.ENERGETIC]: 3300,
   [Mood.CALM]: 4500,
   [Mood.TIRED]: 5500,
+  [Mood.SAD]: 3600,
 }
 
 const MOTION_TIME = {
   [Mood.ENERGETIC]: 3300,
   [Mood.CALM]: 5500,
   [Mood.TIRED]: 5500,
+  [Mood.SAD]: 4600,
 }
+
+const QUIVER_TIME = 360
 
 const breathe = (progress: number) => {
   'worklet'
@@ -51,6 +55,21 @@ const tiredTilt = () => {
   return { rotate: `${TILT_DEG}deg` }
 }
 
+const QUIVER_PX = 0.5
+const QUIVER_DEG = 0.4
+
+const quiverShift = (progress: number) => {
+  'worklet'
+
+  return { translateX: -QUIVER_PX + 2 * QUIVER_PX * progress }
+}
+
+const quiverRotate = (progress: number) => {
+  'worklet'
+
+  return { rotate: `${-QUIVER_DEG + 2 * QUIVER_DEG * progress}deg` }
+}
+
 const PetStage = ({ mood }: { mood: Mood }) => {
   const { activePet } = useActivePet()
   const { Body } = activePet
@@ -61,6 +80,7 @@ const PetStage = ({ mood }: { mood: Mood }) => {
 
   const pulse = usePingPong(BREATH_TIME[mood])
   const motion = usePingPong(MOTION_TIME[mood], 0, mood !== Mood.TIRED)
+  const tremble = usePingPong(QUIVER_TIME, 0, mood === Mood.SAD)
 
   const style = useAnimatedStyle(() => {
     const transforms: any[] = [breathe(pulse.value)]
@@ -68,8 +88,16 @@ const PetStage = ({ mood }: { mood: Mood }) => {
     if (mood === Mood.ENERGETIC) { transforms.push(bobble(motion.value)) }
 
     if (mood === Mood.CALM) { transforms.push(sway(motion.value)) }
-    
+
     if (mood === Mood.TIRED) { transforms.push(tiredTilt()) }
+
+    if (mood === Mood.SAD) {
+      transforms.push(
+        bobble(motion.value),
+        quiverShift(tremble.value),
+        quiverRotate(tremble.value)
+      )
+    }
 
     return { transform: transforms }
   })

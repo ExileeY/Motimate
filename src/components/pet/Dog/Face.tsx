@@ -165,6 +165,46 @@ const FACE: Record<Mood, React.FC<OffsetProps>> = {
       />
     </>
   ),
+  [Mood.SAD]: ({ ox, oy }: OffsetProps) => (
+    <>
+      <Arc
+        ox={ox}
+        oy={oy}
+        dx={56}
+        dy={72}
+        d="q 9 9 18 0"
+        color={EYE_COLOR}
+      />
+      <Arc
+        ox={ox}
+        oy={oy}
+        dx={106}
+        dy={72}
+        d="q 9 9 18 0"
+        color={EYE_COLOR}
+      />
+
+      {/* Philtrum */}
+      <Rect
+        x={ox + SNOUT.cx - 1}
+        y={oy + SNOUT.top + 21}
+        width={2}
+        height={8}
+        rx={1}
+        fill={PHILTRUM}
+      />
+
+      {/* Frown */}
+      <Arc
+        ox={ox}
+        oy={oy}
+        dx={SNOUT.cx - 9}
+        dy={SNOUT.top + 30}
+        d="q 9 -7 18 0"
+        color={PHILTRUM}
+      />
+    </>
+  ),
 }
 
 const Face = ({ mood, ox, oy }: { mood: Mood } & OffsetProps) => {

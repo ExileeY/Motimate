@@ -188,4 +188,24 @@ export const aruticMessages: Record<Mood, MessageSet[]> = {
       footer: "See you at dawn, partner. Sleep well.",
     },
   ],
+  [Mood.SAD]: [
+    {
+      headline: 'No trail to ride.',
+      subtitle: 'Sure is lonesome out here…',
+      meta: 'none in days',
+      footer: 'No trail in days — I miss it, partner.',
+    },
+    {
+      headline: 'Quiet on the range.',
+      subtitle: 'Been a long spell since we last set out.',
+      meta: 'feeling low',
+      footer: 'A little ride would do this heart good.',
+    },
+    {
+      headline: 'Missin\' the open road.',
+      subtitle: "It's awful still without you, partner.",
+      meta: 'lonely',
+      footer: 'Saddle up with me? Even a short one.',
+    },
+  ],
 }
