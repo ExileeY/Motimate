@@ -8,6 +8,7 @@ import { octopusMessages } from '@/pet/octopus/messages'
 import { aruticMessages } from '@/pet/arutic/messages'
 import { khinklearMessages } from '@/pet/khinklear/messages'
 import { tomatoMessages } from '@/pet/tomato/messages'
+import { schnauzerMessages } from '@/pet/schnauzer/messages'
 import Mochi from '@/components/pet/Mochi'
 import Bulbashik from '@/components/pet/Bulbashik'
 import Dog from '@/components/pet/Dog'
@@ -15,6 +16,7 @@ import Octopus from '@/components/pet/Octopus'
 import Arutic from '@/components/pet/Arutic'
 import Khinklear from '@/components/pet/Khinklear'
 import Tomato from '@/components/pet/Tomato'
+import Schnauzer from '@/components/pet/Schnauzer'
 
 export enum PetId {
   MOCHI = 'mochi',
@@ -24,6 +26,7 @@ export enum PetId {
   ARUTIC = 'arutic',
   KHINKLEAR = 'khinklear',
   TOMATO = 'tomato',
+  SCHNAUZER = 'schnauzer',
 }
 
 export interface PetDefinition {
@@ -67,6 +70,11 @@ export const PETS: Record<PetId, PetDefinition> = {
     name: 'Tomato',
     Body: Tomato,
     pickMessages: () => pickMessages(tomatoMessages)
+  },
+  [PetId.SCHNAUZER]: {
+    name: 'Schnauzer',
+    Body: Schnauzer,
+    pickMessages: () => pickMessages(schnauzerMessages)
   }
 }
 
