@@ -20,19 +20,19 @@ private func stepMood(steps: Int, goal: Int) -> Mood {
         .tired
     ]
 
-    baseMoods.first { Double(steps) < Double(goal) * MOOD_MAX_RATIO[$0]! }!
+  return baseMoods.first { Double(steps) < Double(goal) * MOOD_MAX_RATIO[$0]! }!
 }
 
 enum StepsConvertor {
     static func toMood(steps: Int, goal: Int, mode: GameMode, hour: Int) -> Mood {
         let mood = stepMood(steps: steps, goal: goal)
 
-        return mode == .real && baseMood == .energetic && hour >= MORNING_END_HOUR
+        return mode == .real && mood == .energetic && hour >= MORNING_END_HOUR
             ? .sad
             : mood
     }
 
     static func toProgress(steps: Int, goal: Int) -> Double {
-        min(Double(steps) / Double(goal), 1)
+        return min(Double(steps) / Double(goal), 1)
     }
 }
