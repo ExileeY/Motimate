@@ -23,6 +23,10 @@
 		E0C2A216CC4ACDE6F8287806 /* MoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CFB464CEE620159654FC7B /* MoodTests.swift */; };
 		F533B4A40A0692B7C7071221 /* GoalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE68437C77B6F7B00EA37D5C /* GoalStorageTests.swift */; };
 		F58AEDE061E480E5538D9869 /* GoalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C72BA9943D6BCF8A46012 /* GoalStorage.swift */; };
+		A1B2C3D4E5F60718293A4B5C /* StepReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E2F3A4B5C60718293A4B5D /* StepReading.swift */; };
+		A2B3C4D5E6F70819203B4C6D /* StepReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3F4A5B6C70819203B4C6E /* StepReader.swift */; };
+		A3B4C5D6E7F8091A213C5D7E /* UnavailableStepReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4F5A6B7C8091A213C5D7F /* UnavailableStepReader.swift */; };
+		A4B5C6D7E8F90A1B223D6E8F /* StepReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6A7B8C90A1B223D6E90 /* StepReaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		CE68437C77B6F7B00EA37D5C /* GoalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageTests.swift; sourceTree = "<group>"; };
 		D7CFB464CEE620159654FC7B /* MoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTests.swift; sourceTree = "<group>"; };
 		DB246AA2FDD639F18A1D424E /* PersistedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedStorage.swift; sourceTree = "<group>"; };
+		D1E2F3A4B5C60718293A4B5D /* StepReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReading.swift; sourceTree = "<group>"; };
+		D2E3F4A5B6C70819203B4C6E /* StepReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReader.swift; sourceTree = "<group>"; };
+		D3E4F5A6B7C8091A213C5D7F /* UnavailableStepReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnavailableStepReader.swift; sourceTree = "<group>"; };
+		D4E5F6A7B8C90A1B223D6E90 /* StepReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -77,6 +85,16 @@
 				8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		E5F6A7B8C9D00A1B223D6E91 /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				D1E2F3A4B5C60718293A4B5D /* StepReading.swift */,
+				D2E3F4A5B6C70819203B4C6E /* StepReader.swift */,
+				D3E4F5A6B7C8091A213C5D7F /* UnavailableStepReader.swift */,
+			);
+			path = Steps;
 			sourceTree = "<group>";
 		};
 		462109A39BD86FD1401E6764 /* Domain */ = {
@@ -105,6 +123,7 @@
 				D7CFB464CEE620159654FC7B /* MoodTests.swift */,
 				25CF40AC0DDE802444321A46 /* PetStorageTests.swift */,
 				769B8E79AFB024CFB49D357E /* SettingsStoreTests.swift */,
+				D4E5F6A7B8C90A1B223D6E90 /* StepReaderTests.swift */,
 			);
 			path = MotimateTests;
 			sourceTree = "<group>";
@@ -116,6 +135,7 @@
 				5FEEA24A89CE12C14DF5D378 /* MotimateApp.swift */,
 				462109A39BD86FD1401E6764 /* Domain */,
 				429B478F0519A735DCA5ABF1 /* Persistence */,
+				E5F6A7B8C9D00A1B223D6E91 /* Steps */,
 				717A583777EE9CD42CCD2491 /* Resources */,
 				A4FED4628343219A8B97A429 /* Views */,
 			);
@@ -233,6 +253,9 @@
 				847D50278BB7EBAAD91938B6 /* PetId.swift in Sources */,
 				B960E5AEF2083E9116C99E2C /* PetStorage.swift in Sources */,
 				B7FCC9B8E97A7A07EB9D910A /* SettingsStore.swift in Sources */,
+				A1B2C3D4E5F60718293A4B5C /* StepReading.swift in Sources */,
+				A2B3C4D5E6F70819203B4C6D /* StepReader.swift in Sources */,
+				A3B4C5D6E7F8091A213C5D7E /* UnavailableStepReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +268,7 @@
 				E0C2A216CC4ACDE6F8287806 /* MoodTests.swift in Sources */,
 				CF6C66987462F72EF34CB45D /* PetStorageTests.swift in Sources */,
 				0959FB1AF93D054F6214903C /* SettingsStoreTests.swift in Sources */,
+				A4B5C6D7E8F90A1B223D6E8F /* StepReaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
