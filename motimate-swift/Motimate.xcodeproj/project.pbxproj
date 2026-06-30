@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0959FB1AF93D054F6214903C /* SettingsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769B8E79AFB024CFB49D357E /* SettingsStoreTests.swift */; };
 		11F1BB38BB3172F51B9B6EE7 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A9CDF0EC9783DDCBF59D8 /* GameMode.swift */; };
+		174A2F947ABFC803B4AC8749 /* GameModeStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855E683B5F6CAEB565534221 /* GameModeStorageTests.swift */; };
 		30B5A643279A63A1D3A53945 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F134252AEA764CB094123BA /* Mood.swift */; };
 		677A95C0BCED7122F3610FDB /* MotimateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEA24A89CE12C14DF5D378 /* MotimateApp.swift */; };
+		847D50278BB7EBAAD91938B6 /* PetId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1B82889BA0055172984986 /* PetId.swift */; };
+		AFA752BCDFEA35198F8EE8A1 /* GameModeStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9517C127B4644100BDB78F7 /* GameModeStorage.swift */; };
+		B02E5C0C50152F835605CD15 /* PersistedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB246AA2FDD639F18A1D424E /* PersistedStorage.swift */; };
+		B7FCC9B8E97A7A07EB9D910A /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */; };
+		B960E5AEF2083E9116C99E2C /* PetStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744687A246CF63AED4B2ABB9 /* PetStorage.swift */; };
 		BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C64CD38FFE017BEDEE318E /* HomeView.swift */; };
 		CDB0422D50F4F56ECA5AB840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBAFEC736402E2546C30A35B /* Assets.xcassets */; };
+		CF6C66987462F72EF34CB45D /* PetStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF40AC0DDE802444321A46 /* PetStorageTests.swift */; };
 		E0C2A216CC4ACDE6F8287806 /* MoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CFB464CEE620159654FC7B /* MoodTests.swift */; };
+		F533B4A40A0692B7C7071221 /* GoalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE68437C77B6F7B00EA37D5C /* GoalStorageTests.swift */; };
+		F58AEDE061E480E5538D9869 /* GoalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C72BA9943D6BCF8A46012 /* GoalStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,15 +36,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B1B82889BA0055172984986 /* PetId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetId.swift; sourceTree = "<group>"; };
+		25CF40AC0DDE802444321A46 /* PetStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStorageTests.swift; sourceTree = "<group>"; };
 		2E9A9CDF0EC9783DDCBF59D8 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		5FEEA24A89CE12C14DF5D378 /* MotimateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotimateApp.swift; sourceTree = "<group>"; };
 		6EA817CED2C8D0CDDE1C3C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		744687A246CF63AED4B2ABB9 /* PetStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStorage.swift; sourceTree = "<group>"; };
+		769B8E79AFB024CFB49D357E /* SettingsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreTests.swift; sourceTree = "<group>"; };
+		855E683B5F6CAEB565534221 /* GameModeStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeStorageTests.swift; sourceTree = "<group>"; };
 		8F134252AEA764CB094123BA /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		92EAF117670BA7388893C100 /* MotimateTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MotimateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C64CD38FFE017BEDEE318E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AC9C72BA9943D6BCF8A46012 /* GoalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorage.swift; sourceTree = "<group>"; };
 		BBAFEC736402E2546C30A35B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9517C127B4644100BDB78F7 /* GameModeStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeStorage.swift; sourceTree = "<group>"; };
+		CE68437C77B6F7B00EA37D5C /* GoalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageTests.swift; sourceTree = "<group>"; };
 		D7CFB464CEE620159654FC7B /* MoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTests.swift; sourceTree = "<group>"; };
+		DB246AA2FDD639F18A1D424E /* PersistedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -47,11 +67,24 @@
 			);
 			sourceTree = "<group>";
 		};
+		429B478F0519A735DCA5ABF1 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				C9517C127B4644100BDB78F7 /* GameModeStorage.swift */,
+				AC9C72BA9943D6BCF8A46012 /* GoalStorage.swift */,
+				DB246AA2FDD639F18A1D424E /* PersistedStorage.swift */,
+				744687A246CF63AED4B2ABB9 /* PetStorage.swift */,
+				8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		462109A39BD86FD1401E6764 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
 				2E9A9CDF0EC9783DDCBF59D8 /* GameMode.swift */,
 				8F134252AEA764CB094123BA /* Mood.swift */,
+				1B1B82889BA0055172984986 /* PetId.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -67,7 +100,11 @@
 		722500783C52FDF6DE837379 /* MotimateTests */ = {
 			isa = PBXGroup;
 			children = (
+				855E683B5F6CAEB565534221 /* GameModeStorageTests.swift */,
+				CE68437C77B6F7B00EA37D5C /* GoalStorageTests.swift */,
 				D7CFB464CEE620159654FC7B /* MoodTests.swift */,
+				25CF40AC0DDE802444321A46 /* PetStorageTests.swift */,
+				769B8E79AFB024CFB49D357E /* SettingsStoreTests.swift */,
 			);
 			path = MotimateTests;
 			sourceTree = "<group>";
@@ -78,6 +115,7 @@
 				6EA817CED2C8D0CDDE1C3C5A /* Info.plist */,
 				5FEEA24A89CE12C14DF5D378 /* MotimateApp.swift */,
 				462109A39BD86FD1401E6764 /* Domain */,
+				429B478F0519A735DCA5ABF1 /* Persistence */,
 				717A583777EE9CD42CCD2491 /* Resources */,
 				A4FED4628343219A8B97A429 /* Views */,
 			);
@@ -186,9 +224,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F1BB38BB3172F51B9B6EE7 /* GameMode.swift in Sources */,
+				AFA752BCDFEA35198F8EE8A1 /* GameModeStorage.swift in Sources */,
+				F58AEDE061E480E5538D9869 /* GoalStorage.swift in Sources */,
 				BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */,
 				30B5A643279A63A1D3A53945 /* Mood.swift in Sources */,
 				677A95C0BCED7122F3610FDB /* MotimateApp.swift in Sources */,
+				B02E5C0C50152F835605CD15 /* PersistedStorage.swift in Sources */,
+				847D50278BB7EBAAD91938B6 /* PetId.swift in Sources */,
+				B960E5AEF2083E9116C99E2C /* PetStorage.swift in Sources */,
+				B7FCC9B8E97A7A07EB9D910A /* SettingsStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +240,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				174A2F947ABFC803B4AC8749 /* GameModeStorageTests.swift in Sources */,
+				F533B4A40A0692B7C7071221 /* GoalStorageTests.swift in Sources */,
 				E0C2A216CC4ACDE6F8287806 /* MoodTests.swift in Sources */,
+				CF6C66987462F72EF34CB45D /* PetStorageTests.swift in Sources */,
+				0959FB1AF93D054F6214903C /* SettingsStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
