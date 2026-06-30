@@ -14,7 +14,7 @@ export const MORNING_END_HOUR = 12
  * Step-derived moods only. SAD is NOT reachable from steps — it's an overlay the
  * Real game mode applies when the pet is energetic (barely moved) past morning.
  */
-const MOOD_MAX_RATIO: Record<Exclude<Mood, Mood.SAD>, number> = {
+export const MOOD_MAX_RATIO: Record<Exclude<Mood, Mood.SAD>, number> = {
   [Mood.ENERGETIC]: 0.2,
   [Mood.CALM]: 0.64,
   [Mood.TIRED]: Infinity,
