@@ -24,6 +24,13 @@
 	<true/>
 	<key>NSMotionUsageDescription</key>
 	<string>Motimate reads your step count to set your companion's mood.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Fredoka_500Medium.ttf</string>
+		<string>Fredoka_600SemiBold.ttf</string>
+		<string>Nunito_400Regular.ttf</string>
+		<string>Nunito_700Bold.ttf</string>
+	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 	<key>UILaunchScreen</key>

@@ -10,25 +10,35 @@
 		0959FB1AF93D054F6214903C /* SettingsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769B8E79AFB024CFB49D357E /* SettingsStoreTests.swift */; };
 		11F1BB38BB3172F51B9B6EE7 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A9CDF0EC9783DDCBF59D8 /* GameMode.swift */; };
 		174A2F947ABFC803B4AC8749 /* GameModeStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855E683B5F6CAEB565534221 /* GameModeStorageTests.swift */; };
+		306BF4D9600D60AE2507F993 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AA63323571C7576C36F81 /* Dimensions.swift */; };
 		30B5A643279A63A1D3A53945 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F134252AEA764CB094123BA /* Mood.swift */; };
+		3D00E5E569D1E9DA270B7DA1 /* StepReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2308EB01D257A005D294300 /* StepReader.swift */; };
+		67005F60D3591046A1B61E00 /* DailyStepsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5963D8391D7FF2B1ACF4CAA9 /* DailyStepsTests.swift */; };
 		677A95C0BCED7122F3610FDB /* MotimateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEA24A89CE12C14DF5D378 /* MotimateApp.swift */; };
+		69E0F90A236DFFD2A7774BD4 /* ResponsiveScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C30F54FF56007EE55DB842 /* ResponsiveScale.swift */; };
+		6D10E4B91A5B4B7AD387AAD1 /* Fredoka_600SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1614F871C04C5B1AE281272B /* Fredoka_600SemiBold.ttf */; };
 		847D50278BB7EBAAD91938B6 /* PetId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1B82889BA0055172984986 /* PetId.swift */; };
+		84B36044DCEC5FF813A0F281 /* Fredoka_500Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 975B8A4F9AF5EC0919EE1FB2 /* Fredoka_500Medium.ttf */; };
+		8636E2C59207A780DCFA0736 /* RoundedBoxPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C9D68B5B2F903AABFD9D3 /* RoundedBoxPathTests.swift */; };
+		8AB4E7E7D03F5E19F8EB2D0F /* StepReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8C25A20C4F17067CCB36B7 /* StepReaderTests.swift */; };
+		92E21A4090A3113C98348574 /* UnavailableStepReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82136E95D3598033BDEB1BDC /* UnavailableStepReader.swift */; };
+		9F35E55BD9D7BD5B12021A8A /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C0ED2F963F9B6B61C3A182 /* Tokens.swift */; };
 		AFA752BCDFEA35198F8EE8A1 /* GameModeStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9517C127B4644100BDB78F7 /* GameModeStorage.swift */; };
 		B02E5C0C50152F835605CD15 /* PersistedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB246AA2FDD639F18A1D424E /* PersistedStorage.swift */; };
 		B7FCC9B8E97A7A07EB9D910A /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */; };
+		B9585B5D3BA1B978B75E7718 /* Nunito_400Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32B29B0082422D0540A988A7 /* Nunito_400Regular.ttf */; };
 		B960E5AEF2083E9116C99E2C /* PetStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744687A246CF63AED4B2ABB9 /* PetStorage.swift */; };
 		BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C64CD38FFE017BEDEE318E /* HomeView.swift */; };
+		C3EE35B97E93B4A322B60523 /* StepReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77173406A078F871B84D237 /* StepReading.swift */; };
+		C532220CDB70CBE3BA3A643D /* ResponsiveScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64EDBD66987A9216CFBC195 /* ResponsiveScaleTests.swift */; };
 		CDB0422D50F4F56ECA5AB840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBAFEC736402E2546C30A35B /* Assets.xcassets */; };
 		CF6C66987462F72EF34CB45D /* PetStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF40AC0DDE802444321A46 /* PetStorageTests.swift */; };
+		DB8DCC566EDC500424002E9E /* RoundedBoxPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF28A4FEB35C882FCC6D042 /* RoundedBoxPath.swift */; };
 		E0C2A216CC4ACDE6F8287806 /* MoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CFB464CEE620159654FC7B /* MoodTests.swift */; };
+		E5C27A62E83F3CC8B47483A4 /* Nunito_700Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2454CC72A9C0007D022582 /* Nunito_700Bold.ttf */; };
 		F533B4A40A0692B7C7071221 /* GoalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE68437C77B6F7B00EA37D5C /* GoalStorageTests.swift */; };
 		F58AEDE061E480E5538D9869 /* GoalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C72BA9943D6BCF8A46012 /* GoalStorage.swift */; };
-		A1B2C3D4E5F60718293A4B5C /* StepReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E2F3A4B5C60718293A4B5D /* StepReading.swift */; };
-		A2B3C4D5E6F70819203B4C6D /* StepReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E3F4A5B6C70819203B4C6E /* StepReader.swift */; };
-		A3B4C5D6E7F8091A213C5D7E /* UnavailableStepReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E4F5A6B7C8091A213C5D7F /* UnavailableStepReader.swift */; };
-		A5B6C7D8E9F00B1C334E7F01 /* DailySteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E6F7A8B9C00B1C334E7F02 /* DailySteps.swift */; };
-		A4B5C6D7E8F90A1B223D6E8F /* StepReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6A7B8C90A1B223D6E90 /* StepReaderTests.swift */; };
-		A6B7C8D9E0F10C2D445F8012 /* DailyStepsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E7F8A9B0C10C2D445F8013 /* DailyStepsTests.swift */; };
+		F965DF6B09B520C7E30CA42E /* DailySteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADCD4AC057C8E6D7E63E4 /* DailySteps.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,31 +52,41 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1614F871C04C5B1AE281272B /* Fredoka_600SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fredoka_600SemiBold.ttf; sourceTree = "<group>"; };
+		1A2454CC72A9C0007D022582 /* Nunito_700Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nunito_700Bold.ttf; sourceTree = "<group>"; };
 		1B1B82889BA0055172984986 /* PetId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetId.swift; sourceTree = "<group>"; };
+		1D8C9D68B5B2F903AABFD9D3 /* RoundedBoxPathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBoxPathTests.swift; sourceTree = "<group>"; };
 		25CF40AC0DDE802444321A46 /* PetStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStorageTests.swift; sourceTree = "<group>"; };
 		2E9A9CDF0EC9783DDCBF59D8 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
+		30C0ED2F963F9B6B61C3A182 /* Tokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
+		32B29B0082422D0540A988A7 /* Nunito_400Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nunito_400Regular.ttf; sourceTree = "<group>"; };
+		54C30F54FF56007EE55DB842 /* ResponsiveScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveScale.swift; sourceTree = "<group>"; };
+		5963D8391D7FF2B1ACF4CAA9 /* DailyStepsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStepsTests.swift; sourceTree = "<group>"; };
 		5FEEA24A89CE12C14DF5D378 /* MotimateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotimateApp.swift; sourceTree = "<group>"; };
 		6EA817CED2C8D0CDDE1C3C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		744687A246CF63AED4B2ABB9 /* PetStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStorage.swift; sourceTree = "<group>"; };
 		769B8E79AFB024CFB49D357E /* SettingsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreTests.swift; sourceTree = "<group>"; };
+		82136E95D3598033BDEB1BDC /* UnavailableStepReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnavailableStepReader.swift; sourceTree = "<group>"; };
 		855E683B5F6CAEB565534221 /* GameModeStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeStorageTests.swift; sourceTree = "<group>"; };
 		8F134252AEA764CB094123BA /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		92EAF117670BA7388893C100 /* MotimateTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MotimateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		975B8A4F9AF5EC0919EE1FB2 /* Fredoka_500Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fredoka_500Medium.ttf; sourceTree = "<group>"; };
 		A3C64CD38FFE017BEDEE318E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AAF28A4FEB35C882FCC6D042 /* RoundedBoxPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBoxPath.swift; sourceTree = "<group>"; };
 		AC9C72BA9943D6BCF8A46012 /* GoalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorage.swift; sourceTree = "<group>"; };
+		B2308EB01D257A005D294300 /* StepReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReader.swift; sourceTree = "<group>"; };
 		BBAFEC736402E2546C30A35B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C64EDBD66987A9216CFBC195 /* ResponsiveScaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveScaleTests.swift; sourceTree = "<group>"; };
+		C77173406A078F871B84D237 /* StepReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReading.swift; sourceTree = "<group>"; };
 		C9517C127B4644100BDB78F7 /* GameModeStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeStorage.swift; sourceTree = "<group>"; };
 		CE68437C77B6F7B00EA37D5C /* GoalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageTests.swift; sourceTree = "<group>"; };
 		D7CFB464CEE620159654FC7B /* MoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTests.swift; sourceTree = "<group>"; };
 		DB246AA2FDD639F18A1D424E /* PersistedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedStorage.swift; sourceTree = "<group>"; };
-		D1E2F3A4B5C60718293A4B5D /* StepReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReading.swift; sourceTree = "<group>"; };
-		D2E3F4A5B6C70819203B4C6E /* StepReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReader.swift; sourceTree = "<group>"; };
-		D3E4F5A6B7C8091A213C5D7F /* UnavailableStepReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnavailableStepReader.swift; sourceTree = "<group>"; };
-		D5E6F7A8B9C00B1C334E7F02 /* DailySteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySteps.swift; sourceTree = "<group>"; };
-		D4E5F6A7B8C90A1B223D6E90 /* StepReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReaderTests.swift; sourceTree = "<group>"; };
-		D6E7F8A9B0C10C2D445F8013 /* DailyStepsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStepsTests.swift; sourceTree = "<group>"; };
+		DE9ADCD4AC057C8E6D7E63E4 /* DailySteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySteps.swift; sourceTree = "<group>"; };
+		DF8C25A20C4F17067CCB36B7 /* StepReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReaderTests.swift; sourceTree = "<group>"; };
+		F12AA63323571C7576C36F81 /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -79,6 +99,26 @@
 			);
 			sourceTree = "<group>";
 		};
+		239F8B5138854A99077DB185 /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				DE9ADCD4AC057C8E6D7E63E4 /* DailySteps.swift */,
+				B2308EB01D257A005D294300 /* StepReader.swift */,
+				C77173406A078F871B84D237 /* StepReading.swift */,
+				82136E95D3598033BDEB1BDC /* UnavailableStepReader.swift */,
+			);
+			path = Steps;
+			sourceTree = "<group>";
+		};
+		2FC9B7A239003788E804E50A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				54C30F54FF56007EE55DB842 /* ResponsiveScale.swift */,
+				AAF28A4FEB35C882FCC6D042 /* RoundedBoxPath.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		429B478F0519A735DCA5ABF1 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,17 +129,6 @@
 				8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */,
 			);
 			path = Persistence;
-			sourceTree = "<group>";
-		};
-		E5F6A7B8C9D00A1B223D6E91 /* Steps */ = {
-			isa = PBXGroup;
-			children = (
-				D1E2F3A4B5C60718293A4B5D /* StepReading.swift */,
-				D2E3F4A5B6C70819203B4C6E /* StepReader.swift */,
-				D3E4F5A6B7C8091A213C5D7F /* UnavailableStepReader.swift */,
-				D5E6F7A8B9C00B1C334E7F02 /* DailySteps.swift */,
-			);
-			path = Steps;
 			sourceTree = "<group>";
 		};
 		462109A39BD86FD1401E6764 /* Domain */ = {
@@ -116,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				BBAFEC736402E2546C30A35B /* Assets.xcassets */,
+				ADC862A08F9F8C0ADBEA4CB9 /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -123,13 +153,15 @@
 		722500783C52FDF6DE837379 /* MotimateTests */ = {
 			isa = PBXGroup;
 			children = (
+				5963D8391D7FF2B1ACF4CAA9 /* DailyStepsTests.swift */,
 				855E683B5F6CAEB565534221 /* GameModeStorageTests.swift */,
 				CE68437C77B6F7B00EA37D5C /* GoalStorageTests.swift */,
 				D7CFB464CEE620159654FC7B /* MoodTests.swift */,
 				25CF40AC0DDE802444321A46 /* PetStorageTests.swift */,
+				C64EDBD66987A9216CFBC195 /* ResponsiveScaleTests.swift */,
+				1D8C9D68B5B2F903AABFD9D3 /* RoundedBoxPathTests.swift */,
 				769B8E79AFB024CFB49D357E /* SettingsStoreTests.swift */,
-				D4E5F6A7B8C90A1B223D6E90 /* StepReaderTests.swift */,
-				D6E7F8A9B0C10C2D445F8013 /* DailyStepsTests.swift */,
+				DF8C25A20C4F17067CCB36B7 /* StepReaderTests.swift */,
 			);
 			path = MotimateTests;
 			sourceTree = "<group>";
@@ -139,10 +171,12 @@
 			children = (
 				6EA817CED2C8D0CDDE1C3C5A /* Info.plist */,
 				5FEEA24A89CE12C14DF5D378 /* MotimateApp.swift */,
+				F8C4A6CBF0DE1926771F190B /* Constants */,
 				462109A39BD86FD1401E6764 /* Domain */,
+				2FC9B7A239003788E804E50A /* Helpers */,
 				429B478F0519A735DCA5ABF1 /* Persistence */,
-				E5F6A7B8C9D00A1B223D6E91 /* Steps */,
 				717A583777EE9CD42CCD2491 /* Resources */,
+				239F8B5138854A99077DB185 /* Steps */,
 				A4FED4628343219A8B97A429 /* Views */,
 			);
 			path = Motimate;
@@ -156,6 +190,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		ADC862A08F9F8C0ADBEA4CB9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				975B8A4F9AF5EC0919EE1FB2 /* Fredoka_500Medium.ttf */,
+				1614F871C04C5B1AE281272B /* Fredoka_600SemiBold.ttf */,
+				32B29B0082422D0540A988A7 /* Nunito_400Regular.ttf */,
+				1A2454CC72A9C0007D022582 /* Nunito_700Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		E1106CD9AFEC0F7F5945319B /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +208,15 @@
 				92EAF117670BA7388893C100 /* MotimateTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F8C4A6CBF0DE1926771F190B /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F12AA63323571C7576C36F81 /* Dimensions.swift */,
+				30C0ED2F963F9B6B61C3A182 /* Tokens.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +266,8 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 9B50063C0F687A650CFDA41A /* Build configuration list for PBXProject "Motimate" */;
 			developmentRegion = en;
@@ -239,6 +295,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDB0422D50F4F56ECA5AB840 /* Assets.xcassets in Resources */,
+				84B36044DCEC5FF813A0F281 /* Fredoka_500Medium.ttf in Resources */,
+				6D10E4B91A5B4B7AD387AAD1 /* Fredoka_600SemiBold.ttf in Resources */,
+				B9585B5D3BA1B978B75E7718 /* Nunito_400Regular.ttf in Resources */,
+				E5C27A62E83F3CC8B47483A4 /* Nunito_700Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +309,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F965DF6B09B520C7E30CA42E /* DailySteps.swift in Sources */,
+				306BF4D9600D60AE2507F993 /* Dimensions.swift in Sources */,
 				11F1BB38BB3172F51B9B6EE7 /* GameMode.swift in Sources */,
 				AFA752BCDFEA35198F8EE8A1 /* GameModeStorage.swift in Sources */,
 				F58AEDE061E480E5538D9869 /* GoalStorage.swift in Sources */,
@@ -258,11 +320,13 @@
 				B02E5C0C50152F835605CD15 /* PersistedStorage.swift in Sources */,
 				847D50278BB7EBAAD91938B6 /* PetId.swift in Sources */,
 				B960E5AEF2083E9116C99E2C /* PetStorage.swift in Sources */,
+				69E0F90A236DFFD2A7774BD4 /* ResponsiveScale.swift in Sources */,
+				DB8DCC566EDC500424002E9E /* RoundedBoxPath.swift in Sources */,
 				B7FCC9B8E97A7A07EB9D910A /* SettingsStore.swift in Sources */,
-				A1B2C3D4E5F60718293A4B5C /* StepReading.swift in Sources */,
-				A2B3C4D5E6F70819203B4C6D /* StepReader.swift in Sources */,
-				A3B4C5D6E7F8091A213C5D7E /* UnavailableStepReader.swift in Sources */,
-				A5B6C7D8E9F00B1C334E7F01 /* DailySteps.swift in Sources */,
+				3D00E5E569D1E9DA270B7DA1 /* StepReader.swift in Sources */,
+				C3EE35B97E93B4A322B60523 /* StepReading.swift in Sources */,
+				9F35E55BD9D7BD5B12021A8A /* Tokens.swift in Sources */,
+				92E21A4090A3113C98348574 /* UnavailableStepReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,13 +334,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67005F60D3591046A1B61E00 /* DailyStepsTests.swift in Sources */,
 				174A2F947ABFC803B4AC8749 /* GameModeStorageTests.swift in Sources */,
 				F533B4A40A0692B7C7071221 /* GoalStorageTests.swift in Sources */,
 				E0C2A216CC4ACDE6F8287806 /* MoodTests.swift in Sources */,
 				CF6C66987462F72EF34CB45D /* PetStorageTests.swift in Sources */,
+				C532220CDB70CBE3BA3A643D /* ResponsiveScaleTests.swift in Sources */,
+				8636E2C59207A780DCFA0736 /* RoundedBoxPathTests.swift in Sources */,
 				0959FB1AF93D054F6214903C /* SettingsStoreTests.swift in Sources */,
-				A4B5C6D7E8F90A1B223D6E8F /* StepReaderTests.swift in Sources */,
-				A6B7C8D9E0F10C2D445F8012 /* DailyStepsTests.swift in Sources */,
+				8AB4E7E7D03F5E19F8EB2D0F /* StepReaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +518,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -472,7 +537,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
