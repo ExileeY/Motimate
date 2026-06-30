@@ -15,8 +15,7 @@ const BASE_HEIGHT = 812
 const MIN = 0.85
 const MAX = 1.15
 
-export const useResponsiveScale = () => {
-  const { height } = useWindowDimensions()
+export const computeScale = (height: number) =>
+  Math.min(MAX, Math.max(MIN, height / BASE_HEIGHT))
 
-  return Math.min(MAX, Math.max(MIN, height / BASE_HEIGHT))
-}
+export const useResponsiveScale = () => computeScale(useWindowDimensions().height)
