@@ -7,17 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11F1BB38BB3172F51B9B6EE7 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A9CDF0EC9783DDCBF59D8 /* GameMode.swift */; };
+		30B5A643279A63A1D3A53945 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F134252AEA764CB094123BA /* Mood.swift */; };
 		677A95C0BCED7122F3610FDB /* MotimateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEA24A89CE12C14DF5D378 /* MotimateApp.swift */; };
 		BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C64CD38FFE017BEDEE318E /* HomeView.swift */; };
 		CDB0422D50F4F56ECA5AB840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBAFEC736402E2546C30A35B /* Assets.xcassets */; };
+		E0C2A216CC4ACDE6F8287806 /* MoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CFB464CEE620159654FC7B /* MoodTests.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C1A916D0283D863DD5619F6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3D0F244FDCFFC5EE6AE1D49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B313B4C159B32F49A03E3A5B;
+			remoteInfo = Motimate;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		2E9A9CDF0EC9783DDCBF59D8 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		5FEEA24A89CE12C14DF5D378 /* MotimateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotimateApp.swift; sourceTree = "<group>"; };
 		6EA817CED2C8D0CDDE1C3C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8F134252AEA764CB094123BA /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		92EAF117670BA7388893C100 /* MotimateTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MotimateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C64CD38FFE017BEDEE318E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BBAFEC736402E2546C30A35B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7CFB464CEE620159654FC7B /* MoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -25,8 +42,18 @@
 			isa = PBXGroup;
 			children = (
 				790D1108B02BCC5395338BAF /* Motimate */,
+				722500783C52FDF6DE837379 /* MotimateTests */,
 				E1106CD9AFEC0F7F5945319B /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		462109A39BD86FD1401E6764 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2E9A9CDF0EC9783DDCBF59D8 /* GameMode.swift */,
+				8F134252AEA764CB094123BA /* Mood.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		717A583777EE9CD42CCD2491 /* Resources */ = {
@@ -37,11 +64,20 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		722500783C52FDF6DE837379 /* MotimateTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7CFB464CEE620159654FC7B /* MoodTests.swift */,
+			);
+			path = MotimateTests;
+			sourceTree = "<group>";
+		};
 		790D1108B02BCC5395338BAF /* Motimate */ = {
 			isa = PBXGroup;
 			children = (
 				6EA817CED2C8D0CDDE1C3C5A /* Info.plist */,
 				5FEEA24A89CE12C14DF5D378 /* MotimateApp.swift */,
+				462109A39BD86FD1401E6764 /* Domain */,
 				717A583777EE9CD42CCD2491 /* Resources */,
 				A4FED4628343219A8B97A429 /* Views */,
 			);
@@ -60,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				92FAE3A894F7324D4B300BC7 /* Motimate.app */,
+				92EAF117670BA7388893C100 /* MotimateTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,6 +121,24 @@
 			productName = Motimate;
 			productReference = 92FAE3A894F7324D4B300BC7 /* Motimate.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C00FAD5397952309949A06B4 /* MotimateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4ABE6CA6E87E1CCB601AC87 /* Build configuration list for PBXNativeTarget "MotimateTests" */;
+			buildPhases = (
+				8981D55838DFCFE3890AB836 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0311BEB4181B29BDB053D79C /* PBXTargetDependency */,
+			);
+			name = MotimateTests;
+			packageProductDependencies = (
+			);
+			productName = MotimateTests;
+			productReference = 92EAF117670BA7388893C100 /* MotimateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -111,6 +166,7 @@
 			projectRoot = "";
 			targets = (
 				B313B4C159B32F49A03E3A5B /* Motimate */,
+				C00FAD5397952309949A06B4 /* MotimateTests */,
 			);
 		};
 /* End PBXProject section */
@@ -131,14 +187,68 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11F1BB38BB3172F51B9B6EE7 /* GameMode.swift in Sources */,
 				BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */,
+				30B5A643279A63A1D3A53945 /* Mood.swift in Sources */,
 				677A95C0BCED7122F3610FDB /* MotimateApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8981D55838DFCFE3890AB836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0C2A216CC4ACDE6F8287806 /* MoodTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0311BEB4181B29BDB053D79C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B313B4C159B32F49A03E3A5B /* Motimate */;
+			targetProxy = C1A916D0283D863DD5619F6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		229DAC95CBE6EB3291267F74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilaglazoff.motimate.swift.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Motimate.app/Motimate";
+			};
+			name = Release;
+		};
+		65DCB09182846BF22C0B6960 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilaglazoff.motimate.swift.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Motimate.app/Motimate";
+			};
+			name = Debug;
+		};
 		7521A2E3CE487C2C54C94742 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -313,6 +423,15 @@
 			buildConfigurations = (
 				DF2A03A2159169574163517E /* Debug */,
 				8F035AEE2D7C403F5665E744 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E4ABE6CA6E87E1CCB601AC87 /* Build configuration list for PBXNativeTarget "MotimateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65DCB09182846BF22C0B6960 /* Debug */,
+				229DAC95CBE6EB3291267F74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
