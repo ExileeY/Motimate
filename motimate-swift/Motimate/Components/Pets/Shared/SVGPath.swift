@@ -11,17 +11,17 @@ func svgPath(_ d: String) -> Path {
     var scanner = PathScanner(d)
     var current = CGPoint.zero
     var start = CGPoint.zero
-    var prevControl: CGPoint? = nil // for smooth curves (T/S) — unused today but cheap
-    var command: Character = " "
 
     func num() -> CGFloat { CGFloat(scanner.number()) }
     func point(relative: Bool) -> CGPoint {
         let x = num(), y = num()
         return relative ? CGPoint(x: current.x + x, y: current.y + y) : CGPoint(x: x, y: y)
     }
+    func repeating(_ body: () -> Void) {
+        repeat { body() } while scanner.peekIsNumber()
+    }
 
     while let cmd = scanner.command() {
-        command = cmd
         let relative = cmd.isLowercase
         switch Character(cmd.lowercased()) {
         case "m":
@@ -34,41 +34,39 @@ func svgPath(_ d: String) -> Path {
                 path.addLine(to: current)
             }
         case "l":
-            repeat {
+            repeating {
                 current = point(relative: relative)
                 path.addLine(to: current)
-            } while scanner.peekIsNumber()
+            }
         case "h":
-            repeat {
+            repeating {
                 let x = num()
                 current = CGPoint(x: relative ? current.x + x : x, y: current.y)
                 path.addLine(to: current)
-            } while scanner.peekIsNumber()
+            }
         case "v":
-            repeat {
+            repeating {
                 let y = num()
                 current = CGPoint(x: current.x, y: relative ? current.y + y : y)
                 path.addLine(to: current)
-            } while scanner.peekIsNumber()
+            }
         case "c":
-            repeat {
+            repeating {
                 let c1 = point(relative: relative)
                 let c2 = point(relative: relative)
                 let end = point(relative: relative)
                 path.addCurve(to: end, control1: c1, control2: c2)
-                prevControl = c2
                 current = end
-            } while scanner.peekIsNumber()
+            }
         case "q":
-            repeat {
+            repeating {
                 let c = point(relative: relative)
                 let end = point(relative: relative)
                 path.addQuadCurve(to: end, control: c)
-                prevControl = c
                 current = end
-            } while scanner.peekIsNumber()
+            }
         case "a":
-            repeat {
+            repeating {
                 let rx = num(), ry = num()
                 let xRotation = num()
                 let largeArc = num() != 0
@@ -76,15 +74,13 @@ func svgPath(_ d: String) -> Path {
                 let end = point(relative: relative)
                 addArc(to: &path, from: current, to: end, rx: rx, ry: ry, xRotationDeg: xRotation, largeArc: largeArc, sweep: sweep)
                 current = end
-            } while scanner.peekIsNumber()
+            }
         case "z":
             path.closeSubpath()
             current = start
         default:
             break
         }
-        _ = command
-        _ = prevControl
     }
 
     return path
