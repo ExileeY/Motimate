@@ -90,6 +90,10 @@
 		A017B5EA0001000000000006 /* GlowMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000006 /* GlowMathTests.swift */; };
 		A018B5EA0001000000000001 /* PetStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018B5EB0002000000000001 /* PetStage.swift */; };
 		A018B5EA0001000000000002 /* PetStageMotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018B5EB0002000000000002 /* PetStageMotionTests.swift */; };
+		A019B5EA0001000000000001 /* PhoneCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019B5EB0002000000000001 /* PhoneCanvas.swift */; };
+		A019B5EA0001000000000002 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019B5EB0002000000000002 /* TopBar.swift */; };
+		A019B5EA0001000000000003 /* MovementCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019B5EB0002000000000003 /* MovementCard.swift */; };
+		A019B5EA0001000000000004 /* ChromeComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019B5EB0002000000000004 /* ChromeComponentsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +193,10 @@
 		A017B5EB0002000000000006 /* GlowMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowMathTests.swift; sourceTree = "<group>"; };
 		A018B5EB0002000000000001 /* PetStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStage.swift; sourceTree = "<group>"; };
 		A018B5EB0002000000000002 /* PetStageMotionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStageMotionTests.swift; sourceTree = "<group>"; };
+		A019B5EB0002000000000001 /* PhoneCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCanvas.swift; sourceTree = "<group>"; };
+		A019B5EB0002000000000002 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		A019B5EB0002000000000003 /* MovementCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementCard.swift; sourceTree = "<group>"; };
+		A019B5EB0002000000000004 /* ChromeComponentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromeComponentsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -258,6 +266,7 @@
 		722500783C52FDF6DE837379 /* MotimateTests */ = {
 			isa = PBXGroup;
 			children = (
+				A019B5EB0002000000000004 /* ChromeComponentsTests.swift */,
 				7179112C9D9DE48647DAD63C /* PetRegistryTests.swift */,
 				A018B5EB0002000000000002 /* PetStageMotionTests.swift */,
 				5963D8391D7FF2B1ACF4CAA9 /* DailyStepsTests.swift */,
@@ -347,7 +356,10 @@
 		54FE5E34995DE10F87DF7B85 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A019B5EB0002000000000003 /* MovementCard.swift */,
 				A018B5EB0002000000000001 /* PetStage.swift */,
+				A019B5EB0002000000000001 /* PhoneCanvas.swift */,
+				A019B5EB0002000000000002 /* TopBar.swift */,
 				A017B5EC0003000000000001 /* Glow */,
 				E1FA8B36A1618B47400D96C8 /* Pets */,
 			);
@@ -617,8 +629,10 @@
 				A016B5EA0001000000000001 /* Loop.swift in Sources */,
 				30B5A643279A63A1D3A53945 /* Mood.swift in Sources */,
 				677A95C0BCED7122F3610FDB /* MotimateApp.swift in Sources */,
+				A019B5EA0001000000000003 /* MovementCard.swift in Sources */,
 				A017B5EA0001000000000004 /* Particles.swift in Sources */,
 				A018B5EA0001000000000001 /* PetStage.swift in Sources */,
+				A019B5EA0001000000000001 /* PhoneCanvas.swift in Sources */,
 				B02E5C0C50152F835605CD15 /* PersistedStorage.swift in Sources */,
 				B960E5AEF2083E9116C99E2C /* PetStorage.swift in Sources */,
 				69E0F90A236DFFD2A7774BD4 /* ResponsiveScale.swift in Sources */,
@@ -627,6 +641,7 @@
 				3D00E5E569D1E9DA270B7DA1 /* StepReader.swift in Sources */,
 				C3EE35B97E93B4A322B60523 /* StepReading.swift in Sources */,
 				9F35E55BD9D7BD5B12021A8A /* Tokens.swift in Sources */,
+				A019B5EA0001000000000002 /* TopBar.swift in Sources */,
 				92E21A4090A3113C98348574 /* UnavailableStepReader.swift in Sources */,
 				A017B5EA0001000000000005 /* Zzz.swift in Sources */,
 			);
@@ -636,6 +651,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A019B5EA0001000000000004 /* ChromeComponentsTests.swift in Sources */,
 				BABDFB62E0236A7563A47E81 /* PetRegistryTests.swift in Sources */,
 				A018B5EA0001000000000002 /* PetStageMotionTests.swift in Sources */,
 				67005F60D3591046A1B61E00 /* DailyStepsTests.swift in Sources */,
