@@ -92,6 +92,9 @@
 		A018B5EA0001000000000002 /* PetStageMotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018B5EB0002000000000002 /* PetStageMotionTests.swift */; };
 		A019B5EA0001000000000001 /* PhoneCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019B5EB0002000000000001 /* PhoneCanvas.swift */; };
 		A019B5EA0001000000000002 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019B5EB0002000000000002 /* TopBar.swift */; };
+		A020B5EA0001000000000001 /* PetPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A020B5EB0002000000000001 /* PetPicker.swift */; };
+		A021B5EA0001000000000001 /* ModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A021B5EB0002000000000001 /* ModePicker.swift */; };
+		A022B5EA0001000000000001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022B5EB0002000000000001 /* SettingsView.swift */; };
 		A019B5EA0001000000000003 /* MovementCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019B5EB0002000000000003 /* MovementCard.swift */; };
 		A019B5EA0001000000000004 /* ChromeComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019B5EB0002000000000004 /* ChromeComponentsTests.swift */; };
 /* End PBXBuildFile section */
@@ -195,6 +198,9 @@
 		A018B5EB0002000000000002 /* PetStageMotionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStageMotionTests.swift; sourceTree = "<group>"; };
 		A019B5EB0002000000000001 /* PhoneCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCanvas.swift; sourceTree = "<group>"; };
 		A019B5EB0002000000000002 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		A020B5EB0002000000000001 /* PetPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPicker.swift; sourceTree = "<group>"; };
+		A021B5EB0002000000000001 /* ModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModePicker.swift; sourceTree = "<group>"; };
+		A022B5EB0002000000000001 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A019B5EB0002000000000003 /* MovementCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementCard.swift; sourceTree = "<group>"; };
 		A019B5EB0002000000000004 /* ChromeComponentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromeComponentsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -305,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				A3C64CD38FFE017BEDEE318E /* HomeView.swift */,
+				A022B5EB0002000000000001 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -360,6 +367,8 @@
 				A018B5EB0002000000000001 /* PetStage.swift */,
 				A019B5EB0002000000000001 /* PhoneCanvas.swift */,
 				A019B5EB0002000000000002 /* TopBar.swift */,
+				A020B5EB0002000000000001 /* PetPicker.swift */,
+				A021B5EB0002000000000001 /* ModePicker.swift */,
 				A017B5EC0003000000000001 /* Glow */,
 				E1FA8B36A1618B47400D96C8 /* Pets */,
 			);
@@ -642,6 +651,9 @@
 				C3EE35B97E93B4A322B60523 /* StepReading.swift in Sources */,
 				9F35E55BD9D7BD5B12021A8A /* Tokens.swift in Sources */,
 				A019B5EA0001000000000002 /* TopBar.swift in Sources */,
+				A020B5EA0001000000000001 /* PetPicker.swift in Sources */,
+				A021B5EA0001000000000001 /* ModePicker.swift in Sources */,
+				A022B5EA0001000000000001 /* SettingsView.swift in Sources */,
 				92E21A4090A3113C98348574 /* UnavailableStepReader.swift in Sources */,
 				A017B5EA0001000000000005 /* Zzz.swift in Sources */,
 			);

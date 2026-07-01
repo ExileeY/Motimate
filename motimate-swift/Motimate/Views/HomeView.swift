@@ -28,11 +28,9 @@ struct HomeView: View {
         }
         .navigationBarHidden(true)
         .background(
-            // iOS 15 has no `.navigationDestination`; drive navigation with a
-            // hidden link. TODO(Step 21): replace destination with SettingsView().
             NavigationLink(
                 isActive: $showSettings,
-                destination: { Text("Settings") },
+                destination: { SettingsView(isPresented: $showSettings) },
                 label: { EmptyView() }
             )
             .hidden()
