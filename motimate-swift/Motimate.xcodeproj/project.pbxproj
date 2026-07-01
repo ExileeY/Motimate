@@ -1,0 +1,922 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0959FB1AF93D054F6214903C /* SettingsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769B8E79AFB024CFB49D357E /* SettingsStoreTests.swift */; };
+		11F1BB38BB3172F51B9B6EE7 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A9CDF0EC9783DDCBF59D8 /* GameMode.swift */; };
+		174A2F947ABFC803B4AC8749 /* GameModeStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 855E683B5F6CAEB565534221 /* GameModeStorageTests.swift */; };
+		306BF4D9600D60AE2507F993 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AA63323571C7576C36F81 /* Dimensions.swift */; };
+		30B5A643279A63A1D3A53945 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F134252AEA764CB094123BA /* Mood.swift */; };
+		3D00E5E569D1E9DA270B7DA1 /* StepReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2308EB01D257A005D294300 /* StepReader.swift */; };
+		67005F60D3591046A1B61E00 /* DailyStepsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5963D8391D7FF2B1ACF4CAA9 /* DailyStepsTests.swift */; };
+		677A95C0BCED7122F3610FDB /* MotimateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEA24A89CE12C14DF5D378 /* MotimateApp.swift */; };
+		69E0F90A236DFFD2A7774BD4 /* ResponsiveScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C30F54FF56007EE55DB842 /* ResponsiveScale.swift */; };
+		6D10E4B91A5B4B7AD387AAD1 /* Fredoka_600SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1614F871C04C5B1AE281272B /* Fredoka_600SemiBold.ttf */; };
+		84B36044DCEC5FF813A0F281 /* Fredoka_500Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 975B8A4F9AF5EC0919EE1FB2 /* Fredoka_500Medium.ttf */; };
+		8636E2C59207A780DCFA0736 /* RoundedBoxPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C9D68B5B2F903AABFD9D3 /* RoundedBoxPathTests.swift */; };
+		8AB4E7E7D03F5E19F8EB2D0F /* StepReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8C25A20C4F17067CCB36B7 /* StepReaderTests.swift */; };
+		92E21A4090A3113C98348574 /* UnavailableStepReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82136E95D3598033BDEB1BDC /* UnavailableStepReader.swift */; };
+		9F35E55BD9D7BD5B12021A8A /* Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C0ED2F963F9B6B61C3A182 /* Tokens.swift */; };
+		AFA752BCDFEA35198F8EE8A1 /* GameModeStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9517C127B4644100BDB78F7 /* GameModeStorage.swift */; };
+		B02E5C0C50152F835605CD15 /* PersistedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB246AA2FDD639F18A1D424E /* PersistedStorage.swift */; };
+		B7FCC9B8E97A7A07EB9D910A /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */; };
+		B9585B5D3BA1B978B75E7718 /* Nunito_400Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32B29B0082422D0540A988A7 /* Nunito_400Regular.ttf */; };
+		B960E5AEF2083E9116C99E2C /* PetStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744687A246CF63AED4B2ABB9 /* PetStorage.swift */; };
+		BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C64CD38FFE017BEDEE318E /* HomeView.swift */; };
+		C3EE35B97E93B4A322B60523 /* StepReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77173406A078F871B84D237 /* StepReading.swift */; };
+		C532220CDB70CBE3BA3A643D /* ResponsiveScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64EDBD66987A9216CFBC195 /* ResponsiveScaleTests.swift */; };
+		CDB0422D50F4F56ECA5AB840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBAFEC736402E2546C30A35B /* Assets.xcassets */; };
+		CF6C66987462F72EF34CB45D /* PetStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF40AC0DDE802444321A46 /* PetStorageTests.swift */; };
+		DB8DCC566EDC500424002E9E /* RoundedBoxPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF28A4FEB35C882FCC6D042 /* RoundedBoxPath.swift */; };
+		E0C2A216CC4ACDE6F8287806 /* MoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CFB464CEE620159654FC7B /* MoodTests.swift */; };
+		E5C27A62E83F3CC8B47483A4 /* Nunito_700Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2454CC72A9C0007D022582 /* Nunito_700Bold.ttf */; };
+		F533B4A40A0692B7C7071221 /* GoalStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE68437C77B6F7B00EA37D5C /* GoalStorageTests.swift */; };
+		F58AEDE061E480E5538D9869 /* GoalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9C72BA9943D6BCF8A46012 /* GoalStorage.swift */; };
+		F965DF6B09B520C7E30CA42E /* DailySteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADCD4AC057C8E6D7E63E4 /* DailySteps.swift */; };
+		FE203E2B9697343C791E8772 /* MessageSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C662AFCE742962F4FA2CAB /* MessageSet.swift */; };
+		BB198FE0253131F7FA09F463 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6D46927C9C9201D956ED9F /* Pet.swift */; };
+		299F37AC32335F6AB2498A8A /* MochiMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2900BFC7C65B609D46E9ACD /* MochiMessages.swift */; };
+		AC9880E9B9E257DC67490696 /* BulbashikMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD77215D99D39C4ED764AD6 /* BulbashikMessages.swift */; };
+		EDBBA09A483C9DB368F68FD4 /* DogMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4769500ABB4C5629372119C6 /* DogMessages.swift */; };
+		34CDFAB10552672F8F864BB3 /* OctopusMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3C558D56CCCD58DBD8CE80 /* OctopusMessages.swift */; };
+		FCC3A960D211698470C68390 /* AruticMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F576EE8400E396C69BCC9F0D /* AruticMessages.swift */; };
+		1D76577CCCD3900C8AA8A368 /* KhinklearMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BADD91DCF4D1965816D077 /* KhinklearMessages.swift */; };
+		34B90C0D2F682649567871AE /* TomatoMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BBEBEBD528C724C7BFEDBA /* TomatoMessages.swift */; };
+		F8CED5C7CC870963C6BB7D68 /* SchnauzerMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2ADB9E98CB81A10C78F9C8 /* SchnauzerMessages.swift */; };
+		40DA4D9727AB7895FBBD2F94 /* PlaceholderPetBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5916657554F4A31BDD84430A /* PlaceholderPetBody.swift */; };
+		7E664CABDFC7476EB424C71C /* SVGGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB72674F5C5E4257802BAE61 /* SVGGradient.swift */; };
+		EB1D267E11314EA8B3D0F4EA /* RoundEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF1EBA93A0947DA914566FE /* RoundEye.swift */; };
+		A8D22C172F964467BCDAE338 /* MochiFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7514A79C4546F2B1982CE4 /* MochiFace.swift */; };
+		83C2B235F8F54A4885436616 /* MochiBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179C0D6BDFFB4495BBB31BE5 /* MochiBody.swift */; };
+		0C1090500001000000000001 /* OctopusBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1090500000000000000001 /* OctopusBody.swift */; };
+		0C1090500001000000000002 /* OctopusFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1090500000000000000002 /* OctopusFace.swift */; };
+		0C1090500001000000000003 /* OctopusEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1090500000000000000003 /* OctopusEye.swift */; };
+		0C1090510001000000000001 /* KhinklearBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1090510000000000000001 /* KhinklearBody.swift */; };
+		0C1090510001000000000002 /* KhinklearFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1090510000000000000002 /* KhinklearFace.swift */; };
+		0C1090510001000000000003 /* KhinklEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1090510000000000000003 /* KhinklEye.swift */; };
+		B01BA5EA0001000000000001 /* BulbashikBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000001 /* BulbashikBody.swift */; };
+		B01BA5EA0001000000000002 /* BulbashikFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000002 /* BulbashikFace.swift */; };
+		B01BA5EA0001000000000003 /* BulbEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000003 /* BulbEye.swift */; };
+		B01BA5EA0001000000000004 /* DogBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000004 /* DogBody.swift */; };
+		B01BA5EA0001000000000005 /* DogFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000005 /* DogFace.swift */; };
+		B01BA5EA0001000000000006 /* DogEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000006 /* DogEye.swift */; };
+		B01BA5EA0001000000000007 /* AruticBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000007 /* AruticBody.swift */; };
+		B01BA5EA0001000000000008 /* AruticFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000008 /* AruticFace.swift */; };
+		B01BA5EA0001000000000009 /* AruticEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000009 /* AruticEye.swift */; };
+		A014B5EA0001000000000001 /* TomatoBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014B5EB0002000000000001 /* TomatoBody.swift */; };
+		A014B5EA0001000000000002 /* TomatoFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014B5EB0002000000000002 /* TomatoFace.swift */; };
+		A014B5EA0001000000000003 /* TomatoEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014B5EB0002000000000003 /* TomatoEye.swift */; };
+		A015B5EA0001000000000001 /* SchnauzerBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015B5EB0002000000000001 /* SchnauzerBody.swift */; };
+		A015B5EA0001000000000002 /* SchnauzerFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015B5EB0002000000000002 /* SchnauzerFace.swift */; };
+		A015B5EA0001000000000003 /* SchnauzerEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015B5EB0002000000000003 /* SchnauzerEye.swift */; };
+		A015B5EA0001000000000004 /* SchnauzerBrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015B5EB0002000000000004 /* SchnauzerBrow.swift */; };
+		E7649B84125BD6893FA9176D /* OffsetProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6950B8A5A79F9BA0F118A4C /* OffsetProps.swift */; };
+		70493E1A4134C7FEB8FC0169 /* SVGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EB8E45346ECDDB30C09D25 /* SVGPath.swift */; };
+		D8F9DEF1A3255079A0921AB8 /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70DB185F57594572A3777A4 /* Arc.swift */; };
+		36F31DBCD5AE84F32B3BBC43 /* Cheek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB29D2220635E17DAC367B5 /* Cheek.swift */; };
+		BABDFB62E0236A7563A47E81 /* PetRegistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7179112C9D9DE48647DAD63C /* PetRegistryTests.swift */; };
+		A016B5EA0001000000000001 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A016B5EB0002000000000001 /* Loop.swift */; };
+		A016B5EA0001000000000002 /* LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A016B5EB0002000000000002 /* LoopTests.swift */; };
+		A017B5EA0001000000000001 /* GlowMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000001 /* GlowMath.swift */; };
+		A017B5EA0001000000000002 /* Glow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000002 /* Glow.swift */; };
+		A017B5EA0001000000000003 /* Halo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000003 /* Halo.swift */; };
+		A017B5EA0001000000000004 /* Particles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000004 /* Particles.swift */; };
+		A017B5EA0001000000000005 /* Zzz.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000005 /* Zzz.swift */; };
+		A017B5EA0001000000000006 /* GlowMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000006 /* GlowMathTests.swift */; };
+		A018B5EA0001000000000001 /* PetStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018B5EB0002000000000001 /* PetStage.swift */; };
+		A018B5EA0001000000000002 /* PetStageMotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018B5EB0002000000000002 /* PetStageMotionTests.swift */; };
+		A019B5EA0001000000000001 /* PhoneCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019B5EB0002000000000001 /* PhoneCanvas.swift */; };
+		A019B5EA0001000000000002 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019B5EB0002000000000002 /* TopBar.swift */; };
+		A020B5EA0001000000000001 /* PetPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A020B5EB0002000000000001 /* PetPicker.swift */; };
+		A021B5EA0001000000000001 /* ModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A021B5EB0002000000000001 /* ModePicker.swift */; };
+		A022B5EA0001000000000001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A022B5EB0002000000000001 /* SettingsView.swift */; };
+		A019B5EA0001000000000003 /* MovementCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019B5EB0002000000000003 /* MovementCard.swift */; };
+		A019B5EA0001000000000004 /* ChromeComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A019B5EB0002000000000004 /* ChromeComponentsTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C1A916D0283D863DD5619F6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3D0F244FDCFFC5EE6AE1D49 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B313B4C159B32F49A03E3A5B;
+			remoteInfo = Motimate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1614F871C04C5B1AE281272B /* Fredoka_600SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fredoka_600SemiBold.ttf; sourceTree = "<group>"; };
+		1A2454CC72A9C0007D022582 /* Nunito_700Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nunito_700Bold.ttf; sourceTree = "<group>"; };
+		1D8C9D68B5B2F903AABFD9D3 /* RoundedBoxPathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBoxPathTests.swift; sourceTree = "<group>"; };
+		25CF40AC0DDE802444321A46 /* PetStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStorageTests.swift; sourceTree = "<group>"; };
+		2E9A9CDF0EC9783DDCBF59D8 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
+		30C0ED2F963F9B6B61C3A182 /* Tokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokens.swift; sourceTree = "<group>"; };
+		32B29B0082422D0540A988A7 /* Nunito_400Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nunito_400Regular.ttf; sourceTree = "<group>"; };
+		54C30F54FF56007EE55DB842 /* ResponsiveScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveScale.swift; sourceTree = "<group>"; };
+		5963D8391D7FF2B1ACF4CAA9 /* DailyStepsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStepsTests.swift; sourceTree = "<group>"; };
+		5FEEA24A89CE12C14DF5D378 /* MotimateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotimateApp.swift; sourceTree = "<group>"; };
+		6EA817CED2C8D0CDDE1C3C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		744687A246CF63AED4B2ABB9 /* PetStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStorage.swift; sourceTree = "<group>"; };
+		769B8E79AFB024CFB49D357E /* SettingsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreTests.swift; sourceTree = "<group>"; };
+		82136E95D3598033BDEB1BDC /* UnavailableStepReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnavailableStepReader.swift; sourceTree = "<group>"; };
+		855E683B5F6CAEB565534221 /* GameModeStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeStorageTests.swift; sourceTree = "<group>"; };
+		8F134252AEA764CB094123BA /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		92EAF117670BA7388893C100 /* MotimateTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MotimateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		975B8A4F9AF5EC0919EE1FB2 /* Fredoka_500Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fredoka_500Medium.ttf; sourceTree = "<group>"; };
+		A3C64CD38FFE017BEDEE318E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AAF28A4FEB35C882FCC6D042 /* RoundedBoxPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBoxPath.swift; sourceTree = "<group>"; };
+		AC9C72BA9943D6BCF8A46012 /* GoalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorage.swift; sourceTree = "<group>"; };
+		B2308EB01D257A005D294300 /* StepReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReader.swift; sourceTree = "<group>"; };
+		BBAFEC736402E2546C30A35B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C64EDBD66987A9216CFBC195 /* ResponsiveScaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveScaleTests.swift; sourceTree = "<group>"; };
+		C77173406A078F871B84D237 /* StepReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReading.swift; sourceTree = "<group>"; };
+		C9517C127B4644100BDB78F7 /* GameModeStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeStorage.swift; sourceTree = "<group>"; };
+		CE68437C77B6F7B00EA37D5C /* GoalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageTests.swift; sourceTree = "<group>"; };
+		D7CFB464CEE620159654FC7B /* MoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTests.swift; sourceTree = "<group>"; };
+		DB246AA2FDD639F18A1D424E /* PersistedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedStorage.swift; sourceTree = "<group>"; };
+		DE9ADCD4AC057C8E6D7E63E4 /* DailySteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySteps.swift; sourceTree = "<group>"; };
+		DF8C25A20C4F17067CCB36B7 /* StepReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReaderTests.swift; sourceTree = "<group>"; };
+		F12AA63323571C7576C36F81 /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
+		91C662AFCE742962F4FA2CAB /* MessageSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSet.swift; sourceTree = "<group>"; };
+		5F6D46927C9C9201D956ED9F /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		D2900BFC7C65B609D46E9ACD /* MochiMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MochiMessages.swift; sourceTree = "<group>"; };
+		2FD77215D99D39C4ED764AD6 /* BulbashikMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikMessages.swift; sourceTree = "<group>"; };
+		4769500ABB4C5629372119C6 /* DogMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogMessages.swift; sourceTree = "<group>"; };
+		FE3C558D56CCCD58DBD8CE80 /* OctopusMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusMessages.swift; sourceTree = "<group>"; };
+		F576EE8400E396C69BCC9F0D /* AruticMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AruticMessages.swift; sourceTree = "<group>"; };
+		94BADD91DCF4D1965816D077 /* KhinklearMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhinklearMessages.swift; sourceTree = "<group>"; };
+		06BBEBEBD528C724C7BFEDBA /* TomatoMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoMessages.swift; sourceTree = "<group>"; };
+		9E2ADB9E98CB81A10C78F9C8 /* SchnauzerMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchnauzerMessages.swift; sourceTree = "<group>"; };
+		5916657554F4A31BDD84430A /* PlaceholderPetBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderPetBody.swift; sourceTree = "<group>"; };
+		EB72674F5C5E4257802BAE61 /* SVGGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGGradient.swift; sourceTree = "<group>"; };
+		DFF1EBA93A0947DA914566FE /* RoundEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundEye.swift; sourceTree = "<group>"; };
+		8A7514A79C4546F2B1982CE4 /* MochiFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MochiFace.swift; sourceTree = "<group>"; };
+		179C0D6BDFFB4495BBB31BE5 /* MochiBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MochiBody.swift; sourceTree = "<group>"; };
+		0C1090500000000000000001 /* OctopusBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusBody.swift; sourceTree = "<group>"; };
+		0C1090500000000000000002 /* OctopusFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusFace.swift; sourceTree = "<group>"; };
+		0C1090500000000000000003 /* OctopusEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusEye.swift; sourceTree = "<group>"; };
+		0C1090510000000000000001 /* KhinklearBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhinklearBody.swift; sourceTree = "<group>"; };
+		0C1090510000000000000002 /* KhinklearFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhinklearFace.swift; sourceTree = "<group>"; };
+		0C1090510000000000000003 /* KhinklEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhinklEye.swift; sourceTree = "<group>"; };
+		B01BA5EB0002000000000001 /* BulbashikBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikBody.swift; sourceTree = "<group>"; };
+		B01BA5EB0002000000000002 /* BulbashikFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikFace.swift; sourceTree = "<group>"; };
+		B01BA5EB0002000000000003 /* BulbEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbEye.swift; sourceTree = "<group>"; };
+		B01BA5EB0002000000000004 /* DogBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBody.swift; sourceTree = "<group>"; };
+		B01BA5EB0002000000000005 /* DogFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFace.swift; sourceTree = "<group>"; };
+		B01BA5EB0002000000000006 /* DogEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogEye.swift; sourceTree = "<group>"; };
+		B01BA5EB0002000000000007 /* AruticBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AruticBody.swift; sourceTree = "<group>"; };
+		B01BA5EB0002000000000008 /* AruticFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AruticFace.swift; sourceTree = "<group>"; };
+		B01BA5EB0002000000000009 /* AruticEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AruticEye.swift; sourceTree = "<group>"; };
+		A014B5EB0002000000000001 /* TomatoBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoBody.swift; sourceTree = "<group>"; };
+		A014B5EB0002000000000002 /* TomatoFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoFace.swift; sourceTree = "<group>"; };
+		A014B5EB0002000000000003 /* TomatoEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoEye.swift; sourceTree = "<group>"; };
+		A015B5EB0002000000000001 /* SchnauzerBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchnauzerBody.swift; sourceTree = "<group>"; };
+		A015B5EB0002000000000002 /* SchnauzerFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchnauzerFace.swift; sourceTree = "<group>"; };
+		A015B5EB0002000000000003 /* SchnauzerEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchnauzerEye.swift; sourceTree = "<group>"; };
+		A015B5EB0002000000000004 /* SchnauzerBrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchnauzerBrow.swift; sourceTree = "<group>"; };
+		E6950B8A5A79F9BA0F118A4C /* OffsetProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetProps.swift; sourceTree = "<group>"; };
+		09EB8E45346ECDDB30C09D25 /* SVGPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGPath.swift; sourceTree = "<group>"; };
+		B70DB185F57594572A3777A4 /* Arc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arc.swift; sourceTree = "<group>"; };
+		3EB29D2220635E17DAC367B5 /* Cheek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cheek.swift; sourceTree = "<group>"; };
+		7179112C9D9DE48647DAD63C /* PetRegistryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRegistryTests.swift; sourceTree = "<group>"; };
+		A016B5EB0002000000000001 /* Loop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
+		A016B5EB0002000000000002 /* LoopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopTests.swift; sourceTree = "<group>"; };
+		A017B5EB0002000000000001 /* GlowMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowMath.swift; sourceTree = "<group>"; };
+		A017B5EB0002000000000002 /* Glow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glow.swift; sourceTree = "<group>"; };
+		A017B5EB0002000000000003 /* Halo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Halo.swift; sourceTree = "<group>"; };
+		A017B5EB0002000000000004 /* Particles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particles.swift; sourceTree = "<group>"; };
+		A017B5EB0002000000000005 /* Zzz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zzz.swift; sourceTree = "<group>"; };
+		A017B5EB0002000000000006 /* GlowMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowMathTests.swift; sourceTree = "<group>"; };
+		A018B5EB0002000000000001 /* PetStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStage.swift; sourceTree = "<group>"; };
+		A018B5EB0002000000000002 /* PetStageMotionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStageMotionTests.swift; sourceTree = "<group>"; };
+		A019B5EB0002000000000001 /* PhoneCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCanvas.swift; sourceTree = "<group>"; };
+		A019B5EB0002000000000002 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		A020B5EB0002000000000001 /* PetPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPicker.swift; sourceTree = "<group>"; };
+		A021B5EB0002000000000001 /* ModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModePicker.swift; sourceTree = "<group>"; };
+		A022B5EB0002000000000001 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A019B5EB0002000000000003 /* MovementCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementCard.swift; sourceTree = "<group>"; };
+		A019B5EB0002000000000004 /* ChromeComponentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromeComponentsTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		17573C3A481063F1DA70055B = {
+			isa = PBXGroup;
+			children = (
+				790D1108B02BCC5395338BAF /* Motimate */,
+				722500783C52FDF6DE837379 /* MotimateTests */,
+				E1106CD9AFEC0F7F5945319B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		239F8B5138854A99077DB185 /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				DE9ADCD4AC057C8E6D7E63E4 /* DailySteps.swift */,
+				B2308EB01D257A005D294300 /* StepReader.swift */,
+				C77173406A078F871B84D237 /* StepReading.swift */,
+				82136E95D3598033BDEB1BDC /* UnavailableStepReader.swift */,
+			);
+			path = Steps;
+			sourceTree = "<group>";
+		};
+		2FC9B7A239003788E804E50A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A016B5EB0002000000000001 /* Loop.swift */,
+				54C30F54FF56007EE55DB842 /* ResponsiveScale.swift */,
+				AAF28A4FEB35C882FCC6D042 /* RoundedBoxPath.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		429B478F0519A735DCA5ABF1 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				C9517C127B4644100BDB78F7 /* GameModeStorage.swift */,
+				AC9C72BA9943D6BCF8A46012 /* GoalStorage.swift */,
+				DB246AA2FDD639F18A1D424E /* PersistedStorage.swift */,
+				744687A246CF63AED4B2ABB9 /* PetStorage.swift */,
+				8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		462109A39BD86FD1401E6764 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				91C662AFCE742962F4FA2CAB /* MessageSet.swift */,
+				5F6D46927C9C9201D956ED9F /* Pet.swift */,
+				B2F5B716246FD6367A7AECAB /* Messages */,
+				2E9A9CDF0EC9783DDCBF59D8 /* GameMode.swift */,
+				8F134252AEA764CB094123BA /* Mood.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		717A583777EE9CD42CCD2491 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BBAFEC736402E2546C30A35B /* Assets.xcassets */,
+				ADC862A08F9F8C0ADBEA4CB9 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		722500783C52FDF6DE837379 /* MotimateTests */ = {
+			isa = PBXGroup;
+			children = (
+				A019B5EB0002000000000004 /* ChromeComponentsTests.swift */,
+				7179112C9D9DE48647DAD63C /* PetRegistryTests.swift */,
+				A018B5EB0002000000000002 /* PetStageMotionTests.swift */,
+				5963D8391D7FF2B1ACF4CAA9 /* DailyStepsTests.swift */,
+				855E683B5F6CAEB565534221 /* GameModeStorageTests.swift */,
+				CE68437C77B6F7B00EA37D5C /* GoalStorageTests.swift */,
+				A017B5EB0002000000000006 /* GlowMathTests.swift */,
+				A016B5EB0002000000000002 /* LoopTests.swift */,
+				D7CFB464CEE620159654FC7B /* MoodTests.swift */,
+				25CF40AC0DDE802444321A46 /* PetStorageTests.swift */,
+				C64EDBD66987A9216CFBC195 /* ResponsiveScaleTests.swift */,
+				1D8C9D68B5B2F903AABFD9D3 /* RoundedBoxPathTests.swift */,
+				769B8E79AFB024CFB49D357E /* SettingsStoreTests.swift */,
+				DF8C25A20C4F17067CCB36B7 /* StepReaderTests.swift */,
+			);
+			path = MotimateTests;
+			sourceTree = "<group>";
+		};
+		790D1108B02BCC5395338BAF /* Motimate */ = {
+			isa = PBXGroup;
+			children = (
+				54FE5E34995DE10F87DF7B85 /* Components */,
+				6EA817CED2C8D0CDDE1C3C5A /* Info.plist */,
+				5FEEA24A89CE12C14DF5D378 /* MotimateApp.swift */,
+				F8C4A6CBF0DE1926771F190B /* Constants */,
+				462109A39BD86FD1401E6764 /* Domain */,
+				2FC9B7A239003788E804E50A /* Helpers */,
+				429B478F0519A735DCA5ABF1 /* Persistence */,
+				717A583777EE9CD42CCD2491 /* Resources */,
+				239F8B5138854A99077DB185 /* Steps */,
+				A4FED4628343219A8B97A429 /* Views */,
+			);
+			path = Motimate;
+			sourceTree = "<group>";
+		};
+		A4FED4628343219A8B97A429 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A3C64CD38FFE017BEDEE318E /* HomeView.swift */,
+				A022B5EB0002000000000001 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ADC862A08F9F8C0ADBEA4CB9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				975B8A4F9AF5EC0919EE1FB2 /* Fredoka_500Medium.ttf */,
+				1614F871C04C5B1AE281272B /* Fredoka_600SemiBold.ttf */,
+				32B29B0082422D0540A988A7 /* Nunito_400Regular.ttf */,
+				1A2454CC72A9C0007D022582 /* Nunito_700Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E1106CD9AFEC0F7F5945319B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92FAE3A894F7324D4B300BC7 /* Motimate.app */,
+				92EAF117670BA7388893C100 /* MotimateTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8C4A6CBF0DE1926771F190B /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F12AA63323571C7576C36F81 /* Dimensions.swift */,
+				30C0ED2F963F9B6B61C3A182 /* Tokens.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B2F5B716246FD6367A7AECAB /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				D2900BFC7C65B609D46E9ACD /* MochiMessages.swift */,
+				2FD77215D99D39C4ED764AD6 /* BulbashikMessages.swift */,
+				4769500ABB4C5629372119C6 /* DogMessages.swift */,
+				FE3C558D56CCCD58DBD8CE80 /* OctopusMessages.swift */,
+				F576EE8400E396C69BCC9F0D /* AruticMessages.swift */,
+				94BADD91DCF4D1965816D077 /* KhinklearMessages.swift */,
+				06BBEBEBD528C724C7BFEDBA /* TomatoMessages.swift */,
+				9E2ADB9E98CB81A10C78F9C8 /* SchnauzerMessages.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		54FE5E34995DE10F87DF7B85 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A019B5EB0002000000000003 /* MovementCard.swift */,
+				A018B5EB0002000000000001 /* PetStage.swift */,
+				A019B5EB0002000000000001 /* PhoneCanvas.swift */,
+				A019B5EB0002000000000002 /* TopBar.swift */,
+				A020B5EB0002000000000001 /* PetPicker.swift */,
+				A021B5EB0002000000000001 /* ModePicker.swift */,
+				A017B5EC0003000000000001 /* Glow */,
+				E1FA8B36A1618B47400D96C8 /* Pets */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A017B5EC0003000000000001 /* Glow */ = {
+			isa = PBXGroup;
+			children = (
+				A017B5EB0002000000000002 /* Glow.swift */,
+				A017B5EB0002000000000001 /* GlowMath.swift */,
+				A017B5EB0002000000000003 /* Halo.swift */,
+				A017B5EB0002000000000004 /* Particles.swift */,
+				A017B5EB0002000000000005 /* Zzz.swift */,
+			);
+			path = Glow;
+			sourceTree = "<group>";
+		};
+		E1FA8B36A1618B47400D96C8 /* Pets */ = {
+			isa = PBXGroup;
+			children = (
+				5916657554F4A31BDD84430A /* PlaceholderPetBody.swift */,
+				E497BC1F46DC40C896AD118F /* Mochi */,
+				B01BA5EC0003000000000001 /* Bulbashik */,
+				B01BA5EC0003000000000002 /* Dog */,
+				B01BA5EC0003000000000003 /* Arutic */,
+				0C1090500002000000000001 /* Octopus */,
+				0C1090510002000000000001 /* Khinklear */,
+				A014B5EC0003000000000001 /* Tomato */,
+				A015B5EC0003000000000001 /* Schnauzer */,
+				3F9DBE08B08536CB91414260 /* Shared */,
+			);
+			path = Pets;
+			sourceTree = "<group>";
+		};
+		E497BC1F46DC40C896AD118F /* Mochi */ = {
+			isa = PBXGroup;
+			children = (
+				179C0D6BDFFB4495BBB31BE5 /* MochiBody.swift */,
+				8A7514A79C4546F2B1982CE4 /* MochiFace.swift */,
+				DFF1EBA93A0947DA914566FE /* RoundEye.swift */,
+			);
+			path = Mochi;
+			sourceTree = "<group>";
+		};
+		0C1090500002000000000001 /* Octopus */ = {
+			isa = PBXGroup;
+			children = (
+				0C1090500000000000000001 /* OctopusBody.swift */,
+				0C1090500000000000000002 /* OctopusFace.swift */,
+				0C1090500000000000000003 /* OctopusEye.swift */,
+			);
+			path = Octopus;
+			sourceTree = "<group>";
+		};
+		0C1090510002000000000001 /* Khinklear */ = {
+			isa = PBXGroup;
+			children = (
+				0C1090510000000000000001 /* KhinklearBody.swift */,
+				0C1090510000000000000002 /* KhinklearFace.swift */,
+				0C1090510000000000000003 /* KhinklEye.swift */,
+			);
+			path = Khinklear;
+			sourceTree = "<group>";
+		};
+		B01BA5EC0003000000000001 /* Bulbashik */ = {
+			isa = PBXGroup;
+			children = (
+				B01BA5EB0002000000000001 /* BulbashikBody.swift */,
+				B01BA5EB0002000000000002 /* BulbashikFace.swift */,
+				B01BA5EB0002000000000003 /* BulbEye.swift */,
+			);
+			path = Bulbashik;
+			sourceTree = "<group>";
+		};
+		B01BA5EC0003000000000002 /* Dog */ = {
+			isa = PBXGroup;
+			children = (
+				B01BA5EB0002000000000004 /* DogBody.swift */,
+				B01BA5EB0002000000000005 /* DogFace.swift */,
+				B01BA5EB0002000000000006 /* DogEye.swift */,
+			);
+			path = Dog;
+			sourceTree = "<group>";
+		};
+		B01BA5EC0003000000000003 /* Arutic */ = {
+			isa = PBXGroup;
+			children = (
+				B01BA5EB0002000000000007 /* AruticBody.swift */,
+				B01BA5EB0002000000000008 /* AruticFace.swift */,
+				B01BA5EB0002000000000009 /* AruticEye.swift */,
+			);
+			path = Arutic;
+			sourceTree = "<group>";
+		};
+		A014B5EC0003000000000001 /* Tomato */ = {
+			isa = PBXGroup;
+			children = (
+				A014B5EB0002000000000001 /* TomatoBody.swift */,
+				A014B5EB0002000000000002 /* TomatoFace.swift */,
+				A014B5EB0002000000000003 /* TomatoEye.swift */,
+			);
+			path = Tomato;
+			sourceTree = "<group>";
+		};
+		A015B5EC0003000000000001 /* Schnauzer */ = {
+			isa = PBXGroup;
+			children = (
+				A015B5EB0002000000000001 /* SchnauzerBody.swift */,
+				A015B5EB0002000000000002 /* SchnauzerFace.swift */,
+				A015B5EB0002000000000003 /* SchnauzerEye.swift */,
+				A015B5EB0002000000000004 /* SchnauzerBrow.swift */,
+			);
+			path = Schnauzer;
+			sourceTree = "<group>";
+		};
+		3F9DBE08B08536CB91414260 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E6950B8A5A79F9BA0F118A4C /* OffsetProps.swift */,
+				09EB8E45346ECDDB30C09D25 /* SVGPath.swift */,
+				B70DB185F57594572A3777A4 /* Arc.swift */,
+				3EB29D2220635E17DAC367B5 /* Cheek.swift */,
+				EB72674F5C5E4257802BAE61 /* SVGGradient.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B313B4C159B32F49A03E3A5B /* Motimate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFE11840FA33CFF013155868 /* Build configuration list for PBXNativeTarget "Motimate" */;
+			buildPhases = (
+				3C6D58A3887427780A4193DC /* Sources */,
+				94DE11F8E54C29B38FD52240 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Motimate;
+			packageProductDependencies = (
+			);
+			productName = Motimate;
+			productReference = 92FAE3A894F7324D4B300BC7 /* Motimate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C00FAD5397952309949A06B4 /* MotimateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4ABE6CA6E87E1CCB601AC87 /* Build configuration list for PBXNativeTarget "MotimateTests" */;
+			buildPhases = (
+				8981D55838DFCFE3890AB836 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0311BEB4181B29BDB053D79C /* PBXTargetDependency */,
+			);
+			name = MotimateTests;
+			packageProductDependencies = (
+			);
+			productName = MotimateTests;
+			productReference = 92EAF117670BA7388893C100 /* MotimateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3D0F244FDCFFC5EE6AE1D49 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 9B50063C0F687A650CFDA41A /* Build configuration list for PBXProject "Motimate" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 17573C3A481063F1DA70055B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E1106CD9AFEC0F7F5945319B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B313B4C159B32F49A03E3A5B /* Motimate */,
+				C00FAD5397952309949A06B4 /* MotimateTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		94DE11F8E54C29B38FD52240 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDB0422D50F4F56ECA5AB840 /* Assets.xcassets in Resources */,
+				84B36044DCEC5FF813A0F281 /* Fredoka_500Medium.ttf in Resources */,
+				6D10E4B91A5B4B7AD387AAD1 /* Fredoka_600SemiBold.ttf in Resources */,
+				B9585B5D3BA1B978B75E7718 /* Nunito_400Regular.ttf in Resources */,
+				E5C27A62E83F3CC8B47483A4 /* Nunito_700Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C6D58A3887427780A4193DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE203E2B9697343C791E8772 /* MessageSet.swift in Sources */,
+				BB198FE0253131F7FA09F463 /* Pet.swift in Sources */,
+				299F37AC32335F6AB2498A8A /* MochiMessages.swift in Sources */,
+				AC9880E9B9E257DC67490696 /* BulbashikMessages.swift in Sources */,
+				EDBBA09A483C9DB368F68FD4 /* DogMessages.swift in Sources */,
+				34CDFAB10552672F8F864BB3 /* OctopusMessages.swift in Sources */,
+				FCC3A960D211698470C68390 /* AruticMessages.swift in Sources */,
+				1D76577CCCD3900C8AA8A368 /* KhinklearMessages.swift in Sources */,
+				34B90C0D2F682649567871AE /* TomatoMessages.swift in Sources */,
+				F8CED5C7CC870963C6BB7D68 /* SchnauzerMessages.swift in Sources */,
+				40DA4D9727AB7895FBBD2F94 /* PlaceholderPetBody.swift in Sources */,
+				7E664CABDFC7476EB424C71C /* SVGGradient.swift in Sources */,
+				EB1D267E11314EA8B3D0F4EA /* RoundEye.swift in Sources */,
+				A8D22C172F964467BCDAE338 /* MochiFace.swift in Sources */,
+				83C2B235F8F54A4885436616 /* MochiBody.swift in Sources */,
+				0C1090500001000000000001 /* OctopusBody.swift in Sources */,
+				0C1090500001000000000002 /* OctopusFace.swift in Sources */,
+				0C1090500001000000000003 /* OctopusEye.swift in Sources */,
+				0C1090510001000000000001 /* KhinklearBody.swift in Sources */,
+				0C1090510001000000000002 /* KhinklearFace.swift in Sources */,
+				0C1090510001000000000003 /* KhinklEye.swift in Sources */,
+				B01BA5EA0001000000000001 /* BulbashikBody.swift in Sources */,
+				B01BA5EA0001000000000002 /* BulbashikFace.swift in Sources */,
+				B01BA5EA0001000000000003 /* BulbEye.swift in Sources */,
+				B01BA5EA0001000000000004 /* DogBody.swift in Sources */,
+				B01BA5EA0001000000000005 /* DogFace.swift in Sources */,
+				B01BA5EA0001000000000006 /* DogEye.swift in Sources */,
+				B01BA5EA0001000000000007 /* AruticBody.swift in Sources */,
+				B01BA5EA0001000000000008 /* AruticFace.swift in Sources */,
+				B01BA5EA0001000000000009 /* AruticEye.swift in Sources */,
+				A014B5EA0001000000000001 /* TomatoBody.swift in Sources */,
+				A014B5EA0001000000000002 /* TomatoFace.swift in Sources */,
+				A014B5EA0001000000000003 /* TomatoEye.swift in Sources */,
+				A015B5EA0001000000000001 /* SchnauzerBody.swift in Sources */,
+				A015B5EA0001000000000002 /* SchnauzerFace.swift in Sources */,
+				A015B5EA0001000000000003 /* SchnauzerEye.swift in Sources */,
+				A015B5EA0001000000000004 /* SchnauzerBrow.swift in Sources */,
+				E7649B84125BD6893FA9176D /* OffsetProps.swift in Sources */,
+				70493E1A4134C7FEB8FC0169 /* SVGPath.swift in Sources */,
+				D8F9DEF1A3255079A0921AB8 /* Arc.swift in Sources */,
+				36F31DBCD5AE84F32B3BBC43 /* Cheek.swift in Sources */,
+				F965DF6B09B520C7E30CA42E /* DailySteps.swift in Sources */,
+				306BF4D9600D60AE2507F993 /* Dimensions.swift in Sources */,
+				11F1BB38BB3172F51B9B6EE7 /* GameMode.swift in Sources */,
+				AFA752BCDFEA35198F8EE8A1 /* GameModeStorage.swift in Sources */,
+				F58AEDE061E480E5538D9869 /* GoalStorage.swift in Sources */,
+				A017B5EA0001000000000002 /* Glow.swift in Sources */,
+				A017B5EA0001000000000001 /* GlowMath.swift in Sources */,
+				BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */,
+				A017B5EA0001000000000003 /* Halo.swift in Sources */,
+				A016B5EA0001000000000001 /* Loop.swift in Sources */,
+				30B5A643279A63A1D3A53945 /* Mood.swift in Sources */,
+				677A95C0BCED7122F3610FDB /* MotimateApp.swift in Sources */,
+				A019B5EA0001000000000003 /* MovementCard.swift in Sources */,
+				A017B5EA0001000000000004 /* Particles.swift in Sources */,
+				A018B5EA0001000000000001 /* PetStage.swift in Sources */,
+				A019B5EA0001000000000001 /* PhoneCanvas.swift in Sources */,
+				B02E5C0C50152F835605CD15 /* PersistedStorage.swift in Sources */,
+				B960E5AEF2083E9116C99E2C /* PetStorage.swift in Sources */,
+				69E0F90A236DFFD2A7774BD4 /* ResponsiveScale.swift in Sources */,
+				DB8DCC566EDC500424002E9E /* RoundedBoxPath.swift in Sources */,
+				B7FCC9B8E97A7A07EB9D910A /* SettingsStore.swift in Sources */,
+				3D00E5E569D1E9DA270B7DA1 /* StepReader.swift in Sources */,
+				C3EE35B97E93B4A322B60523 /* StepReading.swift in Sources */,
+				9F35E55BD9D7BD5B12021A8A /* Tokens.swift in Sources */,
+				A019B5EA0001000000000002 /* TopBar.swift in Sources */,
+				A020B5EA0001000000000001 /* PetPicker.swift in Sources */,
+				A021B5EA0001000000000001 /* ModePicker.swift in Sources */,
+				A022B5EA0001000000000001 /* SettingsView.swift in Sources */,
+				92E21A4090A3113C98348574 /* UnavailableStepReader.swift in Sources */,
+				A017B5EA0001000000000005 /* Zzz.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8981D55838DFCFE3890AB836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A019B5EA0001000000000004 /* ChromeComponentsTests.swift in Sources */,
+				BABDFB62E0236A7563A47E81 /* PetRegistryTests.swift in Sources */,
+				A018B5EA0001000000000002 /* PetStageMotionTests.swift in Sources */,
+				67005F60D3591046A1B61E00 /* DailyStepsTests.swift in Sources */,
+				174A2F947ABFC803B4AC8749 /* GameModeStorageTests.swift in Sources */,
+				F533B4A40A0692B7C7071221 /* GoalStorageTests.swift in Sources */,
+				A017B5EA0001000000000006 /* GlowMathTests.swift in Sources */,
+				A016B5EA0001000000000002 /* LoopTests.swift in Sources */,
+				E0C2A216CC4ACDE6F8287806 /* MoodTests.swift in Sources */,
+				CF6C66987462F72EF34CB45D /* PetStorageTests.swift in Sources */,
+				C532220CDB70CBE3BA3A643D /* ResponsiveScaleTests.swift in Sources */,
+				8636E2C59207A780DCFA0736 /* RoundedBoxPathTests.swift in Sources */,
+				0959FB1AF93D054F6214903C /* SettingsStoreTests.swift in Sources */,
+				8AB4E7E7D03F5E19F8EB2D0F /* StepReaderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0311BEB4181B29BDB053D79C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B313B4C159B32F49A03E3A5B /* Motimate */;
+			targetProxy = C1A916D0283D863DD5619F6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		229DAC95CBE6EB3291267F74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilaglazoff.motimate.swift.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Motimate.app/Motimate";
+			};
+			name = Release;
+		};
+		65DCB09182846BF22C0B6960 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilaglazoff.motimate.swift.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Motimate.app/Motimate";
+			};
+			name = Debug;
+		};
+		7521A2E3CE487C2C54C94742 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		81F12D15F0FA07B3CBE5E49C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8F035AEE2D7C403F5665E744 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = T5KVCW8ZW4;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Motimate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilaglazoff.motimate.swift;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DF2A03A2159169574163517E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = T5KVCW8ZW4;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Motimate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilaglazoff.motimate.swift;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B50063C0F687A650CFDA41A /* Build configuration list for PBXProject "Motimate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81F12D15F0FA07B3CBE5E49C /* Debug */,
+				7521A2E3CE487C2C54C94742 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AFE11840FA33CFF013155868 /* Build configuration list for PBXNativeTarget "Motimate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF2A03A2159169574163517E /* Debug */,
+				8F035AEE2D7C403F5665E744 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E4ABE6CA6E87E1CCB601AC87 /* Build configuration list for PBXNativeTarget "MotimateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65DCB09182846BF22C0B6960 /* Debug */,
+				229DAC95CBE6EB3291267F74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F3D0F244FDCFFC5EE6AE1D49 /* Project object */;
+}

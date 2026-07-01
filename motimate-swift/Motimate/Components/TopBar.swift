@@ -1,0 +1,95 @@
+import SwiftUI
+
+func timeOfDay(hour: Int) -> String {
+    if hour < 12 {
+        return "Morning"
+    }
+
+    if hour < 18 {
+        return "Afternoon"
+    }
+
+    return "Evening"
+}
+
+func formatClock(
+    _ date: Date,
+    calendar: Calendar = .current
+) -> String {
+    let hour = calendar.component(.hour, from: date)
+    let minute = calendar.component(.minute, from: date)
+    return "\(hour):\(String(format: "%02d", minute))"
+}
+
+struct TopBar: View {
+    let mood: Mood
+    var onSettingsTap: () -> Void = {}
+
+    @State private var now = Date()
+
+    private let timer = Timer.publish(
+        every: 30,
+        on: .main,
+        in: .common
+    ).autoconnect()
+
+    var body: some View {
+        let dot = statusDot[mood]!
+        let hour = Calendar.current.component(.hour, from: now)
+
+        HStack(alignment: .center) {
+            HStack(spacing: 7) {
+                Circle()
+                    .fill(dot)
+                    .frame(width: 9, height: 9)
+                    .shadow(color: dot.opacity(0.9), radius: 4)
+
+                Text(timeOfDay(hour: hour))
+                    .font(Fonts.bodyBold(12.5))
+                    .foregroundColor(Colors.pillText)
+            }
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(Colors.pillBg)
+            .overlay(
+                Capsule()
+                    .stroke(Colors.pillBorder, lineWidth: 1)
+            )
+            .clipShape(Capsule())
+
+            Spacer()
+
+            HStack(spacing: 12) {
+                Text(formatClock(now))
+                    .font(Fonts.bodyBold(13))
+                    .foregroundColor(Colors.clock)
+
+                Button(action: onSettingsTap) {
+                    Image(systemName: "gearshape")
+                        .font(.system(size: 20, weight: .regular))
+                        .foregroundColor(Colors.clock)
+                        .frame(width: 24, height: 24)
+                }
+                .buttonStyle(.plain)
+                .contentShape(Rectangle())
+                .accessibilityLabel("Settings")
+            }
+        }
+        .onReceive(timer) { date in
+            now = date
+        }
+    }
+}
+
+#if DEBUG
+#Preview("TopBar Moods") {
+    VStack(spacing: 18) {
+        ForEach(Mood.allCases, id: \.self) { mood in
+            TopBar(mood: mood)
+                .padding(22)
+                .background(screenBackground[mood]!.colors[1])
+        }
+    }
+    .padding()
+}
+#endif

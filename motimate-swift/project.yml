@@ -1,0 +1,44 @@
+name: Motimate
+options:
+  bundleIdPrefix: com.danilaglazoff
+  deploymentTarget:
+    iOS: "15.1"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+targets:
+  Motimate:
+    type: application
+    platform: iOS
+    deploymentTarget: "15.1"
+    sources:
+      - Motimate
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.danilaglazoff.motimate.swift
+        INFOPLIST_FILE: Motimate/Info.plist
+        TARGETED_DEVICE_FAMILY: "1,2"
+        GENERATE_INFOPLIST_FILE: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+  MotimateTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "15.1"
+    sources:
+      - MotimateTests
+    dependencies:
+      - target: Motimate
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.danilaglazoff.motimate.swift.tests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  Motimate:
+    build:
+      targets:
+        Motimate: all
+    test:
+      targets:
+        - MotimateTests

@@ -1,0 +1,11 @@
+# Build artifacts
+build/
+DerivedData/
+
+# Xcode user state (the .xcodeproj itself IS tracked — it's regenerable via `xcodegen generate`)
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# macOS
+.DS_Store
