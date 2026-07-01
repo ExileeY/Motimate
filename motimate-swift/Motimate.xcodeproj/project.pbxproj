@@ -56,6 +56,9 @@
 		B01BA5EA0001000000000001 /* BulbashikBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000001 /* BulbashikBody.swift */; };
 		B01BA5EA0001000000000002 /* BulbashikFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000002 /* BulbashikFace.swift */; };
 		B01BA5EA0001000000000003 /* BulbEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000003 /* BulbEye.swift */; };
+		B01BA5EA0001000000000004 /* DogBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000004 /* DogBody.swift */; };
+		B01BA5EA0001000000000005 /* DogFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000005 /* DogFace.swift */; };
+		B01BA5EA0001000000000006 /* DogEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000006 /* DogEye.swift */; };
 		E7649B84125BD6893FA9176D /* OffsetProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6950B8A5A79F9BA0F118A4C /* OffsetProps.swift */; };
 		70493E1A4134C7FEB8FC0169 /* SVGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EB8E45346ECDDB30C09D25 /* SVGPath.swift */; };
 		D8F9DEF1A3255079A0921AB8 /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70DB185F57594572A3777A4 /* Arc.swift */; };
@@ -126,6 +129,9 @@
 		B01BA5EB0002000000000001 /* BulbashikBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikBody.swift; sourceTree = "<group>"; };
 		B01BA5EB0002000000000002 /* BulbashikFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikFace.swift; sourceTree = "<group>"; };
 		B01BA5EB0002000000000003 /* BulbEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbEye.swift; sourceTree = "<group>"; };
+		B01BA5EB0002000000000004 /* DogBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBody.swift; sourceTree = "<group>"; };
+		B01BA5EB0002000000000005 /* DogFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFace.swift; sourceTree = "<group>"; };
+		B01BA5EB0002000000000006 /* DogEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogEye.swift; sourceTree = "<group>"; };
 		E6950B8A5A79F9BA0F118A4C /* OffsetProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetProps.swift; sourceTree = "<group>"; };
 		09EB8E45346ECDDB30C09D25 /* SVGPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGPath.swift; sourceTree = "<group>"; };
 		B70DB185F57594572A3777A4 /* Arc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arc.swift; sourceTree = "<group>"; };
@@ -296,6 +302,7 @@
 				5916657554F4A31BDD84430A /* PlaceholderPetBody.swift */,
 				E497BC1F46DC40C896AD118F /* Mochi */,
 				B01BA5EC0003000000000001 /* Bulbashik */,
+				B01BA5EC0003000000000002 /* Dog */,
 				3F9DBE08B08536CB91414260 /* Shared */,
 			);
 			path = Pets;
@@ -319,6 +326,16 @@
 				B01BA5EB0002000000000003 /* BulbEye.swift */,
 			);
 			path = Bulbashik;
+			sourceTree = "<group>";
+		};
+		B01BA5EC0003000000000002 /* Dog */ = {
+			isa = PBXGroup;
+			children = (
+				B01BA5EB0002000000000004 /* DogBody.swift */,
+				B01BA5EB0002000000000005 /* DogFace.swift */,
+				B01BA5EB0002000000000006 /* DogEye.swift */,
+			);
+			path = Dog;
 			sourceTree = "<group>";
 		};
 		3F9DBE08B08536CB91414260 /* Shared */ = {
@@ -439,6 +456,9 @@
 				B01BA5EA0001000000000001 /* BulbashikBody.swift in Sources */,
 				B01BA5EA0001000000000002 /* BulbashikFace.swift in Sources */,
 				B01BA5EA0001000000000003 /* BulbEye.swift in Sources */,
+				B01BA5EA0001000000000004 /* DogBody.swift in Sources */,
+				B01BA5EA0001000000000005 /* DogFace.swift in Sources */,
+				B01BA5EA0001000000000006 /* DogEye.swift in Sources */,
 				E7649B84125BD6893FA9176D /* OffsetProps.swift in Sources */,
 				70493E1A4134C7FEB8FC0169 /* SVGPath.swift in Sources */,
 				D8F9DEF1A3255079A0921AB8 /* Arc.swift in Sources */,
