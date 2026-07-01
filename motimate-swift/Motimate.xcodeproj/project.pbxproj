@@ -53,6 +53,9 @@
 		EB1D267E11314EA8B3D0F4EA /* RoundEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF1EBA93A0947DA914566FE /* RoundEye.swift */; };
 		A8D22C172F964467BCDAE338 /* MochiFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7514A79C4546F2B1982CE4 /* MochiFace.swift */; };
 		83C2B235F8F54A4885436616 /* MochiBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179C0D6BDFFB4495BBB31BE5 /* MochiBody.swift */; };
+		0C1090500001000000000001 /* OctopusBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1090500000000000000001 /* OctopusBody.swift */; };
+		0C1090500001000000000002 /* OctopusFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1090500000000000000002 /* OctopusFace.swift */; };
+		0C1090500001000000000003 /* OctopusEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1090500000000000000003 /* OctopusEye.swift */; };
 		B01BA5EA0001000000000001 /* BulbashikBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000001 /* BulbashikBody.swift */; };
 		B01BA5EA0001000000000002 /* BulbashikFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000002 /* BulbashikFace.swift */; };
 		B01BA5EA0001000000000003 /* BulbEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000003 /* BulbEye.swift */; };
@@ -126,6 +129,9 @@
 		DFF1EBA93A0947DA914566FE /* RoundEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundEye.swift; sourceTree = "<group>"; };
 		8A7514A79C4546F2B1982CE4 /* MochiFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MochiFace.swift; sourceTree = "<group>"; };
 		179C0D6BDFFB4495BBB31BE5 /* MochiBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MochiBody.swift; sourceTree = "<group>"; };
+		0C1090500000000000000001 /* OctopusBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusBody.swift; sourceTree = "<group>"; };
+		0C1090500000000000000002 /* OctopusFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusFace.swift; sourceTree = "<group>"; };
+		0C1090500000000000000003 /* OctopusEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusEye.swift; sourceTree = "<group>"; };
 		B01BA5EB0002000000000001 /* BulbashikBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikBody.swift; sourceTree = "<group>"; };
 		B01BA5EB0002000000000002 /* BulbashikFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikFace.swift; sourceTree = "<group>"; };
 		B01BA5EB0002000000000003 /* BulbEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbEye.swift; sourceTree = "<group>"; };
@@ -303,6 +309,7 @@
 				E497BC1F46DC40C896AD118F /* Mochi */,
 				B01BA5EC0003000000000001 /* Bulbashik */,
 				B01BA5EC0003000000000002 /* Dog */,
+				0C1090500002000000000001 /* Octopus */,
 				3F9DBE08B08536CB91414260 /* Shared */,
 			);
 			path = Pets;
@@ -316,6 +323,16 @@
 				DFF1EBA93A0947DA914566FE /* RoundEye.swift */,
 			);
 			path = Mochi;
+			sourceTree = "<group>";
+		};
+		0C1090500002000000000001 /* Octopus */ = {
+			isa = PBXGroup;
+			children = (
+				0C1090500000000000000001 /* OctopusBody.swift */,
+				0C1090500000000000000002 /* OctopusFace.swift */,
+				0C1090500000000000000003 /* OctopusEye.swift */,
+			);
+			path = Octopus;
 			sourceTree = "<group>";
 		};
 		B01BA5EC0003000000000001 /* Bulbashik */ = {
@@ -453,6 +470,9 @@
 				EB1D267E11314EA8B3D0F4EA /* RoundEye.swift in Sources */,
 				A8D22C172F964467BCDAE338 /* MochiFace.swift in Sources */,
 				83C2B235F8F54A4885436616 /* MochiBody.swift in Sources */,
+				0C1090500001000000000001 /* OctopusBody.swift in Sources */,
+				0C1090500001000000000002 /* OctopusFace.swift in Sources */,
+				0C1090500001000000000003 /* OctopusEye.swift in Sources */,
 				B01BA5EA0001000000000001 /* BulbashikBody.swift in Sources */,
 				B01BA5EA0001000000000002 /* BulbashikFace.swift in Sources */,
 				B01BA5EA0001000000000003 /* BulbEye.swift in Sources */,
