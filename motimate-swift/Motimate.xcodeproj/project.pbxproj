@@ -56,6 +56,9 @@
 		0C1090500001000000000001 /* OctopusBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1090500000000000000001 /* OctopusBody.swift */; };
 		0C1090500001000000000002 /* OctopusFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1090500000000000000002 /* OctopusFace.swift */; };
 		0C1090500001000000000003 /* OctopusEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1090500000000000000003 /* OctopusEye.swift */; };
+		0C1090510001000000000001 /* KhinklearBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1090510000000000000001 /* KhinklearBody.swift */; };
+		0C1090510001000000000002 /* KhinklearFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1090510000000000000002 /* KhinklearFace.swift */; };
+		0C1090510001000000000003 /* KhinklEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1090510000000000000003 /* KhinklEye.swift */; };
 		B01BA5EA0001000000000001 /* BulbashikBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000001 /* BulbashikBody.swift */; };
 		B01BA5EA0001000000000002 /* BulbashikFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000002 /* BulbashikFace.swift */; };
 		B01BA5EA0001000000000003 /* BulbEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000003 /* BulbEye.swift */; };
@@ -135,6 +138,9 @@
 		0C1090500000000000000001 /* OctopusBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusBody.swift; sourceTree = "<group>"; };
 		0C1090500000000000000002 /* OctopusFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusFace.swift; sourceTree = "<group>"; };
 		0C1090500000000000000003 /* OctopusEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusEye.swift; sourceTree = "<group>"; };
+		0C1090510000000000000001 /* KhinklearBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhinklearBody.swift; sourceTree = "<group>"; };
+		0C1090510000000000000002 /* KhinklearFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhinklearFace.swift; sourceTree = "<group>"; };
+		0C1090510000000000000003 /* KhinklEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhinklEye.swift; sourceTree = "<group>"; };
 		B01BA5EB0002000000000001 /* BulbashikBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikBody.swift; sourceTree = "<group>"; };
 		B01BA5EB0002000000000002 /* BulbashikFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikFace.swift; sourceTree = "<group>"; };
 		B01BA5EB0002000000000003 /* BulbEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbEye.swift; sourceTree = "<group>"; };
@@ -317,6 +323,7 @@
 				B01BA5EC0003000000000002 /* Dog */,
 				B01BA5EC0003000000000003 /* Arutic */,
 				0C1090500002000000000001 /* Octopus */,
+				0C1090510002000000000001 /* Khinklear */,
 				3F9DBE08B08536CB91414260 /* Shared */,
 			);
 			path = Pets;
@@ -340,6 +347,16 @@
 				0C1090500000000000000003 /* OctopusEye.swift */,
 			);
 			path = Octopus;
+			sourceTree = "<group>";
+		};
+		0C1090510002000000000001 /* Khinklear */ = {
+			isa = PBXGroup;
+			children = (
+				0C1090510000000000000001 /* KhinklearBody.swift */,
+				0C1090510000000000000002 /* KhinklearFace.swift */,
+				0C1090510000000000000003 /* KhinklEye.swift */,
+			);
+			path = Khinklear;
 			sourceTree = "<group>";
 		};
 		B01BA5EC0003000000000001 /* Bulbashik */ = {
@@ -490,6 +507,9 @@
 				0C1090500001000000000001 /* OctopusBody.swift in Sources */,
 				0C1090500001000000000002 /* OctopusFace.swift in Sources */,
 				0C1090500001000000000003 /* OctopusEye.swift in Sources */,
+				0C1090510001000000000001 /* KhinklearBody.swift in Sources */,
+				0C1090510001000000000002 /* KhinklearFace.swift in Sources */,
+				0C1090510001000000000003 /* KhinklEye.swift in Sources */,
 				B01BA5EA0001000000000001 /* BulbashikBody.swift in Sources */,
 				B01BA5EA0001000000000002 /* BulbashikFace.swift in Sources */,
 				B01BA5EA0001000000000003 /* BulbEye.swift in Sources */,

@@ -66,8 +66,7 @@ let PETS: [PetId: PetDefinition] = [
     .khinklear: PetDefinition(
         name: "Khinklear",
         body: { mood, size in AnyView(
-            PlaceholderPetBody(
-                name: "Khinklear",
+            KhinklearBody(
                 mood: mood,
                 size: size)
         )},
