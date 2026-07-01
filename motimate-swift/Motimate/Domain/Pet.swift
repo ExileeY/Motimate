@@ -30,8 +30,7 @@ let PETS: [PetId: PetDefinition] = [
     .bulbashik: PetDefinition(
         name: "Bulbashik",
         body: { (mood, size) in AnyView(
-            PlaceholderPetBody(
-                name: "Bulbashik",
+            BulbashikBody(
                 mood: mood,
                 size: size)
         )},
