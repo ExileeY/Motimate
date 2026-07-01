@@ -75,8 +75,7 @@ let PETS: [PetId: PetDefinition] = [
     .tomato: PetDefinition(
         name: "Tomato",
         body: { mood, size in AnyView(
-            PlaceholderPetBody(
-                name: "Tomato",
+            TomatoBody(
                 mood: mood,
                 size: size)
         )},

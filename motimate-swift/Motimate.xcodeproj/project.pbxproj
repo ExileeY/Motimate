@@ -68,6 +68,9 @@
 		B01BA5EA0001000000000007 /* AruticBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000007 /* AruticBody.swift */; };
 		B01BA5EA0001000000000008 /* AruticFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000008 /* AruticFace.swift */; };
 		B01BA5EA0001000000000009 /* AruticEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01BA5EB0002000000000009 /* AruticEye.swift */; };
+		A014B5EA0001000000000001 /* TomatoBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014B5EB0002000000000001 /* TomatoBody.swift */; };
+		A014B5EA0001000000000002 /* TomatoFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014B5EB0002000000000002 /* TomatoFace.swift */; };
+		A014B5EA0001000000000003 /* TomatoEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014B5EB0002000000000003 /* TomatoEye.swift */; };
 		E7649B84125BD6893FA9176D /* OffsetProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6950B8A5A79F9BA0F118A4C /* OffsetProps.swift */; };
 		70493E1A4134C7FEB8FC0169 /* SVGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EB8E45346ECDDB30C09D25 /* SVGPath.swift */; };
 		D8F9DEF1A3255079A0921AB8 /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70DB185F57594572A3777A4 /* Arc.swift */; };
@@ -150,6 +153,9 @@
 		B01BA5EB0002000000000007 /* AruticBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AruticBody.swift; sourceTree = "<group>"; };
 		B01BA5EB0002000000000008 /* AruticFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AruticFace.swift; sourceTree = "<group>"; };
 		B01BA5EB0002000000000009 /* AruticEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AruticEye.swift; sourceTree = "<group>"; };
+		A014B5EB0002000000000001 /* TomatoBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoBody.swift; sourceTree = "<group>"; };
+		A014B5EB0002000000000002 /* TomatoFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoFace.swift; sourceTree = "<group>"; };
+		A014B5EB0002000000000003 /* TomatoEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoEye.swift; sourceTree = "<group>"; };
 		E6950B8A5A79F9BA0F118A4C /* OffsetProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetProps.swift; sourceTree = "<group>"; };
 		09EB8E45346ECDDB30C09D25 /* SVGPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGPath.swift; sourceTree = "<group>"; };
 		B70DB185F57594572A3777A4 /* Arc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arc.swift; sourceTree = "<group>"; };
@@ -324,6 +330,7 @@
 				B01BA5EC0003000000000003 /* Arutic */,
 				0C1090500002000000000001 /* Octopus */,
 				0C1090510002000000000001 /* Khinklear */,
+				A014B5EC0003000000000001 /* Tomato */,
 				3F9DBE08B08536CB91414260 /* Shared */,
 			);
 			path = Pets;
@@ -387,6 +394,16 @@
 				B01BA5EB0002000000000009 /* AruticEye.swift */,
 			);
 			path = Arutic;
+			sourceTree = "<group>";
+		};
+		A014B5EC0003000000000001 /* Tomato */ = {
+			isa = PBXGroup;
+			children = (
+				A014B5EB0002000000000001 /* TomatoBody.swift */,
+				A014B5EB0002000000000002 /* TomatoFace.swift */,
+				A014B5EB0002000000000003 /* TomatoEye.swift */,
+			);
+			path = Tomato;
 			sourceTree = "<group>";
 		};
 		3F9DBE08B08536CB91414260 /* Shared */ = {
@@ -519,6 +536,9 @@
 				B01BA5EA0001000000000007 /* AruticBody.swift in Sources */,
 				B01BA5EA0001000000000008 /* AruticFace.swift in Sources */,
 				B01BA5EA0001000000000009 /* AruticEye.swift in Sources */,
+				A014B5EA0001000000000001 /* TomatoBody.swift in Sources */,
+				A014B5EA0001000000000002 /* TomatoFace.swift in Sources */,
+				A014B5EA0001000000000003 /* TomatoEye.swift in Sources */,
 				E7649B84125BD6893FA9176D /* OffsetProps.swift in Sources */,
 				70493E1A4134C7FEB8FC0169 /* SVGPath.swift in Sources */,
 				D8F9DEF1A3255079A0921AB8 /* Arc.swift in Sources */,
