@@ -44,12 +44,29 @@ func radialGradient(
     )
 }
 
-/// Port of a top→bottom SVG `<LinearGradient x1=0 y1=0 x2=0 y2=1>` (the only
-/// linear direction the pets use — vertical). Maps straight to `.top`→`.bottom`.
-func verticalLinearGradient(_ stops: [GStop]) -> LinearGradient {
+/// Port of an SVG `<LinearGradient x1 y1 x2 y2>`, where coordinates are
+/// fractions (SVG percents ÷ 100).
+func linearGradient(
+    _ stops: [GStop],
+    x1: CGFloat,
+    y1: CGFloat,
+    x2: CGFloat,
+    y2: CGFloat
+) -> LinearGradient {
     LinearGradient(
         gradient: gradient(stops),
-        startPoint: .top,
-        endPoint: .bottom
+        startPoint: UnitPoint(x: x1, y: y1),
+        endPoint: UnitPoint(x: x2, y: y2)
+    )
+}
+
+/// Port of a top→bottom SVG `<LinearGradient x1=0 y1=0 x2=0 y2=1>`.
+func verticalLinearGradient(_ stops: [GStop]) -> LinearGradient {
+    linearGradient(
+        stops,
+        x1: 0,
+        y1: 0,
+        x2: 0,
+        y2: 1
     )
 }
