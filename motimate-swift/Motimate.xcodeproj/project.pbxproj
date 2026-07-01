@@ -82,6 +82,12 @@
 		BABDFB62E0236A7563A47E81 /* PetRegistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7179112C9D9DE48647DAD63C /* PetRegistryTests.swift */; };
 		A016B5EA0001000000000001 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A016B5EB0002000000000001 /* Loop.swift */; };
 		A016B5EA0001000000000002 /* LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A016B5EB0002000000000002 /* LoopTests.swift */; };
+		A017B5EA0001000000000001 /* GlowMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000001 /* GlowMath.swift */; };
+		A017B5EA0001000000000002 /* Glow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000002 /* Glow.swift */; };
+		A017B5EA0001000000000003 /* Halo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000003 /* Halo.swift */; };
+		A017B5EA0001000000000004 /* Particles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000004 /* Particles.swift */; };
+		A017B5EA0001000000000005 /* Zzz.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000005 /* Zzz.swift */; };
+		A017B5EA0001000000000006 /* GlowMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000006 /* GlowMathTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +179,12 @@
 		7179112C9D9DE48647DAD63C /* PetRegistryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRegistryTests.swift; sourceTree = "<group>"; };
 		A016B5EB0002000000000001 /* Loop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
 		A016B5EB0002000000000002 /* LoopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopTests.swift; sourceTree = "<group>"; };
+		A017B5EB0002000000000001 /* GlowMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowMath.swift; sourceTree = "<group>"; };
+		A017B5EB0002000000000002 /* Glow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glow.swift; sourceTree = "<group>"; };
+		A017B5EB0002000000000003 /* Halo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Halo.swift; sourceTree = "<group>"; };
+		A017B5EB0002000000000004 /* Particles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particles.swift; sourceTree = "<group>"; };
+		A017B5EB0002000000000005 /* Zzz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zzz.swift; sourceTree = "<group>"; };
+		A017B5EB0002000000000006 /* GlowMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowMathTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -246,6 +258,7 @@
 				5963D8391D7FF2B1ACF4CAA9 /* DailyStepsTests.swift */,
 				855E683B5F6CAEB565534221 /* GameModeStorageTests.swift */,
 				CE68437C77B6F7B00EA37D5C /* GoalStorageTests.swift */,
+				A017B5EB0002000000000006 /* GlowMathTests.swift */,
 				A016B5EB0002000000000002 /* LoopTests.swift */,
 				D7CFB464CEE620159654FC7B /* MoodTests.swift */,
 				25CF40AC0DDE802444321A46 /* PetStorageTests.swift */,
@@ -329,9 +342,22 @@
 		54FE5E34995DE10F87DF7B85 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A017B5EC0003000000000001 /* Glow */,
 				E1FA8B36A1618B47400D96C8 /* Pets */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		A017B5EC0003000000000001 /* Glow */ = {
+			isa = PBXGroup;
+			children = (
+				A017B5EB0002000000000002 /* Glow.swift */,
+				A017B5EB0002000000000001 /* GlowMath.swift */,
+				A017B5EB0002000000000003 /* Halo.swift */,
+				A017B5EB0002000000000004 /* Particles.swift */,
+				A017B5EB0002000000000005 /* Zzz.swift */,
+			);
+			path = Glow;
 			sourceTree = "<group>";
 		};
 		E1FA8B36A1618B47400D96C8 /* Pets */ = {
@@ -578,10 +604,14 @@
 				11F1BB38BB3172F51B9B6EE7 /* GameMode.swift in Sources */,
 				AFA752BCDFEA35198F8EE8A1 /* GameModeStorage.swift in Sources */,
 				F58AEDE061E480E5538D9869 /* GoalStorage.swift in Sources */,
+				A017B5EA0001000000000002 /* Glow.swift in Sources */,
+				A017B5EA0001000000000001 /* GlowMath.swift in Sources */,
 				BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */,
+				A017B5EA0001000000000003 /* Halo.swift in Sources */,
 				A016B5EA0001000000000001 /* Loop.swift in Sources */,
 				30B5A643279A63A1D3A53945 /* Mood.swift in Sources */,
 				677A95C0BCED7122F3610FDB /* MotimateApp.swift in Sources */,
+				A017B5EA0001000000000004 /* Particles.swift in Sources */,
 				B02E5C0C50152F835605CD15 /* PersistedStorage.swift in Sources */,
 				B960E5AEF2083E9116C99E2C /* PetStorage.swift in Sources */,
 				69E0F90A236DFFD2A7774BD4 /* ResponsiveScale.swift in Sources */,
@@ -591,6 +621,7 @@
 				C3EE35B97E93B4A322B60523 /* StepReading.swift in Sources */,
 				9F35E55BD9D7BD5B12021A8A /* Tokens.swift in Sources */,
 				92E21A4090A3113C98348574 /* UnavailableStepReader.swift in Sources */,
+				A017B5EA0001000000000005 /* Zzz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +633,7 @@
 				67005F60D3591046A1B61E00 /* DailyStepsTests.swift in Sources */,
 				174A2F947ABFC803B4AC8749 /* GameModeStorageTests.swift in Sources */,
 				F533B4A40A0692B7C7071221 /* GoalStorageTests.swift in Sources */,
+				A017B5EA0001000000000006 /* GlowMathTests.swift in Sources */,
 				A016B5EA0001000000000002 /* LoopTests.swift in Sources */,
 				E0C2A216CC4ACDE6F8287806 /* MoodTests.swift in Sources */,
 				CF6C66987462F72EF34CB45D /* PetStorageTests.swift in Sources */,
