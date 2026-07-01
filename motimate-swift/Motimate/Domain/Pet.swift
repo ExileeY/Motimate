@@ -57,8 +57,7 @@ let PETS: [PetId: PetDefinition] = [
     .arutic: PetDefinition(
         name: "Arutic",
         body: { mood, size in AnyView(
-            PlaceholderPetBody(
-                name: "Arutic",
+            AruticBody(
                 mood: mood,
                 size: size)
         )},
