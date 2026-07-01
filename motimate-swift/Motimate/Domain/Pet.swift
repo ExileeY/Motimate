@@ -21,8 +21,7 @@ let PETS: [PetId: PetDefinition] = [
     .mochi: PetDefinition(
         name: "Mochi",
         body: { (mood, size) in AnyView(
-            PlaceholderPetBody(
-                name: "Mochi",
+            MochiBody(
                 mood: mood,
                 size: size)
         )},
