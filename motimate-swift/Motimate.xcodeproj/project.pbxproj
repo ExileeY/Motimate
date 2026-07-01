@@ -80,6 +80,8 @@
 		D8F9DEF1A3255079A0921AB8 /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70DB185F57594572A3777A4 /* Arc.swift */; };
 		36F31DBCD5AE84F32B3BBC43 /* Cheek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB29D2220635E17DAC367B5 /* Cheek.swift */; };
 		BABDFB62E0236A7563A47E81 /* PetRegistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7179112C9D9DE48647DAD63C /* PetRegistryTests.swift */; };
+		A016B5EA0001000000000001 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = A016B5EB0002000000000001 /* Loop.swift */; };
+		A016B5EA0001000000000002 /* LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A016B5EB0002000000000002 /* LoopTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +171,8 @@
 		B70DB185F57594572A3777A4 /* Arc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arc.swift; sourceTree = "<group>"; };
 		3EB29D2220635E17DAC367B5 /* Cheek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cheek.swift; sourceTree = "<group>"; };
 		7179112C9D9DE48647DAD63C /* PetRegistryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRegistryTests.swift; sourceTree = "<group>"; };
+		A016B5EB0002000000000001 /* Loop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
+		A016B5EB0002000000000002 /* LoopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -195,6 +199,7 @@
 		2FC9B7A239003788E804E50A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A016B5EB0002000000000001 /* Loop.swift */,
 				54C30F54FF56007EE55DB842 /* ResponsiveScale.swift */,
 				AAF28A4FEB35C882FCC6D042 /* RoundedBoxPath.swift */,
 			);
@@ -241,6 +246,7 @@
 				5963D8391D7FF2B1ACF4CAA9 /* DailyStepsTests.swift */,
 				855E683B5F6CAEB565534221 /* GameModeStorageTests.swift */,
 				CE68437C77B6F7B00EA37D5C /* GoalStorageTests.swift */,
+				A016B5EB0002000000000002 /* LoopTests.swift */,
 				D7CFB464CEE620159654FC7B /* MoodTests.swift */,
 				25CF40AC0DDE802444321A46 /* PetStorageTests.swift */,
 				C64EDBD66987A9216CFBC195 /* ResponsiveScaleTests.swift */,
@@ -573,6 +579,7 @@
 				AFA752BCDFEA35198F8EE8A1 /* GameModeStorage.swift in Sources */,
 				F58AEDE061E480E5538D9869 /* GoalStorage.swift in Sources */,
 				BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */,
+				A016B5EA0001000000000001 /* Loop.swift in Sources */,
 				30B5A643279A63A1D3A53945 /* Mood.swift in Sources */,
 				677A95C0BCED7122F3610FDB /* MotimateApp.swift in Sources */,
 				B02E5C0C50152F835605CD15 /* PersistedStorage.swift in Sources */,
@@ -595,6 +602,7 @@
 				67005F60D3591046A1B61E00 /* DailyStepsTests.swift in Sources */,
 				174A2F947ABFC803B4AC8749 /* GameModeStorageTests.swift in Sources */,
 				F533B4A40A0692B7C7071221 /* GoalStorageTests.swift in Sources */,
+				A016B5EA0001000000000002 /* LoopTests.swift in Sources */,
 				E0C2A216CC4ACDE6F8287806 /* MoodTests.swift in Sources */,
 				CF6C66987462F72EF34CB45D /* PetStorageTests.swift in Sources */,
 				C532220CDB70CBE3BA3A643D /* ResponsiveScaleTests.swift in Sources */,
