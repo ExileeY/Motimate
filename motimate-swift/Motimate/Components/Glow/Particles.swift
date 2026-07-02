@@ -16,8 +16,8 @@ private let particlePalette = [
 private let particleRadii: [CGFloat] = [6, 7.5, 9]
 
 private struct ParticlePairConfig {
-    let dx: CGFloat
-    let y: CGFloat
+    let dxFraction: CGFloat
+    let yFraction: CGFloat
     let leftDurationMs: Double
     let leftDelayMs: Double
     let rightDurationMs: Double
@@ -26,64 +26,64 @@ private struct ParticlePairConfig {
 
 private let particlePairConfigs: [ParticlePairConfig] = [
     ParticlePairConfig(
-        dx: 118,
-        y: 96,
+        dxFraction: 0.303,
+        yFraction: 0.12,
         leftDurationMs: 3_400,
         leftDelayMs: 0,
         rightDurationMs: 4_400,
         rightDelayMs: 2_600
     ),
     ParticlePairConfig(
-        dx: 70,
-        y: 168,
+        dxFraction: 0.179,
+        yFraction: 0.21,
         leftDurationMs: 3_800,
         leftDelayMs: 1_800,
         rightDurationMs: 4_000,
         rightDelayMs: 900
     ),
     ParticlePairConfig(
-        dx: 150,
-        y: 244,
+        dxFraction: 0.385,
+        yFraction: 0.3,
         leftDurationMs: 4_200,
         leftDelayMs: 3_100,
         rightDurationMs: 3_600,
         rightDelayMs: 1_400
     ),
     ParticlePairConfig(
-        dx: 44,
-        y: 56,
+        dxFraction: 0.113,
+        yFraction: 0.07,
         leftDurationMs: 4_000,
         leftDelayMs: 2_200,
         rightDurationMs: 3_500,
         rightDelayMs: 700
     ),
     ParticlePairConfig(
-        dx: 0,
-        y: 320,
+        dxFraction: 0,
+        yFraction: 0.39,
         leftDurationMs: 4_400,
         leftDelayMs: 1_200,
         rightDurationMs: 0,
         rightDelayMs: 0
     ),
     ParticlePairConfig(
-        dx: 96,
-        y: 392,
+        dxFraction: 0.246,
+        yFraction: 0.48,
         leftDurationMs: 3_900,
         leftDelayMs: 2_400,
         rightDurationMs: 4_300,
         rightDelayMs: 600
     ),
     ParticlePairConfig(
-        dx: 132,
-        y: 468,
+        dxFraction: 0.338,
+        yFraction: 0.58,
         leftDurationMs: 4_100,
         leftDelayMs: 800,
         rightDurationMs: 3_700,
         rightDelayMs: 2_900
     ),
     ParticlePairConfig(
-        dx: 58,
-        y: 544,
+        dxFraction: 0.149,
+        yFraction: 0.67,
         leftDurationMs: 4_500,
         leftDelayMs: 1_600,
         rightDurationMs: 3_300,
@@ -118,8 +118,7 @@ struct BackgroundParticles: View {
                     radius: spec.radius,
                     color: spec.color,
                     durationMs: spec.durationMs,
-                    delayMs: spec.delayMs,
-                    stageScale: 1
+                    delayMs: spec.delayMs
                 )
             }
         }
@@ -134,11 +133,13 @@ struct BackgroundParticles: View {
         for config in particlePairConfigs {
             let color = particlePalette.randomElement()!
             let radius = particleRadii.randomElement()!
+            let dx = config.dxFraction * area.width
+            let y = config.yFraction * area.height
 
             specs.append(
                 BackgroundParticleSpec(
                     id: specs.count,
-                    position: CGPoint(x: centerX - config.dx, y: config.y),
+                    position: CGPoint(x: centerX - dx, y: y),
                     radius: radius,
                     color: color,
                     durationMs: config.leftDurationMs,
@@ -146,12 +147,12 @@ struct BackgroundParticles: View {
                 )
             )
 
-            guard config.dx > 0 else { continue }
+            guard config.dxFraction > 0 else { continue }
 
             specs.append(
                 BackgroundParticleSpec(
                     id: specs.count,
-                    position: CGPoint(x: centerX + config.dx, y: config.y),
+                    position: CGPoint(x: centerX + dx, y: y),
                     radius: radius,
                     color: color,
                     durationMs: config.rightDurationMs,
@@ -170,13 +171,8 @@ private struct Particle: View {
     let color: Color
     let durationMs: Double
     let delayMs: Double
-    let stageScale: CGFloat
 
     var body: some View {
-        let centerX = center.x * stageScale
-        let centerY = center.y * stageScale
-        let radius = radius * stageScale
-
         RiseLoop(
             durationMs: durationMs,
             delayMs: delayMs
@@ -198,9 +194,9 @@ private struct Particle: View {
             )
             let transform = GlowMath.calcTransform(
                 scale: scale,
-                cx: centerX,
-                cy: centerY,
-                ty: translateY * stageScale
+                cx: center.x,
+                cy: center.y,
+                ty: translateY
             )
 
             RoundedRectangle(cornerRadius: radius * 0.4)
