@@ -1,7 +1,12 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-#
-# Xcode build artifacts and user state are ignored in motimate-swift/.gitignore.
-# This root file only covers repo-wide concerns.
+
+# Xcode build artifacts and user state
+# (the .xcodeproj itself IS tracked — it's regenerable via `xcodegen generate`)
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
 
 # Signing secrets — never commit
 *.jks
