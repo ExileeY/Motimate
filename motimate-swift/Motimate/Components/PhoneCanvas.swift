@@ -25,6 +25,9 @@ struct PhoneCanvas<Content: View>: View {
             )
             .ignoresSafeArea()
 
+            BackgroundEmitters(mood: mood)
+                .ignoresSafeArea()
+
             content
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding(.horizontal, 22)
