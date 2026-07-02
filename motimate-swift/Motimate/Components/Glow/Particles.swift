@@ -8,83 +8,174 @@ private enum ParticleMotion {
     static let fadeIn: CGFloat = 0.28
 }
 
-private struct ParticleSpec: Identifiable {
+private let particlePalette = [
+    Color(hex: "#F4A38C"),
+    Color(hex: "#EF9A8E"),
+    Color(hex: "#F6C07A"),
+]
+private let particleRadii: [CGFloat] = [6, 7.5, 9]
+
+private struct ParticlePairConfig {
+    let dxFraction: CGFloat
+    let yFraction: CGFloat
+    let leftDurationMs: Double
+    let leftDelayMs: Double
+    let rightDurationMs: Double
+    let rightDelayMs: Double
+}
+
+private let particlePairConfigs: [ParticlePairConfig] = [
+    ParticlePairConfig(
+        dxFraction: 0.303,
+        yFraction: 0.12,
+        leftDurationMs: 3_400,
+        leftDelayMs: 0,
+        rightDurationMs: 4_400,
+        rightDelayMs: 2_600
+    ),
+    ParticlePairConfig(
+        dxFraction: 0.179,
+        yFraction: 0.21,
+        leftDurationMs: 3_800,
+        leftDelayMs: 1_800,
+        rightDurationMs: 4_000,
+        rightDelayMs: 900
+    ),
+    ParticlePairConfig(
+        dxFraction: 0.385,
+        yFraction: 0.3,
+        leftDurationMs: 4_200,
+        leftDelayMs: 3_100,
+        rightDurationMs: 3_600,
+        rightDelayMs: 1_400
+    ),
+    ParticlePairConfig(
+        dxFraction: 0.113,
+        yFraction: 0.07,
+        leftDurationMs: 4_000,
+        leftDelayMs: 2_200,
+        rightDurationMs: 3_500,
+        rightDelayMs: 700
+    ),
+    ParticlePairConfig(
+        dxFraction: 0,
+        yFraction: 0.39,
+        leftDurationMs: 4_400,
+        leftDelayMs: 1_200,
+        rightDurationMs: 0,
+        rightDelayMs: 0
+    ),
+    ParticlePairConfig(
+        dxFraction: 0.246,
+        yFraction: 0.48,
+        leftDurationMs: 3_900,
+        leftDelayMs: 2_400,
+        rightDurationMs: 4_300,
+        rightDelayMs: 600
+    ),
+    ParticlePairConfig(
+        dxFraction: 0.338,
+        yFraction: 0.58,
+        leftDurationMs: 4_100,
+        leftDelayMs: 800,
+        rightDurationMs: 3_700,
+        rightDelayMs: 2_900
+    ),
+    ParticlePairConfig(
+        dxFraction: 0.149,
+        yFraction: 0.67,
+        leftDurationMs: 4_500,
+        leftDelayMs: 1_600,
+        rightDurationMs: 3_300,
+        rightDelayMs: 3_400
+    ),
+]
+
+private struct BackgroundParticleSpec: Identifiable {
     let id: Int
-    let x: CGFloat
-    let y: CGFloat
+    let position: CGPoint
     let radius: CGFloat
     let color: Color
     let durationMs: Double
     let delayMs: Double
 }
 
-private let particleSpecs = [
-    ParticleSpec(
-        id: 0,
-        x: BOX_CENTER - 70,
-        y: 30,
-        radius: 9,
-        color: Color(hex: "#F4A38C"),
-        durationMs: 3_400,
-        delayMs: 0
-    ),
-    ParticleSpec(
-        id: 1,
-        x: BOX_CENTER + 70,
-        y: 30,
-        radius: 9,
-        color: Color(hex: "#F4A38C"),
-        durationMs: 4_400,
-        delayMs: 2_600
-    ),
-    ParticleSpec(
-        id: 2,
-        x: BOX_CENTER - 34,
-        y: 10,
-        radius: 6,
-        color: Color(hex: "#EF9A8E"),
-        durationMs: 3_800,
-        delayMs: 1_800
-    ),
-    ParticleSpec(
-        id: 3,
-        x: BOX_CENTER + 34,
-        y: 10,
-        radius: 6,
-        color: Color(hex: "#F6C07A"),
-        durationMs: 4_000,
-        delayMs: 900
-    ),
-]
+struct BackgroundParticles: View {
+    let area: CGSize
 
-struct Particles: View {
-    let size: CGFloat
+    private let specs: [BackgroundParticleSpec]
+
+    init(area: CGSize) {
+        self.area = area
+        self.specs = BackgroundParticles.makeSpecs(area: area)
+    }
 
     var body: some View {
         ZStack {
-            ForEach(particleSpecs) { spec in
+            ForEach(specs) { spec in
                 Particle(
-                    spec: spec,
-                    stageScale: size / BOX_SIZE
+                    center: spec.position,
+                    radius: spec.radius,
+                    color: spec.color,
+                    durationMs: spec.durationMs,
+                    delayMs: spec.delayMs
                 )
             }
         }
-        .frame(width: size, height: size)
+        .frame(width: area.width, height: area.height)
+    }
+
+    private static func makeSpecs(area: CGSize) -> [BackgroundParticleSpec] {
+        let centerX = area.width / 2
+
+        var specs: [BackgroundParticleSpec] = []
+
+        for config in particlePairConfigs {
+            let color = particlePalette.randomElement()!
+            let radius = particleRadii.randomElement()!
+            let dx = config.dxFraction * area.width
+            let y = config.yFraction * area.height
+
+            specs.append(
+                BackgroundParticleSpec(
+                    id: specs.count,
+                    position: CGPoint(x: centerX - dx, y: y),
+                    radius: radius,
+                    color: color,
+                    durationMs: config.leftDurationMs,
+                    delayMs: config.leftDelayMs
+                )
+            )
+
+            guard config.dxFraction > 0 else { continue }
+
+            specs.append(
+                BackgroundParticleSpec(
+                    id: specs.count,
+                    position: CGPoint(x: centerX + dx, y: y),
+                    radius: radius,
+                    color: color,
+                    durationMs: config.rightDurationMs,
+                    delayMs: config.rightDelayMs
+                )
+            )
+        }
+
+        return specs
     }
 }
 
 private struct Particle: View {
-    let spec: ParticleSpec
-    let stageScale: CGFloat
+    let center: CGPoint
+    let radius: CGFloat
+    let color: Color
+    let durationMs: Double
+    let delayMs: Double
 
     var body: some View {
-        let centerX = spec.x * stageScale
-        let centerY = spec.y * stageScale
-        let radius = spec.radius * stageScale
-
         RiseLoop(
-            durationMs: spec.durationMs,
-            delayMs: spec.delayMs
+            durationMs: durationMs,
+            delayMs: delayMs
         ) { progress in
             let progress = CGFloat(progress)
             let scale = GlowMath.linearInterpolate(
@@ -103,13 +194,13 @@ private struct Particle: View {
             )
             let transform = GlowMath.calcTransform(
                 scale: scale,
-                cx: centerX,
-                cy: centerY,
-                ty: translateY * stageScale
+                cx: center.x,
+                cy: center.y,
+                ty: translateY
             )
 
             RoundedRectangle(cornerRadius: radius * 0.4)
-                .fill(spec.color)
+                .fill(color)
                 .frame(width: radius * 2, height: radius * 2)
                 .rotationEffect(.degrees(45))
                 .scaleEffect(transform.scale)
@@ -123,9 +214,11 @@ private struct Particle: View {
 }
 
 #if DEBUG
-#Preview("Particles") {
-    Particles(size: BOX_SIZE)
-        .background(screenBackground[.energetic]!.colors[1])
-        .padding()
+#Preview("BackgroundParticles") {
+    GeometryReader { geo in
+        BackgroundParticles(area: geo.size)
+    }
+    .background(screenBackground[.energetic]!.colors[1])
+    .ignoresSafeArea()
 }
 #endif

@@ -10,14 +10,6 @@ struct Glow: View {
                 mood: mood,
                 size: size
             )
-
-            if mood == .energetic {
-                Particles(size: size)
-            }
-
-            if mood == .tired {
-                Zzz(size: size)
-            }
         }
         .frame(width: size, height: size)
         .clipped()

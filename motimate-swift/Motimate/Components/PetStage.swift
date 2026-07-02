@@ -7,14 +7,14 @@ struct PetStageMotionValues: Equatable {
 }
 
 enum PetStageMotion {
-    static let quiverDurationMs: Double = 360
+    static let quiverDurationMs: Double = 1_000
 
     private static let breatheDepth: CGFloat = 0.035
     private static let bobbleRise: CGFloat = 9
     private static let swayDegrees: Double = 2.6
     private static let tiredTiltDegrees: Double = -3
-    private static let quiverPixels: CGFloat = 0.5
-    private static let quiverDegrees: Double = 0.4
+    private static let quiverPixels: CGFloat = 0.35
+    private static let quiverDegrees: Double = 0.3
 
     static func breathDurationMs(for mood: Mood) -> Double {
         switch mood {
@@ -112,9 +112,7 @@ private struct PetStageMotionScope<Content: View>: View {
     let mood: Mood
     let content: Content
 
-    @State private var breathProgress: CGFloat = 0
-    @State private var motionProgress: CGFloat = 0
-    @State private var trembleProgress: CGFloat = 0
+    @State private var startDate = Date()
 
     init(
         mood: Mood,
@@ -125,64 +123,44 @@ private struct PetStageMotionScope<Content: View>: View {
     }
 
     var body: some View {
-        let values = PetStageMotion.values(
-            mood: mood,
-            breathProgress: breathProgress,
-            motionProgress: motionProgress,
-            trembleProgress: trembleProgress
+        TimelineView(.animation) { timeline in
+            let values = motionValues(at: timeline.date)
+
+            content
+                .scaleEffect(values.scale)
+                .offset(values.offset)
+                .rotationEffect(.degrees(values.rotationDegrees))
+        }
+        .onAppear { startDate = Date() }
+    }
+
+    private func motionValues(at date: Date) -> PetStageMotionValues {
+        let elapsedMs = date.timeIntervalSince(startDate) * 1_000
+
+        let breathProgress = LoopTiming.progress(
+            elapsedMs: elapsedMs,
+            durationMs: PetStageMotion.breathDurationMs(for: mood),
+            mode: .pingPong
+        )
+        let motionProgress = LoopTiming.progress(
+            elapsedMs: elapsedMs,
+            durationMs: PetStageMotion.motionDurationMs(for: mood),
+            mode: .pingPong,
+            active: mood != .tired
+        )
+        let trembleProgress = LoopTiming.progress(
+            elapsedMs: elapsedMs,
+            durationMs: PetStageMotion.quiverDurationMs,
+            mode: .pingPong,
+            active: mood == .sad
         )
 
-        content
-            .scaleEffect(values.scale)
-            .offset(values.offset)
-            .rotationEffect(.degrees(values.rotationDegrees))
-            .onAppear(perform: restartAnimations)
-            .onChange(of: mood) { _ in restartAnimations() }
-    }
-
-    private func restartAnimations() {
-        resetProgress()
-        startBreathAnimation()
-        startMotionAnimation()
-        startTrembleAnimation()
-    }
-
-    private func resetProgress() {
-        var transaction = Transaction()
-        transaction.disablesAnimations = true
-
-        withTransaction(transaction) {
-            breathProgress = 0
-            motionProgress = 0
-            trembleProgress = 0
-        }
-    }
-
-    private func startBreathAnimation() {
-        withAnimation(loopAnimation(durationMs: PetStageMotion.breathDurationMs(for: mood))) {
-            breathProgress = 1
-        }
-    }
-
-    private func startMotionAnimation() {
-        guard mood != .tired else { return }
-
-        withAnimation(loopAnimation(durationMs: PetStageMotion.motionDurationMs(for: mood))) {
-            motionProgress = 1
-        }
-    }
-
-    private func startTrembleAnimation() {
-        guard mood == .sad else { return }
-
-        withAnimation(loopAnimation(durationMs: PetStageMotion.quiverDurationMs)) {
-            trembleProgress = 1
-        }
-    }
-
-    private func loopAnimation(durationMs: Double) -> Animation {
-        .easeInOut(duration: durationMs / 2_000)
-            .repeatForever(autoreverses: true)
+        return PetStageMotion.values(
+            mood: mood,
+            breathProgress: CGFloat(breathProgress),
+            motionProgress: CGFloat(motionProgress),
+            trembleProgress: CGFloat(trembleProgress)
+        )
     }
 }
 
