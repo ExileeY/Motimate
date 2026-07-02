@@ -9,6 +9,9 @@ struct BackgroundEmitters: View {
                 if mood == .energetic {
                     BackgroundParticles(area: geo.size)
                 }
+                if mood == .tired {
+                    CloudDrift(area: geo.size)
+                }
             }
             .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
         }
