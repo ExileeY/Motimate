@@ -86,6 +86,7 @@
 		A017B5EA0001000000000002 /* Glow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000002 /* Glow.swift */; };
 		A017B5EA0001000000000003 /* Halo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000003 /* Halo.swift */; };
 		A017B5EA0001000000000004 /* Particles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000004 /* Particles.swift */; };
+		A017B5EA0001000000000008 /* Clouds.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000008 /* Clouds.swift */; };
 		A017B5EA0001000000000007 /* BackgroundEmitters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000007 /* BackgroundEmitters.swift */; };
 		A017B5EA0001000000000006 /* GlowMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A017B5EB0002000000000006 /* GlowMathTests.swift */; };
 		A018B5EA0001000000000001 /* PetStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A018B5EB0002000000000001 /* PetStage.swift */; };
@@ -192,6 +193,7 @@
 		A017B5EB0002000000000002 /* Glow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glow.swift; sourceTree = "<group>"; };
 		A017B5EB0002000000000003 /* Halo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Halo.swift; sourceTree = "<group>"; };
 		A017B5EB0002000000000004 /* Particles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particles.swift; sourceTree = "<group>"; };
+		A017B5EB0002000000000008 /* Clouds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clouds.swift; sourceTree = "<group>"; };
 		A017B5EB0002000000000007 /* BackgroundEmitters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundEmitters.swift; sourceTree = "<group>"; };
 		A017B5EB0002000000000006 /* GlowMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowMathTests.swift; sourceTree = "<group>"; };
 		A018B5EB0002000000000001 /* PetStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStage.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				A017B5EB0002000000000001 /* GlowMath.swift */,
 				A017B5EB0002000000000003 /* Halo.swift */,
 				A017B5EB0002000000000004 /* Particles.swift */,
+				A017B5EB0002000000000008 /* Clouds.swift */,
 			);
 			path = Glow;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 				677A95C0BCED7122F3610FDB /* MotimateApp.swift in Sources */,
 				A019B5EA0001000000000003 /* MovementCard.swift in Sources */,
 				A017B5EA0001000000000004 /* Particles.swift in Sources */,
+				A017B5EA0001000000000008 /* Clouds.swift in Sources */,
 				A018B5EA0001000000000001 /* PetStage.swift in Sources */,
 				A019B5EA0001000000000001 /* PhoneCanvas.swift in Sources */,
 				B02E5C0C50152F835605CD15 /* PersistedStorage.swift in Sources */,

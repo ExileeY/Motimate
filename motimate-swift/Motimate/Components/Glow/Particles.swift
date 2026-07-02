@@ -15,7 +15,7 @@ private let particlePalette = [
 ]
 private let particleRadii: [CGFloat] = [6, 7.5, 9]
 
-private struct ParticlePairSpec {
+private struct ParticlePairConfig {
     let dx: CGFloat
     let y: CGFloat
     let leftDurationMs: Double
@@ -24,8 +24,8 @@ private struct ParticlePairSpec {
     let rightDelayMs: Double
 }
 
-private let particlePairSpecs: [ParticlePairSpec] = [
-    ParticlePairSpec(
+private let particlePairConfigs: [ParticlePairConfig] = [
+    ParticlePairConfig(
         dx: 118,
         y: 96,
         leftDurationMs: 3_400,
@@ -33,7 +33,7 @@ private let particlePairSpecs: [ParticlePairSpec] = [
         rightDurationMs: 4_400,
         rightDelayMs: 2_600
     ),
-    ParticlePairSpec(
+    ParticlePairConfig(
         dx: 70,
         y: 168,
         leftDurationMs: 3_800,
@@ -41,7 +41,7 @@ private let particlePairSpecs: [ParticlePairSpec] = [
         rightDurationMs: 4_000,
         rightDelayMs: 900
     ),
-    ParticlePairSpec(
+    ParticlePairConfig(
         dx: 150,
         y: 244,
         leftDurationMs: 4_200,
@@ -49,7 +49,7 @@ private let particlePairSpecs: [ParticlePairSpec] = [
         rightDurationMs: 3_600,
         rightDelayMs: 1_400
     ),
-    ParticlePairSpec(
+    ParticlePairConfig(
         dx: 44,
         y: 56,
         leftDurationMs: 4_000,
@@ -57,7 +57,7 @@ private let particlePairSpecs: [ParticlePairSpec] = [
         rightDurationMs: 3_500,
         rightDelayMs: 700
     ),
-    ParticlePairSpec(
+    ParticlePairConfig(
         dx: 0,
         y: 320,
         leftDurationMs: 4_400,
@@ -65,7 +65,7 @@ private let particlePairSpecs: [ParticlePairSpec] = [
         rightDurationMs: 0,
         rightDelayMs: 0
     ),
-    ParticlePairSpec(
+    ParticlePairConfig(
         dx: 96,
         y: 392,
         leftDurationMs: 3_900,
@@ -73,7 +73,7 @@ private let particlePairSpecs: [ParticlePairSpec] = [
         rightDurationMs: 4_300,
         rightDelayMs: 600
     ),
-    ParticlePairSpec(
+    ParticlePairConfig(
         dx: 132,
         y: 468,
         leftDurationMs: 4_100,
@@ -81,7 +81,7 @@ private let particlePairSpecs: [ParticlePairSpec] = [
         rightDurationMs: 3_700,
         rightDelayMs: 2_900
     ),
-    ParticlePairSpec(
+    ParticlePairConfig(
         dx: 58,
         y: 544,
         leftDurationMs: 4_500,
@@ -131,31 +131,31 @@ struct BackgroundParticles: View {
 
         var specs: [BackgroundParticleSpec] = []
 
-        for pair in particlePairSpecs {
+        for config in particlePairConfigs {
             let color = particlePalette.randomElement()!
             let radius = particleRadii.randomElement()!
 
             specs.append(
                 BackgroundParticleSpec(
                     id: specs.count,
-                    position: CGPoint(x: centerX - pair.dx, y: pair.y),
+                    position: CGPoint(x: centerX - config.dx, y: config.y),
                     radius: radius,
                     color: color,
-                    durationMs: pair.leftDurationMs,
-                    delayMs: pair.leftDelayMs
+                    durationMs: config.leftDurationMs,
+                    delayMs: config.leftDelayMs
                 )
             )
 
-            guard pair.dx > 0 else { continue }
+            guard config.dx > 0 else { continue }
 
             specs.append(
                 BackgroundParticleSpec(
                     id: specs.count,
-                    position: CGPoint(x: centerX + pair.dx, y: pair.y),
+                    position: CGPoint(x: centerX + config.dx, y: config.y),
                     radius: radius,
                     color: color,
-                    durationMs: pair.rightDurationMs,
-                    delayMs: pair.rightDelayMs
+                    durationMs: config.rightDurationMs,
+                    delayMs: config.rightDelayMs
                 )
             )
         }
