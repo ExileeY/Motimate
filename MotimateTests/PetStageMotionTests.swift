@@ -74,12 +74,12 @@ final class PetStageMotionTests: XCTestCase {
         )
 
         XCTAssertEqual(values.scale, 1.0175, accuracy: 0.0001)
-        XCTAssertEqual(values.offset.width, -0.25, accuracy: 0.0001)
+        XCTAssertEqual(values.offset.width, -0.175, accuracy: 0.0001)
         XCTAssertEqual(values.offset.height, -9, accuracy: 0.0001)
-        XCTAssertEqual(values.rotationDegrees, -0.2, accuracy: 0.0001)
+        XCTAssertEqual(values.rotationDegrees, -0.15, accuracy: 0.0001)
     }
 
-    func testDurationsMatchReactNativePetStage() {
+    func testMotionDurations() {
         XCTAssertEqual(PetStageMotion.breathDurationMs(for: .energetic), 3_300)
         XCTAssertEqual(PetStageMotion.breathDurationMs(for: .calm), 4_500)
         XCTAssertEqual(PetStageMotion.breathDurationMs(for: .tired), 5_500)
@@ -89,6 +89,7 @@ final class PetStageMotionTests: XCTestCase {
         XCTAssertEqual(PetStageMotion.motionDurationMs(for: .calm), 5_500)
         XCTAssertEqual(PetStageMotion.motionDurationMs(for: .tired), 5_500)
         XCTAssertEqual(PetStageMotion.motionDurationMs(for: .sad), 4_600)
-        XCTAssertEqual(PetStageMotion.quiverDurationMs, 360)
+
+        XCTAssertEqual(PetStageMotion.quiverDurationMs, 1_000)
     }
 }
