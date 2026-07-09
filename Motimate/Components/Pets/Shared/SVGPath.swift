@@ -142,7 +142,7 @@ private func addArc(
     func angle(_ ux: CGFloat, _ uy: CGFloat, _ vx: CGFloat, _ vy: CGFloat) -> CGFloat {
         let dot = ux * vx + uy * vy
         let len = sqrt((ux * ux + uy * uy) * (vx * vx + vy * vy))
-        var a = acos(min(1, max(-1, dot / len)))
+        var a = acos(MathUtils.clamp(dot / len, min: -1, max: 1))
         if ux * vy - uy * vx < 0 { a = -a }
         return a
     }

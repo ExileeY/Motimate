@@ -6,7 +6,7 @@ let GOAL_MAX = 50_000
 
 func normalizeGoal(_ goal: Double) -> Int {
     guard goal.isFinite else { return GOAL_DEFAULT }
-    return min(max(Int(goal.rounded()), GOAL_MIN), GOAL_MAX)
+    return MathUtils.clamp(Int(goal.rounded()), min: GOAL_MIN, max: GOAL_MAX)
 }
 
 func makeGoalStorage(defaults: UserDefaults = .standard) -> PersistedStorage<Int> {

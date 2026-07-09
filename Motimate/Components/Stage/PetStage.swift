@@ -85,6 +85,8 @@ struct PetStage: View {
     var petId: PetId = PET_ID_DEFAULT
     var screenHeight: CGFloat = RESPONSIVE_BASE_HEIGHT
 
+    var entrance = EntranceMotionParams()
+
     var body: some View {
         let stage = PetStageMotion.stageSize(screenHeight: screenHeight)
         let pet = PetStageMotion.petSize(screenHeight: screenHeight)
@@ -97,10 +99,13 @@ struct PetStage: View {
                     size: stage
                 )
 
-                definition.body(
-                    mood,
-                    pet
-                )
+                EntranceMotion(params: entrance) {
+                    definition.body(
+                        mood,
+                        pet
+                    )
+                    .compositingGroup()
+                }
             }
             .frame(width: stage, height: stage)
         }

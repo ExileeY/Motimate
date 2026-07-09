@@ -3,6 +3,7 @@ import SwiftUI
 enum LoopMode: Equatable {
     case pingPong
     case rise
+    case once
 }
 
 enum LoopTiming {
@@ -18,25 +19,26 @@ enum LoopTiming {
         let delayedElapsed = elapsedMs - max(delayMs, 0)
         guard delayedElapsed >= 0 else { return 0 }
 
-        let cycleElapsed = delayedElapsed.truncatingRemainder(dividingBy: durationMs)
-
         switch mode {
+        case .once:
+            // A single ramp that holds at the end — must not wrap.
+            return MathUtils.easeInOut(min(delayedElapsed / durationMs, 1))
         case .pingPong:
+            let cycleElapsed = cycleOffset(elapsedMs: delayedElapsed, durationMs: durationMs)
             let halfDuration = durationMs / 2
             let rawProgress = cycleElapsed <= halfDuration
                 ? cycleElapsed / halfDuration
                 : 1 - ((cycleElapsed - halfDuration) / halfDuration)
 
-            return easeInOut(rawProgress)
+            return MathUtils.easeInOut(rawProgress)
         case .rise:
-            return easeInOut(cycleElapsed / durationMs)
+            let cycleElapsed = cycleOffset(elapsedMs: delayedElapsed, durationMs: durationMs)
+            return MathUtils.easeInOut(cycleElapsed / durationMs)
         }
     }
 
-    private static func easeInOut(_ progress: Double) -> Double {
-        let t = min(1, max(0, progress))
-
-        return t * t * (3 - 2 * t)
+    private static func cycleOffset(elapsedMs: Double, durationMs: Double) -> Double {
+        elapsedMs.truncatingRemainder(dividingBy: durationMs)
     }
 }
 
@@ -46,27 +48,33 @@ struct LoopClock<Content: View>: View {
     let mode: LoopMode
     let active: Bool
     let content: (Double) -> Content
+    let onFinished: () -> Void
 
     @State private var startDate = Date()
+    @State private var finished = false
 
     init(
         durationMs: Double,
         delayMs: Double = 0,
         mode: LoopMode,
         active: Bool = true,
-        @ViewBuilder content: @escaping (Double) -> Content
+        @ViewBuilder content: @escaping (Double) -> Content,
+        onFinished: @escaping () -> Void = {}
     ) {
         self.durationMs = durationMs
         self.delayMs = delayMs
         self.mode = mode
         self.active = active
         self.content = content
+        self.onFinished = onFinished
     }
 
     var body: some View {
         if active {
             TimelineView(.animation) { timeline in
-                content(progress(at: timeline.date))
+                let value = progress(at: timeline.date)
+                content(value)
+                    .onChange(of: value) { value in onceFinished(value) }
             }
             .onAppear(perform: reset)
             .onChange(of: durationMs) { _ in reset() }
@@ -89,6 +97,14 @@ struct LoopClock<Content: View>: View {
 
     private func reset() {
         startDate = Date()
+        finished = false
+    }
+
+    private func onceFinished(_ value: Double) {
+        guard mode == .once, value >= 1, !finished else { return }
+
+        finished = true
+        onFinished()
     }
 }
 
@@ -146,6 +162,35 @@ struct RiseLoop<Content: View>: View {
             mode: .rise,
             active: active,
             content: content
+        )
+    }
+}
+
+struct OnceLoop<Content: View>: View {
+    let durationMs: Double
+    let delayMs: Double
+    let content: (Double) -> Content
+    let onFinished: () -> Void
+
+    init(
+        durationMs: Double,
+        delayMs: Double = 0,
+        onFinished: @escaping () -> Void = {},
+        @ViewBuilder content: @escaping (Double) -> Content
+    ) {
+        self.durationMs = durationMs
+        self.delayMs = delayMs
+        self.onFinished = onFinished
+        self.content = content
+    }
+
+    var body: some View {
+        LoopClock(
+            durationMs: durationMs,
+            delayMs: delayMs,
+            mode: .once,
+            content: content,
+            onFinished: onFinished
         )
     }
 }

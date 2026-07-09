@@ -87,6 +87,60 @@ final class LoopTests: XCTestCase {
         )
     }
 
+    // MARK: - .once (play-once, then hold)
+
+    func testOnceStartsAtRest() {
+        XCTAssertEqual(
+            LoopTiming.progress(elapsedMs: 0, durationMs: 1_000, mode: .once),
+            0,
+            accuracy: 0.0001
+        )
+    }
+
+    func testOnceReachesOneAtFullDuration() {
+        XCTAssertEqual(
+            LoopTiming.progress(elapsedMs: 1_000, durationMs: 1_000, mode: .once),
+            1,
+            accuracy: 0.0001
+        )
+    }
+
+    func testOnceHoldsAtOnePastFullDuration() {
+        // Unlike .rise, it must NOT wrap back to 0.
+        XCTAssertEqual(
+            LoopTiming.progress(elapsedMs: 5_000, durationMs: 1_000, mode: .once),
+            1,
+            accuracy: 0.0001
+        )
+    }
+
+    func testOnceRespectsDelay() {
+        XCTAssertEqual(
+            LoopTiming.progress(elapsedMs: 199, durationMs: 1_000, delayMs: 200, mode: .once),
+            0,
+            accuracy: 0.0001
+        )
+    }
+
+    /// The property `LoopClock.onFinished` relies on: at (and past) a full-duration
+    /// boundary, only `.once` reads a held 1 — the repeating modes wrap back to 0.
+    /// So a clock keyed on "progress reached 1" fires for `.once` alone.
+    func testOnlyOnceReachesOneAtDurationBoundaries() {
+        for cycles in 1...4 {
+            let atBoundary = Double(cycles) * 1_000
+            XCTAssertEqual(
+                LoopTiming.progress(elapsedMs: atBoundary, durationMs: 1_000, mode: .once),
+                1, accuracy: 0.0001, "once should hold at 1 past its end"
+            )
+            for mode in [LoopMode.pingPong, .rise] {
+                XCTAssertEqual(
+                    LoopTiming.progress(elapsedMs: atBoundary, durationMs: 1_000, mode: mode),
+                    0, accuracy: 0.0001, "\(mode) should wrap to rest, not hold at 1"
+                )
+            }
+        }
+    }
+
     func testProgressIsClampedAcrossModes() {
         let samples = [
             LoopTiming.progress(elapsedMs: 250, durationMs: 1_000, mode: .rise),

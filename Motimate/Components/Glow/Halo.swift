@@ -21,12 +21,12 @@ struct Halo: View {
 
         PingPongLoop(durationMs: spec.pulseDuration) { progress in
             let progress = CGFloat(progress)
-            let scale = GlowMath.linearInterpolate(
+            let scale = MathUtils.linearInterpolate(
                 HaloScale.min,
                 HaloScale.max,
                 progress
             )
-            let opacity = GlowMath.linearInterpolate(
+            let opacity = MathUtils.linearInterpolate(
                 HaloOpacity.min,
                 HaloOpacity.max,
                 progress

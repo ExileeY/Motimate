@@ -8,6 +8,9 @@ struct HomeView: View {
 
     @State private var showSettings = false
 
+    private static var isEntrancePlayed = false // process-lifetime state, survives view remounts
+    @State private var shouldPlayEntrance = false
+
     #if DEBUG
     // Dev-only: tap the pet to preview each mood without walking.
     @State private var override: Mood? = nil
@@ -38,6 +41,7 @@ struct HomeView: View {
         .onAppear {
             dailySteps.start()
             refreshMessages()
+            triggerEntrance()
         }
         .onChange(of: settings.petId) { _ in
             refreshMessages()
@@ -109,7 +113,11 @@ struct HomeView: View {
         let stage = PetStage(
             mood: mood,
             petId: settings.petId,
-            screenHeight: height
+            screenHeight: height,
+            entrance: EntranceMotionParams(
+                active: shouldPlayEntrance,
+                onFinished: { shouldPlayEntrance = false }
+            )
         )
 
         #if DEBUG
@@ -150,6 +158,13 @@ struct HomeView: View {
 
     private func refreshMessages() {
         messages = petDefinition(settings.petId).pickMessages()
+    }
+
+    private func triggerEntrance() {
+        if !Self.isEntrancePlayed {
+            Self.isEntrancePlayed = true
+            shouldPlayEntrance = true
+        }
     }
 
     #if DEBUG
