@@ -17,9 +17,9 @@ final class SettingsStore: ObservableObject {
     private let autoNightStore: PersistedStorage<Bool>
 
     init(defaults: UserDefaults = .standard) {
-        goalStore = makeGoalStorage(defaults: defaults)
-        gameModeStore = makeGameModeStorage(defaults: defaults)
-        petStore = makePetStorage(defaults: defaults)
+        goalStore = GoalStorage.make(defaults: defaults)
+        gameModeStore = GameModeStorage.make(defaults: defaults)
+        petStore = PetStorage.make(defaults: defaults)
         autoNightStore = AutoNightStorage.make(defaults: defaults)
 
         goal = goalStore.get()

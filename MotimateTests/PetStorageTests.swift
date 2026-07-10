@@ -3,13 +3,13 @@ import XCTest
 
 final class PetStorageTests: XCTestCase {
     func testPassesThroughEveryRegisteredPetIdUnchanged() {
-        for id in PET_IDS {
-            XCTAssertEqual(normalizePet(id), id)
+        for id in PetStorage.ids {
+            XCTAssertEqual(PetStorage.normalize(id), id)
         }
     }
 
     func testFallsBackToPetDefaultForAnUnregisteredValue() {
-        XCTAssertEqual(normalizePet(PetId(rawValue: "not-a-pet")), PET_DEFAULT)
-        XCTAssertEqual(normalizePet(nil), PET_DEFAULT)
+        XCTAssertEqual(PetStorage.normalize(PetId(rawValue: "not-a-pet")), PetStorage.defaultValue)
+        XCTAssertEqual(PetStorage.normalize(nil), PetStorage.defaultValue)
     }
 }

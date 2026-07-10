@@ -20,16 +20,16 @@ final class SettingsStoreTests: XCTestCase {
     func testFreshStoreHydratesToDefaults() {
         let store = SettingsStore(defaults: defaults)
         XCTAssertTrue(store.ready)
-        XCTAssertEqual(store.goal, GOAL_DEFAULT)
-        XCTAssertEqual(store.petId, PET_DEFAULT)
-        XCTAssertEqual(store.gameMode, GAME_MODE_DEFAULT)
+        XCTAssertEqual(store.goal, GoalStorage.defaultValue)
+        XCTAssertEqual(store.petId, PetStorage.defaultValue)
+        XCTAssertEqual(store.gameMode, GameModeStorage.defaultValue)
     }
 
     func testSetGoalNormalizesPublishesAndReturns() {
         let store = SettingsStore(defaults: defaults)
         let returned = store.setGoal(60_000)
-        XCTAssertEqual(returned, GOAL_MAX)
-        XCTAssertEqual(store.goal, GOAL_MAX)
+        XCTAssertEqual(returned, GoalStorage.maxValue)
+        XCTAssertEqual(store.goal, GoalStorage.maxValue)
     }
 
     func testSettingsPersistAcrossReinstantiation() {
