@@ -33,7 +33,9 @@ struct SettingsView: View {
         }
         .environment(\.theme, theme)
         .navigationBarHidden(true)
+        .enableInteractiveSwipeBack()
         .onAppear { draft = String(settings.goal) }
+        .onDisappear { commitGoal() }
         .onChange(of: goalFocused) { focused in
             if !focused { commitGoal() }
         }
