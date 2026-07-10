@@ -3,10 +3,13 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject private var settings: SettingsStore
     @EnvironmentObject private var dailySteps: DailyStepsModel
+    @EnvironmentObject private var celebration: CelebrationStore
 
     @State private var messages: [Mood: MessageSet] = [:]
 
     @State private var showSettings = false
+
+    @State private var isCelebrating = false
 
     private static var isEntrancePlayed = false // process-lifetime state, survives view remounts
     @State private var shouldPlayEntrance = false
@@ -28,6 +31,7 @@ struct HomeView: View {
                     screen(mood: mood, height: geo.size.height)
                 }
             }
+            .overlay(celebrationOverlay)
         }
         .navigationBarHidden(true)
         .background(
@@ -42,13 +46,30 @@ struct HomeView: View {
             dailySteps.start()
             refreshMessages()
             triggerEntrance()
+            maybeCelebrate()
         }
         .onChange(of: settings.petId) { _ in
             refreshMessages()
         }
+        .onChange(of: dailySteps.progress) { _ in
+            maybeCelebrate()
+        }
+        .onChange(of: dailySteps.loading) { _ in
+            maybeCelebrate()
+        }
     }
 
-    // MARK: - Boot
+    // MARK: - Celebration overlay
+
+    @ViewBuilder
+    private var celebrationOverlay: some View {
+        if isCelebrating {
+            Confetti(onFinished: { isCelebrating = false })
+                .ignoresSafeArea()
+        }
+    }
+
+    // MARK: - Boot screen
 
     private var bootScreen: some View {
         ZStack {
@@ -61,7 +82,7 @@ struct HomeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
-    // MARK: - Assembled screen
+    // MARK: - Main screen
 
     private func screen(mood: Mood, height: CGFloat) -> some View {
         let scale = computeScale(height)
@@ -167,11 +188,25 @@ struct HomeView: View {
         }
     }
 
+    private func maybeCelebrate() {
+        guard !dailySteps.loading else { return }
+        guard dailySteps.progress >= 1 else { return }
+        guard celebration.shouldCelebrate() else { return }
+
+        celebration.markCelebrated()
+        isCelebrating = true
+    }
+
     #if DEBUG
     private func cycleMood() {
         let current = override ?? dailySteps.mood
         let next = (moodCycle.firstIndex(of: current) ?? -1) + 1
         override = moodCycle[next % moodCycle.count]
+
+        // Replay the confetti
+        celebration.resetToday()
+        isCelebrating = false
+        DispatchQueue.main.async { isCelebrating = true }
     }
     #endif
 }
@@ -185,5 +220,6 @@ struct HomeView: View {
     .navigationViewStyle(.stack)
     .environmentObject(settings)
     .environmentObject(DailyStepsModel(settings: settings))
+    .environmentObject(CelebrationStore())
 }
 #endif
