@@ -22,7 +22,7 @@ struct BackgroundEmitters: View {
 #if DEBUG
 #Preview("BackgroundEmitters") {
     BackgroundEmitters(mood: .energetic)
-        .background(screenBackground[.energetic]!.colors[1])
+        .background(ThemeTokens.day.screenBackground(.energetic).colors[1])
         .ignoresSafeArea()
 }
 #endif

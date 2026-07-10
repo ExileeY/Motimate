@@ -5,23 +5,26 @@ struct PlaceholderPetBody: View {
     let mood: Mood
     var size: CGFloat? = nil
 
+    @Environment(\.themeTokens) private var tokens
+
     var body: some View {
+        let palette = tokens.palette
         let side = size ?? PET_SIZE
         VStack(spacing: 6) {
             Text(name)
                 .font(Fonts.heading(20))
-                .foregroundColor(Colors.text)
+                .foregroundColor(palette.text)
             Text(mood.rawValue)
                 .font(Fonts.bodyRegular(13))
-                .foregroundColor(Colors.subtitle)
+                .foregroundColor(palette.subtitle)
         }
         .frame(width: side, height: side)
         .background(
             RoundedRectangle(cornerRadius: 28)
-                .fill(Colors.cardBg)
+                .fill(palette.cardBg)
                 .overlay(
                     RoundedRectangle(cornerRadius: 28)
-                        .stroke(Colors.cardBorder, lineWidth: 1)
+                        .stroke(palette.cardBorder, lineWidth: 1)
                 )
         )
     }

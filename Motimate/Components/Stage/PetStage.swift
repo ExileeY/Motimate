@@ -177,7 +177,7 @@ private struct PetStageMotionScope<Content: View>: View {
                 mood: mood,
                 petId: .mochi
             )
-            .background(screenBackground[mood]!.colors[1])
+            .background(ThemeTokens.day.screenBackground(mood).colors[1])
         }
     }
     .padding()
@@ -189,13 +189,13 @@ private struct PetStageMotionScope<Content: View>: View {
             mood: .energetic,
             petId: .dog
         )
-        .background(screenBackground[.energetic]!.colors[1])
+        .background(ThemeTokens.day.screenBackground(.energetic).colors[1])
 
         PetStage(
             mood: .sad,
             petId: .tomato
         )
-        .background(screenBackground[.sad]!.colors[1])
+        .background(ThemeTokens.day.screenBackground(.sad).colors[1])
     }
     .padding()
 }

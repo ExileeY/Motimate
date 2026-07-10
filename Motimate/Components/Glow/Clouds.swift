@@ -188,7 +188,7 @@ private struct CloudPuff: View {
     GeometryReader { geo in
         CloudDrift(area: geo.size)
     }
-    .background(screenBackground[.tired]!.colors[1])
+    .background(ThemeTokens.day.screenBackground(.tired).colors[1])
     .ignoresSafeArea()
 }
 #endif

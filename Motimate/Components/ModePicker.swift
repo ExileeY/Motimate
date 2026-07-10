@@ -66,39 +66,43 @@ struct ModePicker: View {
         let selected: Bool
         let onSelect: (GameMode) -> Void
 
+        @Environment(\.themeTokens) private var tokens
+
         var body: some View {
-            Button(action: { onSelect(option.id) }) {
+            let palette = tokens.palette
+
+            return Button(action: { onSelect(option.id) }) {
                 HStack(spacing: 13) {
-                    iconTile
+                    iconTile(palette)
 
                     VStack(alignment: .leading, spacing: 3) {
                         HStack(spacing: 7) {
                             Text(option.title)
                                 .font(Fonts.heading(16.5))
-                                .foregroundColor(Colors.text)
+                                .foregroundColor(palette.text)
 
                             if option.isDefault {
-                                defaultPill
+                                defaultPill(palette)
                             }
                         }
 
                         Text(option.subtitle)
                             .font(Fonts.bodyRegular(12))
-                            .foregroundColor(Colors.subtitle)
+                            .foregroundColor(palette.subtitle)
                             .fixedSize(horizontal: false, vertical: true)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
 
-                    radio
+                    radio(palette)
                 }
                 .padding(.vertical, 15)
                 .padding(.horizontal, 15)
-                .background(Colors.cardBg)
+                .background(palette.cardBg)
                 .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                 .overlay(
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
                         .stroke(
-                            selected ? Colors.accent : Colors.cardBorder,
+                            selected ? palette.accent : palette.cardBorder,
                             lineWidth: selected ? 2 : 1.5
                         )
                 )
@@ -108,34 +112,34 @@ struct ModePicker: View {
             .accessibilityAddTraits(selected ? [.isSelected] : [])
         }
 
-        private var iconTile: some View {
+        private func iconTile(_ palette: Palette) -> some View {
             Text(option.icon)
                 .font(.system(size: 22))
                 .frame(width: 46, height: 46)
-                .background(Colors.pillBg)
+                .background(palette.pillBg)
                 .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         }
 
-        private var defaultPill: some View {
+        private func defaultPill(_ palette: Palette) -> some View {
             Text("Default")
                 .font(Fonts.bodyBold(9.5))
                 .kerning(0.5)
                 .textCase(.uppercase)
-                .foregroundColor(Colors.cardMeta)
+                .foregroundColor(palette.cardMeta)
                 .padding(.vertical, 2)
                 .padding(.horizontal, 7)
-                .background(Colors.barTrack)
+                .background(palette.barTrack)
                 .clipShape(Capsule())
         }
 
-        private var radio: some View {
+        private func radio(_ palette: Palette) -> some View {
             ZStack {
                 Circle()
-                    .fill(selected ? Colors.accent : Color.clear)
+                    .fill(selected ? palette.accent : Color.clear)
                     .overlay(
                         Circle()
                             .stroke(
-                                selected ? Color.clear : Colors.pillBorder,
+                                selected ? Color.clear : palette.pillBorder,
                                 lineWidth: 2
                             )
                     )

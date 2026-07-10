@@ -4,6 +4,7 @@ struct HomeView: View {
     @EnvironmentObject private var settings: SettingsStore
     @EnvironmentObject private var dailySteps: DailyStepsModel
     @EnvironmentObject private var celebration: CelebrationStore
+    @Environment(\.colorScheme) private var colorScheme
 
     @State private var messages: [Mood: MessageSet] = [:]
 
@@ -20,6 +21,10 @@ struct HomeView: View {
     private let moodCycle: [Mood] = [.energetic, .calm, .tired, .sad]
     #endif
 
+    private var theme: Theme {
+        settings.resolvedTheme(isDark: colorScheme == .dark)
+    }
+
     var body: some View {
         GeometryReader { geo in
             let mood = displayMood
@@ -33,6 +38,7 @@ struct HomeView: View {
             }
             .overlay(celebrationOverlay)
         }
+        .environment(\.theme, theme)
         .navigationBarHidden(true)
         .background(
             NavigationLink(
@@ -72,12 +78,15 @@ struct HomeView: View {
     // MARK: - Boot screen
 
     private var bootScreen: some View {
-        ZStack {
-            Color(hex: "#F6E4D0")
+        let palette = ThemeTokens.for(theme).palette
+        let bootBg = ThemeTokens.for(theme).screenBackground(.calm).colors[1]
+
+        return ZStack {
+            bootBg
                 .ignoresSafeArea()
 
             ProgressView()
-                .tint(Colors.accent)
+                .tint(palette.accent)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -88,6 +97,7 @@ struct HomeView: View {
         let scale = computeScale(height)
         let message = messages[mood] ?? fallbackMessage
         let hasLiveSteps = dailySteps.permission == .granted && dailySteps.error == nil
+        let palette = ThemeTokens.for(theme).palette
 
         return PhoneCanvas(mood: mood) {
             VStack(spacing: 0) {
@@ -102,12 +112,12 @@ struct HomeView: View {
                 VStack(spacing: 6) {
                     Text(message.headline)
                         .font(Fonts.heading((30 * scale).rounded()))
-                        .foregroundColor(Colors.text)
+                        .foregroundColor(palette.text)
                         .multilineTextAlignment(.center)
 
                     Text(message.subtitle)
                         .font(Fonts.bodyRegular(((14.5 * scale) * 10).rounded() / 10))
-                        .foregroundColor(Colors.subtitle)
+                        .foregroundColor(palette.subtitle)
                         .multilineTextAlignment(.center)
                 }
 
@@ -122,7 +132,7 @@ struct HomeView: View {
                 if let notice = notice {
                     Text(notice)
                         .font(Fonts.bodyRegular(12))
-                        .foregroundColor(Colors.cardMeta)
+                        .foregroundColor(palette.cardMeta)
                         .multilineTextAlignment(.center)
                         .padding(.top, 10)
                 }
@@ -145,6 +155,7 @@ struct HomeView: View {
         return stage
             .contentShape(Rectangle())
             .onTapGesture(perform: cycleMood)
+            .onLongPressGesture(perform: toggleTheme)
         #else
         return stage
         #endif
@@ -207,6 +218,14 @@ struct HomeView: View {
         celebration.resetToday()
         isCelebrating = false
         DispatchQueue.main.async { isCelebrating = true }
+    }
+
+    private func toggleTheme() {
+        switch settings.themeOverride {
+        case nil: settings.themeOverride = .night
+        case .night: settings.themeOverride = .day
+        case .day: settings.themeOverride = nil
+        }
     }
     #endif
 }

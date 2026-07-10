@@ -27,12 +27,16 @@ struct MovementCard: View {
     let progress: Double
     let hasLiveSteps: Bool
 
+    @Environment(\.themeTokens) private var tokens
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 9) {
+        let palette = tokens.palette
+
+        return VStack(alignment: .leading, spacing: 9) {
             HStack(alignment: .center) {
                 Text("Today's movement")
                     .font(Fonts.bodyBold(13))
-                    .foregroundColor(Colors.pillText)
+                    .foregroundColor(palette.pillText)
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
 
@@ -46,7 +50,7 @@ struct MovementCard: View {
                     )
                 )
                 .font(Fonts.bodyRegular(12))
-                .foregroundColor(Colors.cardMeta)
+                .foregroundColor(palette.cardMeta)
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)
             }
@@ -54,12 +58,12 @@ struct MovementCard: View {
             GeometryReader { proxy in
                 ZStack(alignment: .leading) {
                     Capsule()
-                        .fill(Colors.barTrack)
+                        .fill(palette.barTrack)
 
                     LinearGradient(
                         colors: [
-                            Colors.barFrom,
-                            Colors.barTo
+                            palette.barFrom,
+                            palette.barTo
                         ],
                         startPoint: .leading,
                         endPoint: .trailing
@@ -72,16 +76,16 @@ struct MovementCard: View {
 
             Text(message.footer)
                 .font(Fonts.bodyRegular(12.5))
-                .foregroundColor(Colors.cardFooter)
+                .foregroundColor(palette.cardFooter)
                 .fixedSize(horizontal: false, vertical: true)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 16)
         .padding(.vertical, 14)
-        .background(Colors.cardBg)
+        .background(palette.cardBg)
         .overlay(
             RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .stroke(Colors.cardBorder, lineWidth: 1)
+                .stroke(palette.cardBorder, lineWidth: 1)
         )
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
     }
@@ -112,6 +116,6 @@ private let movementCardPreviewMessage = MessageSet(
         )
     }
     .padding(22)
-    .background(screenBackground[.calm]!.colors[1])
+    .background(ThemeTokens.day.screenBackground(.calm).colors[1])
 }
 #endif
