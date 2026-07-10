@@ -25,7 +25,7 @@ struct Glow: View {
                 mood: mood,
                 size: BOX_SIZE
             )
-            .background(screenBackground[mood]!.colors[1])
+            .background(ThemeTokens.day.screenBackground(mood).colors[1])
         }
     }
     .padding()

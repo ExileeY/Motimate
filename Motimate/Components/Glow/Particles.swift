@@ -218,7 +218,7 @@ private struct Particle: View {
     GeometryReader { geo in
         BackgroundParticles(area: geo.size)
     }
-    .background(screenBackground[.energetic]!.colors[1])
+    .background(ThemeTokens.day.screenBackground(.energetic).colors[1])
     .ignoresSafeArea()
 }
 #endif

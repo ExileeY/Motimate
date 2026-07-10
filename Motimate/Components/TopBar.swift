@@ -25,6 +25,7 @@ struct TopBar: View {
     let mood: Mood
     var onSettingsTap: () -> Void = {}
 
+    @Environment(\.themeTokens) private var tokens
     @State private var now = Date()
 
     private let timer = Timer.publish(
@@ -34,7 +35,8 @@ struct TopBar: View {
     ).autoconnect()
 
     var body: some View {
-        let dot = statusDot[mood]!
+        let palette = tokens.palette
+        let dot = tokens.statusDot(mood)
         let hour = Calendar.current.component(.hour, from: now)
 
         HStack(alignment: .center) {
@@ -46,14 +48,14 @@ struct TopBar: View {
 
                 Text(timeOfDay(hour: hour))
                     .font(Fonts.bodyBold(12.5))
-                    .foregroundColor(Colors.pillText)
+                    .foregroundColor(palette.pillText)
             }
             .padding(.horizontal, 12)
             .padding(.vertical, 6)
-            .background(Colors.pillBg)
+            .background(palette.pillBg)
             .overlay(
                 Capsule()
-                    .stroke(Colors.pillBorder, lineWidth: 1)
+                    .stroke(palette.pillBorder, lineWidth: 1)
             )
             .clipShape(Capsule())
 
@@ -62,12 +64,12 @@ struct TopBar: View {
             HStack(spacing: 12) {
                 Text(formatClock(now))
                     .font(Fonts.bodyBold(13))
-                    .foregroundColor(Colors.clock)
+                    .foregroundColor(palette.clock)
 
                 Button(action: onSettingsTap) {
                     Image(systemName: "gearshape")
                         .font(.system(size: 20, weight: .regular))
-                        .foregroundColor(Colors.clock)
+                        .foregroundColor(palette.clock)
                         .frame(width: 24, height: 24)
                 }
                 .buttonStyle(.plain)
@@ -87,7 +89,7 @@ struct TopBar: View {
         ForEach(Mood.allCases, id: \.self) { mood in
             TopBar(mood: mood)
                 .padding(22)
-                .background(screenBackground[mood]!.colors[1])
+                .background(ThemeTokens.day.screenBackground(mood).colors[1])
         }
     }
     .padding()

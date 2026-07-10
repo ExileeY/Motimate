@@ -29,22 +29,25 @@ private struct PetTile: View {
     let selected: Bool
     let onSelect: (PetId) -> Void
 
+    @Environment(\.themeTokens) private var tokens
+
     var body: some View {
         let def = petDefinition(id)
+        let palette = tokens.palette
 
-        Button(action: { onSelect(id) }) {
+        return Button(action: { onSelect(id) }) {
             VStack(spacing: 7) {
-                card(def)
+                card(def, palette)
                     .overlay(alignment: .topTrailing) {
                         if selected {
-                            badge
+                            badge(palette)
                                 .padding(7)
                         }
                     }
 
                 Text(def.name)
                     .font(Fonts.headingMedium(13.5))
-                    .foregroundColor(Colors.text)
+                    .foregroundColor(palette.text)
                     .lineLimit(1)
             }
             // Center the fixed-size card within its flexible grid column.
@@ -55,7 +58,7 @@ private struct PetTile: View {
         .accessibilityAddTraits(selected ? [.isSelected] : [])
     }
 
-    private func card(_ def: PetDefinition) -> some View {
+    private func card(_ def: PetDefinition, _ palette: Palette) -> some View {
         // Pet bodies render in a fixed 180×180 canvas and only *visually* shrink
         // via `.scaleEffect` (their layout footprint stays 180); pin the scaled
         // body to `previewSize` and clip it. The card itself is a fixed square,
@@ -65,24 +68,21 @@ private struct PetTile: View {
             .frame(width: PetPicker.previewSize, height: PetPicker.previewSize)
             .clipped()
             .frame(width: PetPicker.cardSize, height: PetPicker.cardSize)
-            .background(Colors.cardBg)
+            .background(palette.cardBg)
             .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
             .overlay(
-                // `strokeBorder` draws the border *inside* the fixed bounds (like
-                // RN's border-box), so a thicker selected border grows inward and
-                // never nudges layout.
                 RoundedRectangle(cornerRadius: 18, style: .continuous)
                     .strokeBorder(
-                        selected ? Colors.accent : Colors.cardBorder,
+                        selected ? palette.accent : palette.cardBorder,
                         lineWidth: selected ? 2.5 : 1.5
                     )
             )
     }
 
-    private var badge: some View {
+    private func badge(_ palette: Palette) -> some View {
         ZStack {
             Circle()
-                .fill(Colors.accent)
+                .fill(palette.accent)
                 .frame(width: 22, height: 22)
 
             Image(systemName: "checkmark")

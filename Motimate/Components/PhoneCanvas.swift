@@ -4,6 +4,8 @@ struct PhoneCanvas<Content: View>: View {
     let mood: Mood
     private let content: Content
 
+    @Environment(\.themeTokens) private var tokens
+
     init(
         mood: Mood,
         @ViewBuilder content: () -> Content
@@ -13,7 +15,7 @@ struct PhoneCanvas<Content: View>: View {
     }
 
     var body: some View {
-        let background = screenBackground[mood]!
+        let background = tokens.screenBackground(mood)
 
         ZStack {
             LinearGradient(

@@ -2,27 +2,36 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject private var settings: SettingsStore
+    @Environment(\.colorScheme) private var colorScheme
 
     @Binding var isPresented: Bool
 
     @State private var draft: String = ""
     @FocusState private var goalFocused: Bool
 
+    private var theme: Theme {
+        settings.resolvedTheme(isDark: colorScheme == .dark)
+    }
+
     var body: some View {
-        PhoneCanvas(mood: .calm) {
+        let palette = ThemeTokens.for(theme).palette
+
+        return PhoneCanvas(mood: .calm) {
             VStack(alignment: .leading, spacing: 0) {
-                header
+                header(palette)
 
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 0) {
-                        goalSection
-                        modeSection
-                        petSection
+                        goalSection(palette)
+                        modeSection(palette)
+                        petSection(palette)
+                        nightSection(palette)
                     }
                     .padding(.bottom, 24)
                 }
             }
         }
+        .environment(\.theme, theme)
         .navigationBarHidden(true)
         .onAppear { draft = String(settings.goal) }
         .onChange(of: goalFocused) { focused in
@@ -32,55 +41,63 @@ struct SettingsView: View {
 
     // MARK: - Header
 
-    private var header: some View {
+    private func header(_ palette: Palette) -> some View {
         HStack(spacing: 10) {
             Button(action: goBack) {
                 Image(systemName: "chevron.backward")
                     .font(.system(size: 24, weight: .regular))
-                    .foregroundColor(Colors.text)
+                    .foregroundColor(palette.text)
             }
             .buttonStyle(.plain)
             .accessibilityLabel("Back")
 
             Text("Settings")
                 .font(Fonts.heading(24))
-                .foregroundColor(Colors.text)
+                .foregroundColor(palette.text)
         }
         .padding(.bottom, 28)
     }
 
     // MARK: - Sections
 
-    private var goalSection: some View {
+    private func goalSection(_ palette: Palette) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            sectionLabel("User goals")
+            sectionLabel("User goals", palette)
                 .padding(.bottom, 10)
 
             HStack(spacing: 12) {
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Steps")
                         .font(Fonts.headingMedium(17))
-                        .foregroundColor(Colors.text)
+                        .foregroundColor(palette.text)
                     Text("Your daily movement objective")
                         .font(Fonts.bodyRegular(13))
-                        .foregroundColor(Colors.subtitle)
+                        .foregroundColor(palette.subtitle)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-                TextField(String(GOAL_DEFAULT), text: $draft)
+                TextField("", text: $draft)
                     .keyboardType(.numberPad)
                     .multilineTextAlignment(.trailing)
                     .font(Fonts.bodyBold(17))
-                    .foregroundColor(Colors.text)
+                    .foregroundColor(palette.text)
                     .focused($goalFocused)
                     .frame(minWidth: 92)
+                    .overlay(alignment: .trailing) {
+                        if draft.isEmpty {
+                            Text(String(GOAL_DEFAULT))
+                                .font(Fonts.bodyBold(17))
+                                .foregroundColor(palette.subtitle)
+                                .allowsHitTesting(false)
+                        }
+                    }
                     .padding(.vertical, 8)
                     .padding(.horizontal, 12)
-                    .background(Colors.pillBg)
+                    .background(palette.pillBg)
                     .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
                     .overlay(
                         RoundedRectangle(cornerRadius: 12, style: .continuous)
-                            .stroke(Colors.pillBorder, lineWidth: 1)
+                            .stroke(palette.pillBorder, lineWidth: 1)
                     )
                     .onChange(of: draft) { value in
                         // Digits only, max 6 (mirrors number-pad + maxLength=6).
@@ -96,31 +113,31 @@ struct SettingsView: View {
             }
             .padding(.vertical, 16)
             .padding(.horizontal, 18)
-            .background(Colors.cardBg)
+            .background(palette.cardBg)
             .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
             .overlay(
                 RoundedRectangle(cornerRadius: 18, style: .continuous)
-                    .stroke(Colors.cardBorder, lineWidth: 1)
+                    .stroke(palette.cardBorder, lineWidth: 1)
             )
 
             Text("Between \(formatGoal(GOAL_MIN)) and \(formatGoal(GOAL_MAX)) steps.")
                 .font(Fonts.bodyRegular(12))
-                .foregroundColor(Colors.cardMeta)
+                .foregroundColor(palette.cardMeta)
                 .padding(.top, 10)
                 .padding(.leading, 4)
         }
     }
 
-    private var modeSection: some View {
+    private func modeSection(_ palette: Palette) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            sectionLabel("Mode")
+            sectionLabel("Mode", palette)
                 .padding(.bottom, 5)
             Text("How real do you want it?")
                 .font(Fonts.heading(24))
-                .foregroundColor(Colors.text)
+                .foregroundColor(palette.text)
             Text("Choose what happens to your pet between walks.")
                 .font(Fonts.bodyRegular(13))
-                .foregroundColor(Colors.subtitle)
+                .foregroundColor(palette.subtitle)
                 .padding(.top, 6)
 
             ModePicker()
@@ -129,16 +146,16 @@ struct SettingsView: View {
         .padding(.top, 32)
     }
 
-    private var petSection: some View {
+    private func petSection(_ palette: Palette) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            sectionLabel("Pet")
+            sectionLabel("Pet", palette)
                 .padding(.bottom, 5)
             Text("Choose your companion")
                 .font(Fonts.heading(24))
-                .foregroundColor(Colors.text)
+                .foregroundColor(palette.text)
             Text("Lives on your home screen. Switch any time.")
                 .font(Fonts.bodyRegular(13))
-                .foregroundColor(Colors.subtitle)
+                .foregroundColor(palette.subtitle)
                 .padding(.top, 6)
 
             PetPicker()
@@ -147,14 +164,52 @@ struct SettingsView: View {
         .padding(.top, 32)
     }
 
+    private func nightSection(_ palette: Palette) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            sectionLabel("Appearance", palette)
+                .padding(.bottom, 5)
+            Text("Night theme")
+                .font(Fonts.heading(24))
+                .foregroundColor(palette.text)
+            Text("Switch to a dark look when your device is in Dark Mode.")
+                .font(Fonts.bodyRegular(13))
+                .foregroundColor(palette.subtitle)
+                .padding(.top, 6)
+
+            Toggle(isOn: autoNightBinding) {
+                Text("Follow system appearance")
+                    .font(Fonts.headingMedium(16.5))
+                    .foregroundColor(palette.text)
+            }
+            .tint(palette.accent)
+            .padding(.vertical, 15)
+            .padding(.horizontal, 15)
+            .background(palette.cardBg)
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .stroke(palette.cardBorder, lineWidth: 1.5)
+            )
+            .padding(.top, 16)
+        }
+        .padding(.top, 32)
+    }
+
     // MARK: - Helpers
 
-    private func sectionLabel(_ text: String) -> some View {
+    private var autoNightBinding: Binding<Bool> {
+        Binding(
+            get: { settings.autoNightEnabled },
+            set: { settings.setAutoNight($0) }
+        )
+    }
+
+    private func sectionLabel(_ text: String, _ palette: Palette) -> some View {
         Text(text)
             .font(Fonts.bodyBold(12.5))
             .kerning(0.5)
             .textCase(.uppercase)
-            .foregroundColor(Colors.cardMeta)
+            .foregroundColor(palette.cardMeta)
     }
 
     private func formatGoal(_ value: Int) -> String {

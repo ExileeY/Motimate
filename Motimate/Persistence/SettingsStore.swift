@@ -4,20 +4,28 @@ final class SettingsStore: ObservableObject {
     @Published private(set) var goal: Int
     @Published private(set) var gameMode: GameMode
     @Published private(set) var petId: PetId
+    @Published private(set) var autoNightEnabled: Bool
     @Published private(set) var ready: Bool
+
+    #if DEBUG
+    @Published var themeOverride: Theme? = nil
+    #endif
 
     private let goalStore: PersistedStorage<Int>
     private let gameModeStore: PersistedStorage<GameMode>
     private let petStore: PersistedStorage<PetId>
+    private let autoNightStore: PersistedStorage<Bool>
 
     init(defaults: UserDefaults = .standard) {
         goalStore = makeGoalStorage(defaults: defaults)
         gameModeStore = makeGameModeStorage(defaults: defaults)
         petStore = makePetStorage(defaults: defaults)
+        autoNightStore = AutoNightStorage.make(defaults: defaults)
 
         goal = goalStore.get()
         gameMode = gameModeStore.get()
         petId = petStore.get()
+        autoNightEnabled = autoNightStore.get()
         ready = true
     }
 
@@ -43,5 +51,20 @@ final class SettingsStore: ObservableObject {
         petId = normalized
         petStore.set(normalized)
         return normalized
+    }
+
+    @discardableResult
+    func setAutoNight(_ value: Bool) -> Bool {
+        let normalized = autoNightStore.normalize(value)
+        autoNightEnabled = normalized
+        autoNightStore.set(normalized)
+        return normalized
+    }
+
+    func resolvedTheme(isDark: Bool) -> Theme {
+        #if DEBUG
+        if let themeOverride { return themeOverride }
+        #endif
+        return Theme.resolve(autoNightEnabled: autoNightEnabled, isDark: isDark)
     }
 }

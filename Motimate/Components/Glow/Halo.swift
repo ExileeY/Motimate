@@ -14,8 +14,10 @@ struct Halo: View {
     let mood: Mood
     let size: CGFloat
 
+    @Environment(\.themeTokens) private var tokens
+
     var body: some View {
-        let spec = glow[mood]!
+        let spec = tokens.glow(mood)
         let center = size / 2
         let radius = (spec.size / PET_SIZE) * (size / 2)
 
@@ -68,7 +70,7 @@ struct Halo: View {
                 mood: mood,
                 size: BOX_SIZE
             )
-            .background(screenBackground[mood]!.colors[1])
+            .background(ThemeTokens.day.screenBackground(mood).colors[1])
         }
     }
     .padding()

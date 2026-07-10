@@ -120,7 +120,7 @@ private struct ConfettiPieces: View {
 #if DEBUG
 #Preview("Confetti") {
     ZStack {
-        screenBackground[.calm]!.colors[1].ignoresSafeArea()
+        ThemeTokens.day.screenBackground(.calm).colors[1].ignoresSafeArea()
         Confetti(onFinished: {})
     }
 }
