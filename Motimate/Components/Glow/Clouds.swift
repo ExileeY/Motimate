@@ -126,12 +126,12 @@ private struct Cloud: View {
             delayMs: delayMs
         ) { progress in
             let progress = CGFloat(progress)
-            let riseScale = GlowMath.linearInterpolate(
+            let riseScale = MathUtils.linearInterpolate(
                 CloudMotion.scaleMin,
                 CloudMotion.scaleMax,
                 progress
             )
-            let translateY = GlowMath.linearInterpolate(
+            let translateY = MathUtils.linearInterpolate(
                 CloudMotion.translateYMin,
                 CloudMotion.translateYMax,
                 progress

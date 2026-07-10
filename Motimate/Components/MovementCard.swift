@@ -17,7 +17,7 @@ func movementMeta(
 }
 
 func progressFillFraction(_ progress: Double) -> CGFloat {
-    let clamped = min(max(progress, 0), 1)
+    let clamped = MathUtils.clamp01(progress)
     return CGFloat((clamped * 100).rounded() / 100)
 }
 

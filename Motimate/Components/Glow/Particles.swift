@@ -178,12 +178,12 @@ private struct Particle: View {
             delayMs: delayMs
         ) { progress in
             let progress = CGFloat(progress)
-            let scale = GlowMath.linearInterpolate(
+            let scale = MathUtils.linearInterpolate(
                 ParticleMotion.scaleMin,
                 ParticleMotion.scaleMax,
                 progress
             )
-            let translateY = GlowMath.linearInterpolate(
+            let translateY = MathUtils.linearInterpolate(
                 ParticleMotion.translateYMin,
                 ParticleMotion.translateYMax,
                 progress

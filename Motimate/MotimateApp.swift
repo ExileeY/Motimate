@@ -4,6 +4,7 @@ import SwiftUI
 struct MotimateApp: App {
     @StateObject private var settings: SettingsStore
     @StateObject private var dailySteps: DailyStepsModel
+    @StateObject private var celebration = CelebrationStore()
 
     init() {
         let store = SettingsStore()
@@ -19,6 +20,7 @@ struct MotimateApp: App {
             .navigationViewStyle(.stack)
             .environmentObject(settings)
             .environmentObject(dailySteps)
+            .environmentObject(celebration)
         }
     }
 }

@@ -7,14 +7,6 @@ struct GlowTransform: Equatable {
 }
 
 enum GlowMath {
-    static func linearInterpolate(
-        _ min: CGFloat,
-        _ max: CGFloat,
-        _ progress: CGFloat
-    ) -> CGFloat {
-        min + (max - min) * progress
-    }
-
     static func calcTriangleOpacity(
         progress: CGFloat,
         fadeIn: CGFloat

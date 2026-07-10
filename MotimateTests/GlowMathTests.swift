@@ -2,34 +2,6 @@ import XCTest
 @testable import Motimate
 
 final class GlowMathTests: XCTestCase {
-    func testLinearInterpolateReturnsMinAtProgressZero() {
-        XCTAssertEqual(
-            GlowMath.linearInterpolate(10, 20, 0),
-            10
-        )
-    }
-
-    func testLinearInterpolateReturnsMaxAtProgressOne() {
-        XCTAssertEqual(
-            GlowMath.linearInterpolate(10, 20, 1),
-            20
-        )
-    }
-
-    func testLinearInterpolateReturnsMidpoint() {
-        XCTAssertEqual(
-            GlowMath.linearInterpolate(10, 20, 0.5),
-            15
-        )
-    }
-
-    func testLinearInterpolateExtrapolatesPastRange() {
-        XCTAssertEqual(
-            GlowMath.linearInterpolate(0, 10, 2),
-            20
-        )
-    }
-
     func testTriangleOpacityRampsUpDuringFadeIn() {
         let fadeIn: CGFloat = 0.3
 

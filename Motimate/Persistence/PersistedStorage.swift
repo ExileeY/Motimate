@@ -15,4 +15,8 @@ struct PersistedStorage<T> {
     func set(_ value: T) {
         defaults.set(encode(normalize(value)), forKey: key)
     }
+
+    func clear() {
+        defaults.removeObject(forKey: key)
+    }
 }
