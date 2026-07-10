@@ -1,19 +1,30 @@
 import Foundation
 
-let PET_DEFAULT = PET_ID_DEFAULT
+enum PetStorage {
+    static let defaultValue = PET_ID_DEFAULT
+    static let ids = PET_IDS
 
-func normalizePet(_ value: PetId?) -> PetId {
-    guard let value, PET_IDS.contains(value) else { return PET_DEFAULT }
-    return value
-}
+    static func decode(_ value: String?) -> PetId {
+        value.flatMap { PetId(rawValue: $0) } ?? defaultValue
+    }
 
-func makePetStorage(defaults: UserDefaults = .standard) -> PersistedStorage<PetId> {
-    PersistedStorage(
-        key: "motimate.pet",
-        decode: { stored in stored.flatMap { PetId(rawValue: $0) } ?? PET_DEFAULT },
-        encode: { $0.rawValue },
-        normalize: { normalizePet($0) },
-        fallback: PET_DEFAULT,
-        defaults: defaults
-    )
+    static func encode(_ value: PetId) -> String {
+        value.rawValue
+    }
+
+    static func normalize(_ value: PetId?) -> PetId {
+        guard let value, ids.contains(value) else { return defaultValue }
+        return value
+    }
+
+    static func make(defaults: UserDefaults = .standard) -> PersistedStorage<PetId> {
+        PersistedStorage(
+            key: "motimate.pet",
+            decode: { decode($0) },
+            encode: { encode($0) },
+            normalize: { normalize($0) },
+            fallback: defaultValue,
+            defaults: defaults
+        )
+    }
 }

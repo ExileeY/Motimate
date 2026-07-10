@@ -87,7 +87,7 @@ struct SettingsView: View {
                     .frame(minWidth: 92)
                     .overlay(alignment: .trailing) {
                         if draft.isEmpty {
-                            Text(String(GOAL_DEFAULT))
+                            Text(String(GoalStorage.defaultValue))
                                 .font(Fonts.bodyBold(17))
                                 .foregroundColor(palette.subtitle)
                                 .allowsHitTesting(false)
@@ -122,7 +122,7 @@ struct SettingsView: View {
                     .stroke(palette.cardBorder, lineWidth: 1)
             )
 
-            Text("Between \(formatGoal(GOAL_MIN)) and \(formatGoal(GOAL_MAX)) steps.")
+            Text("Between \(formatGoal(GoalStorage.minValue)) and \(formatGoal(GoalStorage.maxValue)) steps.")
                 .font(Fonts.bodyRegular(12))
                 .foregroundColor(palette.cardMeta)
                 .padding(.top, 10)
@@ -224,7 +224,7 @@ struct SettingsView: View {
 
     private func commitGoal() {
         let trimmed = draft.trimmingCharacters(in: .whitespaces)
-        let parsed = trimmed.isEmpty ? GOAL_DEFAULT : (Int(trimmed) ?? GOAL_DEFAULT)
+        let parsed = trimmed.isEmpty ? GoalStorage.defaultValue : (Int(trimmed) ?? GoalStorage.defaultValue)
         draft = String(settings.setGoal(parsed))
     }
 
