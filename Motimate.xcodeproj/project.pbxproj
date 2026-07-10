@@ -40,6 +40,7 @@
 		56BF7CB982903D88955A0CF2 /* PhoneCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82F59C05246CCC45B8CF46A /* PhoneCanvas.swift */; };
 		5AF2D3B066D8A667D0503425 /* Halo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC9124E2D98D4E6139AE102 /* Halo.swift */; };
 		5B1163A681F1BA7BB33D60DD /* RoundEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = F677A9B1B35FF63B77D3B719 /* RoundEye.swift */; };
+		5DAEE7D8F56AF151578C34E2 /* InteractiveSwipeBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE7451DFEC08194C7053F9E /* InteractiveSwipeBack.swift */; };
 		61C8D5ABFC348029BF77D1BB /* GlowMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E025435A59515A22C9A532F4 /* GlowMath.swift */; };
 		67005F60D3591046A1B61E00 /* DailyStepsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5963D8391D7FF2B1ACF4CAA9 /* DailyStepsTests.swift */; };
 		675D33E6461C1D0F7572646C /* Particles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD0E63596717288553DC990 /* Particles.swift */; };
@@ -194,6 +195,7 @@
 		82136E95D3598033BDEB1BDC /* UnavailableStepReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnavailableStepReader.swift; sourceTree = "<group>"; };
 		855E683B5F6CAEB565534221 /* GameModeStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeStorageTests.swift; sourceTree = "<group>"; };
 		883C0CDAEDD9535C26627ED9 /* MessageSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSet.swift; sourceTree = "<group>"; };
+		8AE7451DFEC08194C7053F9E /* InteractiveSwipeBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveSwipeBack.swift; sourceTree = "<group>"; };
 		8CD0E63596717288553DC990 /* Particles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particles.swift; sourceTree = "<group>"; };
 		8F134252AEA764CB094123BA /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 		2FC9B7A239003788E804E50A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8AE7451DFEC08194C7053F9E /* InteractiveSwipeBack.swift */,
 				E5B979BA5753D47E5E9590D1 /* Loop.swift */,
 				210F1D4117900A67DA1D9CD0 /* MathUtils.swift */,
 				54C30F54FF56007EE55DB842 /* ResponsiveScale.swift */,
@@ -705,6 +708,7 @@
 				F58AEDE061E480E5538D9869 /* GoalStorage.swift in Sources */,
 				5AF2D3B066D8A667D0503425 /* Halo.swift in Sources */,
 				BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */,
+				5DAEE7D8F56AF151578C34E2 /* InteractiveSwipeBack.swift in Sources */,
 				6B15D7A443CF00BFECC08924 /* KhinklEye.swift in Sources */,
 				CABEC257880660AD83E4F6F2 /* KhinklearBody.swift in Sources */,
 				2C75B1E711397277EF6CCD57 /* KhinklearFace.swift in Sources */,
