@@ -1,11 +1,13 @@
 import Foundation
 
-enum HapticsStorage {
-    static let defaultValue = false
+protocol HapticsStorageKind {
+    static var key: String { get }
+    static var defaultValue: Bool { get }
+}
 
+extension HapticsStorageKind {
     static func decode(_ value: String?) -> Bool {
-        guard let value else { return HapticsStorage.defaultValue }
-        return value == "true"
+        value.map { $0 == "true" } ?? defaultValue
     }
 
     static func encode(_ value: Bool) -> String {
@@ -18,7 +20,7 @@ enum HapticsStorage {
 
     static func make(defaults: UserDefaults = .standard) -> PersistedStorage<Bool> {
         PersistedStorage(
-            key: "motimate.haptics",
+            key: key,
             decode: { decode($0) },
             encode: { encode($0) },
             normalize: { normalize($0) },

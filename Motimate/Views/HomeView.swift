@@ -102,7 +102,7 @@ struct HomeView: View {
         return PhoneCanvas(mood: mood) {
             VStack(spacing: 0) {
                 TopBar(mood: mood, onSettingsTap: {
-                    HapticsService.impact(.light, enabled: settings.hapticsEnabled)
+                    HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
                     showSettings = true
                 })
 
@@ -209,6 +209,7 @@ struct HomeView: View {
 
         celebration.markCelebrated()
         isCelebrating = true
+        HapticsService.celebration(enabled: settings.hapticsAnimationEnabled)
     }
 
     #if DEBUG
@@ -217,10 +218,13 @@ struct HomeView: View {
         let next = (moodCycle.firstIndex(of: current) ?? -1) + 1
         override = moodCycle[next % moodCycle.count]
 
-        // Replay the confetti
+        // Replay the confetti (so the animation haptic is testable without walking)
         celebration.resetToday()
         isCelebrating = false
-        DispatchQueue.main.async { isCelebrating = true }
+        DispatchQueue.main.async {
+            isCelebrating = true
+            HapticsService.celebration(enabled: settings.hapticsAnimationEnabled)
+        }
     }
 
     private func toggleTheme() {

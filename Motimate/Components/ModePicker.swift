@@ -53,7 +53,7 @@ struct ModePicker: View {
     private func select(_ id: GameMode) {
         if id == settings.gameMode { return }
 
-        HapticsService.impact(.light, enabled: settings.hapticsEnabled)
+        HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
 
         if id == .real {
             confirmingReal = true
