@@ -17,7 +17,10 @@ struct PetPicker: View {
                 PetTile(
                     id: id,
                     selected: id == settings.petId,
-                    onSelect: { settings.setPet($0) }
+                    onSelect: {
+                        HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
+                        settings.setPet($0)
+                    }
                 )
             }
         }

@@ -23,6 +23,22 @@ final class SettingsStoreTests: XCTestCase {
         XCTAssertEqual(store.goal, GoalStorage.defaultValue)
         XCTAssertEqual(store.petId, PetStorage.defaultValue)
         XCTAssertEqual(store.gameMode, GameModeStorage.defaultValue)
+        XCTAssertEqual(store.hapticsTabEnabled, HapticsTapStorage.defaultValue)
+        XCTAssertEqual(store.hapticsAnimationEnabled, HapticsAnimationStorage.defaultValue)
+    }
+
+    func testSetTapHapticsPublishesAndReturns() {
+        let store = SettingsStore(defaults: defaults)
+        let returned = store.setHapticsTap(true)
+        XCTAssertTrue(returned)
+        XCTAssertTrue(store.hapticsTabEnabled)
+    }
+
+    func testSetAnimationHapticsPublishesAndReturns() {
+        let store = SettingsStore(defaults: defaults)
+        let returned = store.setHapticsAnimation(true)
+        XCTAssertTrue(returned)
+        XCTAssertTrue(store.hapticsAnimationEnabled)
     }
 
     func testSetGoalNormalizesPublishesAndReturns() {
@@ -37,10 +53,14 @@ final class SettingsStoreTests: XCTestCase {
         store.setGoal(20_000)
         store.setPet(.tomato)
         store.setGameMode(.real)
+        store.setHapticsTap(true)
+        store.setHapticsAnimation(true)
 
         let reloaded = SettingsStore(defaults: defaults)
         XCTAssertEqual(reloaded.goal, 20_000)
         XCTAssertEqual(reloaded.petId, .tomato)
         XCTAssertEqual(reloaded.gameMode, .real)
+        XCTAssertTrue(reloaded.hapticsTabEnabled)
+        XCTAssertTrue(reloaded.hapticsAnimationEnabled)
     }
 }
