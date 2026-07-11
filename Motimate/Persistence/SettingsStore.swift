@@ -5,6 +5,7 @@ final class SettingsStore: ObservableObject {
     @Published private(set) var gameMode: GameMode
     @Published private(set) var petId: PetId
     @Published private(set) var autoNightEnabled: Bool
+    @Published private(set) var hapticsEnabled: Bool
     @Published private(set) var ready: Bool
 
     #if DEBUG
@@ -15,17 +16,20 @@ final class SettingsStore: ObservableObject {
     private let gameModeStore: PersistedStorage<GameMode>
     private let petStore: PersistedStorage<PetId>
     private let autoNightStore: PersistedStorage<Bool>
+    private let hapticsStore: PersistedStorage<Bool>
 
     init(defaults: UserDefaults = .standard) {
         goalStore = GoalStorage.make(defaults: defaults)
         gameModeStore = GameModeStorage.make(defaults: defaults)
         petStore = PetStorage.make(defaults: defaults)
         autoNightStore = AutoNightStorage.make(defaults: defaults)
+        hapticsStore = HapticsStorage.make(defaults: defaults)
 
         goal = goalStore.get()
         gameMode = gameModeStore.get()
         petId = petStore.get()
         autoNightEnabled = autoNightStore.get()
+        hapticsEnabled = hapticsStore.get()
         ready = true
     }
 
@@ -58,6 +62,14 @@ final class SettingsStore: ObservableObject {
         let normalized = autoNightStore.normalize(value)
         autoNightEnabled = normalized
         autoNightStore.set(normalized)
+        return normalized
+    }
+
+    @discardableResult
+    func setHaptics(_ value: Bool) -> Bool {
+        let normalized = hapticsStore.normalize(value)
+        hapticsEnabled = normalized
+        hapticsStore.set(normalized)
         return normalized
     }
 

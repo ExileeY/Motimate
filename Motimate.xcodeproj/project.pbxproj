@@ -52,6 +52,7 @@
 		6AFFDE03A5542601B2E556E8 /* DogFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0056D897BDF58DED5B837F7B /* DogFace.swift */; };
 		6B15D7A443CF00BFECC08924 /* KhinklEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959A5890CB30D2D57417665 /* KhinklEye.swift */; };
 		6D10E4B91A5B4B7AD387AAD1 /* Fredoka_600SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1614F871C04C5B1AE281272B /* Fredoka_600SemiBold.ttf */; };
+		6D57D0868888A568FE444234 /* HapticsStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD1D4953FD39836A1B6A56 /* HapticsStorageTests.swift */; };
 		6E30F17B328CCC42D8EBD2A0 /* MochiFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49081B748C7AD0E937672D27 /* MochiFace.swift */; };
 		6EE9AB2AEB8454EC2A39EB46 /* BulbashikFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF1F480BA77EFC04D38D2 /* BulbashikFace.swift */; };
 		7007CE2A796835FB1A2FAD02 /* MochiMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F378C6479AF0C56EAA91F /* MochiMessages.swift */; };
@@ -87,6 +88,7 @@
 		A62B38A5EEC1C0A64E9A40AF /* DogBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F401B73C075B90298532B9 /* DogBody.swift */; };
 		ABA3069797BC746B35622DA8 /* OctopusFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D1A162ADC46EB93E39BE7 /* OctopusFace.swift */; };
 		ABFF85AF55433112DC250D0E /* KhinklearMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D150DA2E1ED62A4F58941A /* KhinklearMessages.swift */; };
+		B0C053338239477D9D880420 /* HapticsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69DA33C806C6893C5943665 /* HapticsStorage.swift */; };
 		B11F09F769C06C5D423FD6B7 /* SchnauzerBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D4AC7299D374AA2865674C /* SchnauzerBody.swift */; };
 		B7FCC9B8E97A7A07EB9D910A /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */; };
 		B9585B5D3BA1B978B75E7718 /* Nunito_400Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32B29B0082422D0540A988A7 /* Nunito_400Regular.ttf */; };
@@ -103,9 +105,11 @@
 		CDB0422D50F4F56ECA5AB840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBAFEC736402E2546C30A35B /* Assets.xcassets */; };
 		CDB9877ECF0B14E931E93946 /* PlaceholderPetBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6955EED43B616CABB7E94518 /* PlaceholderPetBody.swift */; };
 		CE7B6F7A3D89A9668646B833 /* ScreenBgTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB561477397769A7CAD2908 /* ScreenBgTokens.swift */; };
+		CEE81F3F7FE04DDDCBA3CCA5 /* HapticToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77F9D75C19D873BC0BC2AE3 /* HapticToggle.swift */; };
 		CF6C66987462F72EF34CB45D /* PetStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CF40AC0DDE802444321A46 /* PetStorageTests.swift */; };
 		D4E1D1CE071E4D547537484F /* BulbashikBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9C03C55336010B08B3EE7 /* BulbashikBody.swift */; };
 		DB8DCC566EDC500424002E9E /* RoundedBoxPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF28A4FEB35C882FCC6D042 /* RoundedBoxPath.swift */; };
+		DC037AF6E42B548518BE6F49 /* HapticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006C3B437C9B09FFB343EF6F /* HapticsService.swift */; };
 		DC7FFA0A59E08F05224D7587 /* MathUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A593981CD48EE715C86843 /* MathUtilsTests.swift */; };
 		E0C2A216CC4ACDE6F8287806 /* MoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CFB464CEE620159654FC7B /* MoodTests.swift */; };
 		E2C11918922EE21C8C993116 /* CelebrationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201D7BF372A55E7C9E6F111 /* CelebrationStore.swift */; };
@@ -133,6 +137,7 @@
 
 /* Begin PBXFileReference section */
 		0056D897BDF58DED5B837F7B /* DogFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFace.swift; sourceTree = "<group>"; };
+		006C3B437C9B09FFB343EF6F /* HapticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsService.swift; sourceTree = "<group>"; };
 		01242935F32FA026EBEEA0A4 /* MovementCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementCard.swift; sourceTree = "<group>"; };
 		02E9C03C55336010B08B3EE7 /* BulbashikBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikBody.swift; sourceTree = "<group>"; };
 		0758B99C8A2410632AA28584 /* OctopusEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusEye.swift; sourceTree = "<group>"; };
@@ -211,6 +216,8 @@
 		9B9CE45D552CBE0EE666AD19 /* StatusDotTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDotTokens.swift; sourceTree = "<group>"; };
 		A31ACA6E7D1EDE27E6BEE78A /* PersistedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedStorage.swift; sourceTree = "<group>"; };
 		A3C64CD38FFE017BEDEE318E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A69DA33C806C6893C5943665 /* HapticsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsStorage.swift; sourceTree = "<group>"; };
+		A77F9D75C19D873BC0BC2AE3 /* HapticToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticToggle.swift; sourceTree = "<group>"; };
 		A8062C98884D6CC67C321B27 /* TomatoBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoBody.swift; sourceTree = "<group>"; };
 		A82F59C05246CCC45B8CF46A /* PhoneCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCanvas.swift; sourceTree = "<group>"; };
 		AA04048C9312150FE3A82339 /* ChromeComponentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromeComponentsTests.swift; sourceTree = "<group>"; };
@@ -244,6 +251,7 @@
 		EF0566A28399BFFFC32DB1CA /* PetPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPicker.swift; sourceTree = "<group>"; };
 		F12AA63323571C7576C36F81 /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
 		F296C193C5B40FF536A06AA9 /* Confetti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confetti.swift; sourceTree = "<group>"; };
+		F4FD1D4953FD39836A1B6A56 /* HapticsStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsStorageTests.swift; sourceTree = "<group>"; };
 		F677A9B1B35FF63B77D3B719 /* RoundEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundEye.swift; sourceTree = "<group>"; };
 		F7EC6187917CA5DBA619BDF8 /* KhinklearBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhinklearBody.swift; sourceTree = "<group>"; };
 		F84231810466105217B77E9A /* EntranceMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceMotion.swift; sourceTree = "<group>"; };
@@ -315,6 +323,7 @@
 		2FC9B7A239003788E804E50A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				006C3B437C9B09FFB343EF6F /* HapticsService.swift */,
 				8AE7451DFEC08194C7053F9E /* InteractiveSwipeBack.swift */,
 				E5B979BA5753D47E5E9590D1 /* Loop.swift */,
 				210F1D4117900A67DA1D9CD0 /* MathUtils.swift */,
@@ -397,6 +406,7 @@
 				855E683B5F6CAEB565534221 /* GameModeStorageTests.swift */,
 				308C2EACCF1D6A93A555F63B /* GlowMathTests.swift */,
 				CE68437C77B6F7B00EA37D5C /* GoalStorageTests.swift */,
+				F4FD1D4953FD39836A1B6A56 /* HapticsStorageTests.swift */,
 				73CB9FDE689281EDCD53F441 /* LoopTests.swift */,
 				32A593981CD48EE715C86843 /* MathUtilsTests.swift */,
 				D7CFB464CEE620159654FC7B /* MoodTests.swift */,
@@ -418,6 +428,7 @@
 				3216D0CE3BD9533666E45C6B /* AutoNightStorage.swift */,
 				275AD45E4729FCCCA6F20032 /* GameModeStorage.swift */,
 				3E8E5CCC434BF09B366A6B37 /* GoalStorage.swift */,
+				A69DA33C806C6893C5943665 /* HapticsStorage.swift */,
 				5AF5BB110C0EADC77B004F6C /* PetStorage.swift */,
 			);
 			path = Settings;
@@ -518,6 +529,7 @@
 		C0B8CF03DC28A120D244FDF9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A77F9D75C19D873BC0BC2AE3 /* HapticToggle.swift */,
 				C9978145838B653EE8906D2C /* ModePicker.swift */,
 				01242935F32FA026EBEEA0A4 /* MovementCard.swift */,
 				EF0566A28399BFFFC32DB1CA /* PetPicker.swift */,
@@ -723,6 +735,9 @@
 				61C8D5ABFC348029BF77D1BB /* GlowMath.swift in Sources */,
 				482589C209A0C126A816604E /* GoalStorage.swift in Sources */,
 				5AF2D3B066D8A667D0503425 /* Halo.swift in Sources */,
+				CEE81F3F7FE04DDDCBA3CCA5 /* HapticToggle.swift in Sources */,
+				DC037AF6E42B548518BE6F49 /* HapticsService.swift in Sources */,
+				B0C053338239477D9D880420 /* HapticsStorage.swift in Sources */,
 				BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */,
 				5DAEE7D8F56AF151578C34E2 /* InteractiveSwipeBack.swift in Sources */,
 				6B15D7A443CF00BFECC08924 /* KhinklEye.swift in Sources */,
@@ -794,6 +809,7 @@
 				174A2F947ABFC803B4AC8749 /* GameModeStorageTests.swift in Sources */,
 				EE8FCB40F03D2D75C5458F83 /* GlowMathTests.swift in Sources */,
 				F533B4A40A0692B7C7071221 /* GoalStorageTests.swift in Sources */,
+				6D57D0868888A568FE444234 /* HapticsStorageTests.swift in Sources */,
 				7550E7865659D21650766F41 /* LoopTests.swift in Sources */,
 				DC7FFA0A59E08F05224D7587 /* MathUtilsTests.swift in Sources */,
 				E0C2A216CC4ACDE6F8287806 /* MoodTests.swift in Sources */,

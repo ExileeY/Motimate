@@ -26,6 +26,7 @@ struct SettingsView: View {
                         modeSection(palette)
                         petSection(palette)
                         nightSection(palette)
+                        hapticsSection(palette)
                     }
                     .padding(.bottom, 24)
                 }
@@ -183,7 +184,38 @@ struct SettingsView: View {
                     .font(Fonts.headingMedium(16.5))
                     .foregroundColor(palette.text)
             }
-            .tint(palette.accent)
+            .hapticSwitch(enabled: settings.hapticsEnabled, tint: palette.accent)
+            .padding(.vertical, 15)
+            .padding(.horizontal, 15)
+            .background(palette.cardBg)
+            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .stroke(palette.cardBorder, lineWidth: 1.5)
+            )
+            .padding(.top, 16)
+        }
+        .padding(.top, 32)
+    }
+
+    private func hapticsSection(_ palette: Palette) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            sectionLabel("Feedback", palette)
+                .padding(.bottom, 5)
+            Text("Haptics")
+                .font(Fonts.heading(24))
+                .foregroundColor(palette.text)
+            Text("Add subtle vibrations to taps, animations, and celebrations.")
+                .font(Fonts.bodyRegular(13))
+                .foregroundColor(palette.subtitle)
+                .padding(.top, 6)
+
+            Toggle(isOn: hapticsBinding) {
+                Text("Vibrate on interactions")
+                    .font(Fonts.headingMedium(16.5))
+                    .foregroundColor(palette.text)
+            }
+            .hapticSwitch(enabled: settings.hapticsEnabled, tint: palette.accent)
             .padding(.vertical, 15)
             .padding(.horizontal, 15)
             .background(palette.cardBg)
@@ -203,6 +235,13 @@ struct SettingsView: View {
         Binding(
             get: { settings.autoNightEnabled },
             set: { settings.setAutoNight($0) }
+        )
+    }
+
+    private var hapticsBinding: Binding<Bool> {
+        Binding(
+            get: { settings.hapticsEnabled },
+            set: { settings.setHaptics($0) }
         )
     }
 
@@ -229,6 +268,7 @@ struct SettingsView: View {
     }
 
     private func goBack() {
+        HapticsService.impact(.light, enabled: settings.hapticsEnabled)
         commitGoal()
         isPresented = false
     }

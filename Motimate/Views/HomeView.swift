@@ -101,7 +101,10 @@ struct HomeView: View {
 
         return PhoneCanvas(mood: mood) {
             VStack(spacing: 0) {
-                TopBar(mood: mood, onSettingsTap: { showSettings = true })
+                TopBar(mood: mood, onSettingsTap: {
+                    HapticsService.impact(.light, enabled: settings.hapticsEnabled)
+                    showSettings = true
+                })
 
                 Spacer(minLength: 0)
 
