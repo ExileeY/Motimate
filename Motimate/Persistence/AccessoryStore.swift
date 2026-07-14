@@ -26,14 +26,24 @@ final class AccessoryStore: ObservableObject {
         }
         equippedStores = slotStores
 
-        let owned = Set(AccessoryId.allCases.filter { stores[$0]!.get() })
+        let owned = Self.initOwned(stores)
         self.owned = owned
+        self.equipped = Self.initEquipped(slotStores, owned: owned)
+    }
 
-        // Hydrate each slot, reconciling a stale id that isn't owned or whose definition's
-        // slot no longer matches this slot (guards against a hand-written/orphaned key).
+    private static func initOwned(
+        _ stores: [AccessoryId: PersistedStorage<Bool>]
+    ) -> Set<AccessoryId> {
+        Set(AccessoryId.allCases.filter { stores[$0]!.get() })
+    }
+
+    private static func initEquipped(
+        _ stores: [AccessorySlot: PersistedStorage<AccessoryId?>],
+        owned: Set<AccessoryId>
+    ) -> [AccessorySlot: AccessoryId] {
         var equipped: [AccessorySlot: AccessoryId] = [:]
         for slot in AccessorySlot.allCases {
-            let store = slotStores[slot]!
+            let store = stores[slot]!
             guard let id = store.get() else { continue }
             if owned.contains(id), Accessory.define(id).slot == slot {
                 equipped[slot] = id
@@ -41,34 +51,28 @@ final class AccessoryStore: ObservableObject {
                 store.set(nil)
             }
         }
-        self.equipped = equipped
+        return equipped
     }
 
-    /// Fraction toward earning the accessory today (0...1), independent of the user's
-    /// step goal. Do **not** reuse `DailyStepsModel.progress` — that is goal-relative.
     func progress(_ id: AccessoryId, steps: Int) -> Double {
-        let goal = Accessory.define(id).stepGoal
-        guard goal > 0 else { return 1 }
-        return MathUtils.clamp01(Double(steps) / Double(goal))
+        let accessoryGoal = Accessory.define(id).stepGoal
+        guard accessoryGoal > 0 else { return 1 }
+        return MathUtils.clamp01(Double(steps) / Double(accessoryGoal))
+    }
+
+    var equippedList: [AccessoryId] {
+        Array(equipped.values)
     }
 
     func isOwned(_ id: AccessoryId) -> Bool {
         owned.contains(id)
     }
 
-    /// The accessories currently worn, one per filled slot — for rendering on the pet.
-    var equippedList: [AccessoryId] {
-        Array(equipped.values)
-    }
-
-    /// Whether this specific accessory is the one worn in its slot.
     func isEquipped(_ id: AccessoryId) -> Bool {
         equipped[Accessory.define(id).slot] == id
     }
 
     /// Permanently unlocks any not-yet-owned accessory whose goal `steps` meets.
-    /// Idempotent and cheap — safe to call on every step change. Returns the ids newly
-    /// unlocked by this call (empty when nothing changed).
     @discardableResult
     func evaluate(steps: Int) -> [AccessoryId] {
         var newly: [AccessoryId] = []
@@ -81,8 +85,6 @@ final class AccessoryStore: ObservableObject {
         return newly
     }
 
-    /// Equips an owned accessory into its slot, replacing whatever was worn there.
-    /// Equipping an unowned accessory is a no-op. Returns the id now worn in that slot.
     @discardableResult
     func equip(_ id: AccessoryId) -> AccessoryId? {
         let slot = Accessory.define(id).slot
@@ -92,7 +94,6 @@ final class AccessoryStore: ObservableObject {
         return id
     }
 
-    /// Removes `id` from its slot if it is the one currently worn there; otherwise a no-op.
     func unequip(_ id: AccessoryId) {
         let slot = Accessory.define(id).slot
         guard equipped[slot] == id else { return }
