@@ -8,6 +8,13 @@ enum AccessoryId: String, CaseIterable {
 enum AccessorySlot: String, CaseIterable {
     case eyes
     case pet
+
+    var displayTitle: String {
+        switch self {
+        case .eyes: return "Eyes"
+        case .pet: return "Pet"
+        }
+    }
 }
 
 struct AccessoryDefinition {

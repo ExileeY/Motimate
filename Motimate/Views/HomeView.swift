@@ -12,6 +12,7 @@ struct HomeView: View {
 
     @State private var showSettings = false
     @State private var showPodium = false
+    @State private var showWardrobe = false
 
     @State private var isCelebrating = false
 
@@ -55,6 +56,14 @@ struct HomeView: View {
             NavigationLink(
                 isActive: $showPodium,
                 destination: { PodiumView(isPresented: $showPodium) },
+                label: { EmptyView() }
+            )
+            .hidden()
+        )
+        .background(
+            NavigationLink(
+                isActive: $showWardrobe,
+                destination: { WardrobeView(isPresented: $showWardrobe) },
                 label: { EmptyView() }
             )
             .hidden()
@@ -129,6 +138,10 @@ struct HomeView: View {
                     onPodiumTap: {
                         HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
                         showPodium = true
+                    },
+                    onWardrobeTap: {
+                        HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
+                        showWardrobe = true
                     }
                 )
 

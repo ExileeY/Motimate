@@ -25,6 +25,7 @@ struct TopBar: View {
     let mood: Mood
     var onSettingsTap: () -> Void = {}
     var onPodiumTap: () -> Void = {}
+    var onWardrobeTap: () -> Void = {}
 
     @Environment(\.themeTokens) private var tokens
     @State private var now = Date()
@@ -66,6 +67,16 @@ struct TopBar: View {
                 .buttonStyle(.plain)
                 .contentShape(Rectangle())
                 .accessibilityLabel("Podium")
+
+                Button(action: onWardrobeTap) {
+                    Image(systemName: "bag")
+                        .font(.system(size: 20, weight: .regular))
+                        .foregroundColor(palette.clock)
+                        .frame(width: 24, height: 24)
+                }
+                .buttonStyle(.plain)
+                .contentShape(Rectangle())
+                .accessibilityLabel("Collection")
 
                 Button(action: onSettingsTap) {
                     Image(systemName: "gearshape")
