@@ -86,37 +86,6 @@ struct PodiumView: View {
         .enableInteractiveSwipeBack()
     }
 
-    // MARK: - Header
-
-    private func header(_ palette: Palette) -> some View {
-        HStack(spacing: 10) {
-            Button(action: goBack) {
-                Image(systemName: "chevron.backward")
-                    .font(.system(size: 24, weight: .regular))
-                    .foregroundColor(palette.text)
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel("Back")
-
-            Text("Podium")
-                .font(Fonts.heading(24))
-                .foregroundColor(palette.text)
-
-            Spacer()
-
-            PillBadge(
-                text: NumberFormat.grouped(dailySteps.steps),
-                dotColor: palette.accent,
-                palette: palette,
-                dotSize: 7,
-                font: Fonts.bodyBold(11.5),
-                spacing: 6,
-                horizontalPadding: 10
-            )
-        }
-        .padding(.bottom, 28)
-    }
-
     // MARK: - Actions
 
     private func togglePreview() {
