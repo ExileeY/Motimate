@@ -15,7 +15,6 @@
 		0F3212F519A6E461DE9EE233 /* SettingsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D61FD4513055B266F0CFAA /* SettingsStoreTests.swift */; };
 		104539886ECFF1CDF7C4E36A /* HapticsAnimationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A415FFF1D385718B5ED3B0 /* HapticsAnimationStorage.swift */; };
 		10A175B418A8FBE23CBBC48C /* AruticFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15437E830B981397735B8A2B /* AruticFace.swift */; };
-		110FFA46B82CC43C35BADC25 /* CoolShadesArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB95A4A0F2C0ABB3E69FF96F /* CoolShadesArt.swift */; };
 		11B009194EE541072DC255B0 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE2B4A159E7E8CE4F128CB5 /* Palette.swift */; };
 		11F1BB38BB3172F51B9B6EE7 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A9CDF0EC9783DDCBF59D8 /* GameMode.swift */; };
 		168CFC768528BE5866E88454 /* GlowMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C2F47E71A4028FFD68E696 /* GlowMathTests.swift */; };
@@ -91,6 +90,7 @@
 		8DCAC1596139802C202AA071 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210F1D4117900A67DA1D9CD0 /* MathUtils.swift */; };
 		8F5E9653D3BBFC3EF009DBC2 /* TomatoEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750888D29EEB6DB791709DB /* TomatoEye.swift */; };
 		90F6A6847AE437FE110100D5 /* PetStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF5BB110C0EADC77B004F6C /* PetStorage.swift */; };
+		919C502B415D3BC721587F38 /* CoolShades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BD01C9270EAE54875DAD94 /* CoolShades.swift */; };
 		926A6A69AA5E4D54C6BC3140 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6C8A7C8D5877449AB152B /* SettingsView.swift */; };
 		92E21A4090A3113C98348574 /* UnavailableStepReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82136E95D3598033BDEB1BDC /* UnavailableStepReader.swift */; };
 		930849BE7EF518EB5BA38C95 /* SVGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC501B17F277D3FD233FE0A /* SVGPath.swift */; };
@@ -106,6 +106,7 @@
 		9AEAD671E8B4AE803AA52E27 /* AccessoryStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52162E2966B078A8375A5CC4 /* AccessoryStoreTests.swift */; };
 		9CC966A077779FBC3AFF4FD2 /* BaseHapticsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E59D4F1F978723711E300 /* BaseHapticsStorage.swift */; };
 		A02BDA1D5C6633CAA9493A94 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03937399B758963AA42CB30 /* Fonts.swift */; };
+		A3D105356C243B2710DCAC8A /* Accessories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47804569873A78D03A6C17A5 /* Accessories.swift */; };
 		A62B38A5EEC1C0A64E9A40AF /* DogBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F401B73C075B90298532B9 /* DogBody.swift */; };
 		A7C419121B10A733FA42F5C1 /* GameModeStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B2D4167DF9FFD71A5F151C /* GameModeStorageTests.swift */; };
 		A7D9C9A4A0F7FF8E931F9D39 /* HapticsAnimationStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463F35EE95115823C2597E17 /* HapticsAnimationStorageTests.swift */; };
@@ -195,6 +196,7 @@
 		43E7029A2505A3E83AC470E1 /* MovementCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementCardTests.swift; sourceTree = "<group>"; };
 		444257AC8A063F8380FC5620 /* Cheek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cheek.swift; sourceTree = "<group>"; };
 		463F35EE95115823C2597E17 /* HapticsAnimationStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsAnimationStorageTests.swift; sourceTree = "<group>"; };
+		47804569873A78D03A6C17A5 /* Accessories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessories.swift; sourceTree = "<group>"; };
 		49081B748C7AD0E937672D27 /* MochiFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MochiFace.swift; sourceTree = "<group>"; };
 		49683E90535046093852FF15 /* ResponsiveScaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveScaleTests.swift; sourceTree = "<group>"; };
 		4B558AE3254A8019EA288CD2 /* TopBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarTests.swift; sourceTree = "<group>"; };
@@ -243,7 +245,8 @@
 		905B88D9568D222DE0F7D0CF /* SchnauzerFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchnauzerFace.swift; sourceTree = "<group>"; };
 		9065F57200D9F77A9177EA91 /* AccessorySlotStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessorySlotStorage.swift; sourceTree = "<group>"; };
 		92EAF117670BA7388893C100 /* MotimateTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MotimateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94BD01C9270EAE54875DAD94 /* CoolShades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolShades.swift; sourceTree = "<group>"; };
 		975B8A4F9AF5EC0919EE1FB2 /* Fredoka_500Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fredoka_500Medium.ttf; sourceTree = "<group>"; };
 		993D1A162ADC46EB93E39BE7 /* OctopusFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusFace.swift; sourceTree = "<group>"; };
 		9B7C0543EDD523839B60722B /* DogEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogEye.swift; sourceTree = "<group>"; };
@@ -258,7 +261,6 @@
 		A994948A9BA4A760B22C4193 /* ConfettiMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiMathTests.swift; sourceTree = "<group>"; };
 		A9FC20937B24C54047F07110 /* PillBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillBadge.swift; sourceTree = "<group>"; };
 		AAF28A4FEB35C882FCC6D042 /* RoundedBoxPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBoxPath.swift; sourceTree = "<group>"; };
-		AB95A4A0F2C0ABB3E69FF96F /* CoolShadesArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolShadesArt.swift; sourceTree = "<group>"; };
 		AEFCD760C9C8052EB51C81E1 /* StepReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReaderTests.swift; sourceTree = "<group>"; };
 		B2308EB01D257A005D294300 /* StepReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReader.swift; sourceTree = "<group>"; };
 		B54585EBBB63BC0C464201A9 /* GoalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageTests.swift; sourceTree = "<group>"; };
@@ -658,7 +660,8 @@
 		B7D5A81EFC0CF268E6D75E2E /* Accessories */ = {
 			isa = PBXGroup;
 			children = (
-				AB95A4A0F2C0ABB3E69FF96F /* CoolShadesArt.swift */,
+				47804569873A78D03A6C17A5 /* Accessories.swift */,
+				94BD01C9270EAE54875DAD94 /* CoolShades.swift */,
 			);
 			path = Accessories;
 			sourceTree = "<group>";
@@ -859,8 +862,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 9B50063C0F687A650CFDA41A /* Build configuration list for PBXProject "Motimate" */;
 			developmentRegion = en;
@@ -902,6 +903,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D105356C243B2710DCAC8A /* Accessories.swift in Sources */,
 				C5C7532911052AC639DF8C04 /* Accessory.swift in Sources */,
 				3CC9863D9AD8D3B8E4EEE8DD /* AccessoryAnchor.swift in Sources */,
 				5A575C1F148592FD910ACE94 /* AccessoryCard.swift in Sources */,
@@ -927,7 +929,7 @@
 				9532F4B34C284E83DB65AD31 /* Color+Hex.swift in Sources */,
 				7E1DF58E4DDAF4ED7C471D08 /* Confetti.swift in Sources */,
 				E5C6A5157D085A77223D22CD /* ConfettiMath.swift in Sources */,
-				110FFA46B82CC43C35BADC25 /* CoolShadesArt.swift in Sources */,
+				919C502B415D3BC721587F38 /* CoolShades.swift in Sources */,
 				F965DF6B09B520C7E30CA42E /* DailySteps.swift in Sources */,
 				306BF4D9600D60AE2507F993 /* Dimensions.swift in Sources */,
 				A62B38A5EEC1C0A64E9A40AF /* DogBody.swift in Sources */,
@@ -1218,6 +1220,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -1237,6 +1240,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;

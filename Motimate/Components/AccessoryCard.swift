@@ -95,7 +95,7 @@ struct AccessoryCard: View {
                         .stroke(palette.cardBorder, lineWidth: 1)
                 )
 
-            CoolShadesArt(mood: .energetic, size: 66)
+            Accessories.CoolShades(mood: .energetic, size: 66)
                 .frame(width: 66, height: 66)
                 .clipped()
         }

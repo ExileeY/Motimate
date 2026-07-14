@@ -22,7 +22,7 @@ enum Accessory {
             stepGoal: 8_000,
             slot: .eyes,
             view: { mood, size, spread in AnyView(
-                CoolShadesArt(
+                Accessories.CoolShades(
                     mood: mood,
                     size: size,
                     spread: spread)
