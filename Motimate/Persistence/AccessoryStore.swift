@@ -35,7 +35,7 @@ final class AccessoryStore: ObservableObject {
         for slot in AccessorySlot.allCases {
             let store = slotStores[slot]!
             guard let id = store.get() else { continue }
-            if owned.contains(id), accessoryDefinition(id).slot == slot {
+            if owned.contains(id), Accessory.define(id).slot == slot {
                 equipped[slot] = id
             } else {
                 store.set(nil)
@@ -47,7 +47,7 @@ final class AccessoryStore: ObservableObject {
     /// Fraction toward earning the accessory today (0...1), independent of the user's
     /// step goal. Do **not** reuse `DailyStepsModel.progress` — that is goal-relative.
     func progress(_ id: AccessoryId, steps: Int) -> Double {
-        let goal = accessoryDefinition(id).stepGoal
+        let goal = Accessory.define(id).stepGoal
         guard goal > 0 else { return 1 }
         return MathUtils.clamp01(Double(steps) / Double(goal))
     }
@@ -63,7 +63,7 @@ final class AccessoryStore: ObservableObject {
 
     /// Whether this specific accessory is the one worn in its slot.
     func isEquipped(_ id: AccessoryId) -> Bool {
-        equipped[accessoryDefinition(id).slot] == id
+        equipped[Accessory.define(id).slot] == id
     }
 
     /// Permanently unlocks any not-yet-owned accessory whose goal `steps` meets.
@@ -73,7 +73,7 @@ final class AccessoryStore: ObservableObject {
     func evaluate(steps: Int) -> [AccessoryId] {
         var newly: [AccessoryId] = []
         for id in AccessoryId.allCases where !owned.contains(id) {
-            if steps >= accessoryDefinition(id).stepGoal {
+            if steps >= Accessory.define(id).stepGoal {
                 unlock(id)
                 newly.append(id)
             }
@@ -85,7 +85,7 @@ final class AccessoryStore: ObservableObject {
     /// Equipping an unowned accessory is a no-op. Returns the id now worn in that slot.
     @discardableResult
     func equip(_ id: AccessoryId) -> AccessoryId? {
-        let slot = accessoryDefinition(id).slot
+        let slot = Accessory.define(id).slot
         guard owned.contains(id) else { return equipped[slot] }
         equipped[slot] = id
         equippedStores[slot]!.set(id)
@@ -94,7 +94,7 @@ final class AccessoryStore: ObservableObject {
 
     /// Removes `id` from its slot if it is the one currently worn there; otherwise a no-op.
     func unequip(_ id: AccessoryId) {
-        let slot = accessoryDefinition(id).slot
+        let slot = Accessory.define(id).slot
         guard equipped[slot] == id else { return }
         equipped[slot] = nil
         equippedStores[slot]!.set(nil)

@@ -23,15 +23,15 @@ struct PodiumView: View {
     /// the pet's other equipped slots intact.
     private var shownAccessories: [AccessoryId] {
         guard let preview else { return accessories.equippedList }
-        let previewSlot = accessoryDefinition(preview).slot
+        let previewSlot = Accessory.define(preview).slot
         return accessories.equippedList.filter {
-            accessoryDefinition($0).slot != previewSlot
+            Accessory.define($0).slot != previewSlot
         } + [preview]
     }
 
     var body: some View {
         let palette = ThemeTokens.for(theme).palette
-        let definition = accessoryDefinition(focus)
+        let definition = Accessory.define(focus)
         let owned = accessories.isOwned(focus)
 
         return GeometryReader { geo in

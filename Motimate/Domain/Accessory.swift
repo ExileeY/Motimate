@@ -4,6 +4,10 @@ enum AccessoryId: String, CaseIterable {
     case coolShades
 }
 
+enum AccessorySlot: String, CaseIterable {
+    case eyes
+}
+
 struct AccessoryDefinition {
     let name: String
     let stepGoal: Int
@@ -11,22 +15,24 @@ struct AccessoryDefinition {
     let art: (Mood, CGFloat, CGFloat) -> AnyView
 }
 
-let ACCESSORIES: [AccessoryId: AccessoryDefinition] = [
-    .coolShades: AccessoryDefinition(
-        name: "Cool Shades",
-        stepGoal: 8_000,
-        slot: .eyes,
-        art: { mood, size, spread in AnyView(
-            CoolShadesArt(
-                mood: mood,
-                size: size,
-                spread: spread)
-        )}
-    ),
-]
+enum Accessory {
+    static let all: [AccessoryId: AccessoryDefinition] = [
+        .coolShades: AccessoryDefinition(
+            name: "Cool Shades",
+            stepGoal: 8_000,
+            slot: .eyes,
+            art: { mood, size, spread in AnyView(
+                CoolShadesArt(
+                    mood: mood,
+                    size: size,
+                    spread: spread)
+            )}
+        ),
+    ]
 
-let ACCESSORY_IDS = AccessoryId.allCases
+    static let ids = AccessoryId.allCases
 
-func accessoryDefinition(_ id: AccessoryId) -> AccessoryDefinition {
-    ACCESSORIES[id]!
+    static func define(_ id: AccessoryId) -> AccessoryDefinition {
+        all[id]!
+    }
 }

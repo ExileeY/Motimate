@@ -6,11 +6,11 @@ struct AccessoryOverlay: View {
     let mood: Mood
     let petSize: CGFloat
 
-    private static let BASE: CGFloat = PET_SIZE // 180
+    private static let BASE: CGFloat = PET_SIZE
 
     var body: some View {
         let anchor = accessoryAnchor(accessory, petId)
-        let art = accessoryDefinition(accessory).art(mood, Self.BASE, anchor.spread)
+        let art = Accessory.define(accessory).art(mood, Self.BASE, anchor.spread)
 
         art
             .scaleEffect(anchor.scale, anchor: .center)

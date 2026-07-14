@@ -130,7 +130,6 @@
 		CBDB154513244E825197A562 /* TomatoBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8062C98884D6CC67C321B27 /* TomatoBody.swift */; };
 		CDB0422D50F4F56ECA5AB840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBAFEC736402E2546C30A35B /* Assets.xcassets */; };
 		CDB9877ECF0B14E931E93946 /* PlaceholderPetBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6955EED43B616CABB7E94518 /* PlaceholderPetBody.swift */; };
-		CDCB98D59278D0F7D4F15F67 /* AccessorySlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CF52928592EAB09C7E3DAF /* AccessorySlot.swift */; };
 		CE7B6F7A3D89A9668646B833 /* ScreenBgTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB561477397769A7CAD2908 /* ScreenBgTokens.swift */; };
 		CEE81F3F7FE04DDDCBA3CCA5 /* HapticToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77F9D75C19D873BC0BC2AE3 /* HapticToggle.swift */; };
 		D4E1D1CE071E4D547537484F /* BulbashikBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9C03C55336010B08B3EE7 /* BulbashikBody.swift */; };
@@ -236,7 +235,6 @@
 		86CEBB969A759F4611EA361B /* ScreenHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenHeader.swift; sourceTree = "<group>"; };
 		883C0CDAEDD9535C26627ED9 /* MessageSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSet.swift; sourceTree = "<group>"; };
 		895F160A1D67D4A462873230 /* AccessoryOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryOverlay.swift; sourceTree = "<group>"; };
-		89CF52928592EAB09C7E3DAF /* AccessorySlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessorySlot.swift; sourceTree = "<group>"; };
 		8AE7451DFEC08194C7053F9E /* InteractiveSwipeBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveSwipeBack.swift; sourceTree = "<group>"; };
 		8CD0E63596717288553DC990 /* Particles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particles.swift; sourceTree = "<group>"; };
 		8E7BE7E6A52A1EA94E6A1CD9 /* RoundedBoxPathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBoxPathTests.swift; sourceTree = "<group>"; };
@@ -245,7 +243,7 @@
 		905B88D9568D222DE0F7D0CF /* SchnauzerFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchnauzerFace.swift; sourceTree = "<group>"; };
 		9065F57200D9F77A9177EA91 /* AccessorySlotStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessorySlotStorage.swift; sourceTree = "<group>"; };
 		92EAF117670BA7388893C100 /* MotimateTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MotimateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		975B8A4F9AF5EC0919EE1FB2 /* Fredoka_500Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fredoka_500Medium.ttf; sourceTree = "<group>"; };
 		993D1A162ADC46EB93E39BE7 /* OctopusFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusFace.swift; sourceTree = "<group>"; };
 		9B7C0543EDD523839B60722B /* DogEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogEye.swift; sourceTree = "<group>"; };
@@ -436,7 +434,6 @@
 			children = (
 				B90BEFAA93A43F3E8F34D38B /* Accessory.swift */,
 				04C3E2E8903BDF5353B7AC47 /* AccessoryAnchor.swift */,
-				89CF52928592EAB09C7E3DAF /* AccessorySlot.swift */,
 				2E9A9CDF0EC9783DDCBF59D8 /* GameMode.swift */,
 				883C0CDAEDD9535C26627ED9 /* MessageSet.swift */,
 				8F134252AEA764CB094123BA /* Mood.swift */,
@@ -862,6 +859,8 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 9B50063C0F687A650CFDA41A /* Build configuration list for PBXProject "Motimate" */;
 			developmentRegion = en;
@@ -908,7 +907,6 @@
 				5A575C1F148592FD910ACE94 /* AccessoryCard.swift in Sources */,
 				BD0BB4500B1A4102BFD7C462 /* AccessoryOverlay.swift in Sources */,
 				E1A7BA24AC68A651D159B596 /* AccessoryOwnedStorage.swift in Sources */,
-				CDCB98D59278D0F7D4F15F67 /* AccessorySlot.swift in Sources */,
 				682B2EBDE856289C67F9C738 /* AccessorySlotStorage.swift in Sources */,
 				94AFC157407204CB7592CEA5 /* AccessoryStore.swift in Sources */,
 				79CB989241442DC5AB6B3D61 /* Arc.swift in Sources */,
@@ -1220,7 +1218,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -1240,7 +1237,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;

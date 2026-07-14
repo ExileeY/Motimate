@@ -4,23 +4,23 @@ import XCTest
 final class AccessoryRegistryTests: XCTestCase {
     func testEveryAccessoryIdHasARegistryEntry() {
         for id in AccessoryId.allCases {
-            XCTAssertNotNil(ACCESSORIES[id], "missing ACCESSORIES entry for \(id.rawValue)")
+            XCTAssertNotNil(Accessory.all[id], "missing Accessory.all entry for \(id.rawValue)")
         }
     }
 
     func testAccessoryIdsMatchesAllCases() {
-        XCTAssertEqual(ACCESSORY_IDS, AccessoryId.allCases)
+        XCTAssertEqual(Accessory.ids, AccessoryId.allCases)
     }
 
     func testEveryAccessoryNameIsNonEmpty() {
         for id in AccessoryId.allCases {
-            XCTAssertFalse(ACCESSORIES[id]!.name.isEmpty)
+            XCTAssertFalse(Accessory.all[id]!.name.isEmpty)
         }
     }
 
     func testEveryAccessoryGoalIsPositive() {
         for id in AccessoryId.allCases {
-            XCTAssertGreaterThan(ACCESSORIES[id]!.stepGoal, 0, "\(id.rawValue) goal")
+            XCTAssertGreaterThan(Accessory.all[id]!.stepGoal, 0, "\(id.rawValue) goal")
         }
     }
 }
