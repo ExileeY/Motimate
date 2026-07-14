@@ -1,9 +1,6 @@
 import XCTest
 @testable import Motimate
 
-/// Tests for `DailyStepsModel` (port of `src/steps/useDailySteps.ts`).
-/// RN has no Jest test for the hook; this is the SwiftUI port's acceptance
-/// suite, driving the model with a fake `StepReading`.
 @MainActor
 final class DailyStepsTests: XCTestCase {
     private let goal = 10_000
@@ -136,14 +133,90 @@ final class DailyStepsTests: XCTestCase {
 
         XCTAssertEqual(model.mood, .energetic)
     }
+
+    // MARK: - Foreground refresh (re-anchor after background across a boundary)
+
+    /// Lets a test `await` the async work `refresh()` schedules on `@MainActor`.
+    private func tick() async {
+        try? await Task.sleep(nanoseconds: 10_000_000) // 10ms
+    }
+
+    func testRefreshReanchorsHourFlipsToSad() async {
+        settings.setGameMode(.real)
+        let reader = FakeStepReader(permission: .granted, todaySteps: 0)
+        let model = DailyStepsModel(settings: settings, reader: reader, hour: MORNING_END_HOUR - 1)
+
+        model.start()
+        await waitForResolution(model)
+        XCTAssertEqual(model.mood, .energetic)
+
+        model.refresh(hour: MORNING_END_HOUR)
+        await tick()
+
+        XCTAssertEqual(model.mood, .sad)
+    }
+
+    func testRefreshReAnchorsStepsAndResubscribes() async {
+        let reader = FakeStepReader(permission: .granted, todaySteps: 5_000)
+        let model = DailyStepsModel(settings: settings, reader: reader, hour: 9)
+
+        model.start()
+        await waitForResolution(model)
+        XCTAssertEqual(model.steps, 5_000)
+        XCTAssertEqual(reader.subscribeCount, 1)
+
+        reader.todaySteps = 0 // new day: yesterday's 5k is gone
+        model.refresh(hour: 9)
+        await tick()
+
+        XCTAssertEqual(model.steps, 0)
+        XCTAssertEqual(model.mood, .energetic)
+        XCTAssertEqual(reader.subscribeCount, 2)   // re-subscribed
+        XCTAssertEqual(reader.unsubscribeCount, 1) // old stream torn down
+
+        reader.emit(300) // the *new* subscription is the live one
+        await tick()
+        XCTAssertEqual(model.steps, 300)
+    }
+
+    func testRefreshBeforeStartIsNoOp() async {
+        let reader = FakeStepReader(permission: .granted, todaySteps: 5_000)
+        let model = DailyStepsModel(settings: settings, reader: reader, hour: 9)
+
+        model.refresh(hour: 15)
+        await tick()
+
+        XCTAssertNil(model.permission)
+        XCTAssertTrue(model.loading)
+        XCTAssertEqual(reader.subscribeCount, 0)
+    }
+
+    func testRefreshWhenDeniedOnlyUpdatesHour() async {
+        settings.setGameMode(.real)
+        let reader = FakeStepReader(permission: .denied, todaySteps: 9_999)
+        let model = DailyStepsModel(settings: settings, reader: reader, hour: MORNING_END_HOUR - 1)
+
+        model.start()
+        await waitForResolution(model)
+        XCTAssertEqual(model.mood, .energetic)
+
+        model.refresh(hour: MORNING_END_HOUR)
+        await tick()
+
+        XCTAssertEqual(model.mood, .sad)
+        XCTAssertFalse(reader.didSubscribe)
+    }
 }
 
-/// Configurable `StepReading` double for driving `DailyStepsModel` in tests.
 private final class FakeStepReader: StepReading {
     private let permission: PermissionState
-    private let todaySteps: Int
+
+    var todaySteps: Int // Mutable so tests can simulate a new day.
     private var onSteps: ((Int) -> Void)?
-    private(set) var didSubscribe = false
+
+    private(set) var subscribeCount = 0
+    private(set) var unsubscribeCount = 0
+    var didSubscribe: Bool { subscribeCount > 0 }
 
     init(permission: PermissionState, todaySteps: Int) {
         self.permission = permission
@@ -155,12 +228,15 @@ private final class FakeStepReader: StepReading {
     func getTodaySteps() async -> Int { todaySteps }
 
     func subscribe(onSteps: @escaping (Int) -> Void) -> () -> Void {
-        didSubscribe = true
+        subscribeCount += 1
         self.onSteps = onSteps
-        return { [weak self] in self?.onSteps = nil }
+
+        return { [weak self] in
+            self?.unsubscribeCount += 1
+            self?.onSteps = nil
+        }
     }
 
-    /// Simulate a live pedometer update.
     func emit(_ steps: Int) {
         onSteps?(steps)
     }

@@ -6,6 +6,7 @@ struct HomeView: View {
     @EnvironmentObject private var celebration: CelebrationStore
     @EnvironmentObject private var accessories: AccessoryStore
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.scenePhase) private var scenePhase
 
     @State private var messages: [Mood: MessageSet] = [:]
 
@@ -64,6 +65,9 @@ struct HomeView: View {
             triggerEntrance()
             maybeCelebrate()
             maybeUnlock()
+        }
+        .onChange(of: scenePhase) { newPhase in
+            if newPhase == .active { dailySteps.refresh() }
         }
         .onChange(of: settings.petId) { _ in
             refreshMessages()

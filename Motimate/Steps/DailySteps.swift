@@ -67,17 +67,36 @@ final class DailyStepsModel: ObservableObject {
                 return
             }
 
-            let initial = await self.reader.getTodaySteps()
-            self.steps = initial
             self.loading = false
-            self.recompute()
+            await self.loadAndSubscribe()
+        }
+    }
 
-            self.unsubscribe = self.reader.subscribe { [weak self] next in
-                guard let self else { return }
-                Task { @MainActor in
-                    self.steps = next
-                    self.recompute()
-                }
+    func refresh(hour: Int? = nil) {
+        guard started else { return }
+
+        self.hour = hour ?? Calendar.current.component(.hour, from: Date())
+        recompute()
+
+        guard permission == .granted else { return }
+
+        Task { [weak self] in
+            guard let self else { return }
+            await self.loadAndSubscribe()
+        }
+    }
+
+    private func loadAndSubscribe() async {
+        let freshSteps = await reader.getTodaySteps()
+        steps = freshSteps
+        recompute()
+
+        unsubscribe?()
+        unsubscribe = reader.subscribe { [weak self] next in
+            guard let self else { return }
+            Task { @MainActor in
+                self.steps = next
+                self.recompute()
             }
         }
     }
