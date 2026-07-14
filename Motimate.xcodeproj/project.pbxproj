@@ -13,6 +13,7 @@
 		091AB843C5A15CDD19B3BBC7 /* PetRegistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BF2FED798CC189B49B042 /* PetRegistryTests.swift */; };
 		09B37AD201E76BF7FDF1C992 /* DogEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C0543EDD523839B60722B /* DogEye.swift */; };
 		0F3212F519A6E461DE9EE233 /* SettingsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D61FD4513055B266F0CFAA /* SettingsStoreTests.swift */; };
+		0FD20CDF7489CED9D6AE4885 /* EntranceMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031AFD2E2CAA45A25B99ABD6 /* EntranceMotion.swift */; };
 		104539886ECFF1CDF7C4E36A /* HapticsAnimationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A415FFF1D385718B5ED3B0 /* HapticsAnimationStorage.swift */; };
 		10A175B418A8FBE23CBBC48C /* AruticFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15437E830B981397735B8A2B /* AruticFace.swift */; };
 		11B009194EE541072DC255B0 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE2B4A159E7E8CE4F128CB5 /* Palette.swift */; };
@@ -41,7 +42,6 @@
 		46A34FDB4D65607374614997 /* MoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6703DB54354B7E633AA774D /* MoodTests.swift */; };
 		47E8F7F3F0EDDB355F66368F /* SchnauzerBrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECAF9954C89AB7C419FDF80 /* SchnauzerBrow.swift */; };
 		482589C209A0C126A816604E /* GoalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8E5CCC434BF09B366A6B37 /* GoalStorage.swift */; };
-		4ACBADC9F7B656E95DC268EA /* EntranceMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84231810466105217B77E9A /* EntranceMotion.swift */; };
 		4B1E1FF757515FC212D83F76 /* CelebrationStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093841D9D8214E62C208DE4E /* CelebrationStoreTests.swift */; };
 		4D2566784804C5127E0EDA86 /* BulbEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D21A75B63A0F60116139B /* BulbEye.swift */; };
 		4EFD4724CBCDAFBC964DFA5B /* PodiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770BFF684D285450559C433B /* PodiumView.swift */; };
@@ -51,6 +51,7 @@
 		53ED6A210C81EF762A3D6244 /* AruticBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0FD22CC1B27851A4577E0D /* AruticBody.swift */; };
 		5451F74BBBB168D13C2DB1F2 /* PersistedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31ACA6E7D1EDE27E6BEE78A /* PersistedStorage.swift */; };
 		56BF7CB982903D88955A0CF2 /* PhoneCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82F59C05246CCC45B8CF46A /* PhoneCanvas.swift */; };
+		580143B0E56DD52B0AB9FD30 /* EntranceCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15171AB2ED76C0DBD3F631E /* EntranceCurve.swift */; };
 		5A575C1F148592FD910ACE94 /* AccessoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9587F7A1B5F066FEDE51F2B /* AccessoryCard.swift */; };
 		5AF2D3B066D8A667D0503425 /* Halo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC9124E2D98D4E6139AE102 /* Halo.swift */; };
 		5B1163A681F1BA7BB33D60DD /* RoundEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = F677A9B1B35FF63B77D3B719 /* RoundEye.swift */; };
@@ -76,7 +77,6 @@
 		72AE4E75A9BA572F2348300B /* RoundedBoxPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BE7E6A52A1EA94E6A1CD9 /* RoundedBoxPathTests.swift */; };
 		77C8CEDBF0F118CC7A5A7023 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D37E7D60BF49E5A20563B /* Theme.swift */; };
 		79CB989241442DC5AB6B3D61 /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8874CC881E58B18F1F7600D /* Arc.swift */; };
-		7A9651678C4EE14CD565FEC8 /* EntranceCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D52469B11E665A624F2090 /* EntranceCurve.swift */; };
 		7E1DF58E4DDAF4ED7C471D08 /* Confetti.swift in Sources */ = {isa = PBXBuildFile; fileRef = F296C193C5B40FF536A06AA9 /* Confetti.swift */; };
 		7E8A8933C085A06B69AF3E04 /* StatusDotTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9CE45D552CBE0EE666AD19 /* StatusDotTokens.swift */; };
 		7FF2156F7AD7E6B1459C1F0B /* Cheek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444257AC8A063F8380FC5620 /* Cheek.swift */; };
@@ -117,7 +117,6 @@
 		B7FCC9B8E97A7A07EB9D910A /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */; };
 		B9585B5D3BA1B978B75E7718 /* Nunito_400Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32B29B0082422D0540A988A7 /* Nunito_400Regular.ttf */; };
 		BB2FBB41D777F979CA69AECC /* OctopusMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8114D624653618A58D1B38 /* OctopusMessages.swift */; };
-		BD0BB4500B1A4102BFD7C462 /* AccessoryOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F160A1D67D4A462873230 /* AccessoryOverlay.swift */; };
 		BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C64CD38FFE017BEDEE318E /* HomeView.swift */; };
 		BDC9ABEB9D628624322FA1D7 /* TopBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B558AE3254A8019EA288CD2 /* TopBarTests.swift */; };
 		C2B389B8D0E51C1E21799FDA /* AutoNightStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3216D0CE3BD9533666E45C6B /* AutoNightStorage.swift */; };
@@ -144,6 +143,7 @@
 		E5C27A62E83F3CC8B47483A4 /* Nunito_700Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A2454CC72A9C0007D022582 /* Nunito_700Bold.ttf */; };
 		E5C6A5157D085A77223D22CD /* ConfettiMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F57C5ADC6A46F45F62F915 /* ConfettiMath.swift */; };
 		E8AF86A9471A19238BACE666 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6783BAB98A7208BE48D1C3B4 /* Pet.swift */; };
+		EEC993183F763B1F5062318E /* AccessoryOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80408AE7493A6900A9278667 /* AccessoryOverlay.swift */; };
 		F59D4B3E7CEFB6966BAC6371 /* LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECD2B9EB5A3A649AAC4D52C /* LoopTests.swift */; };
 		F965DF6B09B520C7E30CA42E /* DailySteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADCD4AC057C8E6D7E63E4 /* DailySteps.swift */; };
 		FA256F7A6FDDB29632DA30DA /* MochiBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799ED80178D3D9A110780BE9 /* MochiBody.swift */; };
@@ -164,6 +164,7 @@
 		006C3B437C9B09FFB343EF6F /* HapticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsService.swift; sourceTree = "<group>"; };
 		01242935F32FA026EBEEA0A4 /* MovementCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementCard.swift; sourceTree = "<group>"; };
 		02E9C03C55336010B08B3EE7 /* BulbashikBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikBody.swift; sourceTree = "<group>"; };
+		031AFD2E2CAA45A25B99ABD6 /* EntranceMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceMotion.swift; sourceTree = "<group>"; };
 		04C3E2E8903BDF5353B7AC47 /* AccessoryAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryAnchor.swift; sourceTree = "<group>"; };
 		0758B99C8A2410632AA28584 /* OctopusEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusEye.swift; sourceTree = "<group>"; };
 		076F5F2C3D2535CB961A045F /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
@@ -222,7 +223,6 @@
 		7201D7BF372A55E7C9E6F111 /* CelebrationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationStore.swift; sourceTree = "<group>"; };
 		73A415FFF1D385718B5ED3B0 /* HapticsAnimationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsAnimationStorage.swift; sourceTree = "<group>"; };
 		756A66A278775B521E859B14 /* StageGlowTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageGlowTokens.swift; sourceTree = "<group>"; };
-		75D52469B11E665A624F2090 /* EntranceCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceCurve.swift; sourceTree = "<group>"; };
 		76126176AE06F853AA76975B /* SchnauzerMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchnauzerMessages.swift; sourceTree = "<group>"; };
 		770BFF684D285450559C433B /* PodiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodiumView.swift; sourceTree = "<group>"; };
 		77A0B6A48A720336F2991D3E /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
@@ -232,11 +232,11 @@
 		7FAEF8F1FBD8D293137617D1 /* KhinklearFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhinklearFace.swift; sourceTree = "<group>"; };
 		7FE2B4A159E7E8CE4F128CB5 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		801546328A78E5979F2245C4 /* BulbashikMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikMessages.swift; sourceTree = "<group>"; };
+		80408AE7493A6900A9278667 /* AccessoryOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryOverlay.swift; sourceTree = "<group>"; };
 		82136E95D3598033BDEB1BDC /* UnavailableStepReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnavailableStepReader.swift; sourceTree = "<group>"; };
 		82E2A6E9DDC90C46803F705F /* PetStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStorageTests.swift; sourceTree = "<group>"; };
 		86CEBB969A759F4611EA361B /* ScreenHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenHeader.swift; sourceTree = "<group>"; };
 		883C0CDAEDD9535C26627ED9 /* MessageSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSet.swift; sourceTree = "<group>"; };
-		895F160A1D67D4A462873230 /* AccessoryOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryOverlay.swift; sourceTree = "<group>"; };
 		8AE7451DFEC08194C7053F9E /* InteractiveSwipeBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveSwipeBack.swift; sourceTree = "<group>"; };
 		8CD0E63596717288553DC990 /* Particles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particles.swift; sourceTree = "<group>"; };
 		8E7BE7E6A52A1EA94E6A1CD9 /* RoundedBoxPathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBoxPathTests.swift; sourceTree = "<group>"; };
@@ -245,7 +245,7 @@
 		905B88D9568D222DE0F7D0CF /* SchnauzerFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchnauzerFace.swift; sourceTree = "<group>"; };
 		9065F57200D9F77A9177EA91 /* AccessorySlotStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessorySlotStorage.swift; sourceTree = "<group>"; };
 		92EAF117670BA7388893C100 /* MotimateTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MotimateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94BD01C9270EAE54875DAD94 /* CoolShades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolShades.swift; sourceTree = "<group>"; };
 		975B8A4F9AF5EC0919EE1FB2 /* Fredoka_500Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fredoka_500Medium.ttf; sourceTree = "<group>"; };
 		993D1A162ADC46EB93E39BE7 /* OctopusFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusFace.swift; sourceTree = "<group>"; };
@@ -297,12 +297,12 @@
 		EE3594FC0A09D740CAE89993 /* HapticsTapStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsTapStorage.swift; sourceTree = "<group>"; };
 		EF0566A28399BFFFC32DB1CA /* PetPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPicker.swift; sourceTree = "<group>"; };
 		F12AA63323571C7576C36F81 /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
+		F15171AB2ED76C0DBD3F631E /* EntranceCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceCurve.swift; sourceTree = "<group>"; };
 		F296C193C5B40FF536A06AA9 /* Confetti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confetti.swift; sourceTree = "<group>"; };
 		F314AA0232A0344E6C1094EA /* AccessoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryStore.swift; sourceTree = "<group>"; };
 		F60393AF78120FA593AA8011 /* AccessoryAnchorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryAnchorTests.swift; sourceTree = "<group>"; };
 		F677A9B1B35FF63B77D3B719 /* RoundEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundEye.swift; sourceTree = "<group>"; };
 		F7EC6187917CA5DBA619BDF8 /* KhinklearBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhinklearBody.swift; sourceTree = "<group>"; };
-		F84231810466105217B77E9A /* EntranceMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceMotion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -379,6 +379,15 @@
 			path = Glow;
 			sourceTree = "<group>";
 		};
+		2A0D7AD91B3D7169E790888D /* EntranceMotion */ = {
+			isa = PBXGroup;
+			children = (
+				F15171AB2ED76C0DBD3F631E /* EntranceCurve.swift */,
+				031AFD2E2CAA45A25B99ABD6 /* EntranceMotion.swift */,
+			);
+			path = EntranceMotion;
+			sourceTree = "<group>";
+		};
 		2DB493816E5F48EC9DEE6B97 /* Haptics */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +419,14 @@
 				9065F57200D9F77A9177EA91 /* AccessorySlotStorage.swift */,
 			);
 			path = Accessories;
+			sourceTree = "<group>";
+		};
+		3532E2B7A0942A5BE491E452 /* Overlays */ = {
+			isa = PBXGroup;
+			children = (
+				80408AE7493A6900A9278667 /* AccessoryOverlay.swift */,
+			);
+			path = Overlays;
 			sourceTree = "<group>";
 		};
 		3EBD76E58936ED2886C1EE45 /* Glow */ = {
@@ -785,11 +802,10 @@
 		F2E0E56F97DB0D5DCC77B2D2 /* Stage */ = {
 			isa = PBXGroup;
 			children = (
-				895F160A1D67D4A462873230 /* AccessoryOverlay.swift */,
-				75D52469B11E665A624F2090 /* EntranceCurve.swift */,
-				F84231810466105217B77E9A /* EntranceMotion.swift */,
 				65C38307A4B7D805EB0651FC /* PetStage.swift */,
 				4398A2F029C2F62DB90A097F /* PodiumStage.swift */,
+				2A0D7AD91B3D7169E790888D /* EntranceMotion */,
+				3532E2B7A0942A5BE491E452 /* Overlays */,
 			);
 			path = Stage;
 			sourceTree = "<group>";
@@ -862,6 +878,8 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 9B50063C0F687A650CFDA41A /* Build configuration list for PBXProject "Motimate" */;
 			developmentRegion = en;
@@ -907,7 +925,7 @@
 				C5C7532911052AC639DF8C04 /* Accessory.swift in Sources */,
 				3CC9863D9AD8D3B8E4EEE8DD /* AccessoryAnchor.swift in Sources */,
 				5A575C1F148592FD910ACE94 /* AccessoryCard.swift in Sources */,
-				BD0BB4500B1A4102BFD7C462 /* AccessoryOverlay.swift in Sources */,
+				EEC993183F763B1F5062318E /* AccessoryOverlay.swift in Sources */,
 				E1A7BA24AC68A651D159B596 /* AccessoryOwnedStorage.swift in Sources */,
 				682B2EBDE856289C67F9C738 /* AccessorySlotStorage.swift in Sources */,
 				94AFC157407204CB7592CEA5 /* AccessoryStore.swift in Sources */,
@@ -936,8 +954,8 @@
 				09B37AD201E76BF7FDF1C992 /* DogEye.swift in Sources */,
 				6AFFDE03A5542601B2E556E8 /* DogFace.swift in Sources */,
 				C3EDDFC4AF96B62DA27DEAD7 /* DogMessages.swift in Sources */,
-				7A9651678C4EE14CD565FEC8 /* EntranceCurve.swift in Sources */,
-				4ACBADC9F7B656E95DC268EA /* EntranceMotion.swift in Sources */,
+				580143B0E56DD52B0AB9FD30 /* EntranceCurve.swift in Sources */,
+				0FD20CDF7489CED9D6AE4885 /* EntranceMotion.swift in Sources */,
 				A02BDA1D5C6633CAA9493A94 /* Fonts.swift in Sources */,
 				11F1BB38BB3172F51B9B6EE7 /* GameMode.swift in Sources */,
 				1E8B69BB5D98680755BFB993 /* GameModeStorage.swift in Sources */,
@@ -1220,7 +1238,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -1240,7 +1257,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
