@@ -8,30 +8,24 @@ struct PodiumView: View {
 
     @Binding var isPresented: Bool
 
-    /// Local, non-persisting preview override. Only affects this screen.
-    @State private var preview: AccessoryId? = nil
-
-    /// The single accessory featured in v1.
-    private let focus: AccessoryId = .coolShades
+    @State private var previewAccessory: AccessoryId? = nil
+    private let podiumAccessory: AccessoryId = .coolShades
 
     private var theme: Theme {
         settings.resolvedTheme(isDark: colorScheme == .dark)
     }
 
-    /// The accessories rendered on the podium pet. Inside Podium, a live `preview` wins for
-    /// the featured accessory — it replaces whatever fills that accessory's slot, leaving
-    /// the pet's other equipped slots intact.
     private var shownAccessories: [AccessoryId] {
-        guard let preview else { return accessories.equippedList }
-        let previewSlot = Accessory.define(preview).slot
+        guard let previewAccessory else { return accessories.equippedList }
+
         return accessories.equippedList.filter {
-            Accessory.define($0).slot != previewSlot
-        } + [preview]
+            Accessory.define($0).slot != Accessory.define(previewAccessory).slot
+        } + [previewAccessory]
     }
 
     var body: some View {
         let palette = ThemeTokens.for(theme).palette
-        let definition = Accessory.define(focus)
+        let definition = Accessory.define(podiumAccessory)
 
         return GeometryReader { geo in
             PhoneCanvas(mood: .calm) {
@@ -67,12 +61,12 @@ struct PodiumView: View {
                     AccessoryCard(
                         name: definition.name,
                         petName: petDefinition(settings.petId).name,
-                        isOwned: accessories.isOwned(focus),
-                        isEquipped: accessories.isEquipped(focus),
-                        isPreviewing: preview == focus,
+                        isOwned: accessories.isOwned(podiumAccessory),
+                        isEquipped: accessories.isEquipped(podiumAccessory),
+                        isPreviewing: isPreviewing(),
                         steps: dailySteps.steps,
                         goal: definition.stepGoal,
-                        progress: accessories.progress(focus, steps: dailySteps.steps),
+                        progress: accessories.progress(podiumAccessory, steps: dailySteps.steps),
                         onEquip: toggleEquip,
                         onPreview: togglePreview
                     )
@@ -85,21 +79,25 @@ struct PodiumView: View {
         .enableInteractiveSwipeBack()
     }
 
+    private func isPreviewing() -> Bool {
+        previewAccessory == podiumAccessory
+    }
+
     // MARK: - Actions
 
     private func togglePreview() {
         HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
-        preview = (preview == focus) ? nil : focus
+        previewAccessory = isPreviewing() ? nil : podiumAccessory
     }
 
     private func toggleEquip() {
         HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
 
-        if accessories.isEquipped(focus) {
-            accessories.unequip(focus)
+        if accessories.isEquipped(podiumAccessory) {
+            accessories.unequip(podiumAccessory)
         } else {
-            accessories.equip(focus)
-            preview = nil
+            accessories.equip(podiumAccessory)
+            previewAccessory = nil
         }
     }
 
