@@ -102,6 +102,25 @@ final class AccessoryStoreTests: XCTestCase {
         XCTAssertTrue(store.equipped.isEmpty)
     }
 
+    func testDifferentSlotsEquipIndependently() {
+        let store = AccessoryStore(defaults: defaults)
+        store.evaluate(steps: 12_000) // unlocks both coolShades (8k) and babyMochi (12k)
+
+        store.equip(.coolShades)
+        store.equip(.babyMochi)
+
+        XCTAssertTrue(store.isEquipped(.coolShades))
+        XCTAssertTrue(store.isEquipped(.babyMochi))
+        XCTAssertEqual(store.equipped[.eyes], .coolShades)
+        XCTAssertEqual(store.equipped[.pet], .babyMochi)
+
+        // Unequipping one slot leaves the other intact.
+        store.unequip(.coolShades)
+        XCTAssertFalse(store.isEquipped(.coolShades))
+        XCTAssertTrue(store.isEquipped(.babyMochi))
+        XCTAssertEqual(store.equipped[.pet], .babyMochi)
+    }
+
     func testInitReconcilesStaleEquipped() {
         AccessorySlotStorage.make(.eyes, defaults: defaults).set(.coolShades)
 

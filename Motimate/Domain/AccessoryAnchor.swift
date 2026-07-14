@@ -72,6 +72,48 @@ let ACCESSORY_ANCHORS: [AccessoryId: [PetId: AccessoryAnchor]] = [
             rotationDegrees: 0
         ),
     ],
+    .babyMochi: [
+        .mochi: AccessoryAnchor(
+            position: CGPoint(x: 150, y: 150),
+            scale: 1,
+            rotationDegrees: 0
+        ),
+        .bulbashik: AccessoryAnchor(
+            position: CGPoint(x: 150, y: 150),
+            scale: 1,
+            rotationDegrees: 0
+        ),
+        .dog: AccessoryAnchor(
+            position: CGPoint(x: 150, y: 150),
+            scale: 1,
+            rotationDegrees: 0
+        ),
+        .octopus: AccessoryAnchor(
+            position: CGPoint(x: 150, y: 150),
+            scale: 1,
+            rotationDegrees: 0
+        ),
+        .arutic: AccessoryAnchor(
+            position: CGPoint(x: 150, y: 150),
+            scale: 1,
+            rotationDegrees: 0
+        ),
+        .khinklear: AccessoryAnchor(
+            position: CGPoint(x: 150, y: 150),
+            scale: 1,
+            rotationDegrees: 0
+        ),
+        .tomato: AccessoryAnchor(
+            position: CGPoint(x: 150, y: 150),
+            scale: 1,
+            rotationDegrees: 0
+        ),
+        .schnauzer: AccessoryAnchor(
+            position: CGPoint(x: 150, y: 150),
+            scale: 1,
+            rotationDegrees: 0
+        ),
+    ],
 ]
 
 func accessoryAnchor(_ accessory: AccessoryId, _ pet: PetId) -> AccessoryAnchor {

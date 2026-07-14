@@ -3,6 +3,7 @@ import SwiftUI
 struct AccessoryCard: View {
     let name: String
     let petName: String
+    let accessoryId: AccessoryId
     let isOwned: Bool
     let isEquipped: Bool
     let isPreviewing: Bool
@@ -95,7 +96,7 @@ struct AccessoryCard: View {
                         .stroke(palette.cardBorder, lineWidth: 1)
                 )
 
-            Accessories.CoolShades(mood: .energetic, size: 66)
+            Accessory.define(accessoryId).view(.calm, 66, 1)
                 .frame(width: 66, height: 66)
                 .clipped()
         }
@@ -139,6 +140,7 @@ struct AccessoryCard: View {
         AccessoryCard(
             name: "Cool Shades",
             petName: "Mochi",
+            accessoryId: .coolShades,
             isOwned: false,
             isEquipped: false,
             isPreviewing: false,
@@ -152,6 +154,7 @@ struct AccessoryCard: View {
         AccessoryCard(
             name: "Cool Shades",
             petName: "Mochi",
+            accessoryId: .coolShades,
             isOwned: true,
             isEquipped: false,
             isPreviewing: true,

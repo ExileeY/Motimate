@@ -9,7 +9,7 @@ struct PodiumView: View {
     @Binding var isPresented: Bool
 
     @State private var previewAccessory: AccessoryId? = nil
-    private let podiumAccessory: AccessoryId = .coolShades
+    private let podiumAccessory: AccessoryId = .babyMochi
 
     private var theme: Theme {
         settings.resolvedTheme(isDark: colorScheme == .dark)
@@ -61,6 +61,7 @@ struct PodiumView: View {
                     AccessoryCard(
                         name: definition.name,
                         petName: petDefinition(settings.petId).name,
+                        accessoryId: podiumAccessory,
                         isOwned: accessories.isOwned(podiumAccessory),
                         isEquipped: accessories.isEquipped(podiumAccessory),
                         isPreviewing: isPreviewing(),

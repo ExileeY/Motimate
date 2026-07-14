@@ -38,6 +38,7 @@
 		328FF3938E18E0CA9D04B2B4 /* SchnauzerBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA4D701A8205127A5FCCEF5 /* SchnauzerBody.swift */; };
 		342291C44BA80D99BCE98D36 /* SchnauzerEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49AA5E287FD8F07B7EE928 /* SchnauzerEye.swift */; };
 		353A9F83337FB8361F29F41D /* PodiumStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0024DDD3C203E39647A5FAD /* PodiumStage.swift */; };
+		365667C1E26D687B6275D08B /* BabyMochi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B7D7A4E9983C327AAA102 /* BabyMochi.swift */; };
 		3CC9863D9AD8D3B8E4EEE8DD /* AccessoryAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3E2E8903BDF5353B7AC47 /* AccessoryAnchor.swift */; };
 		3D00E5E569D1E9DA270B7DA1 /* StepReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2308EB01D257A005D294300 /* StepReader.swift */; };
 		3DD465C10A38B80AE1D33EE2 /* MochiBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077352DDA0B276C26E0B88D6 /* MochiBody.swift */; };
@@ -240,7 +241,7 @@
 		9065F57200D9F77A9177EA91 /* AccessorySlotStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessorySlotStorage.swift; sourceTree = "<group>"; };
 		924E208E70442568344C1FD1 /* MovementCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementCardTests.swift; sourceTree = "<group>"; };
 		92EAF117670BA7388893C100 /* MotimateTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MotimateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F720245AB9D4000C7FE8A6 /* DogEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogEye.swift; sourceTree = "<group>"; };
 		975B8A4F9AF5EC0919EE1FB2 /* Fredoka_500Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fredoka_500Medium.ttf; sourceTree = "<group>"; };
 		995F57FB782506840F47153F /* Particles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particles.swift; sourceTree = "<group>"; };
@@ -293,6 +294,7 @@
 		E5B979BA5753D47E5E9590D1 /* Loop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
 		E6435E15E00A869A37BFD501 /* MathUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtilsTests.swift; sourceTree = "<group>"; };
 		E819540D7A15E8ADE5FB6D18 /* ThemeTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTokens.swift; sourceTree = "<group>"; };
+		EC9B7D7A4E9983C327AAA102 /* BabyMochi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyMochi.swift; sourceTree = "<group>"; };
 		ECF4773103F0DCA37DB21243 /* HapticsTapStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsTapStorageTests.swift; sourceTree = "<group>"; };
 		EE3594FC0A09D740CAE89993 /* HapticsTapStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsTapStorage.swift; sourceTree = "<group>"; };
 		F12AA63323571C7576C36F81 /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
@@ -534,6 +536,7 @@
 			isa = PBXGroup;
 			children = (
 				D6F9B9BB76EF083F99CB3E89 /* Accessories.swift */,
+				EC9B7D7A4E9983C327AAA102 /* BabyMochi.swift */,
 				3B4C478C9B8E6F42E61A88B8 /* CoolShades.swift */,
 			);
 			path = Accessories;
@@ -918,8 +921,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 9B50063C0F687A650CFDA41A /* Build configuration list for PBXProject "Motimate" */;
 			developmentRegion = en;
@@ -975,6 +976,7 @@
 				AB9C17938035D3DBA1B66953 /* AruticFace.swift in Sources */,
 				171A89C050C33A2399CC7842 /* AruticMessages.swift in Sources */,
 				C2B389B8D0E51C1E21799FDA /* AutoNightStorage.swift in Sources */,
+				365667C1E26D687B6275D08B /* BabyMochi.swift in Sources */,
 				BDC097EE6EE5FAEC1414F529 /* BackgroundEmitters.swift in Sources */,
 				9CC966A077779FBC3AFF4FD2 /* BaseHapticsStorage.swift in Sources */,
 				9B38CB121D2AF3BB0694728E /* BulbEye.swift in Sources */,
@@ -1278,6 +1280,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -1297,6 +1300,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;

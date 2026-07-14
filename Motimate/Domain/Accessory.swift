@@ -2,10 +2,12 @@ import SwiftUI
 
 enum AccessoryId: String, CaseIterable {
     case coolShades
+    case babyMochi
 }
 
 enum AccessorySlot: String, CaseIterable {
     case eyes
+    case pet
 }
 
 struct AccessoryDefinition {
@@ -23,6 +25,17 @@ enum Accessory {
             slot: .eyes,
             view: { mood, size, spread in AnyView(
                 Accessories.CoolShades(
+                    mood: mood,
+                    size: size,
+                    spread: spread)
+            )}
+        ),
+        .babyMochi: AccessoryDefinition(
+            name: "Baby Mochi",
+            stepGoal: 12_000,
+            slot: .pet,
+            view: { mood, size, spread in AnyView(
+                Accessories.BabyMochi(
                     mood: mood,
                     size: size,
                     spread: spread)
