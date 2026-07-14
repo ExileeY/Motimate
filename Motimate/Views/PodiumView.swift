@@ -32,7 +32,6 @@ struct PodiumView: View {
     var body: some View {
         let palette = ThemeTokens.for(theme).palette
         let definition = Accessory.define(focus)
-        let owned = accessories.isOwned(focus)
 
         return GeometryReader { geo in
             PhoneCanvas(mood: .calm) {
@@ -68,9 +67,9 @@ struct PodiumView: View {
                     AccessoryCard(
                         name: definition.name,
                         petName: petDefinition(settings.petId).name,
-                        owned: owned,
-                        equipped: accessories.isEquipped(focus),
-                        previewing: preview == focus,
+                        isOwned: accessories.isOwned(focus),
+                        isEquipped: accessories.isEquipped(focus),
+                        isPreviewing: preview == focus,
                         steps: dailySteps.steps,
                         goal: definition.stepGoal,
                         progress: accessories.progress(focus, steps: dailySteps.steps),

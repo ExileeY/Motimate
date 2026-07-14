@@ -3,9 +3,9 @@ import SwiftUI
 struct AccessoryCard: View {
     let name: String
     let petName: String
-    let owned: Bool
-    let equipped: Bool
-    let previewing: Bool
+    let isOwned: Bool
+    let isEquipped: Bool
+    let isPreviewing: Bool
     let steps: Int
     let goal: Int
     let progress: Double
@@ -28,14 +28,14 @@ struct AccessoryCard: View {
 
                     Text(statusLine)
                         .font(Fonts.bodyRegular(12))
-                        .foregroundColor(owned ? palette.accent : palette.cardMeta)
+                        .foregroundColor(isOwned ? palette.accent : palette.cardMeta)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
 
-            if owned {
+            if isOwned {
                 Button(action: onEquip) {
-                    Text(equipped ? "Unequip" : "Equip on \(petName)")
+                    Text(isEquipped ? "Unequip" : "Equip on \(petName)")
                         .font(Fonts.headingMedium(15))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
@@ -65,7 +65,7 @@ struct AccessoryCard: View {
         .background(palette.cardBg)
         .overlay(
             RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .stroke(owned ? palette.accent.opacity(0.5) : palette.cardBorder, lineWidth: owned ? 1.5 : 1)
+                .stroke(isOwned ? palette.accent.opacity(0.5) : palette.cardBorder, lineWidth: isOwned ? 1.5 : 1)
         )
         .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
         .contentShape(Rectangle())
@@ -73,13 +73,13 @@ struct AccessoryCard: View {
     }
 
     private var statusLine: String {
-        return owned
+        return isOwned
             ? "Unlocked · \(NumberFormat.grouped(goal)) steps today"
             : "Walk \(NumberFormat.grouped(goal)) steps to unlock"
     }
 
     private var previewFooter: String {
-        previewing
+        isPreviewing
             ? "Previewing — tap to remove"
             : "Tap to preview"
     }
@@ -139,9 +139,9 @@ struct AccessoryCard: View {
         AccessoryCard(
             name: "Cool Shades",
             petName: "Mochi",
-            owned: false,
-            equipped: false,
-            previewing: false,
+            isOwned: false,
+            isEquipped: false,
+            isPreviewing: false,
             steps: 4_200,
             goal: 8_000,
             progress: 0.52,
@@ -152,9 +152,9 @@ struct AccessoryCard: View {
         AccessoryCard(
             name: "Cool Shades",
             petName: "Mochi",
-            owned: true,
-            equipped: false,
-            previewing: true,
+            isOwned: true,
+            isEquipped: false,
+            isPreviewing: true,
             steps: 8_000,
             goal: 8_000,
             progress: 1,
