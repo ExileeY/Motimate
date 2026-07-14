@@ -18,7 +18,12 @@ struct SettingsView: View {
 
         return PhoneCanvas(mood: .calm) {
             VStack(alignment: .leading, spacing: 0) {
-                header(palette)
+                ScreenHeader(
+                    palette: palette,
+                    title: "Settings",
+                    onBack: goBack
+                )
+                .padding(.bottom, 28)
 
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 0) {
@@ -40,25 +45,6 @@ struct SettingsView: View {
         .onChange(of: goalFocused) { focused in
             if !focused { commitGoal() }
         }
-    }
-
-    // MARK: - Header
-
-    private func header(_ palette: Palette) -> some View {
-        HStack(spacing: 10) {
-            Button(action: goBack) {
-                Image(systemName: "chevron.backward")
-                    .font(.system(size: 24, weight: .regular))
-                    .foregroundColor(palette.text)
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel("Back")
-
-            Text("Settings")
-                .font(Fonts.heading(24))
-                .foregroundColor(palette.text)
-        }
-        .padding(.bottom, 28)
     }
 
     // MARK: - Sections

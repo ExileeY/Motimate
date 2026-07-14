@@ -37,7 +37,22 @@ struct PodiumView: View {
         return GeometryReader { geo in
             PhoneCanvas(mood: .calm) {
                 VStack(spacing: 0) {
-                    header(palette)
+                    ScreenHeader(
+                        palette: palette,
+                        title: "Podium",
+                        onBack: goBack
+                    ) {
+                        PillBadge(
+                            text: NumberFormat.grouped(dailySteps.steps),
+                            dotColor: palette.accent,
+                            palette: palette,
+                            dotSize: 7,
+                            font: Fonts.bodyBold(11.5),
+                            spacing: 6,
+                            horizontalPadding: 10
+                        )
+                    }
+                    .padding(.bottom, 28)
 
                     Spacer(minLength: 0)
 

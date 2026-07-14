@@ -81,6 +81,7 @@
 		7E1DF58E4DDAF4ED7C471D08 /* Confetti.swift in Sources */ = {isa = PBXBuildFile; fileRef = F296C193C5B40FF536A06AA9 /* Confetti.swift */; };
 		7E8A8933C085A06B69AF3E04 /* StatusDotTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9CE45D552CBE0EE666AD19 /* StatusDotTokens.swift */; };
 		7FF2156F7AD7E6B1459C1F0B /* Cheek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444257AC8A063F8380FC5620 /* Cheek.swift */; };
+		803CC498BAF916D562BCE6AA /* ScreenHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEBB969A759F4611EA361B /* ScreenHeader.swift */; };
 		80B072C96D27C854A03802B2 /* SchnauzerEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA9DBBDDC63E3E44E87E8C /* SchnauzerEye.swift */; };
 		84B36044DCEC5FF813A0F281 /* Fredoka_500Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 975B8A4F9AF5EC0919EE1FB2 /* Fredoka_500Medium.ttf */; };
 		882E58361B871F268D7838A8 /* Glow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C897643F95B54773540A58CB /* Glow.swift */; };
@@ -232,6 +233,7 @@
 		801546328A78E5979F2245C4 /* BulbashikMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikMessages.swift; sourceTree = "<group>"; };
 		82136E95D3598033BDEB1BDC /* UnavailableStepReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnavailableStepReader.swift; sourceTree = "<group>"; };
 		82E2A6E9DDC90C46803F705F /* PetStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStorageTests.swift; sourceTree = "<group>"; };
+		86CEBB969A759F4611EA361B /* ScreenHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenHeader.swift; sourceTree = "<group>"; };
 		883C0CDAEDD9535C26627ED9 /* MessageSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSet.swift; sourceTree = "<group>"; };
 		895F160A1D67D4A462873230 /* AccessoryOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryOverlay.swift; sourceTree = "<group>"; };
 		89CF52928592EAB09C7E3DAF /* AccessorySlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessorySlot.swift; sourceTree = "<group>"; };
@@ -557,6 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				A9FC20937B24C54047F07110 /* PillBadge.swift */,
+				86CEBB969A759F4611EA361B /* ScreenHeader.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -993,6 +996,7 @@
 				E3EBB52F8FA51B1FE69D6901 /* SchnauzerFace.swift in Sources */,
 				2B816E882345E6DAC06DBC10 /* SchnauzerMessages.swift in Sources */,
 				CE7B6F7A3D89A9668646B833 /* ScreenBgTokens.swift in Sources */,
+				803CC498BAF916D562BCE6AA /* ScreenHeader.swift in Sources */,
 				B7FCC9B8E97A7A07EB9D910A /* SettingsStore.swift in Sources */,
 				926A6A69AA5E4D54C6BC3140 /* SettingsView.swift in Sources */,
 				C8FBD8591D9A9E420C7DDC6C /* StageGlowTokens.swift in Sources */,
