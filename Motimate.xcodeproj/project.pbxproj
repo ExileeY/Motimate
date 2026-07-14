@@ -27,6 +27,7 @@
 		2B816E882345E6DAC06DBC10 /* SchnauzerMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76126176AE06F853AA76975B /* SchnauzerMessages.swift */; };
 		2BF388F479235A0BDDE45517 /* MessageSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C0CDAEDD9535C26627ED9 /* MessageSet.swift */; };
 		2C75B1E711397277EF6CCD57 /* KhinklearFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAEF8F1FBD8D293137617D1 /* KhinklearFace.swift */; };
+		2D1061F853F0BBCA207AFDC2 /* PillBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC20937B24C54047F07110 /* PillBadge.swift */; };
 		2E69C68FD0C5AD5F35598850 /* Clouds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BFDACB67BED22A337FF91 /* Clouds.swift */; };
 		306BF4D9600D60AE2507F993 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AA63323571C7576C36F81 /* Dimensions.swift */; };
 		30B5A643279A63A1D3A53945 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F134252AEA764CB094123BA /* Mood.swift */; };
@@ -55,6 +56,7 @@
 		5AF2D3B066D8A667D0503425 /* Halo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC9124E2D98D4E6139AE102 /* Halo.swift */; };
 		5B1163A681F1BA7BB33D60DD /* RoundEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = F677A9B1B35FF63B77D3B719 /* RoundEye.swift */; };
 		5BAA21CC634040013ACD94C3 /* HourClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F400E53055BFC20BDB8DA9C /* HourClockTests.swift */; };
+		5D90187D7C0ABACE75DEBD0C /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FB5F0EDC49AF56842A3E2 /* Protocol.swift */; };
 		5DAEE7D8F56AF151578C34E2 /* InteractiveSwipeBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE7451DFEC08194C7053F9E /* InteractiveSwipeBack.swift */; };
 		61C8D5ABFC348029BF77D1BB /* GlowMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E025435A59515A22C9A532F4 /* GlowMath.swift */; };
 		641FC47E0C085DA45C263410 /* PetStageMotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7825BA24BD46B0D6D71DB1 /* PetStageMotionTests.swift */; };
@@ -69,6 +71,7 @@
 		6D10E4B91A5B4B7AD387AAD1 /* Fredoka_600SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1614F871C04C5B1AE281272B /* Fredoka_600SemiBold.ttf */; };
 		6E30F17B328CCC42D8EBD2A0 /* MochiFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49081B748C7AD0E937672D27 /* MochiFace.swift */; };
 		6EE9AB2AEB8454EC2A39EB46 /* BulbashikFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84AF1F480BA77EFC04D38D2 /* BulbashikFace.swift */; };
+		6FD9F6085DE4CBF7726C394E /* SystemHourClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA30E8B3FF10BF1618E7165 /* SystemHourClock.swift */; };
 		7007CE2A796835FB1A2FAD02 /* MochiMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24F378C6479AF0C56EAA91F /* MochiMessages.swift */; };
 		708D1950D28402B25696FC31 /* OctopusEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0758B99C8A2410632AA28584 /* OctopusEye.swift */; };
 		72AE4E75A9BA572F2348300B /* RoundedBoxPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BE7E6A52A1EA94E6A1CD9 /* RoundedBoxPathTests.swift */; };
@@ -111,7 +114,6 @@
 		B11F09F769C06C5D423FD6B7 /* SchnauzerBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D4AC7299D374AA2865674C /* SchnauzerBody.swift */; };
 		B7FCC9B8E97A7A07EB9D910A /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */; };
 		B9585B5D3BA1B978B75E7718 /* Nunito_400Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32B29B0082422D0540A988A7 /* Nunito_400Regular.ttf */; };
-		BA0ABF0B0EA8EB245FA3742F /* HourClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B8939F64CE6C98CD5F0475 /* HourClock.swift */; };
 		BB2FBB41D777F979CA69AECC /* OctopusMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8114D624653618A58D1B38 /* OctopusMessages.swift */; };
 		BD0BB4500B1A4102BFD7C462 /* AccessoryOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F160A1D67D4A462873230 /* AccessoryOverlay.swift */; };
 		BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C64CD38FFE017BEDEE318E /* HomeView.swift */; };
@@ -201,12 +203,12 @@
 		58B29D6063101ED5341AE7A5 /* OffsetProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetProps.swift; sourceTree = "<group>"; };
 		5AF5BB110C0EADC77B004F6C /* PetStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStorage.swift; sourceTree = "<group>"; };
 		5D3BF2FED798CC189B49B042 /* PetRegistryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRegistryTests.swift; sourceTree = "<group>"; };
+		5EA30E8B3FF10BF1618E7165 /* SystemHourClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemHourClock.swift; sourceTree = "<group>"; };
 		5F8114D624653618A58D1B38 /* OctopusMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusMessages.swift; sourceTree = "<group>"; };
 		5FEEA24A89CE12C14DF5D378 /* MotimateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotimateApp.swift; sourceTree = "<group>"; };
 		61D10BBDF8DA6D09DFBAF37A /* SVGGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGGradient.swift; sourceTree = "<group>"; };
 		65C38307A4B7D805EB0651FC /* PetStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStage.swift; sourceTree = "<group>"; };
 		66B5A04B2C700F615DBEF475 /* BackgroundEmitters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundEmitters.swift; sourceTree = "<group>"; };
-		66B8939F64CE6C98CD5F0475 /* HourClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourClock.swift; sourceTree = "<group>"; };
 		6783BAB98A7208BE48D1C3B4 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		6955EED43B616CABB7E94518 /* PlaceholderPetBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderPetBody.swift; sourceTree = "<group>"; };
 		6A0FD22CC1B27851A4577E0D /* AruticBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AruticBody.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 		A82F59C05246CCC45B8CF46A /* PhoneCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCanvas.swift; sourceTree = "<group>"; };
 		A881D6E27EB7B17F600CA5ED /* AccessoryRegistryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryRegistryTests.swift; sourceTree = "<group>"; };
 		A994948A9BA4A760B22C4193 /* ConfettiMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiMathTests.swift; sourceTree = "<group>"; };
+		A9FC20937B24C54047F07110 /* PillBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillBadge.swift; sourceTree = "<group>"; };
 		AAF28A4FEB35C882FCC6D042 /* RoundedBoxPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBoxPath.swift; sourceTree = "<group>"; };
 		AB95A4A0F2C0ABB3E69FF96F /* CoolShadesArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolShadesArt.swift; sourceTree = "<group>"; };
 		AEFCD760C9C8052EB51C81E1 /* StepReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReaderTests.swift; sourceTree = "<group>"; };
@@ -265,6 +268,7 @@
 		C1C2F47E71A4028FFD68E696 /* GlowMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowMathTests.swift; sourceTree = "<group>"; };
 		C2EB954686F19676799A0650 /* MoodToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodToken.swift; sourceTree = "<group>"; };
 		C46C1FDF209A6D537394DB53 /* NumberFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormat.swift; sourceTree = "<group>"; };
+		C65FB5F0EDC49AF56842A3E2 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		C6703DB54354B7E633AA774D /* MoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTests.swift; sourceTree = "<group>"; };
 		C77173406A078F871B84D237 /* StepReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReading.swift; sourceTree = "<group>"; };
 		C84AF1F480BA77EFC04D38D2 /* BulbashikFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikFace.swift; sourceTree = "<group>"; };
@@ -350,10 +354,10 @@
 			isa = PBXGroup;
 			children = (
 				DE9ADCD4AC057C8E6D7E63E4 /* DailySteps.swift */,
-				66B8939F64CE6C98CD5F0475 /* HourClock.swift */,
 				B2308EB01D257A005D294300 /* StepReader.swift */,
 				C77173406A078F871B84D237 /* StepReading.swift */,
 				82136E95D3598033BDEB1BDC /* UnavailableStepReader.swift */,
+				97CE7F4EF8C740DD8A235A05 /* HourClock */,
 			);
 			path = Steps;
 			sourceTree = "<group>";
@@ -547,6 +551,23 @@
 			path = Confetti;
 			sourceTree = "<group>";
 		};
+		8817A149DCA1E264B317666E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A9FC20937B24C54047F07110 /* PillBadge.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		97CE7F4EF8C740DD8A235A05 /* HourClock */ = {
+			isa = PBXGroup;
+			children = (
+				C65FB5F0EDC49AF56842A3E2 /* Protocol.swift */,
+				5EA30E8B3FF10BF1618E7165 /* SystemHourClock.swift */,
+			);
+			path = HourClock;
+			sourceTree = "<group>";
+		};
 		A28F9AFD3DEDF03A89CA250E /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,6 +675,7 @@
 				8036E296D061B5D2FC4F7FC7 /* Confetti */,
 				2584D00060B7B8E302C3274C /* Glow */,
 				B79036E6A877C1D335B1F1F3 /* Pets */,
+				8817A149DCA1E264B317666E /* Shared */,
 				F2E0E56F97DB0D5DCC77B2D2 /* Stage */,
 			);
 			path = Components;
@@ -924,7 +946,6 @@
 				DC037AF6E42B548518BE6F49 /* HapticsService.swift in Sources */,
 				02E4BF6EF217614D00DA9334 /* HapticsTapStorage.swift in Sources */,
 				BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */,
-				BA0ABF0B0EA8EB245FA3742F /* HourClock.swift in Sources */,
 				5DAEE7D8F56AF151578C34E2 /* InteractiveSwipeBack.swift in Sources */,
 				6B15D7A443CF00BFECC08924 /* KhinklEye.swift in Sources */,
 				CABEC257880660AD83E4F6F2 /* KhinklearBody.swift in Sources */,
@@ -955,8 +976,10 @@
 				38C5DCF1EAB6FF670D0E250D /* PetStage.swift in Sources */,
 				90F6A6847AE437FE110100D5 /* PetStorage.swift in Sources */,
 				56BF7CB982903D88955A0CF2 /* PhoneCanvas.swift in Sources */,
+				2D1061F853F0BBCA207AFDC2 /* PillBadge.swift in Sources */,
 				CDB9877ECF0B14E931E93946 /* PlaceholderPetBody.swift in Sources */,
 				4EFD4724CBCDAFBC964DFA5B /* PodiumView.swift in Sources */,
+				5D90187D7C0ABACE75DEBD0C /* Protocol.swift in Sources */,
 				69E0F90A236DFFD2A7774BD4 /* ResponsiveScale.swift in Sources */,
 				5B1163A681F1BA7BB33D60DD /* RoundEye.swift in Sources */,
 				DB8DCC566EDC500424002E9E /* RoundedBoxPath.swift in Sources */,
@@ -974,6 +997,7 @@
 				7E8A8933C085A06B69AF3E04 /* StatusDotTokens.swift in Sources */,
 				3D00E5E569D1E9DA270B7DA1 /* StepReader.swift in Sources */,
 				C3EE35B97E93B4A322B60523 /* StepReading.swift in Sources */,
+				6FD9F6085DE4CBF7726C394E /* SystemHourClock.swift in Sources */,
 				77C8CEDBF0F118CC7A5A7023 /* Theme.swift in Sources */,
 				C7B058370F8421ABF7C97F91 /* ThemeTokens.swift in Sources */,
 				CBDB154513244E825197A562 /* TomatoBody.swift in Sources */,

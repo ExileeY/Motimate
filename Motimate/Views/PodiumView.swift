@@ -84,28 +84,17 @@ struct PodiumView: View {
 
             Spacer()
 
-            stepsPill(palette)
+            PillBadge(
+                text: NumberFormat.grouped(dailySteps.steps),
+                dotColor: palette.accent,
+                palette: palette,
+                dotSize: 7,
+                font: Fonts.bodyBold(11.5),
+                spacing: 6,
+                horizontalPadding: 10
+            )
         }
         .padding(.bottom, 28)
-    }
-
-    private func stepsPill(_ palette: Palette) -> some View {
-        HStack(spacing: 6) {
-            Circle()
-                .fill(palette.accent)
-                .frame(width: 7, height: 7)
-
-            Text(NumberFormat.grouped(dailySteps.steps))
-                .font(Fonts.bodyBold(11.5))
-                .foregroundColor(palette.pillText)
-        }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 6)
-        .background(palette.pillBg)
-        .overlay(
-            Capsule().stroke(palette.pillBorder, lineWidth: 1)
-        )
-        .clipShape(Capsule())
     }
 
     // MARK: - Stage + plinth

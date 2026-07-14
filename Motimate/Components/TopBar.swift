@@ -41,24 +41,14 @@ struct TopBar: View {
         let hour = Calendar.current.component(.hour, from: now)
 
         HStack(alignment: .center) {
-            HStack(spacing: 7) {
-                Circle()
-                    .fill(dot)
-                    .frame(width: 9, height: 9)
-                    .shadow(color: dot.opacity(0.9), radius: 4)
-
-                Text(timeOfDay(hour: hour))
-                    .font(Fonts.bodyBold(12.5))
-                    .foregroundColor(palette.pillText)
-            }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 6)
-            .background(palette.pillBg)
-            .overlay(
-                Capsule()
-                    .stroke(palette.pillBorder, lineWidth: 1)
+            PillBadge(
+                text: timeOfDay(hour: hour),
+                dotColor: dot,
+                palette: palette,
+                dotSize: 9,
+                dotShadow: true,
+                font: Fonts.bodyBold(12.5)
             )
-            .clipShape(Capsule())
 
             Spacer()
 
