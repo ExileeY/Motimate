@@ -5,6 +5,7 @@ struct MotimateApp: App {
     @StateObject private var settings: SettingsStore
     @StateObject private var dailySteps: DailyStepsModel
     @StateObject private var celebration = CelebrationStore()
+    @StateObject private var accessories = AccessoryStore()
 
     init() {
         let store = SettingsStore()
@@ -21,6 +22,7 @@ struct MotimateApp: App {
             .environmentObject(settings)
             .environmentObject(dailySteps)
             .environmentObject(celebration)
+            .environmentObject(accessories)
         }
     }
 }

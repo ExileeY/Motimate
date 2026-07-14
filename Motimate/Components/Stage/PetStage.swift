@@ -84,6 +84,7 @@ struct PetStage: View {
     let mood: Mood
     var petId: PetId = PET_ID_DEFAULT
     var screenHeight: CGFloat = RESPONSIVE_BASE_HEIGHT
+    var accessories: [AccessoryId] = []
 
     var entrance = EntranceMotionParams()
 
@@ -100,10 +101,21 @@ struct PetStage: View {
                 )
 
                 EntranceMotion(params: entrance) {
-                    definition.body(
-                        mood,
-                        pet
-                    )
+                    ZStack {
+                        definition.body(
+                            mood,
+                            pet
+                        )
+
+                        ForEach(accessories, id: \.self) { accessory in
+                            AccessoryOverlay(
+                                accessory: accessory,
+                                petId: petId,
+                                mood: mood,
+                                petSize: pet
+                            )
+                        }
+                    }
                     .compositingGroup()
                 }
             }

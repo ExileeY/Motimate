@@ -24,6 +24,7 @@ func formatClock(
 struct TopBar: View {
     let mood: Mood
     var onSettingsTap: () -> Void = {}
+    var onPodiumTap: () -> Void = {}
 
     @Environment(\.themeTokens) private var tokens
     @State private var now = Date()
@@ -65,6 +66,16 @@ struct TopBar: View {
                 Text(formatClock(now))
                     .font(Fonts.bodyBold(13))
                     .foregroundColor(palette.clock)
+
+                Button(action: onPodiumTap) {
+                    Image(systemName: "rosette")
+                        .font(.system(size: 20, weight: .regular))
+                        .foregroundColor(palette.clock)
+                        .frame(width: 24, height: 24)
+                }
+                .buttonStyle(.plain)
+                .contentShape(Rectangle())
+                .accessibilityLabel("Podium")
 
                 Button(action: onSettingsTap) {
                     Image(systemName: "gearshape")

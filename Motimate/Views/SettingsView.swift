@@ -123,7 +123,7 @@ struct SettingsView: View {
                     .stroke(palette.cardBorder, lineWidth: 1)
             )
 
-            Text("Between \(formatGoal(GoalStorage.minValue)) and \(formatGoal(GoalStorage.maxValue)) steps.")
+            Text("Between \(NumberFormat.grouped(GoalStorage.minValue)) and \(NumberFormat.grouped(GoalStorage.maxValue)) steps.")
                 .font(Fonts.bodyRegular(12))
                 .foregroundColor(palette.cardMeta)
                 .padding(.top, 10)
@@ -272,12 +272,6 @@ struct SettingsView: View {
             .kerning(0.5)
             .textCase(.uppercase)
             .foregroundColor(palette.cardMeta)
-    }
-
-    private func formatGoal(_ value: Int) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        return formatter.string(from: NSNumber(value: value)) ?? String(value)
     }
 
     // MARK: - Actions

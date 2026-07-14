@@ -4,11 +4,13 @@ struct HomeView: View {
     @EnvironmentObject private var settings: SettingsStore
     @EnvironmentObject private var dailySteps: DailyStepsModel
     @EnvironmentObject private var celebration: CelebrationStore
+    @EnvironmentObject private var accessories: AccessoryStore
     @Environment(\.colorScheme) private var colorScheme
 
     @State private var messages: [Mood: MessageSet] = [:]
 
     @State private var showSettings = false
+    @State private var showPodium = false
 
     @State private var isCelebrating = false
 
@@ -48,11 +50,20 @@ struct HomeView: View {
             )
             .hidden()
         )
+        .background(
+            NavigationLink(
+                isActive: $showPodium,
+                destination: { PodiumView(isPresented: $showPodium) },
+                label: { EmptyView() }
+            )
+            .hidden()
+        )
         .onAppear {
             dailySteps.start()
             refreshMessages()
             triggerEntrance()
             maybeCelebrate()
+            maybeUnlock()
         }
         .onChange(of: settings.petId) { _ in
             refreshMessages()
@@ -62,6 +73,10 @@ struct HomeView: View {
         }
         .onChange(of: dailySteps.loading) { _ in
             maybeCelebrate()
+            maybeUnlock()
+        }
+        .onChange(of: dailySteps.steps) { _ in
+            maybeUnlock()
         }
     }
 
@@ -101,10 +116,17 @@ struct HomeView: View {
 
         return PhoneCanvas(mood: mood) {
             VStack(spacing: 0) {
-                TopBar(mood: mood, onSettingsTap: {
-                    HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
-                    showSettings = true
-                })
+                TopBar(
+                    mood: mood,
+                    onSettingsTap: {
+                        HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
+                        showSettings = true
+                    },
+                    onPodiumTap: {
+                        HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
+                        showPodium = true
+                    }
+                )
 
                 Spacer(minLength: 0)
 
@@ -148,6 +170,7 @@ struct HomeView: View {
             mood: mood,
             petId: settings.petId,
             screenHeight: height,
+            accessories: accessories.equippedList,
             entrance: EntranceMotionParams(
                 active: shouldPlayEntrance,
                 onFinished: { shouldPlayEntrance = false }
@@ -212,6 +235,12 @@ struct HomeView: View {
         HapticsService.celebration(enabled: settings.hapticsAnimationEnabled)
     }
 
+    private func maybeUnlock() {
+        guard !dailySteps.loading else { return }
+        // Permanent + idempotent; no day gating, unlike celebration.
+        accessories.evaluate(steps: dailySteps.steps)
+    }
+
     #if DEBUG
     private func cycleMood() {
         let current = override ?? dailySteps.mood
@@ -247,5 +276,6 @@ struct HomeView: View {
     .environmentObject(settings)
     .environmentObject(DailyStepsModel(settings: settings))
     .environmentObject(CelebrationStore())
+    .environmentObject(AccessoryStore())
 }
 #endif
