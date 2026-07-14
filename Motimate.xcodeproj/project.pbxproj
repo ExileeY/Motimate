@@ -54,6 +54,7 @@
 		5A575C1F148592FD910ACE94 /* AccessoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9587F7A1B5F066FEDE51F2B /* AccessoryCard.swift */; };
 		5AF2D3B066D8A667D0503425 /* Halo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC9124E2D98D4E6139AE102 /* Halo.swift */; };
 		5B1163A681F1BA7BB33D60DD /* RoundEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = F677A9B1B35FF63B77D3B719 /* RoundEye.swift */; };
+		5BAA21CC634040013ACD94C3 /* HourClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F400E53055BFC20BDB8DA9C /* HourClockTests.swift */; };
 		5DAEE7D8F56AF151578C34E2 /* InteractiveSwipeBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE7451DFEC08194C7053F9E /* InteractiveSwipeBack.swift */; };
 		61C8D5ABFC348029BF77D1BB /* GlowMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E025435A59515A22C9A532F4 /* GlowMath.swift */; };
 		641FC47E0C085DA45C263410 /* PetStageMotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7825BA24BD46B0D6D71DB1 /* PetStageMotionTests.swift */; };
@@ -110,6 +111,7 @@
 		B11F09F769C06C5D423FD6B7 /* SchnauzerBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D4AC7299D374AA2865674C /* SchnauzerBody.swift */; };
 		B7FCC9B8E97A7A07EB9D910A /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */; };
 		B9585B5D3BA1B978B75E7718 /* Nunito_400Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32B29B0082422D0540A988A7 /* Nunito_400Regular.ttf */; };
+		BA0ABF0B0EA8EB245FA3742F /* HourClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B8939F64CE6C98CD5F0475 /* HourClock.swift */; };
 		BB2FBB41D777F979CA69AECC /* OctopusMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8114D624653618A58D1B38 /* OctopusMessages.swift */; };
 		BD0BB4500B1A4102BFD7C462 /* AccessoryOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895F160A1D67D4A462873230 /* AccessoryOverlay.swift */; };
 		BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C64CD38FFE017BEDEE318E /* HomeView.swift */; };
@@ -204,6 +206,7 @@
 		61D10BBDF8DA6D09DFBAF37A /* SVGGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGGradient.swift; sourceTree = "<group>"; };
 		65C38307A4B7D805EB0651FC /* PetStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStage.swift; sourceTree = "<group>"; };
 		66B5A04B2C700F615DBEF475 /* BackgroundEmitters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundEmitters.swift; sourceTree = "<group>"; };
+		66B8939F64CE6C98CD5F0475 /* HourClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourClock.swift; sourceTree = "<group>"; };
 		6783BAB98A7208BE48D1C3B4 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		6955EED43B616CABB7E94518 /* PlaceholderPetBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderPetBody.swift; sourceTree = "<group>"; };
 		6A0FD22CC1B27851A4577E0D /* AruticBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AruticBody.swift; sourceTree = "<group>"; };
@@ -241,6 +244,7 @@
 		993D1A162ADC46EB93E39BE7 /* OctopusFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusFace.swift; sourceTree = "<group>"; };
 		9B7C0543EDD523839B60722B /* DogEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogEye.swift; sourceTree = "<group>"; };
 		9B9CE45D552CBE0EE666AD19 /* StatusDotTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDotTokens.swift; sourceTree = "<group>"; };
+		9F400E53055BFC20BDB8DA9C /* HourClockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourClockTests.swift; sourceTree = "<group>"; };
 		A31ACA6E7D1EDE27E6BEE78A /* PersistedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedStorage.swift; sourceTree = "<group>"; };
 		A3C64CD38FFE017BEDEE318E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A77F9D75C19D873BC0BC2AE3 /* HapticToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticToggle.swift; sourceTree = "<group>"; };
@@ -298,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				35E5DBA3657B3A6FEEDF77B7 /* DailyStepsTests.swift */,
+				9F400E53055BFC20BDB8DA9C /* HourClockTests.swift */,
 				AEFCD760C9C8052EB51C81E1 /* StepReaderTests.swift */,
 			);
 			path = Steps;
@@ -345,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				DE9ADCD4AC057C8E6D7E63E4 /* DailySteps.swift */,
+				66B8939F64CE6C98CD5F0475 /* HourClock.swift */,
 				B2308EB01D257A005D294300 /* StepReader.swift */,
 				C77173406A078F871B84D237 /* StepReading.swift */,
 				82136E95D3598033BDEB1BDC /* UnavailableStepReader.swift */,
@@ -918,6 +924,7 @@
 				DC037AF6E42B548518BE6F49 /* HapticsService.swift in Sources */,
 				02E4BF6EF217614D00DA9334 /* HapticsTapStorage.swift in Sources */,
 				BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */,
+				BA0ABF0B0EA8EB245FA3742F /* HourClock.swift in Sources */,
 				5DAEE7D8F56AF151578C34E2 /* InteractiveSwipeBack.swift in Sources */,
 				6B15D7A443CF00BFECC08924 /* KhinklEye.swift in Sources */,
 				CABEC257880660AD83E4F6F2 /* KhinklearBody.swift in Sources */,
@@ -994,6 +1001,7 @@
 				99AF98079FA98D2D7C6B1064 /* GoalStorageTests.swift in Sources */,
 				A7D9C9A4A0F7FF8E931F9D39 /* HapticsAnimationStorageTests.swift in Sources */,
 				4FE32111680970E35A177AA9 /* HapticsTapStorageTests.swift in Sources */,
+				5BAA21CC634040013ACD94C3 /* HourClockTests.swift in Sources */,
 				F59D4B3E7CEFB6966BAC6371 /* LoopTests.swift in Sources */,
 				AFBD65CE1212701A4B3E7495 /* MathUtilsTests.swift in Sources */,
 				46A34FDB4D65607374614997 /* MoodTests.swift in Sources */,

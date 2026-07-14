@@ -34,7 +34,7 @@ final class DailyStepsTests: XCTestCase {
 
     func testGrantedPathFansOutSteps() async {
         let reader = FakeStepReader(permission: .granted, todaySteps: 2_500)
-        let model = DailyStepsModel(settings: settings, reader: reader, hour: 9)
+        let model = DailyStepsModel(settings: settings, reader: reader, clock: FakeHourClock(hour: 9))
 
         model.start()
         await waitForResolution(model)
@@ -50,7 +50,7 @@ final class DailyStepsTests: XCTestCase {
 
     func testDeniedPathDegradesGracefully() async {
         let reader = FakeStepReader(permission: .denied, todaySteps: 9_999)
-        let model = DailyStepsModel(settings: settings, reader: reader, hour: 9)
+        let model = DailyStepsModel(settings: settings, reader: reader, clock: FakeHourClock(hour: 9))
 
         model.start()
         await waitForResolution(model)
@@ -63,7 +63,7 @@ final class DailyStepsTests: XCTestCase {
 
     func testUnavailablePathDegradesGracefully() async {
         let reader = FakeStepReader(permission: .unavailable, todaySteps: 9_999)
-        let model = DailyStepsModel(settings: settings, reader: reader, hour: 9)
+        let model = DailyStepsModel(settings: settings, reader: reader, clock: FakeHourClock(hour: 9))
 
         model.start()
         await waitForResolution(model)
@@ -78,7 +78,7 @@ final class DailyStepsTests: XCTestCase {
 
     func testLiveUpdateRecomputesMoodAndProgress() async {
         let reader = FakeStepReader(permission: .granted, todaySteps: 0)
-        let model = DailyStepsModel(settings: settings, reader: reader, hour: 9)
+        let model = DailyStepsModel(settings: settings, reader: reader, clock: FakeHourClock(hour: 9))
 
         model.start()
         await waitForResolution(model)
@@ -99,7 +99,7 @@ final class DailyStepsTests: XCTestCase {
 
     func testGoalChangeRecomputesMood() async {
         let reader = FakeStepReader(permission: .granted, todaySteps: 2_500)
-        let model = DailyStepsModel(settings: settings, reader: reader, hour: 9)
+        let model = DailyStepsModel(settings: settings, reader: reader, clock: FakeHourClock(hour: 9))
 
         model.start()
         await waitForResolution(model)
@@ -115,7 +115,7 @@ final class DailyStepsTests: XCTestCase {
     func testRealModeEnergeticPastNoonTurnsSad() async {
         settings.setGameMode(.real)
         let reader = FakeStepReader(permission: .granted, todaySteps: 0)
-        let model = DailyStepsModel(settings: settings, reader: reader, hour: MORNING_END_HOUR)
+        let model = DailyStepsModel(settings: settings, reader: reader, clock: FakeHourClock(hour: MORNING_END_HOUR))
 
         model.start()
         await waitForResolution(model)
@@ -126,7 +126,7 @@ final class DailyStepsTests: XCTestCase {
     func testRealModeEnergeticBeforeNoonStaysEnergetic() async {
         settings.setGameMode(.real)
         let reader = FakeStepReader(permission: .granted, todaySteps: 0)
-        let model = DailyStepsModel(settings: settings, reader: reader, hour: MORNING_END_HOUR - 1)
+        let model = DailyStepsModel(settings: settings, reader: reader, clock: FakeHourClock(hour: MORNING_END_HOUR - 1))
 
         model.start()
         await waitForResolution(model)
@@ -141,16 +141,17 @@ final class DailyStepsTests: XCTestCase {
         try? await Task.sleep(nanoseconds: 10_000_000) // 10ms
     }
 
-    func testRefreshReanchorsHourFlipsToSad() async {
+    func testClockCrossingNoonFlipsToSad() async {
         settings.setGameMode(.real)
         let reader = FakeStepReader(permission: .granted, todaySteps: 0)
-        let model = DailyStepsModel(settings: settings, reader: reader, hour: MORNING_END_HOUR - 1)
+        let clock = FakeHourClock(hour: MORNING_END_HOUR - 1)
+        let model = DailyStepsModel(settings: settings, reader: reader, clock: clock)
 
         model.start()
         await waitForResolution(model)
         XCTAssertEqual(model.mood, .energetic)
 
-        model.refresh(hour: MORNING_END_HOUR)
+        clock.push(MORNING_END_HOUR) // hour crosses noon (e.g. a foreground refresh re-reads it)
         await tick()
 
         XCTAssertEqual(model.mood, .sad)
@@ -158,7 +159,7 @@ final class DailyStepsTests: XCTestCase {
 
     func testRefreshReAnchorsStepsAndResubscribes() async {
         let reader = FakeStepReader(permission: .granted, todaySteps: 5_000)
-        let model = DailyStepsModel(settings: settings, reader: reader, hour: 9)
+        let model = DailyStepsModel(settings: settings, reader: reader, clock: FakeHourClock(hour: 9))
 
         model.start()
         await waitForResolution(model)
@@ -166,7 +167,7 @@ final class DailyStepsTests: XCTestCase {
         XCTAssertEqual(reader.subscribeCount, 1)
 
         reader.todaySteps = 0 // new day: yesterday's 5k is gone
-        model.refresh(hour: 9)
+        model.refresh()
         await tick()
 
         XCTAssertEqual(model.steps, 0)
@@ -181,9 +182,9 @@ final class DailyStepsTests: XCTestCase {
 
     func testRefreshBeforeStartIsNoOp() async {
         let reader = FakeStepReader(permission: .granted, todaySteps: 5_000)
-        let model = DailyStepsModel(settings: settings, reader: reader, hour: 9)
+        let model = DailyStepsModel(settings: settings, reader: reader, clock: FakeHourClock(hour: 9))
 
-        model.refresh(hour: 15)
+        model.refresh()
         await tick()
 
         XCTAssertNil(model.permission)
@@ -191,16 +192,17 @@ final class DailyStepsTests: XCTestCase {
         XCTAssertEqual(reader.subscribeCount, 0)
     }
 
-    func testRefreshWhenDeniedOnlyUpdatesHour() async {
+    func testClockChangeWhenDeniedStillRecomputesMood() async {
         settings.setGameMode(.real)
         let reader = FakeStepReader(permission: .denied, todaySteps: 9_999)
-        let model = DailyStepsModel(settings: settings, reader: reader, hour: MORNING_END_HOUR - 1)
+        let clock = FakeHourClock(hour: MORNING_END_HOUR - 1)
+        let model = DailyStepsModel(settings: settings, reader: reader, clock: clock)
 
         model.start()
         await waitForResolution(model)
         XCTAssertEqual(model.mood, .energetic)
 
-        model.refresh(hour: MORNING_END_HOUR)
+        clock.push(MORNING_END_HOUR) // hour advances even though the pedometer is denied
         await tick()
 
         XCTAssertEqual(model.mood, .sad)
