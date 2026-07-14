@@ -10,9 +10,9 @@ struct AccessoryOverlay: View {
 
     var body: some View {
         let anchor = accessoryAnchor(accessory, petId)
-        let art = Accessory.define(accessory).art(mood, Self.BASE, anchor.spread)
+        let view = Accessory.define(accessory).view(mood, Self.BASE, anchor.spread)
 
-        art
+        view
             .scaleEffect(anchor.scale, anchor: .center)
             .rotationEffect(.degrees(anchor.rotationDegrees), anchor: .center)
             .position(x: anchor.position.x, y: anchor.position.y)
