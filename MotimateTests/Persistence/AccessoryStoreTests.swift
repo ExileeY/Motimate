@@ -100,6 +100,45 @@ final class AccessoryStoreTests: XCTestCase {
         XCTAssertEqual(store.equipped[.pet], .babyMochi)
     }
 
+    // MARK: - Equipped list
+
+    func testEquippedListIsEmptyWhenNothingEquipped() {
+        let store = AccessoryStore(defaults: defaults)
+        XCTAssertEqual(store.equippedList, [])
+    }
+
+    func testEquippedListIsOrderedBySlotZOrder() {
+        let store = AccessoryStore(defaults: defaults)
+        store.unlock(.coolShades)
+        store.unlock(.babyMochi)
+        store.equip(.coolShades)
+        store.equip(.babyMochi)
+
+        XCTAssertEqual(store.equippedList, [.babyMochi, .coolShades])
+    }
+
+    /// The regression guard: `equipped` is a dictionary, so deriving the list
+    /// from `values` made the pet's draw order depend on equip sequence.
+    func testEquippedListOrderIsStableRegardlessOfEquipSequence() {
+        let eyesFirst = AccessoryStore(defaults: defaults)
+        eyesFirst.unlock(.coolShades)
+        eyesFirst.unlock(.babyMochi)
+        eyesFirst.equip(.coolShades)
+        eyesFirst.equip(.babyMochi)
+
+        let otherSuite = "AccessoryStoreTests.\(UUID().uuidString)"
+        let otherDefaults = UserDefaults(suiteName: otherSuite)!
+        defer { otherDefaults.removePersistentDomain(forName: otherSuite) }
+
+        let petFirst = AccessoryStore(defaults: otherDefaults)
+        petFirst.unlock(.coolShades)
+        petFirst.unlock(.babyMochi)
+        petFirst.equip(.babyMochi)
+        petFirst.equip(.coolShades)
+
+        XCTAssertEqual(eyesFirst.equippedList, petFirst.equippedList)
+    }
+
     func testInitReconcilesStaleEquipped() {
         AccessorySlotStorage.make(.eyes, defaults: defaults).set(.coolShades)
 

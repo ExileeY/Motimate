@@ -15,6 +15,14 @@ enum AccessorySlot: String, CaseIterable {
         case .pet: return "Pet"
         }
     }
+
+    /// Back-to-front draw order on the pet. Deliberately not `allCases` (that
+    /// drives Wardrobe section order) nor `Accessory.rotationOrder` (that's the
+    /// unlock difficulty ramp). A slot missing here vanishes from the pet.
+    static let zOrder: [AccessorySlot] = [
+        .pet,
+        .eyes,
+    ]
 }
 
 struct AccessoryDefinition {

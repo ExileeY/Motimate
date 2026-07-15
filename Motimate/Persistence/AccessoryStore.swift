@@ -61,7 +61,7 @@ final class AccessoryStore: ObservableObject {
     }
 
     var equippedList: [AccessoryId] {
-        Array(equipped.values)
+        AccessorySlot.zOrder.compactMap { equipped[$0] }
     }
 
     func isOwned(_ id: AccessoryId) -> Bool {
