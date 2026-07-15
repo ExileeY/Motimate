@@ -25,7 +25,7 @@ struct WardrobeView: View {
             VStack(alignment: .leading, spacing: 0) {
                 ScreenHeader(
                     palette: palette,
-                    title: "Collection",
+                    title: "Wardrobe",
                     onBack: goBack
                 ) {
                     PillBadge(

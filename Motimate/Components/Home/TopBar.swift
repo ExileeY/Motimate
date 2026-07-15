@@ -69,14 +69,14 @@ struct TopBar: View {
                 .accessibilityLabel("Podium")
 
                 Button(action: onWardrobeTap) {
-                    Image(systemName: "bag")
+                    Image(systemName: "tshirt")
                         .font(.system(size: 20, weight: .regular))
                         .foregroundColor(palette.clock)
                         .frame(width: 24, height: 24)
                 }
                 .buttonStyle(.plain)
                 .contentShape(Rectangle())
-                .accessibilityLabel("Collection")
+                .accessibilityLabel("Wardrobe")
 
                 Button(action: onSettingsTap) {
                     Image(systemName: "gearshape")
