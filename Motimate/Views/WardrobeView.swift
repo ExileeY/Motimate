@@ -121,7 +121,8 @@ struct WardrobeView: View {
 #Preview("Wardrobe") {
     let settings = SettingsStore()
     let accessories = AccessoryStore()
-    accessories.evaluate(steps: 12_000) // unlock both accessories for preview
+
+    Accessory.ids.forEach { accessories.unlock($0) }
 
     return NavigationView {
         WardrobeView(isPresented: .constant(true))

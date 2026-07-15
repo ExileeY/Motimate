@@ -5,6 +5,7 @@ struct HomeView: View {
     @EnvironmentObject private var dailySteps: DailyStepsModel
     @EnvironmentObject private var celebration: CelebrationStore
     @EnvironmentObject private var accessories: AccessoryStore
+    @EnvironmentObject private var weeklyChallenge: WeeklyChallengeModel
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.scenePhase) private var scenePhase
 
@@ -70,13 +71,16 @@ struct HomeView: View {
         )
         .onAppear {
             dailySteps.start()
+            weeklyChallenge.start()
             refreshMessages()
             triggerEntrance()
             maybeCelebrate()
-            maybeUnlock()
         }
         .onChange(of: scenePhase) { newPhase in
-            if newPhase == .active { dailySteps.refresh() }
+            if newPhase == .active {
+                dailySteps.refresh()
+                weeklyChallenge.refresh()
+            }
         }
         .onChange(of: settings.petId) { _ in
             refreshMessages()
@@ -86,10 +90,6 @@ struct HomeView: View {
         }
         .onChange(of: dailySteps.loading) { _ in
             maybeCelebrate()
-            maybeUnlock()
-        }
-        .onChange(of: dailySteps.steps) { _ in
-            maybeUnlock()
         }
     }
 
@@ -252,12 +252,6 @@ struct HomeView: View {
         HapticsService.celebration(enabled: settings.hapticsAnimationEnabled)
     }
 
-    private func maybeUnlock() {
-        guard !dailySteps.loading else { return }
-        // Permanent + idempotent; no day gating, unlike celebration.
-        accessories.evaluate(steps: dailySteps.steps)
-    }
-
     #if DEBUG
     private func cycleMood() {
         let current = override ?? dailySteps.mood
@@ -286,13 +280,17 @@ struct HomeView: View {
 #if DEBUG
 #Preview {
     let settings = SettingsStore()
+    let dailySteps = DailyStepsModel(settings: settings)
+    let accessories = AccessoryStore()
+
     return NavigationView {
         HomeView()
     }
     .navigationViewStyle(.stack)
     .environmentObject(settings)
-    .environmentObject(DailyStepsModel(settings: settings))
+    .environmentObject(dailySteps)
     .environmentObject(CelebrationStore())
-    .environmentObject(AccessoryStore())
+    .environmentObject(accessories)
+    .environmentObject(WeeklyChallengeModel(accessories: accessories, dailySteps: dailySteps))
 }
 #endif

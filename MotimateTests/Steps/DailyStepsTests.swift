@@ -227,6 +227,7 @@ private final class FakeStepReader: StepReading {
 
     func requestPermission() async -> PermissionState { permission }
 
+    func getSteps(from: Date, to: Date) async -> Int { 0 }
     func getTodaySteps() async -> Int { todaySteps }
 
     func subscribe(onSteps: @escaping (Int) -> Void) -> () -> Void {

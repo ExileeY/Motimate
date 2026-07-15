@@ -4,12 +4,12 @@ struct PodiumView: View {
     @EnvironmentObject private var settings: SettingsStore
     @EnvironmentObject private var dailySteps: DailyStepsModel
     @EnvironmentObject private var accessories: AccessoryStore
+    @EnvironmentObject private var weeklyChallenge: WeeklyChallengeModel
     @Environment(\.colorScheme) private var colorScheme
 
     @Binding var isPresented: Bool
 
     @State private var previewAccessory: AccessoryId? = nil
-    private let podiumAccessory: AccessoryId = .babyMochi
 
     private var theme: Theme {
         settings.resolvedTheme(isDark: colorScheme == .dark)
@@ -25,7 +25,6 @@ struct PodiumView: View {
 
     var body: some View {
         let palette = ThemeTokens.for(theme).palette
-        let definition = Accessory.define(podiumAccessory)
 
         return GeometryReader { geo in
             PhoneCanvas(mood: .calm) {
@@ -35,15 +34,7 @@ struct PodiumView: View {
                         title: "Podium",
                         onBack: goBack
                     ) {
-                        PillBadge(
-                            text: NumberFormat.grouped(dailySteps.steps),
-                            dotColor: palette.accent,
-                            palette: palette,
-                            dotSize: 7,
-                            font: Fonts.bodyBold(11.5),
-                            spacing: 6,
-                            horizontalPadding: 10
-                        )
+                        stepBadge(palette)
                     }
                     .padding(.bottom, 28)
 
@@ -58,46 +49,80 @@ struct PodiumView: View {
 
                     Spacer(minLength: 0)
 
-                    AccessoryCard(
-                        name: definition.name,
-                        petName: petDefinition(settings.petId).name,
-                        accessoryId: podiumAccessory,
-                        isOwned: accessories.isOwned(podiumAccessory),
-                        isEquipped: accessories.isEquipped(podiumAccessory),
-                        isPreviewing: isPreviewing(),
-                        steps: dailySteps.steps,
-                        goal: definition.stepGoal,
-                        progress: accessories.progress(podiumAccessory, steps: dailySteps.steps),
-                        onEquip: toggleEquip,
-                        onPreview: togglePreview
-                    )
-                    .padding(.top, 16)
+                    challengeCard
+                        .padding(.top, 16)
                 }
             }
         }
         .environment(\.theme, theme)
         .navigationBarHidden(true)
         .enableInteractiveSwipeBack()
+        .onAppear { weeklyChallenge.start() }
+        .onChange(of: weeklyChallenge.weeklyAccessory) { _ in previewAccessory = nil }
     }
 
-    private func isPreviewing() -> Bool {
-        previewAccessory == podiumAccessory
+    private func stepBadge(_ palette: Palette) -> some View {
+        let badge = PillBadge(
+            text: NumberFormat.grouped(weeklyChallenge.weeklySteps),
+            dotColor: palette.accent,
+            palette: palette,
+            dotSize: 7,
+            font: Fonts.bodyBold(11.5),
+            spacing: 6,
+            horizontalPadding: 10
+        )
+
+        #if DEBUG
+        return badge
+            .contentShape(Rectangle())
+            .onTapGesture { weeklyChallenge.debugAddWeeklySteps(10_000) }
+            .onLongPressGesture { weeklyChallenge.debugAdvanceWeek() }
+        #else
+        return badge
+        #endif
+    }
+
+    @ViewBuilder
+    private var challengeCard: some View {
+        if let accessory = weeklyChallenge.weeklyAccessory {
+            let definition = Accessory.define(accessory)
+
+            AccessoryCard(
+                name: definition.name,
+                petName: petDefinition(settings.petId).name,
+                accessoryId: accessory,
+                isOwned: accessories.isOwned(accessory),
+                isEquipped: accessories.isEquipped(accessory),
+                isPreviewing: isPreviewing(accessory),
+                steps: weeklyChallenge.weeklySteps,
+                goal: definition.weeklyStepGoal,
+                progress: accessories.progress(accessory, steps: weeklyChallenge.weeklySteps),
+                onEquip: { toggleEquip(accessory) },
+                onPreview: { togglePreview(accessory) }
+            )
+        } else {
+            WeeklyPlaceholderCard()
+        }
+    }
+
+    private func isPreviewing(_ id: AccessoryId) -> Bool {
+        previewAccessory == id
     }
 
     // MARK: - Actions
 
-    private func togglePreview() {
+    private func togglePreview(_ id: AccessoryId) {
         HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
-        previewAccessory = isPreviewing() ? nil : podiumAccessory
+        previewAccessory = isPreviewing(id) ? nil : id
     }
 
-    private func toggleEquip() {
+    private func toggleEquip(_ id: AccessoryId) {
         HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
 
-        if accessories.isEquipped(podiumAccessory) {
-            accessories.unequip(podiumAccessory)
+        if accessories.isEquipped(id) {
+            accessories.unequip(id)
         } else {
-            accessories.equip(podiumAccessory)
+            accessories.equip(id)
             previewAccessory = nil
         }
     }
@@ -111,12 +136,16 @@ struct PodiumView: View {
 #if DEBUG
 #Preview("Podium") {
     let settings = SettingsStore()
+    let dailySteps = DailyStepsModel(settings: settings)
+    let accessories = AccessoryStore()
+
     return NavigationView {
         PodiumView(isPresented: .constant(true))
     }
     .navigationViewStyle(.stack)
     .environmentObject(settings)
-    .environmentObject(DailyStepsModel(settings: settings))
-    .environmentObject(AccessoryStore())
+    .environmentObject(dailySteps)
+    .environmentObject(accessories)
+    .environmentObject(WeeklyChallengeModel(accessories: accessories, dailySteps: dailySteps))
 }
 #endif

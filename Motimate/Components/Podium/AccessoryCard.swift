@@ -75,8 +75,8 @@ struct AccessoryCard: View {
 
     private var statusLine: String {
         return isOwned
-            ? "Unlocked · \(NumberFormat.grouped(goal)) steps today"
-            : "Walk \(NumberFormat.grouped(goal)) steps to unlock"
+            ? "Unlocked · \(NumberFormat.grouped(goal)) steps this week"
+            : "Walk \(NumberFormat.grouped(goal)) steps this week to unlock"
     }
 
     private var previewFooter: String {

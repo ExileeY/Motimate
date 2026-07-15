@@ -20,7 +20,14 @@ final class AccessoryRegistryTests: XCTestCase {
 
     func testEveryAccessoryGoalIsPositive() {
         for id in AccessoryId.allCases {
-            XCTAssertGreaterThan(Accessory.all[id]!.stepGoal, 0, "\(id.rawValue) goal")
+            XCTAssertGreaterThan(Accessory.all[id]!.weeklyStepGoal, 0, "\(id.rawValue) goal")
         }
+    }
+
+    // MARK: - Rotation
+
+    func testRotationOrderIsTotalAndFreeOfDuplicates() {
+        XCTAssertEqual(Set(Accessory.rotationOrder), Set(AccessoryId.allCases))
+        XCTAssertEqual(Accessory.rotationOrder.count, AccessoryId.allCases.count)
     }
 }

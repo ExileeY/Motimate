@@ -55,7 +55,7 @@ final class AccessoryStore: ObservableObject {
     }
 
     func progress(_ id: AccessoryId, steps: Int) -> Double {
-        let accessoryGoal = Accessory.define(id).stepGoal
+        let accessoryGoal = Accessory.define(id).weeklyStepGoal
         guard accessoryGoal > 0 else { return 1 }
         return MathUtils.clamp01(Double(steps) / Double(accessoryGoal))
     }
@@ -70,19 +70,6 @@ final class AccessoryStore: ObservableObject {
 
     func isEquipped(_ id: AccessoryId) -> Bool {
         equipped[Accessory.define(id).slot] == id
-    }
-
-    /// Permanently unlocks any not-yet-owned accessory whose goal `steps` meets.
-    @discardableResult
-    func evaluate(steps: Int) -> [AccessoryId] {
-        var newly: [AccessoryId] = []
-        for id in AccessoryId.allCases where !owned.contains(id) {
-            if steps >= Accessory.define(id).stepGoal {
-                unlock(id)
-                newly.append(id)
-            }
-        }
-        return newly
     }
 
     @discardableResult
@@ -101,7 +88,7 @@ final class AccessoryStore: ObservableObject {
         equippedStores[slot]!.set(nil)
     }
 
-    private func unlock(_ id: AccessoryId) {
+    func unlock(_ id: AccessoryId) {
         guard !owned.contains(id) else { return }
         owned.insert(id)
         ownedStores[id]!.set(true)

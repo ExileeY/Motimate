@@ -1,15 +1,6 @@
 import CoreMotion
 import Foundation
 
-/// `CMPedometer`-backed step source. The direct equivalent of the expo-sensors
-/// `Pedometer` used by the RN app.
-///
-/// `startUpdates(from:)` already yields cumulative `numberOfSteps` from the
-/// start date, so the RN `baseline + delta` bookkeeping collapses to reading
-/// `data.numberOfSteps` directly.
-///
-/// Failure is never thrown — `requestPermission` resolves to a `PermissionState`
-/// and the read paths degrade to `0`, mirroring the RN adapter.
 final class StepReader: StepReading {
     private let pedometer = CMPedometer()
 
@@ -35,12 +26,16 @@ final class StepReader: StepReading {
         }
     }
 
-    func getTodaySteps() async -> Int {
+    func getSteps(from: Date, to: Date) async -> Int {
         await withCheckedContinuation { continuation in
-            pedometer.queryPedometerData(from: startOfToday(), to: Date()) { data, _ in
+            pedometer.queryPedometerData(from: from, to: to) { data, _ in
                 continuation.resume(returning: data.map { Int(truncating: $0.numberOfSteps) } ?? 0)
             }
         }
+    }
+
+    func getTodaySteps() async -> Int {
+        await getSteps(from: startOfToday(), to: Date())
     }
 
     func subscribe(onSteps: @escaping (Int) -> Void) -> () -> Void {
