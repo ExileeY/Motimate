@@ -54,10 +54,6 @@ struct TopBar: View {
             Spacer()
 
             HStack(spacing: 12) {
-                Text(formatClock(now))
-                    .font(Fonts.bodyBold(13))
-                    .foregroundColor(palette.clock)
-
                 Button(action: onPodiumTap) {
                     Image(systemName: "rosette")
                         .font(.system(size: 20, weight: .regular))
@@ -87,6 +83,10 @@ struct TopBar: View {
                 .buttonStyle(.plain)
                 .contentShape(Rectangle())
                 .accessibilityLabel("Settings")
+
+                Text(formatClock(now))
+                    .font(Fonts.bodyBold(13))
+                    .foregroundColor(palette.clock)
             }
         }
         .onReceive(timer) { date in
