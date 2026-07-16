@@ -25,12 +25,10 @@ struct AccessoryAnchor: Equatable {
     )
 }
 
-/// Every host pet places a Pet-slot companion at the same spot, so map them uniformly.
 func uniformAnchor(_ anchor: AccessoryAnchor) -> [PetId: AccessoryAnchor] {
     Dictionary(uniqueKeysWithValues: PetId.allCases.map { ($0, anchor) })
 }
 
-/// Shared placement for every Pet-slot baby companion: lower-right of the 180pt box.
 private let babyCompanionAnchor = AccessoryAnchor(
     position: CGPoint(x: 150, y: 150),
     scale: 1,
@@ -177,7 +175,8 @@ let ACCESSORY_ANCHORS: [AccessoryId: [PetId: AccessoryAnchor]] = [
         ),
     ],
     .babyMochi: uniformAnchor(babyCompanionAnchor),
-    .babySchnauzer: uniformAnchor(babyCompanionAnchor)
+    .babySchnauzer: uniformAnchor(babyCompanionAnchor),
+    .babyDuckling: uniformAnchor(babyCompanionAnchor)
 ]
 
 func accessoryAnchor(_ accessory: AccessoryId, _ pet: PetId) -> AccessoryAnchor {

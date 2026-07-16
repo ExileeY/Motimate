@@ -9,7 +9,7 @@ final class WardrobeGroupingTests: XCTestCase {
         )
         XCTAssertEqual(
             WardrobeGrouping.accessoryIds(in: .pet),
-            [.babyMochi, .babySchnauzer]
+            [.babyMochi, .babySchnauzer, .babyDuckling]
         )
     }
 

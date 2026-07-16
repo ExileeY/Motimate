@@ -6,6 +6,7 @@ enum AccessoryId: String, CaseIterable {
     case heartShades
     case babyMochi
     case babySchnauzer
+    case babyDuckling
 }
 
 enum AccessorySlot: String, CaseIterable {
@@ -89,6 +90,17 @@ enum Accessory {
                     spread: spread)
             )}
         ),
+        .babyDuckling: AccessoryDefinition(
+            name: "Baby Duckling",
+            weeklyStepGoal: 100_000,
+            slot: .pet,
+            view: { mood, size, spread in AnyView(
+                Accessories.BabyDuckling(
+                    mood: mood,
+                    size: size,
+                    spread: spread)
+            )}
+        ),
     ]
 
     static let ids = AccessoryId.allCases
@@ -98,7 +110,8 @@ enum Accessory {
         .threeDGlasses,
         .heartShades,
         .babyMochi,
-        .babySchnauzer
+        .babySchnauzer,
+        .babyDuckling
     ]
 
     static func define(_ id: AccessoryId) -> AccessoryDefinition {

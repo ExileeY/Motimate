@@ -107,6 +107,7 @@
 		8C01CAF87FD5CA41D8759AAF /* AccessoryRegistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A881D6E27EB7B17F600CA5ED /* AccessoryRegistryTests.swift */; };
 		8C4673A672B97D41D1710AF3 /* Particles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995F57FB782506840F47153F /* Particles.swift */; };
 		8DCAC1596139802C202AA071 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210F1D4117900A67DA1D9CD0 /* MathUtils.swift */; };
+		8F5F61F65D2B5C1F11EFFF72 /* BabyDuckling.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1C8B282D19BEBBB61B608 /* BabyDuckling.swift */; };
 		904D5C696150C80506EECB66 /* WeeklyChallengeModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014AF894197652AA2B87EE58 /* WeeklyChallengeModelTests.swift */; };
 		90F6A6847AE437FE110100D5 /* PetStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF5BB110C0EADC77B004F6C /* PetStorage.swift */; };
 		926A6A69AA5E4D54C6BC3140 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6C8A7C8D5877449AB152B /* SettingsView.swift */; };
@@ -123,6 +124,7 @@
 		9CC966A077779FBC3AFF4FD2 /* BaseHapticsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E59D4F1F978723711E300 /* BaseHapticsStorage.swift */; };
 		9D2D3E67630081E94B743366 /* WeeklyChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A479726A5A7DA0206C9D47D1 /* WeeklyChallengeTests.swift */; };
 		A02BDA1D5C6633CAA9493A94 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03937399B758963AA42CB30 /* Fonts.swift */; };
+		A1062BA909EAE544370ED661 /* DucklingBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6085E34F5E095B25B34F2755 /* DucklingBody.swift */; };
 		A570BD96ADA1AF518B1AD4F7 /* WeekIndexStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD6151301F5BB3817CAFBD7 /* WeekIndexStorage.swift */; };
 		A7BF73C5217F7FD23377D765 /* ThreeDGlasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74A01FD649DBE3E66D3AAC /* ThreeDGlasses.swift */; };
 		A7C419121B10A733FA42F5C1 /* GameModeStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B2D4167DF9FFD71A5F151C /* GameModeStorageTests.swift */; };
@@ -241,6 +243,7 @@
 		5EA30E8B3FF10BF1618E7165 /* SystemHourClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemHourClock.swift; sourceTree = "<group>"; };
 		5F8114D624653618A58D1B38 /* OctopusMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusMessages.swift; sourceTree = "<group>"; };
 		5FEEA24A89CE12C14DF5D378 /* MotimateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotimateApp.swift; sourceTree = "<group>"; };
+		6085E34F5E095B25B34F2755 /* DucklingBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DucklingBody.swift; sourceTree = "<group>"; };
 		6783BAB98A7208BE48D1C3B4 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		6A662935D0B9907BAD8158E7 /* Halo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Halo.swift; sourceTree = "<group>"; };
 		6C6F7CFCE4D9956953AC373A /* PlaceholderPetBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderPetBody.swift; sourceTree = "<group>"; };
@@ -271,7 +274,7 @@
 		9065F57200D9F77A9177EA91 /* AccessorySlotStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessorySlotStorage.swift; sourceTree = "<group>"; };
 		924E208E70442568344C1FD1 /* MovementCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementCardTests.swift; sourceTree = "<group>"; };
 		92EAF117670BA7388893C100 /* MotimateTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MotimateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F720245AB9D4000C7FE8A6 /* DogEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogEye.swift; sourceTree = "<group>"; };
 		9605081070039842FD3A643D /* WardrobeGrouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeGrouping.swift; sourceTree = "<group>"; };
 		975B8A4F9AF5EC0919EE1FB2 /* Fredoka_500Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fredoka_500Medium.ttf; sourceTree = "<group>"; };
@@ -323,6 +326,7 @@
 		D5018F7E9BE16B2D55FFF424 /* AccessoryOwnedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryOwnedStorage.swift; sourceTree = "<group>"; };
 		D564323C71607E72EF14C3D4 /* WeekItemStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekItemStorage.swift; sourceTree = "<group>"; };
 		D5B2E8948DBF9D1AB1DAB3AB /* WeeklyChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyChallenge.swift; sourceTree = "<group>"; };
+		D5F1C8B282D19BEBBB61B608 /* BabyDuckling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyDuckling.swift; sourceTree = "<group>"; };
 		D6F9B9BB76EF083F99CB3E89 /* Accessories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessories.swift; sourceTree = "<group>"; };
 		D7AF75082B3C1BA1589DE140 /* WeeklyChallengeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyChallengeModel.swift; sourceTree = "<group>"; };
 		DA74A01FD649DBE3E66D3AAC /* ThreeDGlasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDGlasses.swift; sourceTree = "<group>"; };
@@ -359,6 +363,14 @@
 				014AF894197652AA2B87EE58 /* WeeklyChallengeModelTests.swift */,
 			);
 			path = Steps;
+			sourceTree = "<group>";
+		};
+		037FC066B87D118F6000C81A /* Duckling */ = {
+			isa = PBXGroup;
+			children = (
+				6085E34F5E095B25B34F2755 /* DucklingBody.swift */,
+			);
+			path = Duckling;
 			sourceTree = "<group>";
 		};
 		085DA2ECD16F131CB39637C1 /* Shared */ = {
@@ -612,6 +624,7 @@
 			isa = PBXGroup;
 			children = (
 				D6F9B9BB76EF083F99CB3E89 /* Accessories.swift */,
+				D5F1C8B282D19BEBBB61B608 /* BabyDuckling.swift */,
 				EC9B7D7A4E9983C327AAA102 /* BabyMochi.swift */,
 				E9D95FBDE0BEDA6A1E8DC19C /* BabySchnauzer.swift */,
 				3B4C478C9B8E6F42E61A88B8 /* CoolShades.swift */,
@@ -752,6 +765,7 @@
 				ECF974D68AC869275D579AC5 /* Arutic */,
 				4B252CEA82E082A4AD20BD02 /* Bulbashik */,
 				254D8378B317DAD01E56B02F /* Dog */,
+				037FC066B87D118F6000C81A /* Duckling */,
 				9FDC9F04F12ABC016C522F54 /* Khinklear */,
 				E845B5FA926443B0C3EEDF74 /* Mochi */,
 				8C5B9B65CEF4001701539A21 /* Octopus */,
@@ -1008,6 +1022,8 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 9B50063C0F687A650CFDA41A /* Build configuration list for PBXProject "Motimate" */;
 			developmentRegion = en;
@@ -1063,6 +1079,7 @@
 				AB9C17938035D3DBA1B66953 /* AruticFace.swift in Sources */,
 				171A89C050C33A2399CC7842 /* AruticMessages.swift in Sources */,
 				C2B389B8D0E51C1E21799FDA /* AutoNightStorage.swift in Sources */,
+				8F5F61F65D2B5C1F11EFFF72 /* BabyDuckling.swift in Sources */,
 				365667C1E26D687B6275D08B /* BabyMochi.swift in Sources */,
 				E0D3F18131F52EB6C9ECCE45 /* BabySchnauzer.swift in Sources */,
 				BDC097EE6EE5FAEC1414F529 /* BackgroundEmitters.swift in Sources */,
@@ -1084,6 +1101,7 @@
 				69F59CF649CBC1F20E2F4AEB /* DogEye.swift in Sources */,
 				D950026B5A9551DED2BAC84F /* DogFace.swift in Sources */,
 				C3EDDFC4AF96B62DA27DEAD7 /* DogMessages.swift in Sources */,
+				A1062BA909EAE544370ED661 /* DucklingBody.swift in Sources */,
 				49BCEE05B13DD84F1F0EE1FB /* EntranceCurve.swift in Sources */,
 				5C6DCD5227D224147F2FFA47 /* EntranceMotion.swift in Sources */,
 				A02BDA1D5C6633CAA9493A94 /* Fonts.swift in Sources */,
@@ -1388,7 +1406,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -1408,7 +1425,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
