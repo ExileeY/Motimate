@@ -7,7 +7,10 @@ final class WardrobeGroupingTests: XCTestCase {
             WardrobeGrouping.accessoryIds(in: .eyes),
             [.coolShades, .threeDGlasses, .heartShades]
         )
-        XCTAssertEqual(WardrobeGrouping.accessoryIds(in: .pet), [.babyMochi])
+        XCTAssertEqual(
+            WardrobeGrouping.accessoryIds(in: .pet),
+            [.babyMochi, .babySchnauzer]
+        )
     }
 
     func testPopulatedSlotsOnlyReturnsNonEmptySlots() {

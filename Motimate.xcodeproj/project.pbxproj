@@ -155,6 +155,7 @@
 		DC037AF6E42B548518BE6F49 /* HapticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006C3B437C9B09FFB343EF6F /* HapticsService.swift */; };
 		DDB0ECE5F38604C4DF9C11F0 /* WeeklyChallengeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF75082B3C1BA1589DE140 /* WeeklyChallengeModel.swift */; };
 		E07DE9E92FB5EC601CCBCBFD /* AccessoryOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172E1D88A74B2A25941783CB /* AccessoryOverlay.swift */; };
+		E0D3F18131F52EB6C9ECCE45 /* BabySchnauzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D95FBDE0BEDA6A1E8DC19C /* BabySchnauzer.swift */; };
 		E1A7BA24AC68A651D159B596 /* AccessoryOwnedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5018F7E9BE16B2D55FFF424 /* AccessoryOwnedStorage.swift */; };
 		E2C11918922EE21C8C993116 /* CelebrationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7201D7BF372A55E7C9E6F111 /* CelebrationStore.swift */; };
 		E315103BE7FED3FF69BD53D0 /* Loop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B979BA5753D47E5E9590D1 /* Loop.swift */; };
@@ -333,6 +334,7 @@
 		E5B979BA5753D47E5E9590D1 /* Loop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loop.swift; sourceTree = "<group>"; };
 		E6435E15E00A869A37BFD501 /* MathUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtilsTests.swift; sourceTree = "<group>"; };
 		E819540D7A15E8ADE5FB6D18 /* ThemeTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeTokens.swift; sourceTree = "<group>"; };
+		E9D95FBDE0BEDA6A1E8DC19C /* BabySchnauzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabySchnauzer.swift; sourceTree = "<group>"; };
 		EC9B7D7A4E9983C327AAA102 /* BabyMochi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyMochi.swift; sourceTree = "<group>"; };
 		ECF4773103F0DCA37DB21243 /* HapticsTapStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsTapStorageTests.swift; sourceTree = "<group>"; };
 		EE3594FC0A09D740CAE89993 /* HapticsTapStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsTapStorage.swift; sourceTree = "<group>"; };
@@ -611,6 +613,7 @@
 			children = (
 				D6F9B9BB76EF083F99CB3E89 /* Accessories.swift */,
 				EC9B7D7A4E9983C327AAA102 /* BabyMochi.swift */,
+				E9D95FBDE0BEDA6A1E8DC19C /* BabySchnauzer.swift */,
 				3B4C478C9B8E6F42E61A88B8 /* CoolShades.swift */,
 				D14EDE19F57A63A1B0A768F0 /* HeartGlasses.swift */,
 				DA74A01FD649DBE3E66D3AAC /* ThreeDGlasses.swift */,
@@ -1061,6 +1064,7 @@
 				171A89C050C33A2399CC7842 /* AruticMessages.swift in Sources */,
 				C2B389B8D0E51C1E21799FDA /* AutoNightStorage.swift in Sources */,
 				365667C1E26D687B6275D08B /* BabyMochi.swift in Sources */,
+				E0D3F18131F52EB6C9ECCE45 /* BabySchnauzer.swift in Sources */,
 				BDC097EE6EE5FAEC1414F529 /* BackgroundEmitters.swift in Sources */,
 				9CC966A077779FBC3AFF4FD2 /* BaseHapticsStorage.swift in Sources */,
 				9B38CB121D2AF3BB0694728E /* BulbEye.swift in Sources */,

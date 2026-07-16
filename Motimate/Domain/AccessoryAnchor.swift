@@ -25,6 +25,18 @@ struct AccessoryAnchor: Equatable {
     )
 }
 
+/// Every host pet places a Pet-slot companion at the same spot, so map them uniformly.
+func uniformAnchor(_ anchor: AccessoryAnchor) -> [PetId: AccessoryAnchor] {
+    Dictionary(uniqueKeysWithValues: PetId.allCases.map { ($0, anchor) })
+}
+
+/// Shared placement for every Pet-slot baby companion: lower-right of the 180pt box.
+private let babyCompanionAnchor = AccessoryAnchor(
+    position: CGPoint(x: 150, y: 150),
+    scale: 1,
+    rotationDegrees: 0
+)
+
 let ACCESSORY_ANCHORS: [AccessoryId: [PetId: AccessoryAnchor]] = [
     .coolShades: [
         .mochi: AccessoryAnchor(
@@ -164,48 +176,8 @@ let ACCESSORY_ANCHORS: [AccessoryId: [PetId: AccessoryAnchor]] = [
             rotationDegrees: 0
         ),
     ],
-    .babyMochi: [
-        .mochi: AccessoryAnchor(
-            position: CGPoint(x: 150, y: 150),
-            scale: 1,
-            rotationDegrees: 0
-        ),
-        .bulbashik: AccessoryAnchor(
-            position: CGPoint(x: 150, y: 150),
-            scale: 1,
-            rotationDegrees: 0
-        ),
-        .dog: AccessoryAnchor(
-            position: CGPoint(x: 150, y: 150),
-            scale: 1,
-            rotationDegrees: 0
-        ),
-        .octopus: AccessoryAnchor(
-            position: CGPoint(x: 150, y: 150),
-            scale: 1,
-            rotationDegrees: 0
-        ),
-        .arutic: AccessoryAnchor(
-            position: CGPoint(x: 150, y: 150),
-            scale: 1,
-            rotationDegrees: 0
-        ),
-        .khinklear: AccessoryAnchor(
-            position: CGPoint(x: 150, y: 150),
-            scale: 1,
-            rotationDegrees: 0
-        ),
-        .tomato: AccessoryAnchor(
-            position: CGPoint(x: 150, y: 150),
-            scale: 1,
-            rotationDegrees: 0
-        ),
-        .schnauzer: AccessoryAnchor(
-            position: CGPoint(x: 150, y: 150),
-            scale: 1,
-            rotationDegrees: 0
-        ),
-    ],
+    .babyMochi: uniformAnchor(babyCompanionAnchor),
+    .babySchnauzer: uniformAnchor(babyCompanionAnchor)
 ]
 
 func accessoryAnchor(_ accessory: AccessoryId, _ pet: PetId) -> AccessoryAnchor {
