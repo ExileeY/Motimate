@@ -8,7 +8,8 @@ struct WardrobeTile: View {
 
     @Environment(\.themeTokens) private var tokens
 
-    private static let thumbSize: CGFloat = 66
+    static let cardSize: CGFloat = 96
+    static let previewSize: CGFloat = 64
 
     var body: some View {
         let palette = tokens.palette
@@ -36,18 +37,17 @@ struct WardrobeTile: View {
     }
 
     private func thumbnail(_ palette: Palette) -> some View {
-        Accessory.define(accessoryId).view(.calm, Self.thumbSize, 1)
-            .frame(width: Self.thumbSize, height: Self.thumbSize)
+        Accessory.define(accessoryId).view(.calm, Self.previewSize, 1)
+            .frame(width: Self.previewSize, height: Self.previewSize)
             .clipped()
-            .frame(maxWidth: .infinity)
-            .frame(height: 88)
+            .frame(width: Self.cardSize, height: Self.cardSize)
             .background(palette.cardBg)
             .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
             .overlay(
                 RoundedRectangle(cornerRadius: 18, style: .continuous)
                     .strokeBorder(
                         isEquipped ? palette.accent : palette.cardBorder,
-                        lineWidth: isEquipped ? 2 : 1.5
+                        lineWidth: isEquipped ? 2.5 : 1.5
                     )
             )
     }

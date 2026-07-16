@@ -14,7 +14,7 @@ struct WardrobeView: View {
 
     private let columns = Array(
         repeating: GridItem(.flexible(), spacing: 12),
-        count: 2
+        count: 3
     )
 
     private static let petSizeMultiplier: CGFloat = 0.72

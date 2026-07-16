@@ -12,7 +12,7 @@ struct WardrobeEmptySlotCard: View {
             .multilineTextAlignment(.center)
             .padding(.horizontal, 16)
             .frame(maxWidth: .infinity)
-            .frame(height: 88)
+            .frame(height: 96)
             .background(palette.cardBg)
             .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
             .overlay(
