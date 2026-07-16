@@ -17,42 +17,58 @@ struct WardrobeView: View {
         count: 2
     )
 
+    private static let petSizeMultiplier: CGFloat = 0.72
+
     var body: some View {
         let palette = ThemeTokens.for(theme).palette
         let slots = WardrobeGrouping.populatedSlots()
 
-        return PhoneCanvas(mood: .calm) {
-            VStack(alignment: .leading, spacing: 0) {
-                ScreenHeader(
-                    palette: palette,
-                    title: "Wardrobe",
-                    onBack: goBack
-                ) {
-                    PillBadge(
-                        text: ownedCountLabel,
-                        dotColor: palette.accent,
+        return GeometryReader { geo in
+            PhoneCanvas(mood: .calm) {
+                VStack(alignment: .leading, spacing: 0) {
+                    ScreenHeader(
                         palette: palette,
-                        dotSize: 7,
-                        font: Fonts.bodyBold(11.5),
-                        spacing: 6,
-                        horizontalPadding: 10
-                    )
-                }
-                .padding(.bottom, 24)
-
-                Text("Walk daily to unlock")
-                    .font(Fonts.bodyRegular(13))
-                    .foregroundColor(palette.subtitle)
-                    .padding(.bottom, 4)
-
-                ScrollView(showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: 0) {
-                        ForEach(Array(slots.enumerated()), id: \.element) { index, slot in
-                            slotSection(slot, palette)
-                                .padding(.top, index == 0 ? 20 : 32)
-                        }
+                        title: "Wardrobe",
+                        onBack: goBack
+                    ) {
+                        PillBadge(
+                            text: ownedCountLabel,
+                            dotColor: palette.accent,
+                            palette: palette,
+                            dotSize: 7,
+                            font: Fonts.bodyBold(11.5),
+                            spacing: 6,
+                            horizontalPadding: 10
+                        )
                     }
-                    .padding(.bottom, 24)
+                    .padding(.bottom, 20)
+
+                    PetStage(
+                        mood: dailySteps.mood,
+                        petId: settings.petId,
+                        screenHeight: geo.size.height,
+                        accessories: accessories.equippedList,
+                        sizeMultiplier: Self.petSizeMultiplier
+                    )
+                    .frame(maxWidth: .infinity)
+                    .padding(.bottom, 12)
+
+                    if !accessories.owned.isEmpty {
+                        Text("Tap an item to wear it")
+                            .font(Fonts.bodyRegular(13))
+                            .foregroundColor(palette.subtitle)
+                            .padding(.bottom, 4)
+                    }
+
+                    ScrollView(showsIndicators: false) {
+                        VStack(alignment: .leading, spacing: 0) {
+                            ForEach(Array(slots.enumerated()), id: \.element) { index, slot in
+                                slotSection(slot, palette)
+                                    .padding(.top, index == 0 ? 20 : 32)
+                            }
+                        }
+                        .padding(.bottom, 24)
+                    }
                 }
             }
         }
@@ -64,19 +80,24 @@ struct WardrobeView: View {
     // MARK: - Sections
 
     private func slotSection(_ slot: AccessorySlot, _ palette: Palette) -> some View {
-        VStack(alignment: .leading, spacing: 0) {
+        let ids = WardrobeGrouping.ownedAccessoryIds(in: slot, owned: accessories.owned)
+
+        return VStack(alignment: .leading, spacing: 0) {
             sectionLabel(slot.displayTitle, palette)
                 .padding(.bottom, 14)
 
-            LazyVGrid(columns: columns, spacing: 12) {
-                ForEach(WardrobeGrouping.accessoryIds(in: slot), id: \.self) { id in
-                    WardrobeTile(
-                        name: Accessory.define(id).name,
-                        accessoryId: id,
-                        isOwned: accessories.isOwned(id),
-                        isEquipped: accessories.isEquipped(id),
-                        onToggle: { toggleEquip(id) }
-                    )
+            if ids.isEmpty {
+                WardrobeEmptySlotCard()
+            } else {
+                LazyVGrid(columns: columns, spacing: 12) {
+                    ForEach(ids, id: \.self) { id in
+                        WardrobeTile(
+                            name: Accessory.define(id).name,
+                            accessoryId: id,
+                            isEquipped: accessories.isEquipped(id),
+                            onToggle: { toggleEquip(id) }
+                        )
+                    }
                 }
             }
         }
@@ -118,11 +139,12 @@ struct WardrobeView: View {
 }
 
 #if DEBUG
-#Preview("Wardrobe") {
+@MainActor
+private func wardrobePreview(owned: [AccessoryId]) -> some View {
     let settings = SettingsStore()
     let accessories = AccessoryStore()
 
-    Accessory.ids.forEach { accessories.unlock($0) }
+    owned.forEach { accessories.unlock($0) }
 
     return NavigationView {
         WardrobeView(isPresented: .constant(true))
@@ -131,5 +153,17 @@ struct WardrobeView: View {
     .environmentObject(settings)
     .environmentObject(DailyStepsModel(settings: settings))
     .environmentObject(accessories)
+}
+
+#Preview("Wardrobe") {
+    wardrobePreview(owned: Accessory.ids)
+}
+
+#Preview("Wardrobe — Empty") {
+    wardrobePreview(owned: [])
+}
+
+#Preview("Wardrobe — One slot owned") {
+    wardrobePreview(owned: [.coolShades])
 }
 #endif

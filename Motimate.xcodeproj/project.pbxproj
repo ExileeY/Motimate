@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		02E4BF6EF217614D00DA9334 /* HapticsTapStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3594FC0A09D740CAE89993 /* HapticsTapStorage.swift */; };
+		059CFC2B2243755435A290F9 /* WardrobeEmptySlotCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2328DE22AAC5C4B7782AAED7 /* WardrobeEmptySlotCard.swift */; };
 		07335DC69F1F724818D7D303 /* PetStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E2A6E9DDC90C46803F705F /* PetStorageTests.swift */; };
 		07E28E0D9C7D3B6E17E664F6 /* AruticEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8EA49C28A7FA1B251B6A19 /* AruticEye.swift */; };
 		091AB843C5A15CDD19B3BBC7 /* PetRegistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3BF2FED798CC189B49B042 /* PetRegistryTests.swift */; };
+		0A92E571469FCC3B28F0C5EC /* PetStageSizingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA3CECD85239E45FE987D67 /* PetStageSizingTests.swift */; };
 		0B897D63D6D1B70EE8E211E7 /* WeeklyChallengeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3274F5DE40404BA8862953 /* WeeklyChallengeStoreTests.swift */; };
 		0F3212F519A6E461DE9EE233 /* SettingsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D61FD4513055B266F0CFAA /* SettingsStoreTests.swift */; };
 		104539886ECFF1CDF7C4E36A /* HapticsAnimationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A415FFF1D385718B5ED3B0 /* HapticsAnimationStorage.swift */; };
@@ -185,6 +187,7 @@
 		0787E2FE52438660EA9DF6EA /* DogBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBody.swift; sourceTree = "<group>"; };
 		093841D9D8214E62C208DE4E /* CelebrationStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationStoreTests.swift; sourceTree = "<group>"; };
 		0AC6600EBDFD68B149243108 /* AruticMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AruticMessages.swift; sourceTree = "<group>"; };
+		0DA3CECD85239E45FE987D67 /* PetStageSizingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStageSizingTests.swift; sourceTree = "<group>"; };
 		0DA4D701A8205127A5FCCEF5 /* SchnauzerBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchnauzerBody.swift; sourceTree = "<group>"; };
 		0DC3009B32A1E427B52BEF13 /* WardrobeTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeTile.swift; sourceTree = "<group>"; };
 		0F71EC44DEC5962E64B239E8 /* EntranceMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceMotion.swift; sourceTree = "<group>"; };
@@ -198,6 +201,7 @@
 		1ECD2B9EB5A3A649AAC4D52C /* LoopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopTests.swift; sourceTree = "<group>"; };
 		210757C8E91BD642B63FA191 /* TomatoMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoMessages.swift; sourceTree = "<group>"; };
 		210F1D4117900A67DA1D9CD0 /* MathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
+		2328DE22AAC5C4B7782AAED7 /* WardrobeEmptySlotCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeEmptySlotCard.swift; sourceTree = "<group>"; };
 		25F3454851875DFD71DB6146 /* WeeklyPlaceholderCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyPlaceholderCard.swift; sourceTree = "<group>"; };
 		27345F11DBC3A4C2208A4928 /* PetStageMotionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStageMotionTests.swift; sourceTree = "<group>"; };
 		275AD45E4729FCCCA6F20032 /* GameModeStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeStorage.swift; sourceTree = "<group>"; };
@@ -264,7 +268,7 @@
 		9065F57200D9F77A9177EA91 /* AccessorySlotStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessorySlotStorage.swift; sourceTree = "<group>"; };
 		924E208E70442568344C1FD1 /* MovementCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementCardTests.swift; sourceTree = "<group>"; };
 		92EAF117670BA7388893C100 /* MotimateTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MotimateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F720245AB9D4000C7FE8A6 /* DogEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogEye.swift; sourceTree = "<group>"; };
 		9605081070039842FD3A643D /* WardrobeGrouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeGrouping.swift; sourceTree = "<group>"; };
 		975B8A4F9AF5EC0919EE1FB2 /* Fredoka_500Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fredoka_500Medium.ttf; sourceTree = "<group>"; };
@@ -526,6 +530,7 @@
 		3D30824C8E1EFAA129EAF9FC /* Wardrobe */ = {
 			isa = PBXGroup;
 			children = (
+				2328DE22AAC5C4B7782AAED7 /* WardrobeEmptySlotCard.swift */,
 				9605081070039842FD3A643D /* WardrobeGrouping.swift */,
 				0DC3009B32A1E427B52BEF13 /* WardrobeTile.swift */,
 			);
@@ -630,6 +635,7 @@
 			children = (
 				F9A5703C85E382D0A2C2D4F7 /* EntranceCurveTests.swift */,
 				27345F11DBC3A4C2208A4928 /* PetStageMotionTests.swift */,
+				0DA3CECD85239E45FE987D67 /* PetStageSizingTests.swift */,
 			);
 			path = Stage;
 			sourceTree = "<group>";
@@ -993,6 +999,8 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 9B50063C0F687A650CFDA41A /* Build configuration list for PBXProject "Motimate" */;
 			developmentRegion = en;
@@ -1144,6 +1152,7 @@
 				18A4ED0000B03ED16F2886C2 /* TomatoMessages.swift in Sources */,
 				70D9342384E0241F79BDFD44 /* TopBar.swift in Sources */,
 				92E21A4090A3113C98348574 /* UnavailableStepReader.swift in Sources */,
+				059CFC2B2243755435A290F9 /* WardrobeEmptySlotCard.swift in Sources */,
 				C8FD331E66B747FC6A0CC838 /* WardrobeGrouping.swift in Sources */,
 				5E904745C146A6993689B918 /* WardrobeTile.swift in Sources */,
 				6E24C6E12693000D3D75434D /* WardrobeView.swift in Sources */,
@@ -1181,6 +1190,7 @@
 				71329E5E45A21CA1F433B226 /* MovementCardTests.swift in Sources */,
 				091AB843C5A15CDD19B3BBC7 /* PetRegistryTests.swift in Sources */,
 				5FDF84BD90BD7F69B1612BE2 /* PetStageMotionTests.swift in Sources */,
+				0A92E571469FCC3B28F0C5EC /* PetStageSizingTests.swift in Sources */,
 				07335DC69F1F724818D7D303 /* PetStorageTests.swift in Sources */,
 				319A8375E4470B5F92FD0D5B /* ResponsiveScaleTests.swift in Sources */,
 				72AE4E75A9BA572F2348300B /* RoundedBoxPathTests.swift in Sources */,
@@ -1368,7 +1378,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -1388,7 +1397,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;

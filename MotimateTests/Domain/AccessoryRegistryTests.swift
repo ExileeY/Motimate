@@ -33,8 +33,6 @@ final class AccessoryRegistryTests: XCTestCase {
 
     // MARK: - Draw order
 
-    /// A slot missing from `zOrder` makes its equipped accessory silently
-    /// disappear from every pet, since `equippedList` drives it via compactMap.
     func testSlotZOrderIsTotalAndFreeOfDuplicates() {
         XCTAssertEqual(Set(AccessorySlot.zOrder), Set(AccessorySlot.allCases))
         XCTAssertEqual(AccessorySlot.zOrder.count, AccessorySlot.allCases.count)

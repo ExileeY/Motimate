@@ -3,7 +3,6 @@ import SwiftUI
 struct WardrobeTile: View {
     let name: String
     let accessoryId: AccessoryId
-    let isOwned: Bool
     let isEquipped: Bool
     let onToggle: () -> Void
 
@@ -28,18 +27,10 @@ struct WardrobeTile: View {
                     .font(Fonts.headingMedium(13.5))
                     .foregroundColor(palette.text)
                     .lineLimit(1)
-
-                Text(isOwned ? "OWNED" : "LOCKED")
-                    .font(Fonts.bodyBold(10))
-                    .kerning(0.5)
-                    .textCase(.uppercase)
-                    .foregroundColor(isOwned ? palette.accent : palette.cardMeta)
             }
             .frame(maxWidth: .infinity)
-            .opacity(isOwned ? 1 : 0.4)
         }
         .buttonStyle(.plain)
-        .disabled(!isOwned)
         .accessibilityLabel(name)
         .accessibilityAddTraits(isEquipped ? [.isSelected] : [])
     }
@@ -80,21 +71,12 @@ struct WardrobeTile: View {
         WardrobeTile(
             name: "Cool Shades",
             accessoryId: .coolShades,
-            isOwned: false,
-            isEquipped: false,
-            onToggle: {}
-        )
-        WardrobeTile(
-            name: "Cool Shades",
-            accessoryId: .coolShades,
-            isOwned: true,
             isEquipped: false,
             onToggle: {}
         )
         WardrobeTile(
             name: "Baby Mochi",
             accessoryId: .babyMochi,
-            isOwned: true,
             isEquipped: true,
             onToggle: {}
         )

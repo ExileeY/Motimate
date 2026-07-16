@@ -117,8 +117,6 @@ final class AccessoryStoreTests: XCTestCase {
         XCTAssertEqual(store.equippedList, [.babyMochi, .coolShades])
     }
 
-    /// The regression guard: `equipped` is a dictionary, so deriving the list
-    /// from `values` made the pet's draw order depend on equip sequence.
     func testEquippedListOrderIsStableRegardlessOfEquipSequence() {
         let eyesFirst = AccessoryStore(defaults: defaults)
         eyesFirst.unlock(.coolShades)
