@@ -4,11 +4,16 @@ struct HomeView: View {
     @EnvironmentObject private var settings: SettingsStore
     @EnvironmentObject private var dailySteps: DailyStepsModel
     @EnvironmentObject private var celebration: CelebrationStore
+    @EnvironmentObject private var accessories: AccessoryStore
+    @EnvironmentObject private var weeklyChallenge: WeeklyChallengeModel
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.scenePhase) private var scenePhase
 
     @State private var messages: [Mood: MessageSet] = [:]
 
     @State private var showSettings = false
+    @State private var showPodium = false
+    @State private var showWardrobe = false
 
     @State private var isCelebrating = false
 
@@ -48,11 +53,34 @@ struct HomeView: View {
             )
             .hidden()
         )
+        .background(
+            NavigationLink(
+                isActive: $showPodium,
+                destination: { PodiumView(isPresented: $showPodium) },
+                label: { EmptyView() }
+            )
+            .hidden()
+        )
+        .background(
+            NavigationLink(
+                isActive: $showWardrobe,
+                destination: { WardrobeView(isPresented: $showWardrobe) },
+                label: { EmptyView() }
+            )
+            .hidden()
+        )
         .onAppear {
             dailySteps.start()
+            weeklyChallenge.start()
             refreshMessages()
             triggerEntrance()
             maybeCelebrate()
+        }
+        .onChange(of: scenePhase) { newPhase in
+            if newPhase == .active {
+                dailySteps.refresh()
+                weeklyChallenge.refresh()
+            }
         }
         .onChange(of: settings.petId) { _ in
             refreshMessages()
@@ -101,10 +129,21 @@ struct HomeView: View {
 
         return PhoneCanvas(mood: mood) {
             VStack(spacing: 0) {
-                TopBar(mood: mood, onSettingsTap: {
-                    HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
-                    showSettings = true
-                })
+                TopBar(
+                    mood: mood,
+                    onSettingsTap: {
+                        HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
+                        showSettings = true
+                    },
+                    onPodiumTap: {
+                        HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
+                        showPodium = true
+                    },
+                    onWardrobeTap: {
+                        HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
+                        showWardrobe = true
+                    }
+                )
 
                 Spacer(minLength: 0)
 
@@ -148,6 +187,7 @@ struct HomeView: View {
             mood: mood,
             petId: settings.petId,
             screenHeight: height,
+            accessories: accessories.equippedList,
             entrance: EntranceMotionParams(
                 active: shouldPlayEntrance,
                 onFinished: { shouldPlayEntrance = false }
@@ -240,12 +280,17 @@ struct HomeView: View {
 #if DEBUG
 #Preview {
     let settings = SettingsStore()
+    let dailySteps = DailyStepsModel(settings: settings)
+    let accessories = AccessoryStore()
+
     return NavigationView {
         HomeView()
     }
     .navigationViewStyle(.stack)
     .environmentObject(settings)
-    .environmentObject(DailyStepsModel(settings: settings))
+    .environmentObject(dailySteps)
     .environmentObject(CelebrationStore())
+    .environmentObject(accessories)
+    .environmentObject(WeeklyChallengeModel(accessories: accessories, dailySteps: dailySteps))
 }
 #endif

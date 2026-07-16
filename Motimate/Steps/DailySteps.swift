@@ -8,8 +8,9 @@ import Foundation
 /// everything they need from one object. Failure modes (denied permission, no
 /// pedometer) are surfaced as state, never thrown — the UI degrades gracefully.
 ///
-/// The current hour is refreshed on a ~60s timer so a REAL-mode energetic pet
-/// can turn SAD past noon while the screen stays open.
+/// The current hour comes from an injected `HourClock`; subscribing to its
+/// change stream lets a REAL-mode energetic pet turn SAD past noon while the
+/// screen stays open, without this model owning a `Timer` or touching `Calendar`.
 @MainActor
 final class DailyStepsModel: ObservableObject {
     @Published private(set) var steps: Int = 0
@@ -22,17 +23,17 @@ final class DailyStepsModel: ObservableObject {
 
     private let settings: SettingsStore
     private let reader: StepReading
+    private let clock: HourClock
 
-    private var hour: Int
-    private var hourTimer: Timer?
     private var unsubscribe: (() -> Void)?
+    private var unsubscribeHour: (() -> Void)?
     private var cancellables = Set<AnyCancellable>()
     private var started = false
 
-    init(settings: SettingsStore, reader: StepReading = StepReader(), hour: Int? = nil) {
+    init(settings: SettingsStore, reader: StepReading = StepReader(), clock: HourClock = SystemHourClock()) {
         self.settings = settings
         self.reader = reader
-        self.hour = hour ?? Calendar.current.component(.hour, from: Date())
+        self.clock = clock
 
         // Goal/mode live in SettingsStore; recompute when either changes so the
         // fan-out stays self-contained.
@@ -54,7 +55,7 @@ final class DailyStepsModel: ObservableObject {
         guard !started else { return }
         started = true
 
-        startHourTimer()
+        unsubscribeHour = clock.subscribe { [weak self] _ in self?.recompute() }
 
         Task { [weak self] in
             guard let self else { return }
@@ -67,28 +68,35 @@ final class DailyStepsModel: ObservableObject {
                 return
             }
 
-            let initial = await self.reader.getTodaySteps()
-            self.steps = initial
             self.loading = false
-            self.recompute()
-
-            self.unsubscribe = self.reader.subscribe { [weak self] next in
-                guard let self else { return }
-                Task { @MainActor in
-                    self.steps = next
-                    self.recompute()
-                }
-            }
+            await self.loadAndSubscribe()
         }
     }
 
-    private func startHourTimer() {
-        hourTimer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
+    func refresh() {
+        guard started else { return }
+
+        clock.refresh()
+        recompute()
+
+        guard permission == .granted else { return }
+
+        Task { [weak self] in
+            guard let self else { return }
+            await self.loadAndSubscribe()
+        }
+    }
+
+    private func loadAndSubscribe() async {
+        let freshSteps = await reader.getTodaySteps()
+        steps = freshSteps
+        recompute()
+
+        unsubscribe?()
+        unsubscribe = reader.subscribe { [weak self] next in
+            guard let self else { return }
             Task { @MainActor in
-                guard let self else { return }
-                let now = Calendar.current.component(.hour, from: Date())
-                guard now != self.hour else { return }
-                self.hour = now
+                self.steps = next
                 self.recompute()
             }
         }
@@ -97,19 +105,28 @@ final class DailyStepsModel: ObservableObject {
     private func recompute(goal: Int? = nil, mode: GameMode? = nil) {
         let goal = goal ?? settings.goal
         let mode = mode ?? settings.gameMode
-        mood = StepsConvertor.toMood(steps: steps, goal: goal, mode: mode, hour: hour)
-        progress = StepsConvertor.toProgress(steps: steps, goal: goal)
+
+        mood = StepsConvertor.toMood(
+            steps: steps,
+            goal: goal,
+            mode: mode,
+            hour: clock.hour
+        )
+        progress = StepsConvertor.toProgress(
+            steps: steps,
+            goal: goal
+        )
     }
 
     func stop() {
-        hourTimer?.invalidate()
-        hourTimer = nil
+        unsubscribeHour?()
+        unsubscribeHour = nil
         unsubscribe?()
         unsubscribe = nil
     }
 
     deinit {
-        hourTimer?.invalidate()
+        unsubscribeHour?()
         unsubscribe?()
     }
 }

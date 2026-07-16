@@ -24,6 +24,8 @@ func formatClock(
 struct TopBar: View {
     let mood: Mood
     var onSettingsTap: () -> Void = {}
+    var onPodiumTap: () -> Void = {}
+    var onWardrobeTap: () -> Void = {}
 
     @Environment(\.themeTokens) private var tokens
     @State private var now = Date()
@@ -40,31 +42,37 @@ struct TopBar: View {
         let hour = Calendar.current.component(.hour, from: now)
 
         HStack(alignment: .center) {
-            HStack(spacing: 7) {
-                Circle()
-                    .fill(dot)
-                    .frame(width: 9, height: 9)
-                    .shadow(color: dot.opacity(0.9), radius: 4)
-
-                Text(timeOfDay(hour: hour))
-                    .font(Fonts.bodyBold(12.5))
-                    .foregroundColor(palette.pillText)
-            }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 6)
-            .background(palette.pillBg)
-            .overlay(
-                Capsule()
-                    .stroke(palette.pillBorder, lineWidth: 1)
+            PillBadge(
+                text: timeOfDay(hour: hour),
+                dotColor: dot,
+                palette: palette,
+                dotSize: 9,
+                dotShadow: true,
+                font: Fonts.bodyBold(12.5)
             )
-            .clipShape(Capsule())
 
             Spacer()
 
             HStack(spacing: 12) {
-                Text(formatClock(now))
-                    .font(Fonts.bodyBold(13))
-                    .foregroundColor(palette.clock)
+                Button(action: onPodiumTap) {
+                    Image(systemName: "rosette")
+                        .font(.system(size: 20, weight: .regular))
+                        .foregroundColor(palette.clock)
+                        .frame(width: 24, height: 24)
+                }
+                .buttonStyle(.plain)
+                .contentShape(Rectangle())
+                .accessibilityLabel("Podium")
+
+                Button(action: onWardrobeTap) {
+                    Image(systemName: "tshirt")
+                        .font(.system(size: 20, weight: .regular))
+                        .foregroundColor(palette.clock)
+                        .frame(width: 24, height: 24)
+                }
+                .buttonStyle(.plain)
+                .contentShape(Rectangle())
+                .accessibilityLabel("Wardrobe")
 
                 Button(action: onSettingsTap) {
                     Image(systemName: "gearshape")
@@ -75,6 +83,10 @@ struct TopBar: View {
                 .buttonStyle(.plain)
                 .contentShape(Rectangle())
                 .accessibilityLabel("Settings")
+
+                Text(formatClock(now))
+                    .font(Fonts.bodyBold(13))
+                    .foregroundColor(palette.clock)
             }
         }
         .onReceive(timer) { date in

@@ -5,6 +5,10 @@ final class UnavailableStepReader: StepReading {
         .unavailable
     }
 
+    func getSteps(from: Date, to: Date) async -> Int {
+        0
+    }
+
     func getTodaySteps() async -> Int {
         0
     }

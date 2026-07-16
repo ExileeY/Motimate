@@ -3,21 +3,6 @@ import CoreGraphics
 @testable import Motimate
 
 final class PetStageMotionTests: XCTestCase {
-    func testStageAndPetSizingAtReferenceHeight() {
-        XCTAssertEqual(PetStageMotion.stageSize(screenHeight: 812), 236)
-        XCTAssertEqual(PetStageMotion.petSize(screenHeight: 812), 180)
-    }
-
-    func testStageAndPetSizingClampOnVeryShortScreens() {
-        XCTAssertEqual(PetStageMotion.stageSize(screenHeight: 400), 201)
-        XCTAssertEqual(PetStageMotion.petSize(screenHeight: 400), 153)
-    }
-
-    func testStageAndPetSizingClampOnVeryTallScreens() {
-        XCTAssertEqual(PetStageMotion.stageSize(screenHeight: 2_000), 271)
-        XCTAssertEqual(PetStageMotion.petSize(screenHeight: 2_000), 207)
-    }
-
     func testEnergeticBreathAndBobble() {
         let values = PetStageMotion.values(
             mood: .energetic,

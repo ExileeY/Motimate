@@ -34,6 +34,14 @@ final class StepReaderTests: XCTestCase {
         XCTAssertTrue(Calendar.current.isDateInToday(start))
     }
 
+    func testStartOfTodayUsesThePassedInstant() {
+        let calendar = Calendar.current
+        let lateSunday = calendar.date(
+            from: DateComponents(year: 2026, month: 3, day: 8, hour: 23, minute: 59, second: 59)
+        )!
+        XCTAssertEqual(startOfToday(lateSunday), calendar.startOfDay(for: lateSunday))
+    }
+
     func testReadersConformToStepReading() {
         let real: StepReading = StepReader()
         let fallback: StepReading = UnavailableStepReader()

@@ -42,12 +42,12 @@ enum PetStageMotion {
         }
     }
 
-    static func stageSize(screenHeight: CGFloat) -> CGFloat {
-        (BOX_SIZE * computeScale(screenHeight)).rounded()
+    static func stageSize(screenHeight: CGFloat, sizeMultiplier: CGFloat = 1) -> CGFloat {
+        (BOX_SIZE * computeScale(screenHeight) * sizeMultiplier).rounded()
     }
 
-    static func petSize(screenHeight: CGFloat) -> CGFloat {
-        (PET_SIZE * computeScale(screenHeight)).rounded()
+    static func petSize(screenHeight: CGFloat, sizeMultiplier: CGFloat = 1) -> CGFloat {
+        (PET_SIZE * computeScale(screenHeight) * sizeMultiplier).rounded()
     }
 
     static func values(
@@ -84,12 +84,20 @@ struct PetStage: View {
     let mood: Mood
     var petId: PetId = PET_ID_DEFAULT
     var screenHeight: CGFloat = RESPONSIVE_BASE_HEIGHT
+    var accessories: [AccessoryId] = []
+    var sizeMultiplier: CGFloat = 1
 
     var entrance = EntranceMotionParams()
 
     var body: some View {
-        let stage = PetStageMotion.stageSize(screenHeight: screenHeight)
-        let pet = PetStageMotion.petSize(screenHeight: screenHeight)
+        let stage = PetStageMotion.stageSize(
+            screenHeight: screenHeight,
+            sizeMultiplier: sizeMultiplier
+        )
+        let pet = PetStageMotion.petSize(
+            screenHeight: screenHeight,
+            sizeMultiplier: sizeMultiplier
+        )
         let definition = petDefinition(petId)
 
         PetStageMotionScope(mood: mood) {
@@ -100,10 +108,21 @@ struct PetStage: View {
                 )
 
                 EntranceMotion(params: entrance) {
-                    definition.body(
-                        mood,
-                        pet
-                    )
+                    ZStack {
+                        definition.body(
+                            mood,
+                            pet
+                        )
+
+                        ForEach(accessories, id: \.self) { accessory in
+                            AccessoryOverlay(
+                                accessory: accessory,
+                                petId: petId,
+                                mood: mood,
+                                petSize: pet
+                            )
+                        }
+                    }
                     .compositingGroup()
                 }
             }

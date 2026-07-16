@@ -8,11 +8,11 @@ enum PermissionState: String {
 
 protocol StepReading {
     func requestPermission() async -> PermissionState
+    func getSteps(from: Date, to: Date) async -> Int
     func getTodaySteps() async -> Int
     func subscribe(onSteps: @escaping (Int) -> Void) -> () -> Void
 }
 
-/// Local midnight — equivalent of RN's `setHours(0, 0, 0, 0)`.
-func startOfToday() -> Date {
-    Calendar.current.startOfDay(for: Date())
+func startOfToday(_ now: Date = Date()) -> Date {
+    Calendar.current.startOfDay(for: now)
 }
