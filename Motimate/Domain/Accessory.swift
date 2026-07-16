@@ -58,7 +58,7 @@ enum Accessory {
             )}
         ),
         .heartShades: AccessoryDefinition(
-            name: "Heart Sunglasses",
+            name: "Heart Glasses",
             weeklyStepGoal: 40_000,
             slot: .eyes,
             view: { mood, size, spread in AnyView(
