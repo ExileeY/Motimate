@@ -37,6 +37,7 @@
 		2BF388F479235A0BDDE45517 /* MessageSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C0CDAEDD9535C26627ED9 /* MessageSet.swift */; };
 		2D1061F853F0BBCA207AFDC2 /* PillBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FC20937B24C54047F07110 /* PillBadge.swift */; };
 		2D2CAEB077B90B5A235AA347 /* Accessories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F9B9BB76EF083F99CB3E89 /* Accessories.swift */; };
+		2F1871C716EEA39309E5B619 /* HeartGlasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14EDE19F57A63A1B0A768F0 /* HeartGlasses.swift */; };
 		2F91E2CA8CC1B6BFCB9C29F3 /* ConfettiMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BF81A0797B1307D91DEBD /* ConfettiMathTests.swift */; };
 		306BF4D9600D60AE2507F993 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AA63323571C7576C36F81 /* Dimensions.swift */; };
 		30B5A643279A63A1D3A53945 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F134252AEA764CB094123BA /* Mood.swift */; };
@@ -123,6 +124,7 @@
 		9D2D3E67630081E94B743366 /* WeeklyChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A479726A5A7DA0206C9D47D1 /* WeeklyChallengeTests.swift */; };
 		A02BDA1D5C6633CAA9493A94 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03937399B758963AA42CB30 /* Fonts.swift */; };
 		A570BD96ADA1AF518B1AD4F7 /* WeekIndexStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD6151301F5BB3817CAFBD7 /* WeekIndexStorage.swift */; };
+		A7BF73C5217F7FD23377D765 /* ThreeDGlasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74A01FD649DBE3E66D3AAC /* ThreeDGlasses.swift */; };
 		A7C419121B10A733FA42F5C1 /* GameModeStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B2D4167DF9FFD71A5F151C /* GameModeStorageTests.swift */; };
 		A7D9C9A4A0F7FF8E931F9D39 /* HapticsAnimationStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463F35EE95115823C2597E17 /* HapticsAnimationStorageTests.swift */; };
 		AB9C17938035D3DBA1B66953 /* AruticFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BD81927026B54C6D80EFCF /* AruticFace.swift */; };
@@ -268,7 +270,7 @@
 		9065F57200D9F77A9177EA91 /* AccessorySlotStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessorySlotStorage.swift; sourceTree = "<group>"; };
 		924E208E70442568344C1FD1 /* MovementCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementCardTests.swift; sourceTree = "<group>"; };
 		92EAF117670BA7388893C100 /* MotimateTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MotimateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F720245AB9D4000C7FE8A6 /* DogEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogEye.swift; sourceTree = "<group>"; };
 		9605081070039842FD3A643D /* WardrobeGrouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeGrouping.swift; sourceTree = "<group>"; };
 		975B8A4F9AF5EC0919EE1FB2 /* Fredoka_500Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fredoka_500Medium.ttf; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 		CDD3AB1476E54BDDCBAA4430 /* BulbashikBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikBody.swift; sourceTree = "<group>"; };
 		CE6D37E7D60BF49E5A20563B /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		CF6D0E01DD4BCEDAD4F37F71 /* ModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModePicker.swift; sourceTree = "<group>"; };
+		D14EDE19F57A63A1B0A768F0 /* HeartGlasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartGlasses.swift; sourceTree = "<group>"; };
 		D24F378C6479AF0C56EAA91F /* MochiMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MochiMessages.swift; sourceTree = "<group>"; };
 		D39FD92F0E18EFFFFFC8F352 /* Clouds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clouds.swift; sourceTree = "<group>"; };
 		D4486261F74D8C3489BDF2B7 /* WeekMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekMath.swift; sourceTree = "<group>"; };
@@ -321,6 +324,7 @@
 		D5B2E8948DBF9D1AB1DAB3AB /* WeeklyChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyChallenge.swift; sourceTree = "<group>"; };
 		D6F9B9BB76EF083F99CB3E89 /* Accessories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessories.swift; sourceTree = "<group>"; };
 		D7AF75082B3C1BA1589DE140 /* WeeklyChallengeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyChallengeModel.swift; sourceTree = "<group>"; };
+		DA74A01FD649DBE3E66D3AAC /* ThreeDGlasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDGlasses.swift; sourceTree = "<group>"; };
 		DBD6151301F5BB3817CAFBD7 /* WeekIndexStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekIndexStorage.swift; sourceTree = "<group>"; };
 		DDB561477397769A7CAD2908 /* ScreenBgTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenBgTokens.swift; sourceTree = "<group>"; };
 		DDCCDF6D61FE67914B5CDDB9 /* WardrobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
@@ -608,6 +612,8 @@
 				D6F9B9BB76EF083F99CB3E89 /* Accessories.swift */,
 				EC9B7D7A4E9983C327AAA102 /* BabyMochi.swift */,
 				3B4C478C9B8E6F42E61A88B8 /* CoolShades.swift */,
+				D14EDE19F57A63A1B0A768F0 /* HeartGlasses.swift */,
+				DA74A01FD649DBE3E66D3AAC /* ThreeDGlasses.swift */,
 			);
 			path = Accessories;
 			sourceTree = "<group>";
@@ -999,8 +1005,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 9B50063C0F687A650CFDA41A /* Build configuration list for PBXProject "Motimate" */;
 			developmentRegion = en;
@@ -1089,6 +1093,7 @@
 				104539886ECFF1CDF7C4E36A /* HapticsAnimationStorage.swift in Sources */,
 				DC037AF6E42B548518BE6F49 /* HapticsService.swift in Sources */,
 				02E4BF6EF217614D00DA9334 /* HapticsTapStorage.swift in Sources */,
+				2F1871C716EEA39309E5B619 /* HeartGlasses.swift in Sources */,
 				BD456DFA5E7D1F61AFD92CCF /* HomeView.swift in Sources */,
 				5DAEE7D8F56AF151578C34E2 /* InteractiveSwipeBack.swift in Sources */,
 				98BC3E8740FCD9CA961FA746 /* KhinklEye.swift in Sources */,
@@ -1146,6 +1151,7 @@
 				6FD9F6085DE4CBF7726C394E /* SystemHourClock.swift in Sources */,
 				77C8CEDBF0F118CC7A5A7023 /* Theme.swift in Sources */,
 				C7B058370F8421ABF7C97F91 /* ThemeTokens.swift in Sources */,
+				A7BF73C5217F7FD23377D765 /* ThreeDGlasses.swift in Sources */,
 				1164DE7295CAEA22129B31E9 /* TomatoBody.swift in Sources */,
 				298F9070298108FBE448DAE9 /* TomatoEye.swift in Sources */,
 				F9978335E52C7D6F53227748 /* TomatoFace.swift in Sources */,
@@ -1378,6 +1384,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -1397,6 +1404,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;

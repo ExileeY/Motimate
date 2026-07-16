@@ -3,7 +3,10 @@ import XCTest
 
 final class WardrobeGroupingTests: XCTestCase {
     func testAccessoryIdsInSlotFiltersBySlot() {
-        XCTAssertEqual(WardrobeGrouping.accessoryIds(in: .eyes), [.coolShades])
+        XCTAssertEqual(
+            WardrobeGrouping.accessoryIds(in: .eyes),
+            [.coolShades, .threeDGlasses, .heartShades]
+        )
         XCTAssertEqual(WardrobeGrouping.accessoryIds(in: .pet), [.babyMochi])
     }
 
@@ -46,7 +49,7 @@ final class WardrobeGroupingTests: XCTestCase {
     }
 
     func testOwnedAccessoryIdsWithNothingOwnedIsEmptyForEveryPopulatedSlot() {
-        let owned = []
+        let owned: Set<AccessoryId> = []
 
         for slot in WardrobeGrouping.populatedSlots() {
             XCTAssertEqual(

@@ -2,6 +2,8 @@ import SwiftUI
 
 enum AccessoryId: String, CaseIterable {
     case coolShades
+    case threeDGlasses
+    case heartShades
     case babyMochi
 }
 
@@ -42,6 +44,28 @@ enum Accessory {
                     spread: spread)
             )}
         ),
+        .threeDGlasses: AccessoryDefinition(
+            name: "3D Glasses",
+            weeklyStepGoal: 35_000,
+            slot: .eyes,
+            view: { mood, size, spread in AnyView(
+                Accessories.ThreeDGlasses(
+                    mood: mood,
+                    size: size,
+                    spread: spread)
+            )}
+        ),
+        .heartShades: AccessoryDefinition(
+            name: "Heart Sunglasses",
+            weeklyStepGoal: 40_000,
+            slot: .eyes,
+            view: { mood, size, spread in AnyView(
+                Accessories.HeartGlasses(
+                    mood: mood,
+                    size: size,
+                    spread: spread)
+            )}
+        ),
         .babyMochi: AccessoryDefinition(
             name: "Baby Mochi",
             weeklyStepGoal: 50_000,
@@ -59,6 +83,8 @@ enum Accessory {
 
     static let rotationOrder: [AccessoryId] = [
         .coolShades,
+        .threeDGlasses,
+        .heartShades,
         .babyMochi,
     ]
 
