@@ -84,6 +84,9 @@ private struct SceneryTile: View {
             }
             // Center the fixed-size card within its flexible grid column.
             .frame(maxWidth: .infinity)
+            // Backdrops may opt out of hit testing (they're Home backgrounds), so the
+            // tile defines its own tap area rather than relying on what the scene draws.
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
         .accessibilityLabel(def.name)
