@@ -1,0 +1,27 @@
+CLAUDE.md
+  s_f5f28b06ba4f6a::t_c5d1a6731c7894 37,67,102
+Motimate.xcodeproj/project.pbxproj
+  s_f5f28b06ba4f6a::t_79b236149be532 158,199,292,1020,1084-1085,1223
+Motimate/Views/WardrobeView.swift
+  s_f5f28b06ba4f6a::t_63894100a2b28c 67
+Motimate/Components/Settings/SceneryPicker.swift
+  s_f5f28b06ba4f6a::t_90f22b7d1a56ce 1-129
+Motimate/Views/SettingsView.swift
+  s_f5f28b06ba4f6a::t_7e2f760222271f 33,56,148-165,266
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.18",
+  "base_commit_sha": "4df101e7be00df443be0057cc9283fec1431b1c4",
+  "prompts": {},
+  "sessions": {
+    "s_f5f28b06ba4f6a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5bdcc903-7dd1-4d36-a545-2d5bedd6baab",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Danila Glazov <danikglazov@gmail.com>"
+    }
+  }
+}
