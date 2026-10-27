@@ -30,6 +30,7 @@ struct SettingsView: View {
                     VStack(alignment: .leading, spacing: 0) {
                         goalSection(palette)
                         modeSection(palette)
+                        scenerySection(palette)
                         petSection(palette)
                         nightSection(palette)
                         hapticsSection(palette)
@@ -52,7 +53,7 @@ struct SettingsView: View {
                 settings.setAutoNight(true)
             }
         } message: {
-            Text("Following system appearance uses the Classic theme, so \(sceneryDefinition(settings.sceneryId).name) will be turned off.")
+            Text("Following system appearance uses the Classic scene, so \(sceneryDefinition(settings.sceneryId).name) will be turned off.")
         }
     }
 
@@ -139,6 +140,24 @@ struct SettingsView: View {
                 .padding(.top, 6)
 
             ModePicker()
+                .padding(.top, 16)
+        }
+        .padding(.top, 32)
+    }
+
+    private func scenerySection(_ palette: Palette) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            sectionLabel("Scene", palette)
+                .padding(.bottom, 5)
+            Text("Choose your scene")
+                .font(Fonts.heading(24))
+                .foregroundColor(palette.text)
+            Text("The backdrop behind your pet on the home screen.")
+                .font(Fonts.bodyRegular(13))
+                .foregroundColor(palette.subtitle)
+                .padding(.top, 6)
+
+            SceneryPicker()
                 .padding(.top, 16)
         }
         .padding(.top, 32)
@@ -244,7 +263,7 @@ struct SettingsView: View {
         Binding(
             get: { settings.autoNightEnabled },
             set: { enabled in
-                // A custom theme and auto-night never coexist — ask before resetting the theme.
+                // A custom scene and auto-night never coexist — ask before resetting the scene.
                 if enabled && settings.shouldConfirmEnablingAutoNight {
                     confirmingClassic = true
                 } else {

@@ -155,6 +155,7 @@
 		C8127EC10350A69FCF274562 /* SVGPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20D9D59D005114CEC3F2FB7 /* SVGPath.swift */; };
 		C8FBD8591D9A9E420C7DDC6C /* StageGlowTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756A66A278775B521E859B14 /* StageGlowTokens.swift */; };
 		C8FD331E66B747FC6A0CC838 /* WardrobeGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9605081070039842FD3A643D /* WardrobeGrouping.swift */; };
+		C967DFF5DA4F224FBE6A89E2 /* SceneryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06113BCE4E64CCE137B77A3E /* SceneryPicker.swift */; };
 		C99AAD715AAD9042237F7EFA /* MochiFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CC2706D6B8EC6D3C81CAE /* MochiFace.swift */; };
 		CDB0422D50F4F56ECA5AB840 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBAFEC736402E2546C30A35B /* Assets.xcassets */; };
 		CE5FB69496E0FE26FCCCBE44 /* GlowMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D93011A45DBF8927CEC8F5 /* GlowMathTests.swift */; };
@@ -195,6 +196,7 @@
 		006C3B437C9B09FFB343EF6F /* HapticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsService.swift; sourceTree = "<group>"; };
 		014AF894197652AA2B87EE58 /* WeeklyChallengeModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyChallengeModelTests.swift; sourceTree = "<group>"; };
 		04C3E2E8903BDF5353B7AC47 /* AccessoryAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryAnchor.swift; sourceTree = "<group>"; };
+		06113BCE4E64CCE137B77A3E /* SceneryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneryPicker.swift; sourceTree = "<group>"; };
 		076F5F2C3D2535CB961A045F /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		077352DDA0B276C26E0B88D6 /* MochiBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MochiBody.swift; sourceTree = "<group>"; };
 		0787E2FE52438660EA9DF6EA /* DogBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBody.swift; sourceTree = "<group>"; };
@@ -287,7 +289,7 @@
 		9065F57200D9F77A9177EA91 /* AccessorySlotStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessorySlotStorage.swift; sourceTree = "<group>"; };
 		924E208E70442568344C1FD1 /* MovementCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementCardTests.swift; sourceTree = "<group>"; };
 		92EAF117670BA7388893C100 /* MotimateTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MotimateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FAE3A894F7324D4B300BC7 /* Motimate.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Motimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F720245AB9D4000C7FE8A6 /* DogEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogEye.swift; sourceTree = "<group>"; };
 		9605081070039842FD3A643D /* WardrobeGrouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeGrouping.swift; sourceTree = "<group>"; };
 		965C19C84E4F28F47D1FE93D /* MeadowTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeadowTokens.swift; sourceTree = "<group>"; };
@@ -1015,6 +1017,7 @@
 				BF7981688C5C55BB8EDBA615 /* HapticToggle.swift */,
 				CF6D0E01DD4BCEDAD4F37F71 /* ModePicker.swift */,
 				3EB6F17E51E4EF6ACC092F0E /* PetPicker.swift */,
+				06113BCE4E64CCE137B77A3E /* SceneryPicker.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1078,6 +1081,8 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 9B50063C0F687A650CFDA41A /* Build configuration list for PBXProject "Motimate" */;
 			developmentRegion = en;
@@ -1215,6 +1220,7 @@
 				7F52F7F130CBE2FACE5B34AB /* SVGGradient.swift in Sources */,
 				C8127EC10350A69FCF274562 /* SVGPath.swift in Sources */,
 				B5126D76A9694C96C0CE6E50 /* Scenery.swift in Sources */,
+				C967DFF5DA4F224FBE6A89E2 /* SceneryPicker.swift in Sources */,
 				0DBA4A452052DFF0EBD93E1C /* SceneryStorage.swift in Sources */,
 				328FF3938E18E0CA9D04B2B4 /* SchnauzerBody.swift in Sources */,
 				4781B8A489A5F75DF9F67F2C /* SchnauzerBrow.swift in Sources */,
@@ -1468,7 +1474,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -1488,7 +1493,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = T5KVCW8ZW4;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Motimate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
