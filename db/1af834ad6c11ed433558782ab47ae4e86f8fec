@@ -1,0 +1,55 @@
+CLAUDE.md
+  s_f06f04d269252e::t_81f49ea6678603 67,103-104,106
+Motimate/Components/Shared/Glow/Clouds.swift
+  s_ff8f89d702e82d::t_9c1820ca678229 161
+Motimate/Components/Wardrobe/WardrobeTile.swift
+  s_ff8f89d702e82d::t_cda0e61c28a4a4 7,14-25,31,51-52,87-89,91,94-97
+Motimate/Persistence/Storages/Settings/SceneryStorage.swift
+  s_ff8f89d702e82d::t_971119a40071a2 1-30
+Motimate/Views/HomeView.swift
+  s_ff8f89d702e82d::t_4f8953313479b2 130
+MotimateTests/Persistence/Storages/Settings/SceneryStorageTests.swift
+  s_ff8f89d702e82d::t_3556f9cbba2dd2 1-23
+Motimate/Components/PhoneCanvas.swift
+  s_f9227d2829d903::t_450256936ce32c 5,10,14,20,30-33
+Motimate/Domain/Scenery.swift
+  s_f9227d2829d903::t_24cdd2681250c3 1-32
+Motimate/Views/WardrobeView.swift
+  s_f06f04d269252e::t_8c8c676148b3bf 11-12,67-70,72,83-92,97-116,133-135,159-166,169-181
+MotimateTests/Domain/SceneryRegistryTests.swift
+  s_f9227d2829d903::t_e5c57724dbaae1 1-26
+MotimateTests/Persistence/SettingsStoreTests.swift
+  s_f06f04d269252e::t_44a070caf8b682 66-141
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.18",
+  "base_commit_sha": "db1af834ad6c11ed433558782ab47ae4e86f8fec",
+  "prompts": {},
+  "sessions": {
+    "s_f06f04d269252e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "349bc2ef-41a1-4a9e-88a0-43bb7b356e55",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Danila Glazov <danikglazov@gmail.com>"
+    },
+    "s_f9227d2829d903": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "77b06fcd-1c61-4e1f-b377-2cc59ac9264c",
+        "model": "unknown"
+      },
+      "human_author": "Danila Glazov <danikglazov@gmail.com>"
+    },
+    "s_ff8f89d702e82d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "19ea4abf-1761-4f64-9ff1-e67874c806be",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Danila Glazov <danikglazov@gmail.com>"
+    }
+  }
+}
