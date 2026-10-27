@@ -127,7 +127,7 @@ struct HomeView: View {
         let hasLiveSteps = dailySteps.permission == .granted && dailySteps.error == nil
         let palette = ThemeTokens.for(theme).palette
 
-        return PhoneCanvas(mood: mood) {
+        return PhoneCanvas(mood: mood, scenery: settings.activeScenery(for: theme)) {
             VStack(spacing: 0) {
                 TopBar(
                     mood: mood,

@@ -2,21 +2,33 @@ import SwiftUI
 
 struct WardrobeTile: View {
     let name: String
-    let accessoryId: AccessoryId
     let isEquipped: Bool
     let onToggle: () -> Void
+    private let thumbnail: AnyView
 
     @Environment(\.themeTokens) private var tokens
 
     static let cardSize: CGFloat = 96
     static let previewSize: CGFloat = 64
 
+    init<Thumbnail: View>(
+        name: String,
+        isEquipped: Bool,
+        onToggle: @escaping () -> Void,
+        @ViewBuilder thumbnail: () -> Thumbnail
+    ) {
+        self.name = name
+        self.isEquipped = isEquipped
+        self.onToggle = onToggle
+        self.thumbnail = AnyView(thumbnail())
+    }
+
     var body: some View {
         let palette = tokens.palette
 
         return Button(action: onToggle) {
             VStack(spacing: 7) {
-                thumbnail(palette)
+                card(palette)
                     .overlay(alignment: .topTrailing) {
                         if isEquipped {
                             badge(palette)
@@ -36,8 +48,8 @@ struct WardrobeTile: View {
         .accessibilityAddTraits(isEquipped ? [.isSelected] : [])
     }
 
-    private func thumbnail(_ palette: Palette) -> some View {
-        Accessory.define(accessoryId).view(.calm, Self.previewSize, 1)
+    private func card(_ palette: Palette) -> some View {
+        thumbnail
             .frame(width: Self.previewSize, height: Self.previewSize)
             .clipped()
             .frame(width: Self.cardSize, height: Self.cardSize)
@@ -70,16 +82,19 @@ struct WardrobeTile: View {
     HStack(spacing: 12) {
         WardrobeTile(
             name: "Cool Shades",
-            accessoryId: .coolShades,
             isEquipped: false,
             onToggle: {}
-        )
+        ) {
+            Accessory.define(.coolShades).view(.calm, WardrobeTile.previewSize, 1)
+        }
         WardrobeTile(
-            name: "Baby Mochi",
-            accessoryId: .babyMochi,
+            name: "Meadow",
             isEquipped: true,
             onToggle: {}
-        )
+        ) {
+            MeadowScene(mood: .calm)
+                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        }
     }
     .padding(22)
     .background(ThemeTokens.day.screenBackground(.calm).colors[1])

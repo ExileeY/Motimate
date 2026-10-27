@@ -8,6 +8,8 @@ struct WardrobeView: View {
 
     @Binding var isPresented: Bool
 
+    @State private var sceneryAwaitingConfirmation: SceneryId? = nil
+
     private var theme: Theme {
         settings.resolvedTheme(isDark: colorScheme == .dark)
     }
@@ -62,9 +64,12 @@ struct WardrobeView: View {
 
                     ScrollView(showsIndicators: false) {
                         VStack(alignment: .leading, spacing: 0) {
-                            ForEach(Array(slots.enumerated()), id: \.element) { index, slot in
+                            scenerySection(palette)
+                                .padding(.top, 20)
+
+                            ForEach(slots, id: \.self) { slot in
                                 slotSection(slot, palette)
-                                    .padding(.top, index == 0 ? 20 : 32)
+                                    .padding(.top, 32)
                             }
                         }
                         .padding(.bottom, 24)
@@ -75,9 +80,39 @@ struct WardrobeView: View {
         .environment(\.theme, theme)
         .navigationBarHidden(true)
         .enableInteractiveSwipeBack()
+        .alert(
+            "Stop following system appearance?",
+            isPresented: confirmingScenery,
+            presenting: sceneryAwaitingConfirmation
+        ) { id in
+            Button("Cancel", role: .cancel) {}
+            Button("Use theme") { settings.setScenery(id) }
+        } message: { _ in
+            Text("Themes have their own look, so Follow system appearance will be turned off. You can turn it back on in Settings.")
+        }
     }
 
     // MARK: - Sections
+
+    private func scenerySection(_ palette: Palette) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            sectionLabel("Themes", palette)
+                .padding(.bottom, 14)
+
+            LazyVGrid(columns: columns, spacing: 12) {
+                ForEach(SCENERY_IDS, id: \.self) { id in
+                    WardrobeTile(
+                        name: sceneryDefinition(id).name,
+                        isEquipped: settings.sceneryId == id,
+                        onToggle: { selectScenery(id) }
+                    ) {
+                        sceneryDefinition(id).backdrop(.calm)
+                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    }
+                }
+            }
+        }
+    }
 
     private func slotSection(_ slot: AccessorySlot, _ palette: Palette) -> some View {
         let ids = WardrobeGrouping.ownedAccessoryIds(in: slot, owned: accessories.owned)
@@ -93,10 +128,11 @@ struct WardrobeView: View {
                     ForEach(ids, id: \.self) { id in
                         WardrobeTile(
                             name: Accessory.define(id).name,
-                            accessoryId: id,
                             isEquipped: accessories.isEquipped(id),
                             onToggle: { toggleEquip(id) }
-                        )
+                        ) {
+                            Accessory.define(id).view(.calm, WardrobeTile.previewSize, 1)
+                        }
                     }
                 }
             }
@@ -120,7 +156,28 @@ struct WardrobeView: View {
         )
     }
 
+    /// SwiftUI writes `false` here when any alert button dismisses it, which clears the pending scenery.
+    private var confirmingScenery: Binding<Bool> {
+        Binding(
+            get: { sceneryAwaitingConfirmation != nil },
+            set: { if !$0 { sceneryAwaitingConfirmation = nil } }
+        )
+    }
+
     // MARK: - Actions
+
+    private func selectScenery(_ id: SceneryId) {
+        HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)
+
+        guard id != settings.sceneryId else { return }
+
+        if settings.shouldConfirmDisablingAutoNight(for: id) {
+            sceneryAwaitingConfirmation = id
+            return
+        }
+
+        settings.setScenery(id)
+    }
 
     private func toggleEquip(_ id: AccessoryId) {
         HapticsService.impact(.light, enabled: settings.hapticsTabEnabled)

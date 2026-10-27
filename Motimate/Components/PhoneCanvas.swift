@@ -2,32 +2,22 @@ import SwiftUI
 
 struct PhoneCanvas<Content: View>: View {
     let mood: Mood
+    let scenery: SceneryId
     private let content: Content
-
-    @Environment(\.themeTokens) private var tokens
 
     init(
         mood: Mood,
+        scenery: SceneryId = .classic,
         @ViewBuilder content: () -> Content
     ) {
         self.mood = mood
+        self.scenery = scenery
         self.content = content()
     }
 
     var body: some View {
-        let background = tokens.screenBackground(mood)
-
         ZStack {
-            LinearGradient(
-                stops: zip(background.colors, background.locations).map {
-                    Gradient.Stop(color: $0, location: $1)
-                },
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .ignoresSafeArea()
-
-            BackgroundEmitters(mood: mood)
+            backdrop
                 .ignoresSafeArea()
 
             content
@@ -36,6 +26,10 @@ struct PhoneCanvas<Content: View>: View {
                 .padding(.top, 8)
                 .padding(.bottom, 24)
         }
+    }
+
+    private var backdrop: some View {
+        sceneryDefinition(scenery).backdrop(mood)
     }
 }
 

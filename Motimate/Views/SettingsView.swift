@@ -7,6 +7,7 @@ struct SettingsView: View {
     @Binding var isPresented: Bool
 
     @State private var draft: String = ""
+    @State private var confirmingClassic = false
     @FocusState private var goalFocused: Bool
 
     private var theme: Theme {
@@ -44,6 +45,14 @@ struct SettingsView: View {
         .onDisappear { commitGoal() }
         .onChange(of: goalFocused) { focused in
             if !focused { commitGoal() }
+        }
+        .alert("Switch back to Classic?", isPresented: $confirmingClassic) {
+            Button("Cancel", role: .cancel) {}
+            Button("Switch") {
+                settings.setAutoNight(true)
+            }
+        } message: {
+            Text("Following system appearance uses the Classic theme, so \(sceneryDefinition(settings.sceneryId).name) will be turned off.")
         }
     }
 
@@ -234,7 +243,14 @@ struct SettingsView: View {
     private var autoNightBinding: Binding<Bool> {
         Binding(
             get: { settings.autoNightEnabled },
-            set: { settings.setAutoNight($0) }
+            set: { enabled in
+                // A custom theme and auto-night never coexist — ask before resetting the theme.
+                if enabled && settings.shouldConfirmEnablingAutoNight {
+                    confirmingClassic = true
+                } else {
+                    settings.setAutoNight(enabled)
+                }
+            }
         )
     }
 
