@@ -1,0 +1,19 @@
+Motimate/Components/Settings/SceneryPicker.swift
+  s_4a4a8f64215afb::t_2affb809b5c4d0 87-89
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.18",
+  "base_commit_sha": "7e5d0ec83a026d5ec5cf629645e20fd5dc03b7b3",
+  "prompts": {},
+  "sessions": {
+    "s_4a4a8f64215afb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dd9babf1-8319-4e23-b81f-af360b3fdba7",
+        "model": "unknown"
+      },
+      "human_author": "Danila Glazov <danikglazov@gmail.com>"
+    }
+  }
+}
