@@ -6,6 +6,11 @@ struct PetStageMotionValues: Equatable {
     let rotationDegrees: Double
 }
 
+struct PetGroundShadowValues: Equatable {
+    let scale: CGFloat
+    let opacity: Double
+}
+
 enum PetStageMotion {
     static let quiverDurationMs: Double = 1_000
 
@@ -15,6 +20,8 @@ enum PetStageMotion {
     private static let tiredTiltDegrees: Double = -3
     private static let quiverPixels: CGFloat = 0.35
     private static let quiverDegrees: Double = 0.3
+    private static let shadowLiftShrink: CGFloat = 0.2
+    private static let shadowLiftFade: Double = 0.4
 
     static func breathDurationMs(for mood: Mood) -> Double {
         switch mood {
@@ -48,6 +55,20 @@ enum PetStageMotion {
 
     static func petSize(screenHeight: CGFloat, sizeMultiplier: CGFloat = 1) -> CGFloat {
         (PET_SIZE * computeScale(screenHeight) * sizeMultiplier).rounded()
+    }
+
+    /// How far the pet's feet sit below the stage center.
+    static func footOffset(screenHeight: CGFloat, sizeMultiplier: CGFloat = 1) -> CGFloat {
+        petSize(screenHeight: screenHeight, sizeMultiplier: sizeMultiplier) * PET_FOOT_OFFSET
+    }
+
+    /// The contact shadow shrinks and fades as the pet bobs up off the ground.
+    static func groundShadow(lift: CGFloat) -> PetGroundShadowValues {
+        let t = MathUtils.clamp01(lift / bobbleRise)
+        return PetGroundShadowValues(
+            scale: 1 - shadowLiftShrink * t,
+            opacity: 1 - shadowLiftFade * Double(t)
+        )
     }
 
     static func values(
@@ -86,6 +107,7 @@ struct PetStage: View {
     var screenHeight: CGFloat = RESPONSIVE_BASE_HEIGHT
     var accessories: [AccessoryId] = []
     var sizeMultiplier: CGFloat = 1
+    var groundShadow = false
 
     var entrance = EntranceMotionParams()
 
@@ -100,12 +122,24 @@ struct PetStage: View {
         )
         let definition = petDefinition(petId)
 
-        PetStageMotionScope(mood: mood) {
+        PetStageMotionScope(mood: mood) { values in
             ZStack {
                 Glow(
                     mood: mood,
                     size: stage
                 )
+                .petStageMotion(values)
+
+                if groundShadow {
+                    PetGroundShadow(
+                        petSize: pet,
+                        footOffset: PetStageMotion.footOffset(
+                            screenHeight: screenHeight,
+                            sizeMultiplier: sizeMultiplier
+                        ),
+                        values: PetStageMotion.groundShadow(lift: -values.offset.height)
+                    )
+                }
 
                 EntranceMotion(params: entrance) {
                     ZStack {
@@ -125,6 +159,7 @@ struct PetStage: View {
                     }
                     .compositingGroup()
                 }
+                .petStageMotion(values)
             }
             .frame(width: stage, height: stage)
         }
@@ -132,28 +167,54 @@ struct PetStage: View {
     }
 }
 
+private struct PetGroundShadow: View {
+    private static let color = Color.black.opacity(0.16)
+    private static let widthRatio: CGFloat = 0.55     // of pet size
+    private static let aspect: CGFloat = 0.16         // height / width
+
+    let petSize: CGFloat
+    let footOffset: CGFloat
+    let values: PetGroundShadowValues
+
+    var body: some View {
+        let width = petSize * Self.widthRatio
+
+        Ellipse()
+            .fill(Self.color)
+            .frame(width: width, height: width * Self.aspect)
+            .blur(radius: 2.5)
+            .scaleEffect(values.scale)
+            .opacity(values.opacity)
+            .offset(y: footOffset)
+            .allowsHitTesting(false)
+    }
+}
+
+private extension View {
+    func petStageMotion(_ values: PetStageMotionValues) -> some View {
+        scaleEffect(values.scale)
+            .offset(values.offset)
+            .rotationEffect(.degrees(values.rotationDegrees))
+    }
+}
+
 private struct PetStageMotionScope<Content: View>: View {
     let mood: Mood
-    let content: Content
+    let content: (PetStageMotionValues) -> Content
 
     @State private var startDate = Date()
 
     init(
         mood: Mood,
-        @ViewBuilder content: () -> Content
+        @ViewBuilder content: @escaping (PetStageMotionValues) -> Content
     ) {
         self.mood = mood
-        self.content = content()
+        self.content = content
     }
 
     var body: some View {
         TimelineView(.animation) { timeline in
-            let values = motionValues(at: timeline.date)
-
-            content
-                .scaleEffect(values.scale)
-                .offset(values.offset)
-                .rotationEffect(.degrees(values.rotationDegrees))
+            content(motionValues(at: timeline.date))
         }
         .onAppear { startDate = Date() }
     }

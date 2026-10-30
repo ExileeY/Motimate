@@ -5,6 +5,8 @@ struct PhoneCanvas<Content: View>: View {
     let scenery: SceneryId
     private let content: Content
 
+    @State private var groundLine: CGFloat? = nil
+
     init(
         mood: Mood,
         scenery: SceneryId = .classic,
@@ -26,10 +28,18 @@ struct PhoneCanvas<Content: View>: View {
                 .padding(.top, 8)
                 .padding(.bottom, 24)
         }
+        .onPreferenceChange(GroundLinePreferenceKey.self) { groundLine = $0 }
     }
 
     private var backdrop: some View {
-        sceneryDefinition(scenery).backdrop(mood)
+        // The backdrop ignores safe areas, so the fraction is taken against its own
+        // full-screen frame — the same frame the scene lays itself out in.
+        GeometryReader { geo in
+            sceneryDefinition(scenery).backdrop(
+                mood,
+                groundY: GroundLine.fraction(groundLine, in: geo.frame(in: .global))
+            )
+        }
     }
 }
 

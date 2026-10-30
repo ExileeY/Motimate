@@ -23,4 +23,9 @@ final class SceneryRegistryTests: XCTestCase {
             XCTAssertFalse(sceneryDefinition(id).name.isEmpty)
         }
     }
+
+    func testOnlyNonClassicSceneriesDrawAGroundShadow() {
+        XCTAssertFalse(sceneryDefinition(.classic).groundShadow)
+        XCTAssertTrue(sceneryDefinition(.meadow).groundShadow)
+    }
 }

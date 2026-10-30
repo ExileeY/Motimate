@@ -183,16 +183,19 @@ struct HomeView: View {
     }
 
     private func petArea(mood: Mood, height: CGFloat) -> some View {
+        let scenery = sceneryDefinition(settings.activeScenery(for: theme))
         let stage = PetStage(
             mood: mood,
             petId: settings.petId,
             screenHeight: height,
             accessories: accessories.equippedList,
+            groundShadow: scenery.groundShadow,
             entrance: EntranceMotionParams(
                 active: shouldPlayEntrance,
                 onFinished: { shouldPlayEntrance = false }
             )
         )
+        .reportsGroundLine(footOffset: PetStageMotion.footOffset(screenHeight: height))
 
         #if DEBUG
         return stage

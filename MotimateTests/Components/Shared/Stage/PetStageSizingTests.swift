@@ -59,4 +59,17 @@ final class PetStageSizingTests: XCTestCase {
             130
         )
     }
+
+    func testFootOffsetIsPetSizeTimesFootRatio() {
+        XCTAssertEqual(
+            PetStageMotion.footOffset(screenHeight: 812),
+            PET_SIZE * PET_FOOT_OFFSET,
+            accuracy: 0.0001
+        )
+        XCTAssertEqual(
+            PetStageMotion.footOffset(screenHeight: 812, sizeMultiplier: 0.72),
+            130 * PET_FOOT_OFFSET,
+            accuracy: 0.0001
+        )
+    }
 }

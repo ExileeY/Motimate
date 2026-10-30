@@ -1,11 +1,15 @@
 import SwiftUI
 
 /// The Meadow scenery: sky, sun, mountain, drifting clouds and grass hills.
+/// `mood` effects the styles in which the scene will be presented.
+/// `groundY` (fraction of height) moves the hills under the pet's feet.
 struct MeadowScene: View {
     let mood: Mood
+    var groundY: CGFloat? = nil
 
     var body: some View {
         let spec = MeadowTokens.spec(mood)
+        let layout = MeadowLayout.make(groundY: groundY)
 
         GeometryReader { geo in
             let size = geo.size
@@ -19,16 +23,19 @@ struct MeadowScene: View {
 
                 MeadowSun(sun: spec.sun, area: size)
 
-                MeadowMountain()
+                MeadowMountain(
+                    baseShift: layout.shiftForGround,
+                    peakShift: layout.shiftForPeak
+                )
                     .fill(LinearGradient(colors: MeadowTokens.mountain, startPoint: .top, endPoint: .bottom))
-                MeadowSnowCaps()
+                MeadowSnowCaps(yShift: layout.shiftForPeak)
                     .fill(MeadowTokens.snow)
 
                 MeadowClouds(area: size)
 
-                MeadowHill(startY: 0.60, endY: 0.58, peakRise: 0.05, valleyDepth: 0.03)
+                MeadowHill(startY: 0.60 + layout.shiftForGround, endY: 0.58 + layout.shiftForGround, peakRise: 0.05, valleyDepth: 0.03)
                     .fill(spec.ground.grassColor)
-                MeadowHill(startY: 0.66, endY: 0.63, peakRise: 0.05, valleyDepth: 0.05)
+                MeadowHill(startY: 0.66 + layout.shiftForGround, endY: 0.63 + layout.shiftForGround, peakRise: 0.05, valleyDepth: 0.05)
                     .fill(
                         LinearGradient(
                             stops: [
@@ -120,67 +127,6 @@ private struct MeadowClouds: View {
             }
         }
         .frame(width: area.width, height: area.height)
-    }
-}
-
-// MARK: - Shapes (fractions of rect)
-
-private func point(_ rect: CGRect, _ x: CGFloat, _ y: CGFloat) -> CGPoint {
-    CGPoint(x: rect.minX + x * rect.width, y: rect.minY + y * rect.height)
-}
-
-private func polygon(_ rect: CGRect, _ points: [(CGFloat, CGFloat)]) -> Path {
-    var path = Path()
-    path.addLines(points.map { point(rect, $0.0, $0.1) })
-    path.closeSubpath()
-    return path
-}
-
-private struct MeadowMountain: Shape {
-    func path(in rect: CGRect) -> Path {
-        polygon(rect, [
-            (0, 0.56), (0.12, 0.50), (0.30, 0.36), (0.46, 0.49),
-            (0.56, 0.46), (0.74, 0.40), (0.92, 0.52), (1, 0.55),
-            (1, 0.66), (0, 0.66),
-        ])
-    }
-}
-
-/// Caps sit exactly on the ridge lines of `MeadowMountain`'s two peaks.
-private struct MeadowSnowCaps: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = polygon(rect, [
-            (0.26, 0.391), (0.30, 0.36), (0.34, 0.3925),
-            (0.32, 0.385), (0.30, 0.398), (0.28, 0.385),
-        ])
-        path.addPath(polygon(rect, [
-            (0.70, 0.413), (0.74, 0.40), (0.78, 0.427),
-            (0.76, 0.42), (0.745, 0.43), (0.72, 0.418),
-        ]))
-        return path
-    }
-}
-
-/// A rolling hill from `startY` (left edge) to `endY` (right edge), filled to the
-/// bottom. `peakRise` raises the left bulge, `valleyDepth` lowers the right hollow.
-private struct MeadowHill: Shape {
-    let startY: CGFloat
-    let endY: CGFloat
-    let peakRise: CGFloat
-    let valleyDepth: CGFloat
-
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        path.move(to: point(rect, 0, startY))
-        path.addCurve(
-            to: point(rect, 1, endY),
-            control1: point(rect, 0.3, startY - peakRise),
-            control2: point(rect, 0.65, endY + valleyDepth)
-        )
-        path.addLine(to: point(rect, 1, 1))
-        path.addLine(to: point(rect, 0, 1))
-        path.closeSubpath()
-        return path
     }
 }
 

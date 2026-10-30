@@ -8,19 +8,34 @@ enum SceneryId: String, CaseIterable {
     var requiresDisablingAutoNight: Bool { self != .classic }
 }
 
+/// Draws a scenery's backdrop.
+struct SceneryBackdrop {
+    private let render: (Mood, CGFloat?) -> AnyView
+
+    init(_ render: @escaping (Mood, CGFloat?) -> AnyView) {
+        self.render = render
+    }
+
+    func callAsFunction(_ mood: Mood, groundY: CGFloat? = nil) -> AnyView {
+        render(mood, groundY)
+    }
+}
+
 struct SceneryDefinition {
     let name: String
-    let backdrop: (Mood) -> AnyView
+    let backdrop: SceneryBackdrop
+    var groundShadow: Bool = false
 }
 
 let SCENERIES: [SceneryId: SceneryDefinition] = [
     .classic: SceneryDefinition(
         name: "Classic",
-        backdrop: { mood in AnyView(ClassicScene(mood: mood)) }
+        backdrop: SceneryBackdrop { mood, _ in AnyView(ClassicScene(mood: mood)) }
     ),
     .meadow: SceneryDefinition(
         name: "Meadow",
-        backdrop: { mood in AnyView(MeadowScene(mood: mood)) }
+        backdrop: SceneryBackdrop { mood, groundY in AnyView(MeadowScene(mood: mood, groundY: groundY)) },
+        groundShadow: true
     ),
 ]
 
