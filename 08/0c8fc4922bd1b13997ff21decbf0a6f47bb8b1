@@ -1,0 +1,55 @@
+Motimate.xcodeproj/project.pbxproj
+  s_d066d753f675ad::t_05ab79878781a3 14,20,25,31,68,106,110,215,218-219,261,303,329,352,374,552,594-595,948,950,969,998,1105-1106,1189,1195,1210,1212,1299,1303,1309
+Motimate/Components/Shared/Scenery/Meadow/MeadowLayout.swift
+  s_d066d753f675ad::t_50c392d1539143 1-25
+Motimate/Components/Shared/Scenery/Meadow/MeadowScene.swift
+  s_d066d753f675ad::t_b11580613e3ed1 4-5,8,12,26-29,31,36,38
+MotimateTests/Components/Shared/Scenery/MeadowLayoutTests.swift
+  s_d066d753f675ad::t_e19f6c51a4fe4d 1-22
+MotimateTests/Components/Shared/Stage/PetStageMotionTests.swift
+  s_2c06818bcd4f90::t_542e10754b78e3 80-90
+MotimateTests/Domain/SceneryRegistryTests.swift
+  s_2c06818bcd4f90::t_5f4509e8d4ee27 26-30
+CLAUDE.md
+  s_d066d753f675ad::t_419e91a68459ad 67
+Motimate/Components/PhoneCanvas.swift
+  s_d066d753f675ad::t_863710384cf995 8-9,31,35-42
+Motimate/Components/Shared/Scenery/Meadow/MeadowShapes.swift
+  s_d066d753f675ad::t_596779ae53ce9a 1-80
+Motimate/Components/Shared/Stage/PetStage.swift
+  s_d066d753f675ad::t_0b38417c837982 9-13,23-24,60-73,110,125,131-142,162,170-200,203,209,212,217
+Motimate/Helpers/FractionalPath.swift
+  s_d066d753f675ad::t_873860fbebca8c 1-20
+Motimate/Views/HomeView.swift
+  s_d066d753f675ad::t_50e2351ff369cb 186,192,198
+MotimateTests/Components/Shared/Scenery/GroundLineTests.swift
+  s_d066d753f675ad::t_4c25f2aa040105 1-20
+MotimateTests/Components/Shared/Stage/PetStageSizingTests.swift
+  s_d066d753f675ad::t_f0828daa368937 62-74
+MotimateTests/Helpers/FractionalPathTests.swift
+  s_d066d753f675ad::t_47848e501b77c2 1-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.18",
+  "base_commit_sha": "080c8fc4922bd1b13997ff21decbf0a6f47bb8b1",
+  "prompts": {},
+  "sessions": {
+    "s_2c06818bcd4f90": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0a3aab12-fcbd-48b9-9fdd-6d3e8cb895da",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Danila Glazov <danikglazov@gmail.com>"
+    },
+    "s_d066d753f675ad": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f4295245-d17a-4cf5-99a6-a8472f1e30b0",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Danila Glazov <danikglazov@gmail.com>"
+    }
+  }
+}
