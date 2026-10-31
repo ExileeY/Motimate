@@ -1,52 +1,5 @@
 import SwiftUI
 
-/// The Meadow sun config.
-struct SunConfig {
-    static let defaultX: CGFloat = 0.8
-    static let defaultRadius: CGFloat = 0.07 // fraction of scene width
-    static let defaultCloudOver: Bool = false
-
-    let color: Color
-    let glow: Color
-    let x: CGFloat              // center, fraction of scene width
-    let y: CGFloat              // center, fraction of scene height
-    let radius: CGFloat
-    let opacity: Double
-
-    init(
-        color: Color,
-        glow: Color,
-        x: CGFloat = SunConfig.defaultX,
-        y: CGFloat,
-        radius: CGFloat = SunConfig.defaultRadius,
-        opacity: Double
-    ) {
-        self.color = color
-        self.glow = glow
-        self.x = x
-        self.y = y
-        self.radius = radius
-        self.opacity = opacity
-    }
-}
-
-/// The Meadow sky: a top → bottom gradient.
-struct SkyConfig {
-    static let defaultLocations: [CGFloat] = [0, 0.55, 1]
-
-    let colors: [Color]
-    let locations: [CGFloat]
-
-    init(colors: [Color], locations: [CGFloat] = SkyConfig.defaultLocations) {
-        self.colors = colors
-        self.locations = locations
-    }
-
-    var stops: [Gradient.Stop] {
-        zip(colors, locations).map { Gradient.Stop(color: $0, location: $1) }
-    }
-}
-
 /// The grass hills and the pale ground beneath the home text.
 struct GroundConfig {
     let grassColor: Color

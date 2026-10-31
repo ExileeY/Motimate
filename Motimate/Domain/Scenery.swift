@@ -4,6 +4,7 @@ import SwiftUI
 enum SceneryId: String, CaseIterable {
     case classic
     case meadow
+    case beach
 
     var requiresDisablingAutoNight: Bool { self != .classic }
 }
@@ -35,6 +36,11 @@ let SCENERIES: [SceneryId: SceneryDefinition] = [
     .meadow: SceneryDefinition(
         name: "Meadow",
         backdrop: SceneryBackdrop { mood, groundY in AnyView(MeadowScene(mood: mood, groundY: groundY)) },
+        groundShadow: true
+    ),
+    .beach: SceneryDefinition(
+        name: "Beach",
+        backdrop: SceneryBackdrop { mood, groundY in AnyView(BeachScene(mood: mood, groundY: groundY)) },
         groundShadow: true
     ),
 ]

@@ -22,7 +22,6 @@
 		1164DE7295CAEA22129B31E9 /* TomatoBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE9B9434814A651FF8B6449 /* TomatoBody.swift */; };
 		11B009194EE541072DC255B0 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE2B4A159E7E8CE4F128CB5 /* Palette.swift */; };
 		11F1BB38BB3172F51B9B6EE7 /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A9CDF0EC9783DDCBF59D8 /* GameMode.swift */; };
-		153836449656F0DBCC33D5D3 /* MeadowLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59391AE4E3EC33863D598717 /* MeadowLayoutTests.swift */; };
 		158C04C59A99395E178200D9 /* Arc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21C6D11D88D2E7F084EE369 /* Arc.swift */; };
 		171A89C050C33A2399CC7842 /* AruticMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC6600EBDFD68B149243108 /* AruticMessages.swift */; };
 		17DA466151A3E0385EC4496B /* DailyStepsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E5DBA3657B3A6FEEDF77B7 /* DailyStepsTests.swift */; };
@@ -36,6 +35,7 @@
 		25F6330AA158B4C73E82365B /* BulbashikMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801546328A78E5979F2245C4 /* BulbashikMessages.swift */; };
 		26162E782D750CF2B7E5C165 /* DogBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0787E2FE52438660EA9DF6EA /* DogBody.swift */; };
 		26C28CCFB1C7E92B6E8CA142 /* WeekMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4486261F74D8C3489BDF2B7 /* WeekMath.swift */; };
+		273A5528F80346515B707C96 /* SceneryLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DEE77FA751DE813EC551BE /* SceneryLayoutTests.swift */; };
 		27FE570160749E7D921FFC20 /* ConfettiMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A8425F6825174174D2293A /* ConfettiMath.swift */; };
 		298F9070298108FBE448DAE9 /* TomatoEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8FCD77F51E3B09FA38D8BA /* TomatoEye.swift */; };
 		2B816E882345E6DAC06DBC10 /* SchnauzerMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76126176AE06F853AA76975B /* SchnauzerMessages.swift */; };
@@ -45,6 +45,7 @@
 		2F1871C716EEA39309E5B619 /* HeartGlasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14EDE19F57A63A1B0A768F0 /* HeartGlasses.swift */; };
 		2F91E2CA8CC1B6BFCB9C29F3 /* ConfettiMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322BF81A0797B1307D91DEBD /* ConfettiMathTests.swift */; };
 		306BF4D9600D60AE2507F993 /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AA63323571C7576C36F81 /* Dimensions.swift */; };
+		30900C16633EE42E255FAD02 /* BeachShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF72B3F9CD8092FBEABAC4 /* BeachShapes.swift */; };
 		30B5A643279A63A1D3A53945 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F134252AEA764CB094123BA /* Mood.swift */; };
 		319A1E7151DEA025BA0B17A6 /* WeeklyPlaceholderCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F3454851875DFD71DB6146 /* WeeklyPlaceholderCard.swift */; };
 		319A8375E4470B5F92FD0D5B /* ResponsiveScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49683E90535046093852FF15 /* ResponsiveScaleTests.swift */; };
@@ -52,7 +53,9 @@
 		342291C44BA80D99BCE98D36 /* SchnauzerEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB49AA5E287FD8F07B7EE928 /* SchnauzerEye.swift */; };
 		353A9F83337FB8361F29F41D /* PodiumStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0024DDD3C203E39647A5FAD /* PodiumStage.swift */; };
 		365667C1E26D687B6275D08B /* BabyMochi.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9B7D7A4E9983C327AAA102 /* BabyMochi.swift */; };
+		3669AC3C9E6BB9B5EE2BB27C /* BeachScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AAD8FF7B5ABAB23F967FE5 /* BeachScene.swift */; };
 		396CF800505A40D8628E4C69 /* SceneryRegistryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E12EFB0EDB139C9E8B150D2 /* SceneryRegistryTests.swift */; };
+		39FFD66F447E361021E5D5A8 /* BeachTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5DEAF9BFBE7C4428F0C53F /* BeachTokens.swift */; };
 		3CC9863D9AD8D3B8E4EEE8DD /* AccessoryAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C3E2E8903BDF5353B7AC47 /* AccessoryAnchor.swift */; };
 		3D00E5E569D1E9DA270B7DA1 /* StepReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2308EB01D257A005D294300 /* StepReader.swift */; };
 		3DD465C10A38B80AE1D33EE2 /* MochiBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077352DDA0B276C26E0B88D6 /* MochiBody.swift */; };
@@ -79,6 +82,7 @@
 		56BF7CB982903D88955A0CF2 /* PhoneCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82F59C05246CCC45B8CF46A /* PhoneCanvas.swift */; };
 		58C975D4B20A6A9DE76EC118 /* KhinklearBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362AE001A4735145FEBF8C6A /* KhinklearBody.swift */; };
 		5A3557414B393F6403B8140B /* WeeklyChallengeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77192E651188373C84C52932 /* WeeklyChallengeStore.swift */; };
+		5ADD48F2F1508675D0D7EA07 /* RollingHill.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BFD87596D46CC533C39388 /* RollingHill.swift */; };
 		5BAA21CC634040013ACD94C3 /* HourClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F400E53055BFC20BDB8DA9C /* HourClockTests.swift */; };
 		5C6DCD5227D224147F2FFA47 /* EntranceMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F71EC44DEC5962E64B239E8 /* EntranceMotion.swift */; };
 		5D90187D7C0ABACE75DEBD0C /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FB5F0EDC49AF56842A3E2 /* Protocol.swift */; };
@@ -107,7 +111,7 @@
 		72AE4E75A9BA572F2348300B /* RoundedBoxPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7BE7E6A52A1EA94E6A1CD9 /* RoundedBoxPathTests.swift */; };
 		73C3D4464B6B2CAB21621FDC /* ModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6D0E01DD4BCEDAD4F37F71 /* ModePicker.swift */; };
 		77C8CEDBF0F118CC7A5A7023 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D37E7D60BF49E5A20563B /* Theme.swift */; };
-		782BAC88C7F93437FBA439A5 /* MeadowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D2D084D2F6A17CFA5546A8 /* MeadowLayout.swift */; };
+		7A7420F4FF4890AC4236737B /* SceneClouds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5248449367501616942AD722 /* SceneClouds.swift */; };
 		7E8A8933C085A06B69AF3E04 /* StatusDotTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9CE45D552CBE0EE666AD19 /* StatusDotTokens.swift */; };
 		7F52F7F130CBE2FACE5B34AB /* SVGGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568FD306532805F2A8E91AA /* SVGGradient.swift */; };
 		803CC498BAF916D562BCE6AA /* ScreenHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEBB969A759F4611EA361B /* ScreenHeader.swift */; };
@@ -121,6 +125,7 @@
 		8DCAC1596139802C202AA071 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210F1D4117900A67DA1D9CD0 /* MathUtils.swift */; };
 		8F5F61F65D2B5C1F11EFFF72 /* BabyDuckling.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1C8B282D19BEBBB61B608 /* BabyDuckling.swift */; };
 		904D5C696150C80506EECB66 /* WeeklyChallengeModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014AF894197652AA2B87EE58 /* WeeklyChallengeModelTests.swift */; };
+		90CB0FF934D2EA3E48FCF9E0 /* BeachSceneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118A461043EF4595B06E6AAE /* BeachSceneTests.swift */; };
 		90F6A6847AE437FE110100D5 /* PetStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF5BB110C0EADC77B004F6C /* PetStorage.swift */; };
 		926A6A69AA5E4D54C6BC3140 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D6C8A7C8D5877449AB152B /* SettingsView.swift */; };
 		92803557B4D9BDC04D81CB91 /* Glow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC971E221C9F6EF506D34A2 /* Glow.swift */; };
@@ -136,6 +141,7 @@
 		9CC966A077779FBC3AFF4FD2 /* BaseHapticsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E59D4F1F978723711E300 /* BaseHapticsStorage.swift */; };
 		9D2D3E67630081E94B743366 /* WeeklyChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A479726A5A7DA0206C9D47D1 /* WeeklyChallengeTests.swift */; };
 		A02BDA1D5C6633CAA9493A94 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03937399B758963AA42CB30 /* Fonts.swift */; };
+		A09E80176E3902B9D04AD84D /* SceneSky.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DEF5DB55F60A26F59E4162 /* SceneSky.swift */; };
 		A1062BA909EAE544370ED661 /* DucklingBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6085E34F5E095B25B34F2755 /* DucklingBody.swift */; };
 		A4152A3C9E0E6F256D0617C0 /* MeadowScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2B272AEE8C51F31A482A9B /* MeadowScene.swift */; };
 		A570BD96ADA1AF518B1AD4F7 /* WeekIndexStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD6151301F5BB3817CAFBD7 /* WeekIndexStorage.swift */; };
@@ -145,6 +151,7 @@
 		AB9C17938035D3DBA1B66953 /* AruticFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BD81927026B54C6D80EFCF /* AruticFace.swift */; };
 		ABFF85AF55433112DC250D0E /* KhinklearMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D150DA2E1ED62A4F58941A /* KhinklearMessages.swift */; };
 		AFBD65CE1212701A4B3E7495 /* MathUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6435E15E00A869A37BFD501 /* MathUtilsTests.swift */; };
+		B177119A9FE6E7ED795606C3 /* BeachTokensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7ED852FF82F2F150FFBD8B /* BeachTokensTests.swift */; };
 		B5126D76A9694C96C0CE6E50 /* Scenery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6567D62B00552B7DBBAA93F7 /* Scenery.swift */; };
 		B7FCC9B8E97A7A07EB9D910A /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA03A5FBE1B18686E92C9F1 /* SettingsStore.swift */; };
 		B837F47107FF24402CACF6F2 /* CoolShades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4C478C9B8E6F42E61A88B8 /* CoolShades.swift */; };
@@ -181,6 +188,7 @@
 		E8AF86A9471A19238BACE666 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6783BAB98A7208BE48D1C3B4 /* Pet.swift */; };
 		EBD39CAF9A4006AADD9E6CDB /* OctopusEye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6019289520D8A73B84E058 /* OctopusEye.swift */; };
 		F064BB2124958F7363D21FE2 /* KhinklearFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24201F7926F6196C82AE423 /* KhinklearFace.swift */; };
+		F25DC4906F4B35F924632F28 /* SceneryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DD6F9BFE59919FBBD6A445 /* SceneryLayout.swift */; };
 		F59D4B3E7CEFB6966BAC6371 /* LoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECD2B9EB5A3A649AAC4D52C /* LoopTests.swift */; };
 		F76868E26ADE79B1F0F6317E /* TopBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4B0FC7EC9AD2DECAC8BBF /* TopBarTests.swift */; };
 		F965DF6B09B520C7E30CA42E /* DailySteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADCD4AC057C8E6D7E63E4 /* DailySteps.swift */; };
@@ -208,6 +216,7 @@
 		077352DDA0B276C26E0B88D6 /* MochiBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MochiBody.swift; sourceTree = "<group>"; };
 		0787E2FE52438660EA9DF6EA /* DogBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBody.swift; sourceTree = "<group>"; };
 		093841D9D8214E62C208DE4E /* CelebrationStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrationStoreTests.swift; sourceTree = "<group>"; };
+		09AAD8FF7B5ABAB23F967FE5 /* BeachScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachScene.swift; sourceTree = "<group>"; };
 		0AC6600EBDFD68B149243108 /* AruticMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AruticMessages.swift; sourceTree = "<group>"; };
 		0DA3CECD85239E45FE987D67 /* PetStageSizingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStageSizingTests.swift; sourceTree = "<group>"; };
 		0DA4D701A8205127A5FCCEF5 /* SchnauzerBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchnauzerBody.swift; sourceTree = "<group>"; };
@@ -216,6 +225,7 @@
 		0F71EC44DEC5962E64B239E8 /* EntranceMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceMotion.swift; sourceTree = "<group>"; };
 		106E59D4F1F978723711E300 /* BaseHapticsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHapticsStorage.swift; sourceTree = "<group>"; };
 		113D065F4C9C2FA450D4E2F7 /* MeadowShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeadowShapes.swift; sourceTree = "<group>"; };
+		118A461043EF4595B06E6AAE /* BeachSceneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachSceneTests.swift; sourceTree = "<group>"; };
 		122607C5283F0A8905E92AC1 /* FractionalPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionalPath.swift; sourceTree = "<group>"; };
 		12B2D4167DF9FFD71A5F151C /* GameModeStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeStorageTests.swift; sourceTree = "<group>"; };
 		1607B5313A7B305669DE3B20 /* DogMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogMessages.swift; sourceTree = "<group>"; };
@@ -232,6 +242,7 @@
 		27345F11DBC3A4C2208A4928 /* PetStageMotionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStageMotionTests.swift; sourceTree = "<group>"; };
 		275AD45E4729FCCCA6F20032 /* GameModeStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeStorage.swift; sourceTree = "<group>"; };
 		2BE9B9434814A651FF8B6449 /* TomatoBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoBody.swift; sourceTree = "<group>"; };
+		2C5DEAF9BFBE7C4428F0C53F /* BeachTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachTokens.swift; sourceTree = "<group>"; };
 		2E3274F5DE40404BA8862953 /* WeeklyChallengeStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyChallengeStoreTests.swift; sourceTree = "<group>"; };
 		2E9A9CDF0EC9783DDCBF59D8 /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		3073AAA553B82563497B4004 /* PetStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStage.swift; sourceTree = "<group>"; };
@@ -242,6 +253,7 @@
 		32B29B0082422D0540A988A7 /* Nunito_400Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Nunito_400Regular.ttf; sourceTree = "<group>"; };
 		35E5DBA3657B3A6FEEDF77B7 /* DailyStepsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyStepsTests.swift; sourceTree = "<group>"; };
 		362AE001A4735145FEBF8C6A /* KhinklearBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhinklearBody.swift; sourceTree = "<group>"; };
+		36DEF5DB55F60A26F59E4162 /* SceneSky.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneSky.swift; sourceTree = "<group>"; };
 		3AA4B0FC7EC9AD2DECAC8BBF /* TopBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBarTests.swift; sourceTree = "<group>"; };
 		3AF98DA0FB7EA233A846AC3F /* BulbashikFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbashikFace.swift; sourceTree = "<group>"; };
 		3B4C478C9B8E6F42E61A88B8 /* CoolShades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolShades.swift; sourceTree = "<group>"; };
@@ -252,13 +264,14 @@
 		48138AB4804A3E58F6BFA098 /* WardrobeGroupingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeGroupingTests.swift; sourceTree = "<group>"; };
 		481742E20B22D47DD045B70C /* BulbEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulbEye.swift; sourceTree = "<group>"; };
 		49683E90535046093852FF15 /* ResponsiveScaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveScaleTests.swift; sourceTree = "<group>"; };
+		4EEF72B3F9CD8092FBEABAC4 /* BeachShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachShapes.swift; sourceTree = "<group>"; };
 		4FC971E221C9F6EF506D34A2 /* Glow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glow.swift; sourceTree = "<group>"; };
 		50D150DA2E1ED62A4F58941A /* KhinklearMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhinklearMessages.swift; sourceTree = "<group>"; };
 		52162E2966B078A8375A5CC4 /* AccessoryStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryStoreTests.swift; sourceTree = "<group>"; };
+		5248449367501616942AD722 /* SceneClouds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneClouds.swift; sourceTree = "<group>"; };
 		54C30F54FF56007EE55DB842 /* ResponsiveScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponsiveScale.swift; sourceTree = "<group>"; };
 		57B6C6B7F3372965E9DD7B4C /* EntranceCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceCurve.swift; sourceTree = "<group>"; };
 		57FD7459BB5EFD75E87A6B2B /* WeekOriginStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekOriginStorage.swift; sourceTree = "<group>"; };
-		59391AE4E3EC33863D598717 /* MeadowLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeadowLayoutTests.swift; sourceTree = "<group>"; };
 		5AF5BB110C0EADC77B004F6C /* PetStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetStorage.swift; sourceTree = "<group>"; };
 		5B26B1932F368B95F9746CC2 /* DogFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFace.swift; sourceTree = "<group>"; };
 		5D3BF2FED798CC189B49B042 /* PetRegistryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRegistryTests.swift; sourceTree = "<group>"; };
@@ -270,6 +283,7 @@
 		6783BAB98A7208BE48D1C3B4 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		6A662935D0B9907BAD8158E7 /* Halo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Halo.swift; sourceTree = "<group>"; };
 		6C6F7CFCE4D9956953AC373A /* PlaceholderPetBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderPetBody.swift; sourceTree = "<group>"; };
+		6C7ED852FF82F2F150FFBD8B /* BeachTokensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeachTokensTests.swift; sourceTree = "<group>"; };
 		6E12EFB0EDB139C9E8B150D2 /* SceneryRegistryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneryRegistryTests.swift; sourceTree = "<group>"; };
 		6EA817CED2C8D0CDDE1C3C5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6F2B272AEE8C51F31A482A9B /* MeadowScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeadowScene.swift; sourceTree = "<group>"; };
@@ -310,6 +324,7 @@
 		9E26B66817F4AC1DA5CC5E52 /* OctopusBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OctopusBody.swift; sourceTree = "<group>"; };
 		9F400E53055BFC20BDB8DA9C /* HourClockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourClockTests.swift; sourceTree = "<group>"; };
 		9F5136350008FFB605FB9230 /* OffsetProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetProps.swift; sourceTree = "<group>"; };
+		A1BFD87596D46CC533C39388 /* RollingHill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingHill.swift; sourceTree = "<group>"; };
 		A31ACA6E7D1EDE27E6BEE78A /* PersistedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedStorage.swift; sourceTree = "<group>"; };
 		A3215ADFCD444B227E117828 /* GlowMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowMath.swift; sourceTree = "<group>"; };
 		A3C64CD38FFE017BEDEE318E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -323,10 +338,10 @@
 		B1B281C8CC49A306282706F2 /* SceneryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneryStorage.swift; sourceTree = "<group>"; };
 		B20D9D59D005114CEC3F2FB7 /* SVGPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGPath.swift; sourceTree = "<group>"; };
 		B2308EB01D257A005D294300 /* StepReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReader.swift; sourceTree = "<group>"; };
+		B2DD6F9BFE59919FBBD6A445 /* SceneryLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneryLayout.swift; sourceTree = "<group>"; };
 		B54585EBBB63BC0C464201A9 /* GoalStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalStorageTests.swift; sourceTree = "<group>"; };
 		B568FD306532805F2A8E91AA /* SVGGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGGradient.swift; sourceTree = "<group>"; };
 		B5D93011A45DBF8927CEC8F5 /* GlowMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowMathTests.swift; sourceTree = "<group>"; };
-		B7D2D084D2F6A17CFA5546A8 /* MeadowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeadowLayout.swift; sourceTree = "<group>"; };
 		B8A6B0DB77EFD0BF055BB9A0 /* TomatoFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoFace.swift; sourceTree = "<group>"; };
 		B90BEFAA93A43F3E8F34D38B /* Accessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessory.swift; sourceTree = "<group>"; };
 		B9F03D8E76AFFCCD8ABD2736 /* KhinklEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhinklEye.swift; sourceTree = "<group>"; };
@@ -343,6 +358,7 @@
 		C6703DB54354B7E633AA774D /* MoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodTests.swift; sourceTree = "<group>"; };
 		C7180257C31C85B3257C01E1 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		C77173406A078F871B84D237 /* StepReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepReading.swift; sourceTree = "<group>"; };
+		C8DEE77FA751DE813EC551BE /* SceneryLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneryLayoutTests.swift; sourceTree = "<group>"; };
 		C9BD81927026B54C6D80EFCF /* AruticFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AruticFace.swift; sourceTree = "<group>"; };
 		C9D6C8A7C8D5877449AB152B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CB49AA5E287FD8F07B7EE928 /* SchnauzerEye.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchnauzerEye.swift; sourceTree = "<group>"; };
@@ -591,9 +607,11 @@
 		402160984F96803CBCDA38D3 /* Scenery */ = {
 			isa = PBXGroup;
 			children = (
+				118A461043EF4595B06E6AAE /* BeachSceneTests.swift */,
+				6C7ED852FF82F2F150FFBD8B /* BeachTokensTests.swift */,
 				D1009ABC177DF9006B30246D /* GroundLineTests.swift */,
-				59391AE4E3EC33863D598717 /* MeadowLayoutTests.swift */,
 				18CEAA5E9C918E00B86E066F /* MeadowTokensTests.swift */,
+				C8DEE77FA751DE813EC551BE /* SceneryLayoutTests.swift */,
 			);
 			path = Scenery;
 			sourceTree = "<group>";
@@ -872,6 +890,17 @@
 			path = Storages;
 			sourceTree = "<group>";
 		};
+		AD85A8566F7672FE1AD22BF9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A1BFD87596D46CC533C39388 /* RollingHill.swift */,
+				5248449367501616942AD722 /* SceneClouds.swift */,
+				B2DD6F9BFE59919FBBD6A445 /* SceneryLayout.swift */,
+				36DEF5DB55F60A26F59E4162 /* SceneSky.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		ADC862A08F9F8C0ADBEA4CB9 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -945,7 +974,6 @@
 		D1DB7A01AE2D354DF93BCB1B /* Meadow */ = {
 			isa = PBXGroup;
 			children = (
-				B7D2D084D2F6A17CFA5546A8 /* MeadowLayout.swift */,
 				6F2B272AEE8C51F31A482A9B /* MeadowScene.swift */,
 				113D065F4C9C2FA450D4E2F7 /* MeadowShapes.swift */,
 				965C19C84E4F28F47D1FE93D /* MeadowTokens.swift */,
@@ -963,11 +991,23 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		D7C6B45ADD994F8F91E9871A /* Beach */ = {
+			isa = PBXGroup;
+			children = (
+				09AAD8FF7B5ABAB23F967FE5 /* BeachScene.swift */,
+				4EEF72B3F9CD8092FBEABAC4 /* BeachShapes.swift */,
+				2C5DEAF9BFBE7C4428F0C53F /* BeachTokens.swift */,
+			);
+			path = Beach;
+			sourceTree = "<group>";
+		};
 		DCA2DDE9B4A37891BFFF8A34 /* Scenery */ = {
 			isa = PBXGroup;
 			children = (
 				0ED97F8E858F243A97A71974 /* GroundLine.swift */,
+				D7C6B45ADD994F8F91E9871A /* Beach */,
 				F4A806DA4358564101FE75D4 /* Classic */,
+				AD85A8566F7672FE1AD22BF9 /* Common */,
 				D1DB7A01AE2D354DF93BCB1B /* Meadow */,
 			);
 			path = Scenery;
@@ -1164,6 +1204,9 @@
 				E0D3F18131F52EB6C9ECCE45 /* BabySchnauzer.swift in Sources */,
 				BDC097EE6EE5FAEC1414F529 /* BackgroundEmitters.swift in Sources */,
 				9CC966A077779FBC3AFF4FD2 /* BaseHapticsStorage.swift in Sources */,
+				3669AC3C9E6BB9B5EE2BB27C /* BeachScene.swift in Sources */,
+				30900C16633EE42E255FAD02 /* BeachShapes.swift in Sources */,
+				39FFD66F447E361021E5D5A8 /* BeachTokens.swift in Sources */,
 				9B38CB121D2AF3BB0694728E /* BulbEye.swift in Sources */,
 				E3FCB1B6AFEA4741F254232B /* BulbashikBody.swift in Sources */,
 				C15C5EF4023A15B3DB2AD3FC /* BulbashikFace.swift in Sources */,
@@ -1207,7 +1250,6 @@
 				ABFF85AF55433112DC250D0E /* KhinklearMessages.swift in Sources */,
 				E315103BE7FED3FF69BD53D0 /* Loop.swift in Sources */,
 				8DCAC1596139802C202AA071 /* MathUtils.swift in Sources */,
-				782BAC88C7F93437FBA439A5 /* MeadowLayout.swift in Sources */,
 				A4152A3C9E0E6F256D0617C0 /* MeadowScene.swift in Sources */,
 				1CBE3CBC4409C682AD50E014 /* MeadowShapes.swift in Sources */,
 				6CAEA37A1CFD42ECEAA524BF /* MeadowTokens.swift in Sources */,
@@ -1240,11 +1282,15 @@
 				4EFD4724CBCDAFBC964DFA5B /* PodiumView.swift in Sources */,
 				5D90187D7C0ABACE75DEBD0C /* Protocol.swift in Sources */,
 				69E0F90A236DFFD2A7774BD4 /* ResponsiveScale.swift in Sources */,
+				5ADD48F2F1508675D0D7EA07 /* RollingHill.swift in Sources */,
 				696160D1897E8192F8F35C58 /* RoundEye.swift in Sources */,
 				DB8DCC566EDC500424002E9E /* RoundedBoxPath.swift in Sources */,
 				7F52F7F130CBE2FACE5B34AB /* SVGGradient.swift in Sources */,
 				C8127EC10350A69FCF274562 /* SVGPath.swift in Sources */,
+				7A7420F4FF4890AC4236737B /* SceneClouds.swift in Sources */,
+				A09E80176E3902B9D04AD84D /* SceneSky.swift in Sources */,
 				B5126D76A9694C96C0CE6E50 /* Scenery.swift in Sources */,
+				F25DC4906F4B35F924632F28 /* SceneryLayout.swift in Sources */,
 				C967DFF5DA4F224FBE6A89E2 /* SceneryPicker.swift in Sources */,
 				0DBA4A452052DFF0EBD93E1C /* SceneryStorage.swift in Sources */,
 				328FF3938E18E0CA9D04B2B4 /* SchnauzerBody.swift in Sources */,
@@ -1292,6 +1338,8 @@
 				88EDD5225A74A5BC010AC41C /* AccessoryAnchorTests.swift in Sources */,
 				8C01CAF87FD5CA41D8759AAF /* AccessoryRegistryTests.swift in Sources */,
 				9AEAD671E8B4AE803AA52E27 /* AccessoryStoreTests.swift in Sources */,
+				90CB0FF934D2EA3E48FCF9E0 /* BeachSceneTests.swift in Sources */,
+				B177119A9FE6E7ED795606C3 /* BeachTokensTests.swift in Sources */,
 				4B1E1FF757515FC212D83F76 /* CelebrationStoreTests.swift in Sources */,
 				2F91E2CA8CC1B6BFCB9C29F3 /* ConfettiMathTests.swift in Sources */,
 				17DA466151A3E0385EC4496B /* DailyStepsTests.swift in Sources */,
@@ -1306,7 +1354,6 @@
 				5BAA21CC634040013ACD94C3 /* HourClockTests.swift in Sources */,
 				F59D4B3E7CEFB6966BAC6371 /* LoopTests.swift in Sources */,
 				AFBD65CE1212701A4B3E7495 /* MathUtilsTests.swift in Sources */,
-				153836449656F0DBCC33D5D3 /* MeadowLayoutTests.swift in Sources */,
 				4CCB3E378FB5ECA3C31FE619 /* MeadowTokensTests.swift in Sources */,
 				46A34FDB4D65607374614997 /* MoodTests.swift in Sources */,
 				71329E5E45A21CA1F433B226 /* MovementCardTests.swift in Sources */,
@@ -1316,6 +1363,7 @@
 				07335DC69F1F724818D7D303 /* PetStorageTests.swift in Sources */,
 				319A8375E4470B5F92FD0D5B /* ResponsiveScaleTests.swift in Sources */,
 				72AE4E75A9BA572F2348300B /* RoundedBoxPathTests.swift in Sources */,
+				273A5528F80346515B707C96 /* SceneryLayoutTests.swift in Sources */,
 				396CF800505A40D8628E4C69 /* SceneryRegistryTests.swift in Sources */,
 				FD21663060196572DCE96587 /* SceneryStorageTests.swift in Sources */,
 				0F3212F519A6E461DE9EE233 /* SettingsStoreTests.swift in Sources */,

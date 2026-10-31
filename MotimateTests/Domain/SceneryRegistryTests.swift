@@ -16,6 +16,7 @@ final class SceneryRegistryTests: XCTestCase {
     func testOnlyNonClassicSceneriesDisableAutoNight() {
         XCTAssertFalse(SceneryId.classic.requiresDisablingAutoNight)
         XCTAssertTrue(SceneryId.meadow.requiresDisablingAutoNight)
+        XCTAssertTrue(SceneryId.beach.requiresDisablingAutoNight)
     }
 
     func testEveryNameIsNonEmpty() {
@@ -27,5 +28,6 @@ final class SceneryRegistryTests: XCTestCase {
     func testOnlyNonClassicSceneriesDrawAGroundShadow() {
         XCTAssertFalse(sceneryDefinition(.classic).groundShadow)
         XCTAssertTrue(sceneryDefinition(.meadow).groundShadow)
+        XCTAssertTrue(sceneryDefinition(.beach).groundShadow)
     }
 }
