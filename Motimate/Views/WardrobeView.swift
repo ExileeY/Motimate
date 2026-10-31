@@ -62,9 +62,9 @@ struct WardrobeView: View {
 
                     ScrollView(showsIndicators: false) {
                         VStack(alignment: .leading, spacing: 0) {
-                            ForEach(Array(slots.enumerated()), id: \.element) { index, slot in
+                            ForEach(slots, id: \.self) { slot in
                                 slotSection(slot, palette)
-                                    .padding(.top, index == 0 ? 20 : 32)
+                                    .padding(.top, slot == slots.first ? 20 : 32)
                             }
                         }
                         .padding(.bottom, 24)
@@ -93,10 +93,11 @@ struct WardrobeView: View {
                     ForEach(ids, id: \.self) { id in
                         WardrobeTile(
                             name: Accessory.define(id).name,
-                            accessoryId: id,
                             isEquipped: accessories.isEquipped(id),
                             onToggle: { toggleEquip(id) }
-                        )
+                        ) {
+                            Accessory.define(id).view(.calm, WardrobeTile.previewSize, 1)
+                        }
                     }
                 }
             }

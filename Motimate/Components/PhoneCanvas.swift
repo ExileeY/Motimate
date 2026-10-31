@@ -2,32 +2,24 @@ import SwiftUI
 
 struct PhoneCanvas<Content: View>: View {
     let mood: Mood
+    let scenery: SceneryId
     private let content: Content
 
-    @Environment(\.themeTokens) private var tokens
+    @State private var groundLine: CGFloat? = nil
 
     init(
         mood: Mood,
+        scenery: SceneryId = .classic,
         @ViewBuilder content: () -> Content
     ) {
         self.mood = mood
+        self.scenery = scenery
         self.content = content()
     }
 
     var body: some View {
-        let background = tokens.screenBackground(mood)
-
         ZStack {
-            LinearGradient(
-                stops: zip(background.colors, background.locations).map {
-                    Gradient.Stop(color: $0, location: $1)
-                },
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .ignoresSafeArea()
-
-            BackgroundEmitters(mood: mood)
+            backdrop
                 .ignoresSafeArea()
 
             content
@@ -35,6 +27,18 @@ struct PhoneCanvas<Content: View>: View {
                 .padding(.horizontal, 22)
                 .padding(.top, 8)
                 .padding(.bottom, 24)
+        }
+        .onPreferenceChange(GroundLinePreferenceKey.self) { groundLine = $0 }
+    }
+
+    private var backdrop: some View {
+        // The backdrop ignores safe areas, so the fraction is taken against its own
+        // full-screen frame — the same frame the scene lays itself out in.
+        GeometryReader { geo in
+            sceneryDefinition(scenery).backdrop(
+                mood,
+                groundY: GroundLine.fraction(groundLine, in: geo.frame(in: .global))
+            )
         }
     }
 }

@@ -158,7 +158,7 @@ private struct Cloud: View {
     }
 }
 
-private struct CloudPuff: View {
+struct CloudPuff: View {
     let color: Color
     let alpha: CGFloat
 

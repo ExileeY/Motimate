@@ -63,4 +63,80 @@ final class SettingsStoreTests: XCTestCase {
         XCTAssertTrue(reloaded.hapticsTabEnabled)
         XCTAssertTrue(reloaded.hapticsAnimationEnabled)
     }
+
+    // MARK: - Scenery
+
+    func testFreshStoreIsClassicWithAutoNightOn() {
+        let store = SettingsStore(defaults: defaults)
+        XCTAssertEqual(store.sceneryId, .classic)
+        XCTAssertTrue(store.autoNightEnabled)
+    }
+
+    func testSetMeadowTurnsAutoNightOffAndPersistsBoth() {
+        SettingsStore(defaults: defaults).setScenery(.meadow)
+
+        let reloaded = SettingsStore(defaults: defaults)
+        XCTAssertEqual(reloaded.sceneryId, .meadow)
+        XCTAssertFalse(reloaded.autoNightEnabled)
+    }
+
+    func testSetClassicLeavesAutoNightAlone() {
+        let store = SettingsStore(defaults: defaults)
+        store.setScenery(.classic)
+        XCTAssertTrue(store.autoNightEnabled)
+
+        store.setAutoNight(false)
+        store.setScenery(.classic)
+        XCTAssertFalse(store.autoNightEnabled)
+    }
+
+    func testEnablingAutoNightResetsSceneryToClassic() {
+        let store = SettingsStore(defaults: defaults)
+        store.setScenery(.meadow)
+
+        store.setAutoNight(true)
+
+        XCTAssertEqual(store.sceneryId, .classic)
+        XCTAssertTrue(store.autoNightEnabled)
+        let reloaded = SettingsStore(defaults: defaults)
+        XCTAssertEqual(reloaded.sceneryId, .classic)
+        XCTAssertTrue(reloaded.autoNightEnabled)
+    }
+
+    func testDisablingAutoNightLeavesSceneryAlone() {
+        let store = SettingsStore(defaults: defaults)
+        store.setScenery(.meadow)
+
+        store.setAutoNight(false)
+
+        XCTAssertEqual(store.sceneryId, .meadow)
+        XCTAssertFalse(store.autoNightEnabled)
+    }
+
+    func testConfirmsDisablingAutoNightOnlyWhenPickingACustomSceneryWithAutoNightOn() {
+        let store = SettingsStore(defaults: defaults)
+        XCTAssertTrue(store.shouldConfirmDisablingAutoNight(for: .meadow))
+        XCTAssertFalse(store.shouldConfirmDisablingAutoNight(for: .classic))
+
+        store.setAutoNight(false)
+        XCTAssertFalse(store.shouldConfirmDisablingAutoNight(for: .meadow))
+    }
+
+    func testConfirmsEnablingAutoNightOnlyWhileACustomSceneryIsActive() {
+        let store = SettingsStore(defaults: defaults)
+        XCTAssertFalse(store.shouldConfirmEnablingAutoNight) // classic, auto-night on
+
+        store.setAutoNight(false)
+        XCTAssertFalse(store.shouldConfirmEnablingAutoNight) // classic, auto-night off
+
+        store.setScenery(.meadow)
+        XCTAssertTrue(store.shouldConfirmEnablingAutoNight)
+    }
+
+    func testNightAlwaysDrawsClassic() {
+        let store = SettingsStore(defaults: defaults)
+        store.setScenery(.meadow)
+        XCTAssertEqual(store.activeScenery(for: .day), .meadow)
+        XCTAssertEqual(store.activeScenery(for: .night), .classic)
+    }
 }

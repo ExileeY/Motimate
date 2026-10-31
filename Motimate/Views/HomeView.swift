@@ -127,7 +127,7 @@ struct HomeView: View {
         let hasLiveSteps = dailySteps.permission == .granted && dailySteps.error == nil
         let palette = ThemeTokens.for(theme).palette
 
-        return PhoneCanvas(mood: mood) {
+        return PhoneCanvas(mood: mood, scenery: settings.activeScenery(for: theme)) {
             VStack(spacing: 0) {
                 TopBar(
                     mood: mood,
@@ -183,16 +183,19 @@ struct HomeView: View {
     }
 
     private func petArea(mood: Mood, height: CGFloat) -> some View {
+        let scenery = sceneryDefinition(settings.activeScenery(for: theme))
         let stage = PetStage(
             mood: mood,
             petId: settings.petId,
             screenHeight: height,
             accessories: accessories.equippedList,
+            groundShadow: scenery.groundShadow,
             entrance: EntranceMotionParams(
                 active: shouldPlayEntrance,
                 onFinished: { shouldPlayEntrance = false }
             )
         )
+        .reportsGroundLine(footOffset: PetStageMotion.footOffset(screenHeight: height))
 
         #if DEBUG
         return stage

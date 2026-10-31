@@ -77,4 +77,15 @@ final class PetStageMotionTests: XCTestCase {
 
         XCTAssertEqual(PetStageMotion.quiverDurationMs, 1_000)
     }
+
+    func testGroundShadowShrinksAndFadesAsThePetLifts() {
+        let grounded = PetStageMotion.groundShadow(lift: 0)
+        let peak = PetStageMotion.groundShadow(lift: 9)
+        let beyond = PetStageMotion.groundShadow(lift: 40)
+
+        XCTAssertEqual(grounded, PetGroundShadowValues(scale: 1, opacity: 1))
+        XCTAssertEqual(peak.scale, 0.8, accuracy: 0.0001)
+        XCTAssertEqual(peak.opacity, 0.6, accuracy: 0.0001)
+        XCTAssertEqual(beyond, peak)
+    }
 }
